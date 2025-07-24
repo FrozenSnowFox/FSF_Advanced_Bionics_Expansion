@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	
+	<!-- Advanced Bionic Color Label -->
+	
+	<HediffDef Name="FSFAddedBodyPartAdvBionic" Abstract="True">
+		<hediffClass>Hediff_AddedPart</hediffClass>
+		<defaultLabelColor>(144,98,179)</defaultLabelColor>
+		<isBad>false</isBad>
+		<priceImpact>true</priceImpact>
+	</HediffDef>
+	
+	<!-- Advanced Bionic Implant Color Label -->
+	
+	<HediffDef Name="FSFImplantHediffAdvBase" ParentName="ImplantHediffBase" Abstract="True">
+		<hediffClass>Hediff_Implant</hediffClass>
+		<defaultLabelColor>(144,98,179)</defaultLabelColor>
+		<isBad>false</isBad>
+		<priceImpact>true</priceImpact>
+	</HediffDef>
+	
+	<!-- Archotech Color Label -->
+	
+	<HediffDef Name="FSFAddedBodyPartArchotech" Abstract="True">
+		<hediffClass>Hediff_AddedPart</hediffClass>
+		<defaultLabelColor>(82,190,128)</defaultLabelColor>
+		<isBad>false</isBad>
+		<priceImpact>true</priceImpact>
+	</HediffDef>
+	
+	<!-- Archotech Implant Color Label -->
+	
+	<HediffDef Name="FSFImplantHediffArchotechBase" ParentName="ImplantHediffBase" Abstract="True">
+		<hediffClass>Hediff_Implant</hediffClass>
+		<defaultLabelColor>(82,190,128)</defaultLabelColor>
+		<isBad>false</isBad>
+		<priceImpact>true</priceImpact>
+	</HediffDef>
+
+</Defs>

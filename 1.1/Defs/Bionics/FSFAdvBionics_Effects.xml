@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+	<HediffDef ParentName="DiseaseBase">
+		<defName>FSFEffectTaser</defName>
+		<label>electric shock</label>
+		<description>An electric shock that causes paralysis.</description>
+		<descriptionHyperlinks><ThingDef>FSFAdvBionicTaserArm</ThingDef></descriptionHyperlinks>
+		<isBad>true</isBad>
+		<defaultLabelColor>(253,208,35)</defaultLabelColor>
+		<comps>
+			<li Class="HediffCompProperties_Immunizable">
+				<severityPerDayNotImmune>-2</severityPerDayNotImmune>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<label>shocked</label>
+				<minSeverity>0.5</minSeverity>
+				<painOffset>1.0</painOffset>
+			</li>
+			<li>
+				<label>shocked</label>
+				<minSeverity>2.0</minSeverity>
+				<painOffset>2.0</painOffset>
+			</li>
+		</stages>
+	</HediffDef>
+
+</Defs>

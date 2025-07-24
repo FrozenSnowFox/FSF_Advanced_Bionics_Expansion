@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+	<XmlExtensions.SettingsMenuDef>
+		<defName>FrozenSnowFoxAdvancedBionicsExpansionSettings</defName> <!--Can be anything unique with no periods-->
+		<modId>FrozenSnowFox.FrozenSnowFoxAdvancedBionicsExpansion</modId> <!--MUST be the same as the one entered earlier-->    
+		<label>FrozenSnowFox Advanced Bionics Expansion</label> <!-- This is what displays as your mod's name-->    
+		<settings> <!--This is where you define what settings are in the settings menu-->
+
+			<li Class="XmlExtensions.Setting.SetColor">
+				<color>(187,0,0)</color>
+			</li>
+			<li Class="XmlExtensions.Setting.Text">
+				<text>For any changed settings to take effect the game must be restarted.</text>
+				<font>Medium</font>
+				<anchor>Middle</anchor>
+				<tKey>FSFABEModWarning</tKey>
+			</li>
+			<li Class="XmlExtensions.Setting.SetColor"/>
+			<li Class="XmlExtensions.Setting.GapLine">
+			</li>
+			
+			<li Class="XmlExtensions.Setting.Text">
+				<text>Advanced Bionics Expansion Settings</text>
+				<font>Medium</font>
+				<anchor>Middle</anchor>
+				<tKey>FSFABESettingsTitle</tKey>
+			</li>
+			<li Class="XmlExtensions.Setting.GapLine">
+			</li>
+			
+			<!-- Bionics Table -->
+			
+			<li Class="XmlExtensions.Setting.Checkbox">
+				<label>Bionics Table</label>
+				<key>FSFABEBionicsTableOn</key>
+				<defaultValue>false</defaultValue>
+				<tKey>FSFABEBionicsTableTitle</tKey>
+			</li>
+			<li Class="XmlExtensions.Setting.ToggleableSettings">
+				<key>FSFABEBionicsTableOn</key>
+				<caseFalse>
+					<li Class="XmlExtensions.Setting.SetColor">
+						<color>(163,177,188)</color>
+					</li>
+					<li Class="XmlExtensions.Setting.Text">
+						<text>Enables the Bionics Table which contains all bionics recipes.  The recipes are also removed from existing workbenches to remove clutter.</text>
+						<tKey>FSFABEBionicsTableOnDesc</tKey>
+					</li>
+					<li Class="XmlExtensions.Setting.SetColor"/>				
+				</caseFalse>
+				<caseTrue>
+					<li Class="XmlExtensions.Setting.SetColor">
+						<color>(163,177,188)</color>
+					</li>
+					<li Class="XmlExtensions.Setting.Text">
+						<text>Enables the Bionics Table which contains all bionics recipes.  The recipes are also removed from existing workbenches to remove clutter.</text>
+						<tKey>FSFABEBionicsTableOnDesc</tKey>
+					</li>
+					<li Class="XmlExtensions.Setting.SetColor"/>
+					<li Class="XmlExtensions.Setting.Checkbox">
+						<label>Bionics Worktype</label>
+						<key>FSFABEBionicsWorktype</key>
+						<defaultValue>false</defaultValue>
+						<tKey>FSFABEBionicsWorktypeTitle</tKey>
+					</li>
+					<li Class="XmlExtensions.Setting.SetColor">
+						<color>(163,177,188)</color>
+					</li>
+					<li Class="XmlExtensions.Setting.Text">
+						<text>Enables the Bionics Worktype and changes the Bionics Table to use the Bionics Worktype.\nWarning: Enabling a new worktype on existing saves can cause game breaking issues for some people.</text>
+						<tKey>FSFABEBionicsWorktypeDesc</tKey>
+					</li>
+					<li Class="XmlExtensions.Setting.SetColor"/>
+					<li Class="XmlExtensions.Setting.Checkbox">
+						<label>Move Mechanitor Implant Recipes (Require Biotech DLC)</label>
+						<key>FSFABEMechanitorImplantRecipes</key>
+						<defaultValue>false</defaultValue>
+						<tKey>FSFABEMechanitorImplantRecipesTitle</tKey>
+					</li>
+					<li Class="XmlExtensions.Setting.SetColor">
+						<color>(163,177,188)</color>
+					</li>
+					<li Class="XmlExtensions.Setting.Text">
+						<text>Removes the Mechanitor Implant Recipes from existing workbenches and adds them to the Bionics Table.</text>
+						<tKey>FSFABEMechanitorImplantRecipesDesc</tKey>
+					</li>
+					<li Class="XmlExtensions.Setting.SetColor"/>
+				</caseTrue>
+			</li>
+			
+		</settings>
+	</XmlExtensions.SettingsMenuDef>
+
+</Defs>

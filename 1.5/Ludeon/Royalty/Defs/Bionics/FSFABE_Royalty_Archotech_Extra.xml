@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	
+	<!-- Archotech Skin -->
+
+	<HediffDef ParentName="FSFImplantHediffArchotechBase">
+		<defName>FSFArchotechSkinI</defName>
+		<label>synthetic skin gland</label>
+		<labelNoun>a synthetic skin gland</labelNoun>
+		<description>An installed synthetic skin gland.</description>
+		<descriptionHyperlinks><ThingDef>FSFArchotechSkinI</ThingDef></descriptionHyperlinks>
+		<spawnThingOnRemoved>FSFArchotechSkinI</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<statOffsets>
+					<ArmorRating_Sharp>1.0</ArmorRating_Sharp>
+					<ArmorRating_Blunt>0.5</ArmorRating_Blunt>
+					<ArmorRating_Heat>0.7</ArmorRating_Heat>
+					<DecompressionResistance MayRequire="kentington.saveourship2">1</DecompressionResistance>
+					<PawnBeauty>1</PawnBeauty>
+	    	    </statOffsets>
+			</li>
+		</stages>
+		<comps>
+      		<li MayRequire="V1024.EBFramework" Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust">
+        		<scaleAdjustment>1.0</scaleAdjustment>
+        	</li>
+		</comps>
+		<tags><li>ArmorGland</li></tags>
+	</HediffDef>
+
+	<ThingDef ParentName="BodyPartRoyalBase">
+		<defName>FSFArchotechSkinI</defName>
+		<label>synthetic skin gland</label>
+		<description>An advanced artificial skin gland built by an archotech. The gland releases chemicals and nanomachines that remodels the user’s skin, making it flawless and tougher than plasteel. Its internal workings are a mystery to all human minds.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFArchotechSkinI</RecipeDef></descriptionHyperlinks>
+		<statBases>
+			<MarketValue>3650</MarketValue>
+			<Mass>1</Mass>
+		</statBases>
+		<thingSetMakerTags>
+			<li>RewardStandardMidFreq</li>
+		</thingSetMakerTags>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>InstallFSFArchotechSkinI</defName>
+		<label>install synthetic skin gland</label>
+		<description>Install a synthetic skin gland.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFArchotechSkinI</ThingDef>
+			<HediffDef>FSFArchotechSkinI</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing synthetic skin gland.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFArchotechSkinI</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFArchotechSkinI</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Torso</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFArchotechSkinI</addsHediff>
+		<uiIconThing>FSFArchotechSkinI</uiIconThing>
+		<incompatibleWithHediffTags>
+			<li>ArmorGland</li>
+		</incompatibleWithHediffTags>
+	</RecipeDef>
+  
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemoveFSFArchotechSkinI</defName>
+		<label>remove synthetic skin gland</label>
+		<description>Remove synthetic skin gland.</description>
+		<descriptionHyperlinks><ThingDef>FSFArchotechSkinI</ThingDef></descriptionHyperlinks>
+		<jobString>Removing synthetic skin gland.</jobString>
+		<removesHediff>FSFArchotechSkinI</removesHediff>
+	</RecipeDef>
+	
+</Defs>

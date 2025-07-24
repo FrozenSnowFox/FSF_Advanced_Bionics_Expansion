@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	
+	<!-- Archotech Skin -->
+
+	<HediffDef ParentName="FSFImplantHediffArchotechBase">
+		<defName>FSFArchotechSkinI</defName>
+		<label>synthetic skin gland</label>
+		<labelNoun>a synthetic skin gland</labelNoun>
+		<description>An installed synthetic skin gland.</description>
+		<descriptionHyperlinks><ThingDef>FSFArchotechSkinI</ThingDef></descriptionHyperlinks>
+		<spawnThingOnRemoved>FSFArchotechSkinI</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<statOffsets>
+					<ArmorRating_Sharp>1.0</ArmorRating_Sharp>
+					<ArmorRating_Blunt>0.5</ArmorRating_Blunt>
+					<ArmorRating_Heat>0.7</ArmorRating_Heat>
+					<PawnBeauty>1</PawnBeauty>
+	    	    </statOffsets>
+			</li>
+		</stages>
+		<tags><li>ArmorGland</li></tags>
+	</HediffDef>
+
+	<ThingDef ParentName="BodyPartRoyalBase">
+		<defName>FSFArchotechSkinI</defName>
+		<label>synthetic skin gland</label>
+		<description>An advanced artificial skin gland built by an archotech. The gland releases chemicals and nanomachines that remodels the user’s skin, making it flawless and tougher than plasteel. Its internal workings are a mystery to all human minds.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFArchotechSkinI</RecipeDef></descriptionHyperlinks>
+		<statBases>
+			<MarketValue>3650</MarketValue>
+			<Mass>1</Mass>
+		</statBases>
+		<thingSetMakerTags>
+			<li>RewardStandardMidFreq</li>
+		</thingSetMakerTags>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>InstallFSFArchotechSkinI</defName>
+		<label>install synthetic skin gland</label>
+		<description>Install a synthetic skin gland.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFArchotechSkinI</ThingDef>
+			<HediffDef>FSFArchotechSkinI</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing synthetic skin gland.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFArchotechSkinI</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFArchotechSkinI</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Torso</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFArchotechSkinI</addsHediff>
+		<incompatibleWithHediffTags>
+			<li>ArmorGland</li>
+		</incompatibleWithHediffTags>
+	</RecipeDef>
+  
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemoveFSFArchotechSkinI</defName>
+		<label>remove synthetic skin gland</label>
+		<description>Remove synthetic skin gland.</description>
+		<descriptionHyperlinks><ThingDef>FSFArchotechSkinI</ThingDef></descriptionHyperlinks>
+		<jobString>Removing synthetic skin gland.</jobString>
+		<removesHediff>FSFArchotechSkinI</removesHediff>
+	</RecipeDef>
+	
+	<!-- Archotech Heatsink  (Remove this on next update) -->
+
+	<HediffDef ParentName="FSFImplantHediffArchotechBase">
+		<defName>FSFArchotechPsychicHeatsink</defName>
+		<label>psychic heatsink</label>
+		<labelNoun>a psychic heatsink</labelNoun>
+		<description>An installed psychic heatsink.</description>
+		<descriptionHyperlinks><ThingDef>FSFArchotechPsychicHeatsink</ThingDef></descriptionHyperlinks>
+		<spawnThingOnRemoved>FSFArchotechPsychicHeatsink</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<statOffsets>
+					<PsychicEntropyRecoveryRate>0.75</PsychicEntropyRecoveryRate>
+	    	    </statOffsets>
+			</li>
+		</stages>
+		<tags><li>FSFPsychicAttuner</li></tags>
+	</HediffDef>
+
+	<ThingDef ParentName="BodyPartRoyalBase">
+		<defName>FSFArchotechPsychicHeatsink</defName>
+		<label>psychic heatsink</label>
+		<description>This brain implant works as a cooling system to rapidly reduce neural heat caused by psychic abilities.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFArchotechPsychicHeatsink</RecipeDef></descriptionHyperlinks>
+		<statBases>
+			<MarketValue>1000</MarketValue>
+			<Mass>1</Mass>
+		</statBases>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>InstallFSFArchotechPsychicHeatsink</defName>
+		<label>install psychic heatsink</label>
+		<description>Install a psychic heatsink.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFArchotechPsychicHeatsink</ThingDef>
+			<HediffDef>FSFArchotechPsychicHeatsink</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing psychic heatsink.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFArchotechPsychicHeatsink</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFArchotechPsychicHeatsink</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Brain</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFArchotechPsychicHeatsink</addsHediff>
+		<incompatibleWithHediffTags>
+			<li>FSFPsychicAttuner</li>
+		</incompatibleWithHediffTags>
+	</RecipeDef>
+  
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemoveFSFArchotechPsychicHeatsink</defName>
+		<label>remove psychic heatsink</label>
+		<description>Remove psychic heatsink.</description>
+		<descriptionHyperlinks><ThingDef>FSFArchotechPsychicHeatsink</ThingDef></descriptionHyperlinks>
+		<jobString>Removing psychic heatsink.</jobString>
+		<removesHediff>FSFArchotechPsychicHeatsink</removesHediff>
+	</RecipeDef>
+	
+</Defs>

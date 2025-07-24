@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	
+  <!-- List of Changes
+
+	Change all ThingDefs parent to FSFBodyPartAdvBionicBase used for advanced bionics.
+	Add butcherProducts to all ThingDefs for disassemble bionic recipe.
+	Change materials costs to higher costs.
+	Cut fluff that appears on FSFBodyPartAdvBionicBase recipemaker and statbases.
+ 
+  -->
+	
+<!-- Detocifier Lung -->
+	
+  <ThingDef ParentName="FSFBodyPartAdvBionicBase">
+    <defName>DetoxifierLung</defName>
+    <label>detoxifier lung</label>
+    <description>An advanced artificial lung that uses microfilters to reduce the intake of environmental toxins, allowing the user to survive longer in polluted environments. Additionally, it negates the irritation of acidic smog and prevents lung rot in this lung.</description>
+    <descriptionHyperlinks>
+      <RecipeDef>InstallDetoxifierLung</RecipeDef>
+    </descriptionHyperlinks>
+    <recipeMaker>
+			<researchPrerequisites>
+				<li>FSFAdvancedBionics</li>
+				<li>ToxFiltration</li>
+			</researchPrerequisites>
+    </recipeMaker>
+    <costList>
+      <Plasteel>15</Plasteel>
+      <ComponentSpacer>9</ComponentSpacer>
+    </costList>
+	<butcherProducts>
+      <Plasteel>15</Plasteel>
+      <ComponentSpacer>9</ComponentSpacer>
+	</butcherProducts>
+  </ThingDef>
+	
+<!-- Detocifier kidney -->
+	
+  <ThingDef ParentName="FSFBodyPartAdvBionicBase">
+    <defName>DetoxifierKidney</defName>
+    <label>detoxifier kidney</label>
+    <description>An advanced artificial kidney. Using a series of nanofilters, it can rapidly remove a vast range of toxins from the blood, making it effective against environmental toxins, venoms, and injected poisons.</description>
+    <descriptionHyperlinks>
+      <RecipeDef>InstallDetoxifierKidney</RecipeDef>
+    </descriptionHyperlinks>
+    <recipeMaker>
+			<researchPrerequisites>
+				<li>FSFAdvancedBionics</li>
+				<li>ToxFiltration</li>
+			</researchPrerequisites>
+    </recipeMaker>
+    <costList>
+      <Plasteel>10</Plasteel>
+      <ComponentSpacer>6</ComponentSpacer>
+    </costList>
+	<butcherProducts>
+      <Plasteel>10</Plasteel>
+      <ComponentSpacer>6</ComponentSpacer>
+	</butcherProducts>
+  </ThingDef>
+
+</Defs>

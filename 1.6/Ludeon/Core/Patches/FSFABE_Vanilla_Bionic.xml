@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+	
+	<!-- Patch Bionic items for ABE -->
+			
+			<!-- Power Claw -->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/HediffDef[defName = "PowerClaw"]/comps/li[@Class = "HediffCompProperties_VerbGiver"]/tools/li</xpath>
+				<value>
+					<armorPenetration>0.5</armorPenetration>
+				</value>
+			</li>
+			
+			<!-- Bionic Arm -->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/HediffDef[defName = "BionicArm"]/comps/li[@Class = "HediffCompProperties_VerbGiver"]/tools/li</xpath>
+				<value>
+					<armorPenetration>0.25</armorPenetration>
+				</value>
+			</li>
+			
+			<!-- Bionic Jaw -->
+			
+			<li Class="PatchOperationConditional">		
+				<xpath>/Defs/HediffDef[defName = "BionicJaw"]/comps</xpath>
+				<match Class="PatchOperationReplace">
+					<xpath>/Defs/HediffDef[defName = "BionicJaw"]/comps</xpath>
+					<value>
+						<comps>
+							<li Class="HediffCompProperties_VerbGiver">
+								<tools>
+									<li>
+										<label>teeth</label>
+										<capacities>
+											<li>Bite</li>
+										</capacities>
+										<power>12</power>
+										<armorPenetration>0.25</armorPenetration>
+										<cooldownTime>2</cooldownTime>
+										<linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+										<chanceFactor>0.07</chanceFactor>
+										<soundMeleeHit>Pawn_Melee_HumanBite_Hit</soundMeleeHit>
+										<soundMeleeMiss>Pawn_Melee_HumanBite_Miss</soundMeleeMiss>
+									</li>
+								</tools>
+							</li>
+    		    			<li MayRequire="V1024.EBFramework" Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust">
+    	    	    			<scaleAdjustment>0.25</scaleAdjustment>
+		        			</li>
+    					</comps>
+					</value>
+				</match>				
+				<nomatch Class="PatchOperationAdd">
+					<xpath>/Defs/HediffDef[defName = "BionicJaw"]</xpath>
+					<value>
+						<comps>
+							<li Class="HediffCompProperties_VerbGiver">
+								<tools>
+									<li>
+										<label>teeth</label>
+										<capacities>
+											<li>Bite</li>
+										</capacities>
+										<power>12</power>
+										<armorPenetration>0.25</armorPenetration>
+										<cooldownTime>2</cooldownTime>
+										<linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+										<chanceFactor>0.07</chanceFactor>
+										<soundMeleeHit>Pawn_Melee_HumanBite_Hit</soundMeleeHit>
+										<soundMeleeMiss>Pawn_Melee_HumanBite_Miss</soundMeleeMiss>
+									</li>
+								</tools>
+							</li>
+    		    			<li MayRequire="V1024.EBFramework" Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust">
+    	    	    			<scaleAdjustment>0.25</scaleAdjustment>
+		        			</li>
+    					</comps>
+					</value>
+				</nomatch>
+			</li>
+			
+			<!-- Bionic Spine -->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/HediffDef[defName = "BionicSpine"]/addedPartProps</xpath>
+				<value>
+					<partEfficiency>1.25</partEfficiency>
+				</value>
+			</li>
+	
+		</operations>
+	</Operation>
+	
+</Patch>

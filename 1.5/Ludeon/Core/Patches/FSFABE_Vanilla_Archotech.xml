@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+	
+	<!-- Patch Archotech items for ABE -->
+			
+	<!--
+		Note: Changing a vanilla ParentDef to a custom ParentDef with a PatchOperationAttributeSet will not work normally.
+ 		For it to work you need to add/insert the ParentDef with a patch.  Then it will work as intended.
+	-->
+			
+			<!-- Archotech Eye -->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/HediffDef[defName = "ArchotechEye"]</xpath>
+				<value>
+					<defaultLabelColor>(139,143,104)</defaultLabelColor>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/HediffDef[defName = "ArchotechEye"]/addedPartProps/partEfficiency</xpath>
+				<value>
+					<partEfficiency>2.0</partEfficiency>
+				</value>
+			</li>
+			
+			<!-- Archotech Arm -->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/HediffDef[defName = "ArchotechArm"]</xpath>
+				<value>
+					<defaultLabelColor>(139,143,104)</defaultLabelColor>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/HediffDef[defName = "ArchotechArm"]/comps/li[@Class = "HediffCompProperties_VerbGiver"]/tools/li/power</xpath>
+				<value>
+					<power>24</power>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/HediffDef[defName = "ArchotechArm"]/comps/li[@Class = "HediffCompProperties_VerbGiver"]/tools/li</xpath>
+				<value>
+					<armorPenetration>1.0</armorPenetration>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/HediffDef[defName = "ArchotechArm"]/addedPartProps/partEfficiency</xpath>
+				<value>
+					<partEfficiency>2.0</partEfficiency>
+				</value>
+			</li>
+			
+			<!-- Archotech Leg -->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/HediffDef[defName = "ArchotechLeg"]</xpath>
+				<value>
+					<defaultLabelColor>(139,143,104)</defaultLabelColor>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/HediffDef[defName = "ArchotechLeg"]/addedPartProps/partEfficiency</xpath>
+				<value>
+					<partEfficiency>2.0</partEfficiency>
+				</value>
+			</li>
+	
+		</operations>
+	</Operation>
+	
+</Patch>

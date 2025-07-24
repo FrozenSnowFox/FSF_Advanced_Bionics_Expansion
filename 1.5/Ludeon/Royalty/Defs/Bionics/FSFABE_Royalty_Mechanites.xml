@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	
+	<!-- Mechanites Psychic -->
+
+	<HediffDef ParentName="FSFImplantHediffAdvBase">
+		<defName>FSFImplantMechanitesPsychic</defName>
+		<label>psychic-enhancing mechanites</label>
+		<labelNoun>psychic-enhancing mechanites</labelNoun>
+		<description>A swarm of psychic-enhancing mechanites.  A dose of semi-coherent mechanites which work as a conduit across the body to enhance the hosts psychic abilities.  Due to how mechanites work only one strain can exist harmoniously inside the host’s body.  However, it is possible to remove a mechanite strain with an expensive and difficult surgery.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantMechanitesPsychic</ThingDef>
+			<RecipeDef>InstallFSFImplantMechanitesPsychic</RecipeDef>
+			<RecipeDef>RemoveFSFImplantMechanitesPsychic</RecipeDef>
+		</descriptionHyperlinks>
+		<stages>
+			<li>
+				<statOffsets>
+					<PsychicSensitivity>0.50</PsychicSensitivity>
+					<MeditationFocusGain>0.25</MeditationFocusGain>
+					<PsychicEntropyRecoveryRate>0.25</PsychicEntropyRecoveryRate>
+				</statOffsets>
+			</li>
+		</stages>
+		<tags><li>FSFImplantMechanites</li></tags>
+	</HediffDef>
+
+	<ThingDef ParentName="FSFMechSerumBase">
+		<defName>FSFImplantMechanitesPsychic</defName>
+		<label>psychic-enhancing mechanites</label>
+		<description>A dose of semi-coherent mechanites which work as a conduit across the body to enhance the hosts psychic abilities.  Due to how mechanites work only one strain can exist harmoniously inside the host’s body.  However, it is possible to remove a mechanite strain with an expensive and difficult surgery.</description>
+		<descriptionHyperlinks>
+			<HediffDef>FSFImplantMechanitesPsychic</HediffDef>
+			<RecipeDef>InstallFSFImplantMechanitesPsychic</RecipeDef>
+			<RecipeDef>RemoveFSFImplantMechanitesPsychic</RecipeDef>
+		</descriptionHyperlinks>
+		<graphicData>
+			<texPath>Things/Item/Special/MechSerumHealer</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<costList>
+			<Neutroamine>10</Neutroamine>
+			<MedicineUltratech>20</MedicineUltratech>
+			<ComponentSpacer>4</ComponentSpacer>
+			<VPE_Eltex MayRequire="VanillaExpanded.VPsycastsE">1</VPE_Eltex>
+		</costList>
+	</ThingDef>
+	
+	<RecipeDef ParentName="FSFMechSerumSurgeryInstallBase">
+		<defName>InstallFSFImplantMechanitesPsychic</defName>
+		<label>administer psychic-enhancing mechanite serum</label>
+		<description>Administer a psychic-enhancing mechanite serum.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantMechanitesPsychic</ThingDef>
+			<HediffDef>FSFImplantMechanitesPsychic</HediffDef>
+			<RecipeDef>RemoveFSFImplantMechanitesPsychic</RecipeDef>
+		</descriptionHyperlinks>
+		<jobString>Administering psychic-enhancing mechanite serum.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFImplantMechanitesPsychic</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFImplantMechanitesPsychic</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Torso</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFImplantMechanitesPsychic</addsHediff>
+		<uiIconThing>FSFImplantMechanitesPsychic</uiIconThing>
+		<incompatibleWithHediffTags>
+			<li>FSFImplantMechanites</li>
+		</incompatibleWithHediffTags>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="FSFMechSerumSurgeryRemoveBase">
+		<defName>RemoveFSFImplantMechanitesPsychic</defName>
+		<label>remove and destroy psychic-enhancing mechanites</label>
+		<description>Remove and destroy psychic-enhancing mechanites.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantMechanitesPsychic</ThingDef>
+			<HediffDef>FSFImplantMechanitesPsychic</HediffDef>
+			<RecipeDef>InstallFSFImplantMechanitesPsychic</RecipeDef>
+		</descriptionHyperlinks>
+		<jobString>Removing and destroying psychic-enhancing mechanites.</jobString>
+		<removesHediff>FSFImplantMechanitesPsychic</removesHediff>
+	</RecipeDef>
+	
+</Defs>

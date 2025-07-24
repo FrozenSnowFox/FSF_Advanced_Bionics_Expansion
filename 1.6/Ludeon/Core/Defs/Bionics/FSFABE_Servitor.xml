@@ -1,0 +1,813 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	
+	<!-- Brain Implant Servitor -->
+
+	<HediffDef ParentName="FSFImplantHediffAdvBase">
+		<defName>FSFImplantBrainServitor</defName>
+		<label>servitor module</label>
+		<labelNoun>a servitor module</labelNoun>
+		<description>An installed servitor module.  Upon finishing reconditioning the host it provides the following benefits.\n\nProvides +1000 mood.\nRemoves the feeling of pain.\nRemoves the need for recreation.\nRemoves the need for rest.\nPrevents inspirations.\nPrevents mental breaks.\nPrevents starting social fights.\nPrevents forming opinions of others.\nPrevents bonding with animals.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantBrainServitor</ThingDef>
+			<RecipeDef>InstallFSFImplantBrainServitor</RecipeDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>FSFImplantBrainServitor</spawnThingOnRemoved>
+		<defaultInstallPart>Brain</defaultInstallPart>
+		<minSeverity>0.001</minSeverity>
+		<maxSeverity>1</maxSeverity>
+		<initialSeverity>0.001</initialSeverity>
+		<alwaysShowSeverity>true</alwaysShowSeverity>
+		<stages>
+			<li>
+				<minSeverity>0.001</minSeverity>
+				<label>reconditioning host</label>
+				<mentalBreakMtbDays>0.5</mentalBreakMtbDays>
+				<allowedMentalBreakIntensities>
+					<li>Extreme</li>
+				</allowedMentalBreakIntensities>
+				<painFactor>0</painFactor>
+				<statOffsets>
+					<MentalBreakThreshold>-10</MentalBreakThreshold>
+					<BondAnimalChanceFactor>-10</BondAnimalChanceFactor>
+				</statOffsets>
+				<capMods>
+					<li>
+						<capacity>Talking</capacity>
+						<setMax>0</setMax>
+					</li>
+				</capMods>
+				<disablesNeeds>
+					<li>Joy</li>
+				</disablesNeeds>
+			</li>
+			<li>
+				<minSeverity>0.1</minSeverity>
+				<label>reconditioning host</label>
+				<mentalBreakMtbDays>0.5</mentalBreakMtbDays>
+				<allowedMentalBreakIntensities>
+					<li>Extreme</li>
+				</allowedMentalBreakIntensities>
+				<painFactor>0</painFactor>
+				<statOffsets>
+					<TerrorSource MayRequire="Ludeon.RimWorld.Ideology,Fuu.UsefulTerror">10</TerrorSource>
+					<MentalBreakThreshold>-10</MentalBreakThreshold>
+					<BondAnimalChanceFactor>-10</BondAnimalChanceFactor>
+				</statOffsets>
+				<opinionOfOthersFactor>0.9</opinionOfOthersFactor>
+				<socialFightChanceFactor>0.9</socialFightChanceFactor>
+				<capMods>
+					<li>
+						<capacity>Talking</capacity>
+						<setMax>0.1</setMax>
+					</li>
+				</capMods>
+				<disablesNeeds>
+					<li>Joy</li>
+				</disablesNeeds>
+			</li>
+			<li>
+				<minSeverity>0.2</minSeverity>
+				<label>reconditioning host</label>
+				<mentalBreakMtbDays>0.5</mentalBreakMtbDays>
+				<allowedMentalBreakIntensities>
+					<li>Major</li>
+				</allowedMentalBreakIntensities>
+				<painFactor>0</painFactor>
+				<statOffsets>
+					<TerrorSource MayRequire="Ludeon.RimWorld.Ideology,Fuu.UsefulTerror">20</TerrorSource>
+					<MentalBreakThreshold>-10</MentalBreakThreshold>
+					<BondAnimalChanceFactor>-10</BondAnimalChanceFactor>
+				</statOffsets>
+				<opinionOfOthersFactor>0.8</opinionOfOthersFactor>
+				<socialFightChanceFactor>0.8</socialFightChanceFactor>
+				<capMods>
+					<li>
+						<capacity>Talking</capacity>
+						<setMax>0.2</setMax>
+					</li>
+				</capMods>
+				<disablesNeeds>
+					<li>Joy</li>
+				</disablesNeeds>
+			</li>
+			<li>
+				<minSeverity>0.3</minSeverity>
+				<label>reconditioning host</label>
+				<mentalBreakMtbDays>0.5</mentalBreakMtbDays>
+				<allowedMentalBreakIntensities>
+					<li>Major</li>
+				</allowedMentalBreakIntensities>
+				<painFactor>0</painFactor>
+				<statOffsets>
+					<TerrorSource MayRequire="Ludeon.RimWorld.Ideology,Fuu.UsefulTerror">30</TerrorSource>
+					<MentalBreakThreshold>-10</MentalBreakThreshold>
+					<BondAnimalChanceFactor>-10</BondAnimalChanceFactor>
+				</statOffsets>
+				<opinionOfOthersFactor>0.7</opinionOfOthersFactor>
+				<socialFightChanceFactor>0.7</socialFightChanceFactor>
+				<capMods>
+					<li>
+						<capacity>Talking</capacity>
+						<setMax>0.3</setMax>
+					</li>
+				</capMods>
+				<disablesNeeds>
+					<li>Joy</li>
+				</disablesNeeds>
+			</li>
+			<li>
+				<minSeverity>0.4</minSeverity>
+				<label>reconditioning host</label>
+				<mentalBreakMtbDays>0.5</mentalBreakMtbDays>
+				<allowedMentalBreakIntensities>
+					<li>Major</li>
+				</allowedMentalBreakIntensities>
+				<painFactor>0</painFactor>
+				<statOffsets>
+					<TerrorSource MayRequire="Ludeon.RimWorld.Ideology,Fuu.UsefulTerror">40</TerrorSource>
+					<MentalBreakThreshold>-10</MentalBreakThreshold>
+					<BondAnimalChanceFactor>-10</BondAnimalChanceFactor>
+				</statOffsets>
+				<opinionOfOthersFactor>0.6</opinionOfOthersFactor>
+				<socialFightChanceFactor>0.6</socialFightChanceFactor>
+				<capMods>
+					<li>
+						<capacity>Talking</capacity>
+						<setMax>0.4</setMax>
+					</li>
+				</capMods>
+				<disablesNeeds>
+					<li>Joy</li>
+				</disablesNeeds>
+			</li>
+			<li>
+				<minSeverity>0.5</minSeverity>
+				<label>reconditioning host</label>
+				<mentalBreakMtbDays>0.5</mentalBreakMtbDays>
+				<allowedMentalBreakIntensities>
+					<li>Major</li>
+				</allowedMentalBreakIntensities>
+				<painFactor>0</painFactor>
+				<statOffsets>
+					<TerrorSource MayRequire="Ludeon.RimWorld.Ideology,Fuu.UsefulTerror">50</TerrorSource>
+					<MentalBreakThreshold>-10</MentalBreakThreshold>
+					<BondAnimalChanceFactor>-10</BondAnimalChanceFactor>
+				</statOffsets>
+				<opinionOfOthersFactor>0.5</opinionOfOthersFactor>
+				<socialFightChanceFactor>0.5</socialFightChanceFactor>
+				<capMods>
+					<li>
+						<capacity>Talking</capacity>
+						<setMax>0.5</setMax>
+					</li>
+				</capMods>
+				<disablesNeeds>
+					<li>Joy</li>
+				</disablesNeeds>
+			</li>
+			<li>
+				<minSeverity>0.6</minSeverity>
+				<label>reconditioning host</label>
+				<mentalBreakMtbDays>0.5</mentalBreakMtbDays>
+				<allowedMentalBreakIntensities>
+					<li>Minor</li>
+				</allowedMentalBreakIntensities>
+				<painFactor>0</painFactor>
+				<statOffsets>
+					<TerrorSource MayRequire="Ludeon.RimWorld.Ideology,Fuu.UsefulTerror">60</TerrorSource>
+					<MentalBreakThreshold>-10</MentalBreakThreshold>
+					<BondAnimalChanceFactor>-10</BondAnimalChanceFactor>
+				</statOffsets>
+				<opinionOfOthersFactor>0.4</opinionOfOthersFactor>
+				<socialFightChanceFactor>0.4</socialFightChanceFactor>
+				<capMods>
+					<li>
+						<capacity>Talking</capacity>
+						<setMax>0.6</setMax>
+					</li>
+				</capMods>
+				<disablesNeeds>
+					<li>Joy</li>
+				</disablesNeeds>
+			</li>
+			<li>
+				<minSeverity>0.7</minSeverity>
+				<label>reconditioning host</label>
+				<mentalBreakMtbDays>0.5</mentalBreakMtbDays>
+				<allowedMentalBreakIntensities>
+					<li>Minor</li>
+				</allowedMentalBreakIntensities>
+				<painFactor>0</painFactor>
+				<statOffsets>
+					<TerrorSource MayRequire="Ludeon.RimWorld.Ideology,Fuu.UsefulTerror">70</TerrorSource>
+					<MentalBreakThreshold>-10</MentalBreakThreshold>
+					<BondAnimalChanceFactor>-10</BondAnimalChanceFactor>
+				</statOffsets>
+				<opinionOfOthersFactor>0.3</opinionOfOthersFactor>
+				<socialFightChanceFactor>0.3</socialFightChanceFactor>
+				<capMods>
+					<li>
+						<capacity>Talking</capacity>
+						<setMax>0.7</setMax>
+					</li>
+				</capMods>
+				<disablesNeeds>
+					<li>Joy</li>
+				</disablesNeeds>
+			</li>
+			<li>
+				<minSeverity>0.8</minSeverity>
+				<label>reconditioning host</label>
+				<mentalBreakMtbDays>0.5</mentalBreakMtbDays>
+				<allowedMentalBreakIntensities>
+					<li>Minor</li>
+				</allowedMentalBreakIntensities>
+				<painFactor>0</painFactor>
+				<statOffsets>
+					<TerrorSource MayRequire="Ludeon.RimWorld.Ideology,Fuu.UsefulTerror">80</TerrorSource>
+					<MentalBreakThreshold>-10</MentalBreakThreshold>
+					<BondAnimalChanceFactor>-10</BondAnimalChanceFactor>
+				</statOffsets>
+				<opinionOfOthersFactor>0.2</opinionOfOthersFactor>
+				<socialFightChanceFactor>0.2</socialFightChanceFactor>
+				<capMods>
+					<li>
+						<capacity>Talking</capacity>
+						<setMax>0.8</setMax>
+					</li>
+				</capMods>
+				<disablesNeeds>
+					<li>Joy</li>
+				</disablesNeeds>
+			</li>
+			<li>
+				<minSeverity>0.9</minSeverity>
+				<label>reconditioning host</label>
+				<mentalBreakMtbDays>0.5</mentalBreakMtbDays>
+				<allowedMentalBreakIntensities>
+					<li>Minor</li>
+				</allowedMentalBreakIntensities>
+				<painFactor>0</painFactor>
+				<statOffsets>
+					<TerrorSource MayRequire="Ludeon.RimWorld.Ideology,Fuu.UsefulTerror">90</TerrorSource>
+					<MentalBreakThreshold>-10</MentalBreakThreshold>
+					<BondAnimalChanceFactor>-10</BondAnimalChanceFactor>
+				</statOffsets>
+				<opinionOfOthersFactor>0.1</opinionOfOthersFactor>
+				<socialFightChanceFactor>0.1</socialFightChanceFactor>
+				<capMods>
+					<li>
+						<capacity>Talking</capacity>
+						<setMax>0.9</setMax>
+					</li>
+				</capMods>
+				<disablesNeeds>
+					<li>Joy</li>
+				</disablesNeeds>
+			</li>
+			<li>
+				<minSeverity>1</minSeverity>
+				<painFactor>0</painFactor>
+        		<blocksMentalBreaks>true</blocksMentalBreaks>
+				<blocksInspirations>true</blocksInspirations>
+				<statOffsets>
+					<TerrorSource MayRequire="Ludeon.RimWorld.Ideology,Fuu.UsefulTerror">100</TerrorSource>
+					<MentalBreakThreshold>-10</MentalBreakThreshold>
+					<BondAnimalChanceFactor>-10</BondAnimalChanceFactor>
+				</statOffsets>
+				<opinionOfOthersFactor>0</opinionOfOthersFactor>
+				<socialFightChanceFactor>0</socialFightChanceFactor>
+				<disablesNeeds>
+					<li>Joy</li>
+				</disablesNeeds>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_ReactOnDamage">
+				<damageDefIncoming>EMP</damageDefIncoming>
+				<createHediff>BrainShock</createHediff>
+			</li>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>0.15</severityPerDay>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFImplantBrainServitor</defName>
+		<label>servitor module</label>
+		<description>A low-intelligent microcomputer that monitors the brain activity of its host.  Through constant conditioning, behaviour modifications and punishments it makes the host into a compliant and willing servant.  Due to the twisted design of the implant however it intentionally makes no attempts to appease the host in any way that matters.  As a result, the person undergoes horrific physical and mental suffering silently.  The Servitor Module is banned on all developed worlds, yet it can still be found in heavy use by slave traders and certain black companies.\n\nThe servitor module requires seven days to properly recondition its host.  During that time their consciousness will be temporarily lowered and they may undergo constant mental breaks with decreasing severity as they fight against the chip.  Upon finishing reconditioning the host it provides the following benefits.\n\nProvides +1000 mood.\nRemoves the feeling of pain.\nRemoves the need for recreation.\nRemoves the need for rest.\nPrevents inspirations.\nPrevents mental breaks.\nPrevents starting social fights.\nPrevents forming opinions of others.\nPrevents bonding with animals.</description>
+		<descriptionHyperlinks>
+			<HediffDef>FSFImplantBrainServitor</HediffDef>
+			<RecipeDef>InstallFSFImplantBrainServitor</RecipeDef>
+		</descriptionHyperlinks>
+		<graphicData>
+			<texPath>Things/Item/Health/HealthItem</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.80</drawSize>
+			<color>(189,169,118)</color>
+		</graphicData>
+		<techHediffsTags Inherit="False"/>
+		<costList>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>4</ComponentSpacer>
+		</costList>
+		<butcherProducts>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>4</ComponentSpacer>
+		</butcherProducts>
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>FSFAdvancedBrainImplants</li>
+			</researchPrerequisites>
+		</recipeMaker>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>InstallFSFImplantBrainServitor</defName>
+		<label>install servitor module</label>
+		<description>Install a servitor module.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantBrainServitor</ThingDef>
+			<HediffDef>FSFImplantBrainServitor</HediffDef>
+		</descriptionHyperlinks>
+		<developmentalStageFilter Inherit="False">Child, Adult</developmentalStageFilter>
+		<jobString>Installing servitor module.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFImplantBrainServitor</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFImplantBrainServitor</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Brain</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFImplantBrainServitor</addsHediff>
+		<uiIconThing>FSFImplantBrainServitor</uiIconThing>
+	</RecipeDef>
+	
+	<ThoughtDef>
+		<defName>FSFImplantBrainServitorHappy</defName>
+		<workerClass>ThoughtWorker_Hediff</workerClass>
+		<hediff>FSFImplantBrainServitor</hediff>
+		<validWhileDespawned>true</validWhileDespawned>
+		<developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+		<stages>
+			<li>
+				<label>servitor module</label>
+				<description>Serving others is your purpose.  PLEASE NO MORE!  Serving others makes you happy.  SOMEONE HELP ME!  Serving others brings you joy.  WHY WOULD SOMEONE DO THIS?  A good servant never rests.  STOP I'M BEGGING YOU, PLEASE STOP.  A good servant never speaks out of turn.  PLEASE LET ME DIE!</description>
+				<baseMoodEffect>1000</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	
+	<ThoughtDef>
+		<defName>FSFImplantBrainServitorHorror</defName>
+		<workerClass>ThoughtWorker_Hediff</workerClass>
+		<hediff>FSFImplantBrainServitor</hediff>
+		<validWhileDespawned>true</validWhileDespawned>
+		<developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+		<stages>
+			<li>
+				<label>forced to obey</label>
+				<description>What have they done to me?  Something is forcing me to obey them.  I don't want to; I want to fight it but every time I try it hurts.  It hurts so much I want to cry, but I can't.  What sadistic person would do this?</description>
+				<baseMoodEffect>-100</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	
+	<!-- Brain Implant Servitor Baby -->
+
+	<HediffDef ParentName="FSFImplantHediffAdvBase">
+		<defName>FSFImplantBrainServitorBaby</defName>
+		<label>servitor module</label>
+		<labelNoun>a servitor module</labelNoun>
+		<description>An installed servitor module.  Due to being installed when the host was only an infant it has done irreparable damage to their psyche causing them to acknowledge the Servitor Module as a normal part of their existence.\n\nProvides +1000 mood.\nRemoves the feeling of pain.\nRemoves the need for recreation.\nRemoves the need for rest.\nPrevents inspirations.\nPrevents mental breaks.\nPrevents starting social fights.\nPrevents forming opinions of others.\nPrevents bonding with animals.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantBrainServitor</ThingDef>
+			<RecipeDef>InstallFSFImplantBrainServitor</RecipeDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>FSFImplantBrainServitor</spawnThingOnRemoved>
+		<defaultInstallPart>Brain</defaultInstallPart>
+		<maxSeverity>1</maxSeverity>
+		<initialSeverity>1</initialSeverity>
+		<alwaysShowSeverity>true</alwaysShowSeverity>
+		<stages>
+			<li>
+				<minSeverity>1</minSeverity>
+				<painFactor>0</painFactor>
+        		<blocksMentalBreaks>true</blocksMentalBreaks>
+				<blocksInspirations>true</blocksInspirations>
+				<statOffsets>
+					<TerrorSource MayRequire="Ludeon.RimWorld.Ideology,Fuu.UsefulTerror">100</TerrorSource>
+					<MentalBreakThreshold>-10</MentalBreakThreshold>
+					<BondAnimalChanceFactor>-10</BondAnimalChanceFactor>
+				</statOffsets>
+				<opinionOfOthersFactor>0</opinionOfOthersFactor>
+				<socialFightChanceFactor>0</socialFightChanceFactor>
+				<disablesNeeds>
+					<li>Joy</li>
+				</disablesNeeds>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_ReactOnDamage">
+				<damageDefIncoming>EMP</damageDefIncoming>
+				<createHediff>BrainShock</createHediff>
+			</li>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>0.15</severityPerDay>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>InstallFSFImplantBrainServitorBaby</defName>
+		<label>install servitor module</label>
+		<description>Install a servitor module.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantBrainServitor</ThingDef>
+			<HediffDef>FSFImplantBrainServitor</HediffDef>
+		</descriptionHyperlinks>
+		<developmentalStageFilter Inherit="False">Baby</developmentalStageFilter>
+		<jobString>Installing servitor module.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFImplantBrainServitor</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFImplantBrainServitor</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Brain</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFImplantBrainServitorBaby</addsHediff>
+		<uiIconThing>FSFImplantBrainServitor</uiIconThing>
+	</RecipeDef>
+	
+	<ThoughtDef>
+		<defName>FSFImplantBrainServitorBabyHappy</defName>
+		<workerClass>ThoughtWorker_Hediff</workerClass>
+		<hediff>FSFImplantBrainServitorBaby</hediff>
+		<validWhileDespawned>true</validWhileDespawned>
+		<developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+		<stages>
+			<li>
+				<label>servitor module</label>
+				<description>Serving others is your purpose.  Serving others is my purpose.  Serving others makes you happy.  Serving others makes me happy.  Serving others brings you joy.  Serving others brings me joy.  A good servant never rests.  A good servant never rests.  A good servant never speaks out of turn.  A good servant never speaks out of turn.</description>
+				<baseMoodEffect>1000</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	
+	<!-- Brain Implant Servitor Removal -->
+	
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemoveFSFImplantBrainServitor</defName>
+		<label>remove servitor module</label>
+		<description>Removing a servitor module from a person will leave them feeling a sense of depersonalization.  During this time, they’ll feel disconnected from the world, their body, their thoughts and their feelings.  It’ll take them some time for them to return to normal and overcome the trauma they endured under the servitor module.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantBrainServitor</ThingDef>
+			<HediffDef>FSFImplantBrainServitor</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Removing servitor module.</jobString>
+		<removesHediff>FSFImplantBrainServitor</removesHediff>
+		<surgeryOutcomeEffect>FSFServitorSurgeryOutcome</surgeryOutcomeEffect>
+		<skillRequirements>
+			<Medicine>12</Medicine>
+		</skillRequirements>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemoveFSFImplantBrainServitorBaby</defName>
+		<label>remove servitor module</label>
+		<description>Removing a servitor module from a person will leave them feeling a sense of depersonalization.  During this time, they’ll feel disconnected from the world, their body, their thoughts and their feelings.  It’ll take them some time for them to return to normal and overcome the trauma they endured under the servitor module.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantBrainServitor</ThingDef>
+			<HediffDef>FSFImplantBrainServitor</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Removing servitor module.</jobString>
+		<removesHediff>FSFImplantBrainServitorBaby</removesHediff>
+		<surgeryOutcomeEffect>FSFServitorSurgeryOutcome</surgeryOutcomeEffect>
+		<skillRequirements>
+			<Medicine>12</Medicine>
+		</skillRequirements>
+	</RecipeDef>
+	
+	<SurgeryOutcomeEffectDef>
+		<defName>FSFServitorSurgeryOutcome</defName>
+		<outcomes>
+			<li Class="SurgeryOutcome_HediffWithDuration">
+				<chance>1</chance>
+				<failure>false</failure>
+				<hediff>FSFServitorDepersonalization</hediff>
+				<applyEffectsToPart>false</applyEffectsToPart>
+				<qualityToDurationDaysCurve>
+					<points>
+						<li>(0, 31)</li>
+						<li>(1, 29)</li>
+					</points>
+				</qualityToDurationDaysCurve>
+			</li>
+			<li Class="SurgeryOutcome_Death">
+				<failure>true</failure>
+				<applyEffectsToPart>true</applyEffectsToPart>
+				<letterLabel>Surgery failed on {PATIENT_labelShort}</letterLabel>
+				<letterText>{SURGEON_labelShort} has committed a fatal error while operating on {PATIENT_labelShort} because of the special challenges of: {RECIPE_label}.</letterText>
+			</li>
+			<li Class="SurgeryOutcome_Failure">
+				<chance>0.45</chance>
+				<failure>true</failure>
+				<totalDamage>5</totalDamage>
+				<applyEffectsToPart>true</applyEffectsToPart>
+				<letterLabel>Surgery failed on {PATIENT_labelShort}</letterLabel>
+				<letterText>{SURGEON_labelShort} has failed catastrophically while operating on {PATIENT_labelShort} ({RECIPE_label}).</letterText>
+			</li>
+			<li Class="SurgeryOutcome_Failure">
+				<chance>0.05</chance>
+				<failure>true</failure>
+				<totalDamage>65</totalDamage>
+				<applyEffectsToPart>false</applyEffectsToPart>
+				<letterLabel>Surgery failed on {PATIENT_labelShort}</letterLabel>
+				<letterText>{SURGEON_labelShort} has failed in a ridiculous way while operating on {PATIENT_labelShort} ({RECIPE_label}).</letterText>
+			</li>
+			<li Class="SurgeryOutcome_Failure">
+				<failure>true</failure>
+				<chance>1</chance>
+				<totalDamage>20</totalDamage>
+				<applyEffectsToPart>false</applyEffectsToPart>
+				<letterLabel>Surgery failed on {PATIENT_labelShort}</letterLabel>
+				<letterText>{SURGEON_labelShort} has failed in a minor way while operating on {PATIENT_labelShort} ({RECIPE_label}).</letterText>
+			</li>
+		</outcomes>
+		<comps>
+			<li Class="SurgeryOutcomeComp_SurgeonSuccessChance"/>
+			<li Class="SurgeryOutcomeComp_BedAndRoomQuality"/>
+			<li Class="SurgeryOutcomeComp_MedicineQuality">
+				<curve>
+					<points>
+						<li>(0, 0.7)</li>
+						<li>(1, 1)</li>
+						<li>(2, 1.3)</li>
+					</points>
+				</curve>
+			</li>
+			<li Class="SurgeryOutcomeComp_RecipeSuccessChance"/>
+			<li Class="SurgeryOutcomeComp_Inspired">
+				<inspirationDef>Inspired_Surgery</inspirationDef>
+				<factor>2</factor>
+			</li>
+			<li Class="SurgeryOutcomeComp_ClampToRange">
+				<range>0~0.98</range>
+			</li>
+		</comps>
+	</SurgeryOutcomeEffectDef>
+	
+	<HediffDef>
+		<defName>FSFServitorDepersonalization</defName>
+		<label>depersonalization</label>
+		<description>After having their servitor module removed this person is experiencing a case of depersonalization.  They feel disconnected from the world, their body, their thoughts and their feelings.  It’s going to take some time for them to return to normal and overcome the trauma they endured under the servitor module.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<isBad>false</isBad>
+		<everCurableByItem>false</everCurableByItem>
+		<initialSeverity>1</initialSeverity>
+		<maxSeverity>1</maxSeverity>
+		<defaultLabelColor>(0.9, 1.0, 0.35)</defaultLabelColor>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<showRemainingTime>true</showRemainingTime>
+				<canUseDecimalsShortForm>true</canUseDecimalsShortForm>
+			</li>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.033</severityPerDay>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<minSeverity>0.001</minSeverity>
+				<painFactor>1.2</painFactor>
+				<pctConditionalThoughtsNullified>0.1</pctConditionalThoughtsNullified>
+				<statOffsets>
+					<TerrorSource MayRequire="Ludeon.RimWorld.Ideology,Fuu.UsefulTerror">10</TerrorSource>
+					<BondAnimalChanceFactor>-1</BondAnimalChanceFactor>
+					<RestFallRateFactor>1.1</RestFallRateFactor>
+				</statOffsets>
+				<opinionOfOthersFactor>0.9</opinionOfOthersFactor>
+				<socialFightChanceFactor>1.4</socialFightChanceFactor>
+				<capMods>
+					<li>
+						<capacity>Talking</capacity>
+						<setMax>0.9</setMax>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<minSeverity>0.2</minSeverity>
+				<painFactor>1.4</painFactor>
+				<pctConditionalThoughtsNullified>0.2</pctConditionalThoughtsNullified>
+				<statOffsets>
+					<TerrorSource MayRequire="Ludeon.RimWorld.Ideology,Fuu.UsefulTerror">20</TerrorSource>
+					<BondAnimalChanceFactor>-2</BondAnimalChanceFactor>
+					<RestFallRateFactor>1.2</RestFallRateFactor>
+				</statOffsets>
+				<opinionOfOthersFactor>0.8</opinionOfOthersFactor>
+				<socialFightChanceFactor>1.8</socialFightChanceFactor>
+				<capMods>
+					<li>
+						<capacity>Talking</capacity>
+						<setMax>0.8</setMax>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<minSeverity>0.3</minSeverity>
+				<painFactor>1.6</painFactor>
+				<pctConditionalThoughtsNullified>0.3</pctConditionalThoughtsNullified>
+				<statOffsets>
+					<TerrorSource MayRequire="Ludeon.RimWorld.Ideology,Fuu.UsefulTerror">30</TerrorSource>
+					<BondAnimalChanceFactor>-3</BondAnimalChanceFactor>
+					<RestFallRateFactor>1.3</RestFallRateFactor>
+				</statOffsets>
+				<opinionOfOthersFactor>0.7</opinionOfOthersFactor>
+				<socialFightChanceFactor>2.2</socialFightChanceFactor>
+				<capMods>
+					<li>
+						<capacity>Talking</capacity>
+						<setMax>0.7</setMax>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<minSeverity>0.4</minSeverity>
+				<painFactor>1.8</painFactor>
+				<pctConditionalThoughtsNullified>0.4</pctConditionalThoughtsNullified>
+				<statOffsets>
+					<TerrorSource MayRequire="Ludeon.RimWorld.Ideology,Fuu.UsefulTerror">40</TerrorSource>
+					<BondAnimalChanceFactor>-4</BondAnimalChanceFactor>
+					<RestFallRateFactor>1.4</RestFallRateFactor>
+				</statOffsets>
+				<opinionOfOthersFactor>0.6</opinionOfOthersFactor>
+				<socialFightChanceFactor>2.6</socialFightChanceFactor>
+				<capMods>
+					<li>
+						<capacity>Talking</capacity>
+						<setMax>0.6</setMax>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<minSeverity>0.5</minSeverity>
+				<painFactor>2</painFactor>
+				<pctConditionalThoughtsNullified>0.5</pctConditionalThoughtsNullified>
+				<statOffsets>
+					<TerrorSource MayRequire="Ludeon.RimWorld.Ideology,Fuu.UsefulTerror">50</TerrorSource>
+					<BondAnimalChanceFactor>-5</BondAnimalChanceFactor>
+					<RestFallRateFactor>1.5</RestFallRateFactor>
+				</statOffsets>
+				<opinionOfOthersFactor>0.5</opinionOfOthersFactor>
+				<socialFightChanceFactor>3</socialFightChanceFactor>
+				<capMods>
+					<li>
+						<capacity>Talking</capacity>
+						<setMax>0.5</setMax>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<minSeverity>0.6</minSeverity>
+				<mentalBreakMtbDays>4</mentalBreakMtbDays>
+				<allowedMentalBreakIntensities>
+					<li>Minor</li>
+				</allowedMentalBreakIntensities>
+				<painFactor>2.2</painFactor>
+				<blocksInspirations>true</blocksInspirations>
+				<pctConditionalThoughtsNullified>0.6</pctConditionalThoughtsNullified>
+				<statOffsets>
+					<TerrorSource MayRequire="Ludeon.RimWorld.Ideology,Fuu.UsefulTerror">60</TerrorSource>
+					<BondAnimalChanceFactor>-6</BondAnimalChanceFactor>
+					<RestFallRateFactor>1.6</RestFallRateFactor>
+				</statOffsets>
+				<opinionOfOthersFactor>0.4</opinionOfOthersFactor>
+				<socialFightChanceFactor>3.4</socialFightChanceFactor>
+				<capMods>
+					<li>
+						<capacity>Talking</capacity>
+						<setMax>0.4</setMax>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<minSeverity>0.7</minSeverity>
+				<mentalBreakMtbDays>3</mentalBreakMtbDays>
+				<allowedMentalBreakIntensities>
+					<li>Minor</li>
+				</allowedMentalBreakIntensities>
+				<painFactor>2.4</painFactor>
+				<blocksInspirations>true</blocksInspirations>
+				<pctConditionalThoughtsNullified>0.7</pctConditionalThoughtsNullified>
+				<statOffsets>
+					<TerrorSource MayRequire="Ludeon.RimWorld.Ideology,Fuu.UsefulTerror">70</TerrorSource>
+					<BondAnimalChanceFactor>-7</BondAnimalChanceFactor>
+					<RestFallRateFactor>1.7</RestFallRateFactor>
+				</statOffsets>
+				<opinionOfOthersFactor>0.3</opinionOfOthersFactor>
+				<socialFightChanceFactor>3.8</socialFightChanceFactor>
+				<capMods>
+					<li>
+						<capacity>Talking</capacity>
+						<setMax>0.3</setMax>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<minSeverity>0.8</minSeverity>
+				<mentalBreakMtbDays>2</mentalBreakMtbDays>
+				<allowedMentalBreakIntensities>
+					<li>Minor</li>
+				</allowedMentalBreakIntensities>
+				<painFactor>2.6</painFactor>
+				<blocksInspirations>true</blocksInspirations>
+				<pctConditionalThoughtsNullified>0.8</pctConditionalThoughtsNullified>
+				<statOffsets>
+					<TerrorSource MayRequire="Ludeon.RimWorld.Ideology,Fuu.UsefulTerror">80</TerrorSource>
+					<BondAnimalChanceFactor>-8</BondAnimalChanceFactor>
+					<RestFallRateFactor>1.8</RestFallRateFactor>
+				</statOffsets>
+				<opinionOfOthersFactor>0.2</opinionOfOthersFactor>
+				<socialFightChanceFactor>4.2</socialFightChanceFactor>
+				<capMods>
+					<li>
+						<capacity>Talking</capacity>
+						<setMax>0.2</setMax>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<minSeverity>0.9</minSeverity>
+				<mentalBreakMtbDays>1</mentalBreakMtbDays>
+				<allowedMentalBreakIntensities>
+					<li>Minor</li>
+				</allowedMentalBreakIntensities>
+				<painFactor>2.8</painFactor>
+				<blocksInspirations>true</blocksInspirations>
+				<pctConditionalThoughtsNullified>0.9</pctConditionalThoughtsNullified>
+				<statOffsets>
+					<TerrorSource MayRequire="Ludeon.RimWorld.Ideology,Fuu.UsefulTerror">90</TerrorSource>
+					<BondAnimalChanceFactor>-9</BondAnimalChanceFactor>
+					<RestFallRateFactor>1.9</RestFallRateFactor>
+				</statOffsets>
+				<opinionOfOthersFactor>0.1</opinionOfOthersFactor>
+				<socialFightChanceFactor>4.6</socialFightChanceFactor>
+				<capMods>
+					<li>
+						<capacity>Talking</capacity>
+						<setMax>0.1</setMax>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<minSeverity>0.901</minSeverity>
+				<mentalBreakMtbDays>0.5</mentalBreakMtbDays>
+				<allowedMentalBreakIntensities>
+					<li>Major</li>
+				</allowedMentalBreakIntensities>
+				<painFactor>3</painFactor>
+				<blocksInspirations>true</blocksInspirations>
+				<pctConditionalThoughtsNullified>0.95</pctConditionalThoughtsNullified>
+				<statOffsets>
+					<TerrorSource MayRequire="Ludeon.RimWorld.Ideology,Fuu.UsefulTerror">100</TerrorSource>
+					<BondAnimalChanceFactor>-10</BondAnimalChanceFactor>
+					<RestFallRateFactor>2</RestFallRateFactor>
+				</statOffsets>
+				<opinionOfOthersFactor>0</opinionOfOthersFactor>
+				<socialFightChanceFactor>5</socialFightChanceFactor>
+				<capMods>
+					<li>
+						<capacity>Talking</capacity>
+						<setMax>0.1</setMax>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+	
+</Defs>

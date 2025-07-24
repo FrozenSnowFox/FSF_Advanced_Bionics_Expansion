@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	
+	<!-- Advanced Bionic Base -->	
+	
+	<ThingDef Name="FSFBodyPartAdvBionicBase" ParentName="BodyPartBase" Abstract="True">
+		<techLevel>Ultra</techLevel>
+		<thingCategories>
+			<li>BodyPartsUltra</li>
+		</thingCategories>
+		<graphicData>
+			<texPath>Things/Item/Health/HealthItem</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.80</drawSize>
+			<color>(144,98,179)</color>
+		</graphicData>
+		<tradeTags>
+			<li>Bionic</li>
+			<li MayRequire="Ludeon.RimWorld.Royalty">ImplantEmpireCommon</li>
+		</tradeTags>
+		<techHediffsTags>
+			<li>Advanced</li>
+			<li MayRequire="Ludeon.RimWorld.Royalty">ImplantEmpireCommon</li>
+		</techHediffsTags>
+		<statBases>
+			<WorkToMake>26000</WorkToMake>
+		</statBases>
+		<recipeMaker>
+			<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+			<workSkill>Crafting</workSkill>
+			<effectWorking>Smith</effectWorking>
+			<soundWorking>Recipe_Smith</soundWorking>
+			<unfinishedThingDef>UnfinishedHealthItemBionic</unfinishedThingDef>
+			<skillRequirements>
+				<Crafting>8</Crafting>
+			</skillRequirements>
+			<researchPrerequisite>FSFAdvancedBionics</researchPrerequisite>
+			<recipeUsers>
+				<li>FabricationBench</li>
+			</recipeUsers>
+		</recipeMaker>
+	</ThingDef>
+	
+	<!-- Advanced Bionic Color Label -->
+	
+	<HediffDef Name="FSFAddedBodyPartAdvBionic" ParentName="AddedBodyPartBase" Abstract="True">
+		<hediffClass>Hediff_AddedPart</hediffClass>
+		<defaultLabelColor>(144,98,179)</defaultLabelColor>
+		<isBad>false</isBad>
+		<priceImpact>true</priceImpact>
+    	<countsAsAddedPartOrImplant>true</countsAsAddedPartOrImplant>
+	</HediffDef>
+	
+	<!-- Advanced Bionic Implant Color Label -->
+	
+	<HediffDef Name="FSFImplantHediffAdvBase" ParentName="ImplantHediffBase" Abstract="True">
+		<hediffClass>Hediff_Implant</hediffClass>
+		<defaultLabelColor>(144,98,179)</defaultLabelColor>
+		<isBad>false</isBad>
+		<priceImpact>true</priceImpact>
+	</HediffDef>
+	
+	<!-- Archotech Color Label -->
+	
+	<HediffDef Name="FSFAddedBodyPartArchotech" ParentName="AddedBodyPartBase" Abstract="True">
+		<hediffClass>Hediff_AddedPart</hediffClass>
+		<defaultLabelColor>(82,190,128)</defaultLabelColor>
+		<isBad>false</isBad>
+		<priceImpact>true</priceImpact>
+    	<countsAsAddedPartOrImplant>true</countsAsAddedPartOrImplant>
+	</HediffDef>
+	
+	<!-- Archotech Implant Color Label -->
+	
+	<HediffDef Name="FSFImplantHediffArchotechBase" ParentName="ImplantHediffBase" Abstract="True">
+		<hediffClass>Hediff_Implant</hediffClass>
+		<defaultLabelColor>(82,190,128)</defaultLabelColor>
+		<isBad>false</isBad>
+		<priceImpact>true</priceImpact>
+	</HediffDef>
+
+</Defs>

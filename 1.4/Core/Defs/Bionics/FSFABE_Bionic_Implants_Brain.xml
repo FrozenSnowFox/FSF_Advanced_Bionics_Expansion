@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	
+	<!-- Brain Implant Consciousness -->
+
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>FSFImplantBrainConsciousness</defName>
+		<label>synaptic regulator</label>
+		<labelNoun>a synaptic regulator</labelNoun>
+		<description>An implant that helps restore normal brain functionality and consciousness.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantBrainConsciousness</ThingDef></descriptionHyperlinks>
+		<spawnThingOnRemoved>FSFImplantBrainConsciousness</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<setMax>1</setMax>
+						<offset>10</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_ReactOnDamage">
+				<damageDefIncoming>EMP</damageDefIncoming>
+				<createHediff>BrainShock</createHediff>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<ThingDef ParentName="BodyPartBionicBase">
+		<defName>FSFImplantBrainConsciousness</defName>
+		<label>synaptic regulator</label>
+		<description>A low-intelligent microcomputer that monitors the brain activity of its host. After assessing the host, it works with them to take over the brain functionality the host’s brain is incapable of. In doing so it’s able restore the host’s brain functionality back to what can be considered normal. Due to how the unit functions it strictly regulates a host’s consciousness allowing it to neither rise nor fall regardless of outside factors.  The implant itself is widely used in less developed worlds who have trouble curing brain injuries.  It is also sometimes used by military organizations to keep soldiers up and fighting even if they develop head injuries during the line of duty.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFImplantBrainConsciousness</RecipeDef></descriptionHyperlinks>
+		<graphicData>
+			<texPath>Things/Item/Health/HealthItem</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.80</drawSize>
+			<color>(189,169,118)</color>
+		</graphicData>
+		<thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+		<costList>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>4</ComponentSpacer>
+		</costList>
+		<butcherProducts>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>4</ComponentSpacer>
+		</butcherProducts>
+			<researchPrerequisites>
+				<li>Bionics</li>
+				<li MayRequire="Ludeon.RimWorld.Royalty">BrainWiring</li>
+			</researchPrerequisites>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>InstallFSFImplantBrainConsciousness</defName>
+		<label>install synaptic regulator</label>
+		<description>Install a synaptic regulator.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantBrainConsciousness</ThingDef>
+			<HediffDef>FSFImplantBrainConsciousness</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing synaptic regulator.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFImplantBrainConsciousness</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFImplantBrainConsciousness</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Brain</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFImplantBrainConsciousness</addsHediff>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemoveFSFImplantBrainConsciousness</defName>
+		<label>remove synaptic regulator</label>
+		<description>Remove synaptic regulator.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantBrainConsciousness</ThingDef></descriptionHyperlinks>
+		<jobString>Removing synaptic regulator.</jobString>
+		<removesHediff>FSFImplantBrainConsciousness</removesHediff>
+	</RecipeDef>
+
+</Defs>

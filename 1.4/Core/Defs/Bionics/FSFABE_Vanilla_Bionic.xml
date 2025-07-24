@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	
+	<!-- Bionic Spine Part Efficiency Fix -->
+
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>BionicSpine</defName>
+    <label>bionic spine</label>
+    <labelNoun>a bionic spine</labelNoun>
+    <description>An installed bionic spine.</description>
+    <descriptionHyperlinks><ThingDef>BionicSpine</ThingDef></descriptionHyperlinks>
+    <spawnThingOnRemoved>BionicSpine</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+	  <partEfficiency>1.25</partEfficiency>
+      <betterThanNatural>true</betterThanNatural>
+    </addedPartProps>
+  </HediffDef>
+
+</Defs>

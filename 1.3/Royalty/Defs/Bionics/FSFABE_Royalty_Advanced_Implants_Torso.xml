@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+	<!-- Implant Torso Psychic -->
+
+	<HediffDef ParentName="FSFImplantHediffAdvBase">
+		<defName>FSFImplantTorsoPsychic</defName>
+		<label>psychic frame</label>
+		<labelNoun>a psychic frame</labelNoun>
+		<description>An installed psychic frame.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantTorsoPsychic</ThingDef></descriptionHyperlinks>
+		<spawnThingOnRemoved>FSFImplantTorsoPsychic</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<statOffsets>
+					<PsychicSensitivity>0.50</PsychicSensitivity>
+					<PsychicEntropyRecoveryRate>0.083</PsychicEntropyRecoveryRate>
+				</statOffsets>
+			</li>
+		</stages>
+		<tags><li>FSFImplantTorsoFrame</li></tags>
+	</HediffDef>
+
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFImplantTorsoPsychic</defName>
+		<label>psychic frame</label>
+		<description>A durable plasteel frame designed to replace the skeleton and some of the surrounding tissue.  The frame is embedded with special psychic focusing materials which enhances the user’s psychic sensitivity and helps dissipate psychic entropy.  Not compatible with other body frames.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFImplantTorsoPsychic</RecipeDef></descriptionHyperlinks>
+		<thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+		<costList>
+			<Plasteel>100</Plasteel>
+			<ComponentSpacer>10</ComponentSpacer>
+			<Gold>4</Gold>
+		</costList>
+		<butcherProducts>
+			<Plasteel>100</Plasteel>
+			<ComponentSpacer>10</ComponentSpacer>
+			<Gold>4</Gold>
+		</butcherProducts>
+		<statBases>
+			<Mass>25</Mass>
+		</statBases>
+		<recipeMaker>
+			<researchPrerequisite>FSFResearchAdvancedBodyFrames</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>InstallFSFImplantTorsoPsychic</defName>
+		<label>install psychic frame</label>
+		<description>Install a psychic frame.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantTorsoPsychic</ThingDef>
+			<HediffDef>FSFImplantTorsoPsychic</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing psychic frame.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFImplantTorsoPsychic</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFImplantTorsoPsychic</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Torso</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFImplantTorsoPsychic</addsHediff>
+		<incompatibleWithHediffTags>
+			<li>FSFImplantTorsoFrame</li>
+		</incompatibleWithHediffTags>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemoveFSFImplantTorsoPsychic</defName>
+		<label>remove psychic frame</label>
+		<description>Remove psychic frame.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantTorsoPsychic</ThingDef></descriptionHyperlinks>
+		<jobString>Removing psychic frame.</jobString>
+		<removesHediff>FSFImplantTorsoPsychic</removesHediff>
+	</RecipeDef>
+	
+</Defs>

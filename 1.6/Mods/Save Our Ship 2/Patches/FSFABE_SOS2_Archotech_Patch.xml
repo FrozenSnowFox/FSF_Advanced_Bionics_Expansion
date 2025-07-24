@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+	
+	<!-- Save Our Ship 2 (Patch Archotech items to match ABE Efficiency) -->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/HediffDef[defName = "SoSArchotechEar"]</xpath>
+				<value>
+					<defaultLabelColor>(139,143,104)</defaultLabelColor>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/HediffDef[defName = "SoSArchotechEar"]/addedPartProps/partEfficiency</xpath>
+				<value>
+					<partEfficiency>2.0</partEfficiency>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/HediffDef[defName = "SoSArchotechNose"]</xpath>
+				<value>
+					<defaultLabelColor>(139,143,104)</defaultLabelColor>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/HediffDef[defName = "SoSArchotechNose"]/addedPartProps/partEfficiency</xpath>
+				<value>
+					<partEfficiency>2.0</partEfficiency>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/HediffDef[defName = "SoSArchotechJaw"]</xpath>
+				<value>
+					<defaultLabelColor>(139,143,104)</defaultLabelColor>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/HediffDef[defName = "SoSArchotechJaw"]/addedPartProps/partEfficiency</xpath>
+				<value>
+					<partEfficiency>2.0</partEfficiency>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/HediffDef[defName = "SoSArchotechHeart"]</xpath>
+				<value>
+					<defaultLabelColor>(139,143,104)</defaultLabelColor>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/HediffDef[defName = "SoSArchotechHeart"]/addedPartProps/partEfficiency</xpath>
+				<value>
+					<partEfficiency>2.0</partEfficiency>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/HediffDef[defName = "SoSArchotechLung"]</xpath>
+				<value>
+					<defaultLabelColor>(139,143,104)</defaultLabelColor>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/HediffDef[defName = "SoSArchotechLung"]/addedPartProps/partEfficiency</xpath>
+				<value>
+					<partEfficiency>2.0</partEfficiency>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/HediffDef[defName = "SoSArchotechStomach"]</xpath>
+				<value>
+					<defaultLabelColor>(139,143,104)</defaultLabelColor>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/HediffDef[defName = "SoSArchotechStomach"]/addedPartProps/partEfficiency</xpath>
+				<value>
+					<partEfficiency>2.0</partEfficiency>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/HediffDef[defName = "SoSArchotechKidney"]</xpath>
+				<value>
+					<defaultLabelColor>(139,143,104)</defaultLabelColor>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/HediffDef[defName = "SoSArchotechKidney"]/addedPartProps/partEfficiency</xpath>
+				<value>
+					<partEfficiency>2.0</partEfficiency>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/HediffDef[defName = "SoSArchotechLiver"]</xpath>
+				<value>
+					<defaultLabelColor>(139,143,104)</defaultLabelColor>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/HediffDef[defName = "SoSArchotechLiver"]/addedPartProps/partEfficiency</xpath>
+				<value>
+					<partEfficiency>2.0</partEfficiency>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/HediffDef[defName = "SoSArchotechSpine"]</xpath>
+				<value>
+					<defaultLabelColor>(139,143,104)</defaultLabelColor>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/HediffDef[defName = "SoSArchotechSpine"]/addedPartProps/partEfficiency</xpath>
+				<value>
+					<partEfficiency>2.0</partEfficiency>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/HediffDef[defName = "SoSArchotechSkin"]</xpath>
+				<value>
+					<defaultLabelColor>(139,143,104)</defaultLabelColor>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/HediffDef[defName = "SoSPsychicPredictor"]</xpath>
+				<value>
+					<defaultLabelColor>(139,143,104)</defaultLabelColor>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/HediffDef[defName = "SoSPsychicManipulator"]</xpath>
+				<value>
+					<defaultLabelColor>(139,143,104)</defaultLabelColor>
+				</value>
+			</li>
+	
+		</operations>
+	</Operation>
+	
+</Patch>

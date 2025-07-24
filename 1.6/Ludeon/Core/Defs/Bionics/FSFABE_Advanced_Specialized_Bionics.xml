@@ -1,0 +1,1075 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	
+	<!-- Advanced Bionic Construction Arm -->
+	
+	<HediffDef ParentName="FSFAddedBodyPartAdvBionic">
+		<defName>FSFAdvBionicConstructionArm</defName>
+		<label>advanced bionic construction arm</label>
+		<labelNoun>a advanced bionic construction arm</labelNoun>
+		<description>An installed advanced bionic construction arm.  A highly advanced artificial arm made using cutting edge ultratech techniques.  It provides smooth micrometre precision motor control with strength capable of crushing hardwood branches.  The synthetic flesh looks and feels just like natural flesh, but it’s as hard as plasteel.  Through the use of a lattice-dust healing system its capable of repairing itself over time.\n\nThe arm houses a wide range of tools commonly used in a variety of construction tasks attached to telescoping appendages capable of independent movement.  It allows the user to perform several tasks simultaneously greatly increasing their working speed.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAdvBionicConstructionArm</ThingDef>
+			<RecipeDef>InstallFSFAdvBionicConstructionArm</RecipeDef>
+		</descriptionHyperlinks>
+		<stages>
+			<li>
+				<statOffsets>
+					<ConstructionSpeed>1.60</ConstructionSpeed>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>fist</label>
+						<capacities>
+							<li>Blunt</li>
+						</capacities>
+						<power>16</power>
+						<armorPenetration>0.5</armorPenetration>
+						<cooldownTime>2</cooldownTime>
+						<alwaysTreatAsWeapon>false</alwaysTreatAsWeapon>
+						<soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
+						<soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
+					</li>
+				</tools>
+			</li>
+        	<li MayRequire="V1024.EBFramework" Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust">
+            	<scaleAdjustment>0.5</scaleAdjustment>
+        	</li>
+		</comps>
+		<spawnThingOnRemoved>FSFAdvBionicConstructionArm</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.50</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+	
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFAdvBionicConstructionArm</defName>
+		<label>advanced bionic construction arm</label>
+		<description>A highly advanced artificial arm made using cutting edge ultratech techniques.  It provides smooth micrometre precision motor control with strength capable of crushing hardwood branches.  The synthetic flesh looks and feels just like natural flesh, but it’s as hard as plasteel.  Through the use of a lattice-dust healing system its capable of repairing itself over time.\n\nThe arm houses a wide range of tools commonly used in a variety of construction tasks attached to telescoping appendages capable of independent movement.  It allows the user to perform several tasks simultaneously greatly increasing their working speed.</description>
+		<descriptionHyperlinks>
+			<HediffDef>FSFAdvBionicConstructionArm</HediffDef>
+			<RecipeDef>InstallFSFAdvBionicConstructionArm</RecipeDef>
+		</descriptionHyperlinks>
+		<thingSetMakerTags>
+			<li>RewardStandardMidFreq</li>
+		</thingSetMakerTags>
+		<costList>
+			<Plasteel>60</Plasteel>
+			<ComponentSpacer>12</ComponentSpacer>
+		</costList>
+		<butcherProducts>
+			<Plasteel>60</Plasteel>
+			<ComponentSpacer>12</ComponentSpacer>
+		</butcherProducts>
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>FSFAdvancedSpecializedLimbs</li>
+			</researchPrerequisites>
+		</recipeMaker>
+		<statBases>
+			<Mass>10</Mass>
+		</statBases>
+	</ThingDef>
+	
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallFSFAdvBionicConstructionArm</defName>
+		<label>install advanced bionic construction arm</label>
+		<description>Install an advanced bionic construction arm.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAdvBionicConstructionArm</ThingDef>
+			<HediffDef>FSFAdvBionicConstructionArm</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing advanced bionic construction arm.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFAdvBionicConstructionArm</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFAdvBionicConstructionArm</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Shoulder</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFAdvBionicConstructionArm</addsHediff>
+		<uiIconThing>FSFAdvBionicConstructionArm</uiIconThing>
+	</RecipeDef>
+	
+	<!-- Advanced Bionic Cooking Arm -->
+	
+	<HediffDef ParentName="FSFAddedBodyPartAdvBionic">
+		<defName>FSFAdvBionicCookingArm</defName>
+		<label>advanced bionic chef arm</label>
+		<labelNoun>a advanced bionic chef arm</labelNoun>
+		<description>An installed advanced bionic chef arm.  A highly advanced artificial arm made using cutting edge ultratech techniques.  It provides smooth micrometre precision motor control with strength capable of crushing hardwood branches.  The synthetic flesh looks and feels just like natural flesh, but it’s as hard as plasteel.  Through the use of a lattice-dust healing system its capable of repairing itself over time.\n\nThe arm houses a wide range of tools commonly used in a variety of culinary tasks attached to telescoping finger-like appendages capable of independent movement.  It allows the user to perform several tasks simultaneously greatly increasing their working speed.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAdvBionicCookingArm</ThingDef>
+			<RecipeDef>InstallFSFAdvBionicCookingArm</RecipeDef>
+		</descriptionHyperlinks>
+		<stages>
+			<li>
+				<statOffsets>
+					<ButcheryFleshSpeed>+1.6</ButcheryFleshSpeed>
+					<CookSpeed>+24</CookSpeed>
+					<DrugCookingSpeed>+1.6</DrugCookingSpeed>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>fist</label>
+						<capacities>
+							<li>Blunt</li>
+						</capacities>
+						<power>16</power>
+						<armorPenetration>0.5</armorPenetration>
+						<cooldownTime>2</cooldownTime>
+						<alwaysTreatAsWeapon>false</alwaysTreatAsWeapon>
+						<soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
+						<soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
+					</li>
+				</tools>
+			</li>
+        	<li MayRequire="V1024.EBFramework" Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust">
+            	<scaleAdjustment>0.5</scaleAdjustment>
+        	</li>
+		</comps>
+		<spawnThingOnRemoved>FSFAdvBionicCookingArm</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.50</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+	
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFAdvBionicCookingArm</defName>
+		<label>advanced bionic chef arm</label>
+		<description>A highly advanced artificial arm made using cutting edge ultratech techniques.  It provides smooth micrometre precision motor control with strength capable of crushing hardwood branches.  The synthetic flesh looks and feels just like natural flesh, but it’s as hard as plasteel.  Through the use of a lattice-dust healing system its capable of repairing itself over time.\n\nThe arm houses a wide range of tools commonly used in a variety of culinary tasks attached to telescoping finger-like appendages capable of independent movement.  It allows the user to perform several tasks simultaneously greatly increasing their working speed.</description>
+		<descriptionHyperlinks>
+			<HediffDef>FSFAdvBionicCookingArm</HediffDef>
+			<RecipeDef>InstallFSFAdvBionicCookingArm</RecipeDef>
+		</descriptionHyperlinks>
+		<thingSetMakerTags>
+			<li>RewardStandardMidFreq</li>
+		</thingSetMakerTags>
+		<costList>
+			<Plasteel>60</Plasteel>
+			<ComponentSpacer>12</ComponentSpacer>
+		</costList>
+		<butcherProducts>
+			<Plasteel>60</Plasteel>
+			<ComponentSpacer>12</ComponentSpacer>
+		</butcherProducts>
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>FSFAdvancedSpecializedLimbs</li>
+			</researchPrerequisites>
+		</recipeMaker>
+		<statBases>
+			<Mass>10</Mass>
+		</statBases>
+	</ThingDef>
+	
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallFSFAdvBionicCookingArm</defName>
+		<label>install advanced bionic chef arm</label>
+		<description>Install an advanced bionic chef arm.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAdvBionicCookingArm</ThingDef>
+			<HediffDef>FSFAdvBionicCookingArm</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing advanced bionic chef arm.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFAdvBionicCookingArm</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFAdvBionicCookingArm</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Shoulder</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFAdvBionicCookingArm</addsHediff>
+		<uiIconThing>FSFAdvBionicCookingArm</uiIconThing>
+	</RecipeDef>
+	
+	<!-- Advanced Bionic Crafting Arm -->
+	
+	<HediffDef ParentName="FSFAddedBodyPartAdvBionic">
+		<defName>FSFAdvBionicCraftingArm</defName>
+		<label>advanced bionic production arm</label>
+		<labelNoun>a advanced bionic production arm</labelNoun>
+		<description>An installed advanced bionic production arm.  A highly advanced artificial arm made using cutting edge ultratech techniques.  It provides smooth micrometre precision motor control with strength capable of crushing hardwood branches.  The synthetic flesh looks and feels just like natural flesh, but it’s as hard as plasteel.  Through the use of a lattice-dust healing system its capable of repairing itself over time.\n\nThe arm houses a wide range of tools commonly used in a variety of production tasks attached to telescoping finger-like appendages capable of independent movement.  It allows the user to perform several tasks simultaneously greatly increasing their working speed.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAdvBionicCraftingArm</ThingDef>
+			<RecipeDef>InstallFSFAdvBionicCraftingArm</RecipeDef>
+		</descriptionHyperlinks>
+		<stages>
+			<li>
+				<statOffsets>
+					<DrugSynthesisSpeed>+1.6</DrugSynthesisSpeed>
+					<GeneralLaborSpeed>+1.6</GeneralLaborSpeed>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>fist</label>
+						<capacities>
+							<li>Blunt</li>
+						</capacities>
+						<power>16</power>
+						<armorPenetration>0.5</armorPenetration>
+						<cooldownTime>2</cooldownTime>
+						<alwaysTreatAsWeapon>false</alwaysTreatAsWeapon>
+						<soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
+						<soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
+					</li>
+				</tools>
+			</li>
+        	<li MayRequire="V1024.EBFramework" Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust">
+            	<scaleAdjustment>0.5</scaleAdjustment>
+        	</li>
+		</comps>
+		<spawnThingOnRemoved>FSFAdvBionicCraftingArm</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.50</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+	
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFAdvBionicCraftingArm</defName>
+		<label>advanced bionic production arm</label>
+		<description>A highly advanced artificial arm made using cutting edge ultratech techniques.  It provides smooth micrometre precision motor control with strength capable of crushing hardwood branches.  The synthetic flesh looks and feels just like natural flesh, but it’s as hard as plasteel.  Through the use of a lattice-dust healing system its capable of repairing itself over time.\n\nThe arm houses a wide range of tools commonly used in a variety of production tasks attached to telescoping finger-like appendages capable of independent movement.  It allows the user to perform several tasks simultaneously greatly increasing their working speed.</description>
+		<descriptionHyperlinks>
+			<HediffDef>FSFAdvBionicCraftingArm</HediffDef>
+			<RecipeDef>InstallFSFAdvBionicCraftingArm</RecipeDef>
+		</descriptionHyperlinks>
+		<thingSetMakerTags>
+			<li>RewardStandardMidFreq</li>
+		</thingSetMakerTags>
+		<costList>
+			<Plasteel>60</Plasteel>
+			<ComponentSpacer>12</ComponentSpacer>
+		</costList>
+		<butcherProducts>
+			<Plasteel>60</Plasteel>
+			<ComponentSpacer>12</ComponentSpacer>
+		</butcherProducts>
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>FSFAdvancedSpecializedLimbs</li>
+			</researchPrerequisites>
+		</recipeMaker>
+		<statBases>
+			<Mass>10</Mass>
+		</statBases>
+	</ThingDef>
+	
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallFSFAdvBionicCraftingArm</defName>
+		<label>install advanced bionic production arm</label>
+		<description>Install an advanced bionic production arm.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAdvBionicCraftingArm</ThingDef>
+			<HediffDef>FSFAdvBionicCraftingArm</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing advanced bionic production arm.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFAdvBionicCraftingArm</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFAdvBionicCraftingArm</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Shoulder</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFAdvBionicCraftingArm</addsHediff>
+		<uiIconThing>FSFAdvBionicCraftingArm</uiIconThing>
+	</RecipeDef>
+
+	<!-- Advanced Bionic Power Arm -->
+	
+	<HediffDef ParentName="FSFAddedBodyPartAdvBionic">
+		<defName>FSFAdvBionicPowerArm</defName>
+		<label>advanced bionic power arm</label>
+		<labelNoun>a advanced bionic power arm</labelNoun>
+		<description>An installed advanced bionic power arm.  A highly advanced artificial arm made using cutting edge ultratech techniques.  It provides smooth micrometre precision motor control with strength capable of crushing hardwood branches.  The synthetic flesh looks and feels just like natural flesh, but it’s as hard as plasteel.  Through the use of a lattice-dust healing system its capable of repairing itself over time.\n\nThe arm has a reinforced design for enhanced durability and makes use of an isolated self-charging power system to significantly increase the strength beyond the normal output for use in close quarters combat.  It houses a retractable crystal-metallic blade infused with mechanites that maintains a mono-molecular cutting edge for cleaving through ultratech armor.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAdvBionicPowerArm</ThingDef>
+			<RecipeDef>InstallFSFAdvBionicPowerArm</RecipeDef>
+		</descriptionHyperlinks>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>fist</label>
+						<capacities>
+							<li>Blunt</li>
+						</capacities>
+						<power>32</power>
+						<armorPenetration>0.75</armorPenetration>
+						<cooldownTime>2</cooldownTime>
+						<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+						<soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
+						<soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
+					</li>
+					<li>
+						<label>edge</label>
+						<capacities>
+							<li>Cut</li>
+						</capacities>
+						<power>32</power>
+						<armorPenetration>1.0</armorPenetration>
+						<cooldownTime>2</cooldownTime>
+						<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+						<soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
+						<soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
+					</li>
+					<li>
+						<label>point</label>
+						<capacities>
+							<li>Stab</li>
+						</capacities>
+						<power>32</power>
+						<armorPenetration>1.0</armorPenetration>
+						<cooldownTime>2</cooldownTime>
+						<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+						<soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
+						<soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
+					</li>
+				</tools>
+			</li>
+        	<li MayRequire="V1024.EBFramework" Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust">
+            	<scaleAdjustment>0.75</scaleAdjustment>
+        	</li>
+		</comps>
+		<spawnThingOnRemoved>FSFAdvBionicPowerArm</spawnThingOnRemoved>
+		<addedPartProps>
+			<isGoodWeapon>true</isGoodWeapon>
+			<solid>true</solid>
+			<partEfficiency>1.50</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+	
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFAdvBionicPowerArm</defName>
+		<label>advanced bionic power arm</label>
+		<description>A highly advanced artificial arm made using cutting edge ultratech techniques.  It provides smooth micrometre precision motor control with strength capable of crushing hardwood branches.  The synthetic flesh looks and feels just like natural flesh, but it’s as hard as plasteel.  Through the use of a lattice-dust healing system its capable of repairing itself over time.\n\nThe arm has a reinforced design for enhanced durability and makes use of an isolated self-charging power system to significantly increase the strength beyond the normal output for use in close quarters combat.  It houses a retractable crystal-metallic blade infused with mechanites that maintains a mono-molecular cutting edge for cleaving through ultratech armor.</description>
+		<descriptionHyperlinks>
+			<HediffDef>FSFAdvBionicPowerArm</HediffDef>
+			<RecipeDef>InstallFSFAdvBionicPowerArm</RecipeDef>
+		</descriptionHyperlinks>
+		<thingSetMakerTags>
+			<li>RewardStandardMidFreq</li>
+		</thingSetMakerTags>
+		<costList>
+			<Plasteel>30</Plasteel>
+			<ComponentSpacer>12</ComponentSpacer>
+		</costList>
+		<butcherProducts>
+			<Plasteel>30</Plasteel>
+			<ComponentSpacer>12</ComponentSpacer>
+		</butcherProducts>
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>FSFAdvancedSpecializedLimbs</li>
+			</researchPrerequisites>
+		</recipeMaker>
+		<statBases>
+			<Mass>10</Mass>
+		</statBases>
+		<techHediffsTags>
+			<li>AdvancedWeapon</li>
+		</techHediffsTags>
+	</ThingDef>
+	
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallFSFAdvBionicPowerArm</defName>
+		<label>install advanced bionic power arm</label>
+		<description>Install an advanced bionic power arm.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAdvBionicPowerArm</ThingDef>
+			<HediffDef>FSFAdvBionicPowerArm</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing advanced bionic power arm.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFAdvBionicPowerArm</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFAdvBionicPowerArm</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Shoulder</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFAdvBionicPowerArm</addsHediff>
+		<uiIconThing>FSFAdvBionicPowerArm</uiIconThing>
+	</RecipeDef>
+	
+	<!-- Advanced Bionic Breaching Arm -->
+	
+	<HediffDef ParentName="FSFAddedBodyPartAdvBionic">
+		<defName>FSFAdvBionicBreachArm</defName>
+		<label>advanced bionic breaching arm</label>
+		<labelNoun>a advanced bionic breaching arm</labelNoun>
+		<description>An installed advanced bionic breaching arm.  A highly advanced artificial arm made using cutting edge ultratech techniques.  It provides smooth micrometre precision motor control with strength capable of crushing hardwood branches.  The synthetic flesh looks and feels just like natural flesh, but it’s as hard as plasteel.  Through the use of a lattice-dust healing system its capable of repairing itself over time.\n\nThe arm has a reinforced design for enhanced durability and makes use of an isolated self-charging power system to significantly increase the strength beyond the normal output for use in close quarters combat and demolition.  Upon impact the hand vents out a concussion force from the pores on the skin which specializes in demolishing walls and structures.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAdvBionicBreachArm</ThingDef>
+			<RecipeDef>InstallFSFAdvBionicBreachArm</RecipeDef>
+		</descriptionHyperlinks>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>fist</label>
+						<capacities>
+							<li>Demolish</li>
+						</capacities>
+						<power>32</power>
+						<armorPenetration>0.25</armorPenetration>
+						<cooldownTime>2</cooldownTime>
+						<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+						<soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
+						<soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
+					</li>
+				</tools>
+			</li>
+        	<li MayRequire="V1024.EBFramework" Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust">
+            	<scaleAdjustment>0.75</scaleAdjustment>
+        	</li>
+		</comps>
+		<spawnThingOnRemoved>FSFAdvBionicBreachArm</spawnThingOnRemoved>
+		<addedPartProps>
+			<isGoodWeapon>true</isGoodWeapon>
+			<solid>true</solid>
+			<partEfficiency>1.50</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+	
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFAdvBionicBreachArm</defName>
+		<label>advanced bionic breaching arm</label>
+		<description>A highly advanced artificial arm made using cutting edge ultratech techniques.  It provides smooth micrometre precision motor control with strength capable of crushing hardwood branches.  The synthetic flesh looks and feels just like natural flesh, but it’s as hard as plasteel.  Through the use of a lattice-dust healing system its capable of repairing itself over time.\n\nThe arm has a reinforced design for enhanced durability and makes use of an isolated self-charging power system to significantly increase the strength beyond the normal output for use in close quarters combat and demolition.  Upon impact the hand vents out a concussion force from the pores on the skin which specializes in demolishing walls and structures.</description>
+		<descriptionHyperlinks>
+			<HediffDef>FSFAdvBionicBreachArm</HediffDef>
+			<RecipeDef>InstallFSFAdvBionicBreachArm</RecipeDef>
+		</descriptionHyperlinks>
+		<thingSetMakerTags>
+			<li>RewardStandardMidFreq</li>
+		</thingSetMakerTags>
+		<costList>
+			<Plasteel>30</Plasteel>
+			<ComponentSpacer>12</ComponentSpacer>
+		</costList>
+		<butcherProducts>
+			<Plasteel>30</Plasteel>
+			<ComponentSpacer>12</ComponentSpacer>
+		</butcherProducts>
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>FSFAdvancedSpecializedLimbs</li>
+			</researchPrerequisites>
+		</recipeMaker>
+		<statBases>
+			<Mass>10</Mass>
+		</statBases>
+		<techHediffsTags>
+			<li>AdvancedWeapon</li>
+		</techHediffsTags>
+	</ThingDef>
+	
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallFSFAdvBionicBreachArm</defName>
+		<label>install advanced bionic breaching arm</label>
+		<description>Install an advanced bionic breaching arm.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAdvBionicBreachArm</ThingDef>
+			<HediffDef>FSFAdvBionicBreachArm</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing advanced breaching arm.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFAdvBionicBreachArm</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFAdvBionicBreachArm</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Shoulder</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFAdvBionicBreachArm</addsHediff>
+		<uiIconThing>FSFAdvBionicBreachArm</uiIconThing>
+	</RecipeDef>
+	
+	<!-- Advanced Bionic Shocker Arm -->
+	
+	<HediffDef ParentName="FSFAddedBodyPartAdvBionic">
+		<defName>FSFAdvBionicTaserArm</defName>
+		<label>advanced bionic shocker arm</label>
+		<labelNoun>a advanced bionic shocker arm</labelNoun>
+		<description>An installed advanced bionic shocker arm.  A highly advanced artificial arm made using cutting edge ultratech techniques.  It provides smooth micrometre precision motor control with strength capable of crushing hardwood branches.  The synthetic flesh looks and feels just like natural flesh, but it’s as hard as plasteel.  Through the use of a lattice-dust healing system its capable of repairing itself over time.\n\nThe arm has a reinforced design for enhanced durability and makes use of an isolated self-charging power system to unleash a devastating electrical shock capable of rendering even large animals unconscious.  Its only design flaw is the unit requires a few moments to gather the necessary energy to discharge an attack which leaves the user temporarily vulnerable.  It’s also capable of unleashing low level electromagnetic pulses through impacts without interfering with the unit’s primary function.\n\nNote: Rimworld has a built-in instant death chance when enemies are downed that scales with population.  To bypass this mechanic and use this bionic without randomly killing enemies you'll need to use a mod or tweak your storyteller settings to remove the instant down chance.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAdvBionicTaserArm</ThingDef>
+			<AbilityDef>FSFAdvBionicTaser</AbilityDef>
+			<RecipeDef>InstallFSFAdvBionicTaserArm</RecipeDef>
+		</descriptionHyperlinks>
+		<abilities>
+			<li>FSFAdvBionicTaser</li>
+		</abilities>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>fist</label>
+						<capacities>
+							<li>Blunt</li>
+						</capacities>
+						<power>16</power>
+						<armorPenetration>0.75</armorPenetration>
+						<cooldownTime>2</cooldownTime>
+						<soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
+						<soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
+						<extraMeleeDamages>
+							<li>
+								<def>EMP</def>
+								<amount>50</amount>
+							</li>
+						</extraMeleeDamages>
+					</li>
+				</tools>
+			</li>
+        	<li MayRequire="V1024.EBFramework" Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust">
+            	<scaleAdjustment>0.75</scaleAdjustment>
+        	</li>
+		</comps>
+		<spawnThingOnRemoved>FSFAdvBionicTaserArm</spawnThingOnRemoved>
+		<addedPartProps>
+			<isGoodWeapon>true</isGoodWeapon>
+			<solid>true</solid>
+			<partEfficiency>1.50</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+	
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFAdvBionicTaserArm</defName>
+		<label>advanced bionic shocker arm</label>
+		<description>A highly advanced artificial arm made using cutting edge ultratech techniques.  It provides smooth micrometre precision motor control with strength capable of crushing hardwood branches.  The synthetic flesh looks and feels just like natural flesh, but it’s as hard as plasteel.  Through the use of a lattice-dust healing system its capable of repairing itself over time.\n\nThe arm has a reinforced design for enhanced durability and makes use of an isolated self-charging power system to unleash a devastating electrical shock capable of rendering even large animals unconscious.  Its only design flaw is the unit requires a few moments to gather the necessary energy to discharge an attack which leaves the user temporarily vulnerable.  It’s also capable of unleashing low level electromagnetic pulses through impacts without interfering with the unit’s primary function.\n\nNote: Rimworld has a built-in instant death chance when enemies are downed that scales with population.  To bypass this mechanic and use this bionic without randomly killing enemies you'll need to use a mod or tweak your storyteller settings to remove the instant down chance.</description>
+		<descriptionHyperlinks>
+			<HediffDef>FSFAdvBionicTaserArm</HediffDef>
+			<AbilityDef>FSFAdvBionicTaser</AbilityDef>
+			<RecipeDef>InstallFSFAdvBionicTaserArm</RecipeDef>
+		</descriptionHyperlinks>
+		<thingSetMakerTags>
+			<li>RewardStandardMidFreq</li>
+		</thingSetMakerTags>
+		<costList>
+			<Plasteel>30</Plasteel>
+			<ComponentSpacer>12</ComponentSpacer>
+		</costList>
+		<butcherProducts>
+			<Plasteel>30</Plasteel>
+			<ComponentSpacer>12</ComponentSpacer>
+		</butcherProducts>
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>FSFAdvancedSpecializedLimbs</li>
+			</researchPrerequisites>
+		</recipeMaker>
+		<statBases>
+			<Mass>10</Mass>
+		</statBases>
+		<techHediffsTags>
+			<li>AdvancedWeapon</li>
+		</techHediffsTags>
+	</ThingDef>
+	
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallFSFAdvBionicTaserArm</defName>
+		<label>install advanced bionic shocker arm</label>
+		<description>Install an advanced bionic shocker arm.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAdvBionicTaserArm</ThingDef>
+			<HediffDef>FSFAdvBionicTaserArm</HediffDef>
+			<AbilityDef>FSFAdvBionicTaser</AbilityDef>
+		</descriptionHyperlinks>
+		<jobString>Installing advanced bionic shocker arm.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFAdvBionicTaserArm</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFAdvBionicTaserArm</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Shoulder</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFAdvBionicTaserArm</addsHediff>
+		<uiIconThing>FSFAdvBionicTaserArm</uiIconThing>
+	</RecipeDef>
+
+	<!-- Advanced Bionic Shocker Jaw -->
+	
+	<HediffDef ParentName="FSFAddedBodyPartAdvBionic">
+		<defName>FSFAdvBionicTaserJaw</defName>
+		<label>advanced bionic shocker jaw</label>
+		<labelNoun>a advanced bionic shocker jaw</labelNoun>
+		<description>An installed advanced shocker jaw.  A highly advanced artificial jaw made using cutting edge ultratech techniques.  It has a crushing strength capable of shattering bones and crushing hardwood branches.  The synthetic flesh looks and feels just like natural flesh, but it’s as hard as plasteel.  Through the use of a lattice-dust healing system its capable of repairing itself over time.\n\nThe jaw has a reinforced design for enhanced durability and makes use of an isolated self-charging power system to unleash a devastating electrical shock capable of rendering even large animals unconscious.  Its only design flaw is the unit requires a few moments to gather the necessary energy to discharge an attack which leaves the user temporarily vulnerable.  It’s also capable of unleashing low level electromagnetic pulses through bites without interfering with the unit’s primary function.\n\nNote: Rimworld has a built-in instant death chance when enemies are downed that scales with population.  To bypass this mechanic and use this bionic without randomly killing enemies you'll need to use a mod or tweak your storyteller settings to remove the instant down chance.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAdvBionicTaserJaw</ThingDef>
+			<AbilityDef>FSFAdvBionicTaser</AbilityDef>
+			<RecipeDef>InstallFSFAdvBionicTaserJaw</RecipeDef>
+		</descriptionHyperlinks>
+		<abilities>
+			<li>FSFAdvBionicTaser</li>
+		</abilities>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>teeth</label>
+						<capacities>
+							<li>Bite</li>
+						</capacities>
+						<power>16</power>
+						<armorPenetration>0.75</armorPenetration>
+						<cooldownTime>2</cooldownTime>
+						<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+						<linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+						<extraMeleeDamages>
+							<li>
+								<def>EMP</def>
+								<amount>50</amount>
+							</li>
+						</extraMeleeDamages>
+					</li>
+				</tools>
+			</li>
+        	<li MayRequire="V1024.EBFramework" Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust">
+            	<scaleAdjustment>0.75</scaleAdjustment>
+        	</li>
+		</comps>
+		<spawnThingOnRemoved>FSFAdvBionicTaserJaw</spawnThingOnRemoved>
+		<addedPartProps>
+			<isGoodWeapon>true</isGoodWeapon>
+			<solid>true</solid>
+			<partEfficiency>1.50</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+	
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFAdvBionicTaserJaw</defName>
+		<label>advanced bionic shocker jaw</label>
+		<description>A highly advanced artificial jaw made using cutting edge ultratech techniques.  It has a crushing strength capable of shattering bones and crushing hardwood branches.  The synthetic flesh looks and feels just like natural flesh, but it’s as hard as plasteel.  Through the use of a lattice-dust healing system its capable of repairing itself over time.\n\nThe jaw has a reinforced design for enhanced durability and makes use of an isolated self-charging power system to unleash a devastating electrical shock capable of rendering even large animals unconscious.  Its only design flaw is the unit requires a few moments to gather the necessary energy to discharge an attack which leaves the user temporarily vulnerable.  It’s also capable of unleashing low level electromagnetic pulses through bites without interfering with the unit’s primary function.\n\nNote: Rimworld has a built-in instant death chance when enemies are downed that scales with population.  To bypass this mechanic and use this bionic without randomly killing enemies you'll need to use a mod or tweak your storyteller settings to remove the instant down chance.</description>
+		<descriptionHyperlinks>
+			<HediffDef>FSFAdvBionicTaserJaw</HediffDef>
+			<AbilityDef>FSFAdvBionicTaser</AbilityDef>
+			<RecipeDef>InstallFSFAdvBionicTaserJaw</RecipeDef>
+		</descriptionHyperlinks>
+		<thingSetMakerTags>
+			<li>RewardStandardLowFreq</li>
+		</thingSetMakerTags>
+		<costList>
+			<Plasteel>20</Plasteel>
+			<ComponentSpacer>9</ComponentSpacer>
+		</costList>
+		<butcherProducts>
+			<Plasteel>20</Plasteel>
+			<ComponentSpacer>9</ComponentSpacer>
+		</butcherProducts>
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>FSFAdvancedSpecializedLimbs</li>
+			</researchPrerequisites>
+		</recipeMaker>
+		<statBases>
+			<Mass>2.25</Mass>
+		</statBases>
+	</ThingDef>
+	
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallFSFAdvBionicTaserJaw</defName>
+		<label>install advanced bionic shocker jaw</label>
+		<description>Install an advanced bionic shocker jaw.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAdvBionicTaserJaw</ThingDef>
+			<HediffDef>FSFAdvBionicTaserJaw</HediffDef>
+			<AbilityDef>FSFAdvBionicTaser</AbilityDef>
+		</descriptionHyperlinks>
+		<jobString>Installing advanced bionic shocker jaw.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFAdvBionicTaserJaw</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFAdvBionicTaserJaw</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Jaw</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFAdvBionicTaserJaw</addsHediff>
+		<uiIconThing>FSFAdvBionicTaserJaw</uiIconThing>
+	</RecipeDef>
+	
+	<AbilityDef>
+		<defName>FSFAdvBionicTaser</defName>
+		<label>shock blast</label>
+		<description>Unleash an immense electrical shock on a target to incapacitate them.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAdvBionicTaserArm</ThingDef>
+			<HediffDef>FSFAdvBionicTaserArm</HediffDef>
+			<ThingDef>FSFAdvBionicTaserJaw</ThingDef>
+			<HediffDef>FSFAdvBionicTaserJaw</HediffDef>
+			<AbilityDef>FSFAdvBionicTaser</AbilityDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/Abilities/FSFAdvBionicTaser</iconPath>
+		<cooldownTicksRange>60000</cooldownTicksRange>
+		<cooldownPerCharge>true</cooldownPerCharge>
+		<charges>3</charges>
+		<aiCanUse>true</aiCanUse>
+		<writeCombatLog>true</writeCombatLog>
+		<warmupStartSound>EnergyShield_Reset</warmupStartSound>
+		<stunTargetWhileCasting>true</stunTargetWhileCasting>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<jobDef>CastAbilityOnThingMelee</jobDef>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
+			<drawAimPie>false</drawAimPie>
+			<range>-1</range>
+			<warmupTime>2.5</warmupTime>
+			<soundCast>Explosion_EMP</soundCast>
+		</verbProperties>
+		<comps>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>FSFEffectTaser</hediffDef>
+				<severity>1</severity>
+				<goodwillImpact>-50</goodwillImpact>
+				<applyGoodwillImpactToLodgers>True</applyGoodwillImpactToLodgers>
+			</li>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>BlastEMP</fleckDef>
+			</li>
+		</comps>
+	</AbilityDef>
+	
+	<HediffDef>
+		<defName>FSFEffectTaser</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>electric shock</label>
+		<description>The lingering effects of an immense electrical shock that incapacitates a target.</description>
+		<descriptionHyperlinks><ThingDef>FSFAdvBionicTaserArm</ThingDef></descriptionHyperlinks>
+		<isBad>true</isBad>
+		<defaultLabelColor>(253,208,35)</defaultLabelColor>
+		<maxSeverity>1</maxSeverity>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-8</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
+			</li>
+			<li Class="HediffCompProperties_RemoveIfOtherHediff">
+				<hediffs>
+					<li MayRequire="lts.I">CranialInsulation</li>
+					<li>FSFImplantEMPShield</li>
+				</hediffs>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<vomitMtbDays>0.125</vomitMtbDays>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<setMax>0.01</setMax>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<!-- Advanced Bionic Cleaner Leg -->
+	
+	<HediffDef ParentName="FSFAddedBodyPartAdvBionic">
+		<defName>FSFAdvBionicCleanerLeg</defName>
+		<label>advanced bionic cleaner leg</label>
+		<labelNoun>a advanced bionic cleaner leg</labelNoun>
+		<description>An installed advanced bionic cleaner leg.  A highly advanced artificial leg made using cutting edge ultratech techniques.  It provides smooth micrometre precision motor control with speed fast enough to keep pace with cars.  The synthetic flesh looks and feels just like natural flesh, but it’s as hard as plasteel.  Through the use of a lattice-dust healing system its capable of repairing itself over time.\n\nThe leg houses a wide range of tools commonly used in a variety of cleaning tasks attached to telescoping appendages capable of independent movement.  It allows the user to perform several tasks simultaneously greatly increasing their working speed.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAdvBionicCleanerLeg</ThingDef>
+			<RecipeDef>InstallFSFAdvBionicCleanerLeg</RecipeDef>
+		</descriptionHyperlinks>
+		<stages>
+			<li>
+				<statOffsets>
+					<CleaningSpeed>+2.4</CleaningSpeed>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+        	<li MayRequire="V1024.EBFramework" Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust">
+            	<scaleAdjustment>0.5</scaleAdjustment>
+        	</li>
+		</comps>
+		<spawnThingOnRemoved>FSFAdvBionicCleanerLeg</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.50</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+	
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFAdvBionicCleanerLeg</defName>
+		<label>advanced bionic cleaner leg</label>
+		<description>A highly advanced artificial leg made using cutting edge ultratech techniques.  It provides smooth micrometre precision motor control with speed fast enough to keep pace with cars.  The synthetic flesh looks and feels just like natural flesh, but it’s as hard as plasteel.  Through the use of a lattice-dust healing system its capable of repairing itself over time.\n\nThe leg houses a wide range of tools commonly used in a variety of cleaning tasks attached to telescoping appendages capable of independent movement.  It allows the user to perform several tasks simultaneously greatly increasing their working speed.</description>
+		<descriptionHyperlinks>
+			<HediffDef>FSFAdvBionicCleanerLeg</HediffDef>
+			<RecipeDef>InstallFSFAdvBionicCleanerLeg</RecipeDef>
+		</descriptionHyperlinks>
+		<costList>
+			<Plasteel>30</Plasteel>
+			<ComponentSpacer>12</ComponentSpacer>
+		</costList>
+		<butcherProducts>
+			<Plasteel>30</Plasteel>
+			<ComponentSpacer>12</ComponentSpacer>
+		</butcherProducts>
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>FSFAdvancedSpecializedLimbs</li>
+			</researchPrerequisites>
+		</recipeMaker>
+		<statBases>
+			<Mass>10</Mass>
+		</statBases>
+	</ThingDef>
+	
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallFSFAdvBionicCleanerLeg</defName>
+		<label>install advanced bionic cleaner leg</label>
+		<description>Install an advanced bionic cleaner leg.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAdvBionicCleanerLeg</ThingDef>
+			<HediffDef>FSFAdvBionicCleanerLeg</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing advanced bionic cleaner leg.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFAdvBionicCleanerLeg</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFAdvBionicCleanerLeg</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Leg</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFAdvBionicCleanerLeg</addsHediff>
+		<uiIconThing>FSFAdvBionicCleanerLeg</uiIconThing>
+	</RecipeDef>
+	
+	<!-- Advanced Bionic Power Leg -->
+	
+	<HediffDef ParentName="FSFAddedBodyPartAdvBionic">
+		<defName>FSFAdvBionicPowerLeg</defName>
+		<label>advanced bionic power leg</label>
+		<labelNoun>a advanced bionic power leg</labelNoun>
+		<description>An installed advanced bionic power leg.  A highly advanced artificial leg made using cutting edge ultratech techniques.  It provides smooth micrometre precision motor control with speed fast enough to keep pace with cars.  The synthetic flesh looks and feels just like natural flesh, but it’s as hard as plasteel.  Through the use of a lattice-dust healing system its capable of repairing itself over time.\n\nThe leg has a reinforced design for enhanced durability and makes use of an isolated self-charging power system to significantly increase the strength beyond the normal output for use in close quarters combat.  It houses sets of retractable crystal-metallic spikes in the knee and foot; they’re infused with mechanites that maintains a mono-molecular cutting edge for cleaving through ultratech armor.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAdvBionicPowerLeg</ThingDef>
+			<RecipeDef>InstallFSFAdvBionicPowerLeg</RecipeDef>
+		</descriptionHyperlinks>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>kick</label>
+						<capacities>
+							<li>Blunt</li>
+						</capacities>
+						<power>32</power>
+						<armorPenetration>0.75</armorPenetration>
+						<cooldownTime>2</cooldownTime>
+						<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+						<soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
+						<soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
+					</li>
+					<li>
+						<label>knee spikes</label>
+						<capacities>
+							<li>Stab</li>
+						</capacities>
+						<power>32</power>
+						<armorPenetration>1.0</armorPenetration>
+						<cooldownTime>2</cooldownTime>
+						<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+						<soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
+						<soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
+					</li>
+					<li>
+						<label>foot spikes</label>
+						<capacities>
+							<li>Stab</li>
+						</capacities>
+						<power>32</power>
+						<armorPenetration>1.0</armorPenetration>
+						<cooldownTime>2</cooldownTime>
+						<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+						<soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
+						<soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
+					</li>
+				</tools>
+			</li>
+        	<li MayRequire="V1024.EBFramework" Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust">
+            	<scaleAdjustment>0.75</scaleAdjustment>
+        	</li>
+		</comps>
+		<spawnThingOnRemoved>FSFAdvBionicPowerLeg</spawnThingOnRemoved>
+		<addedPartProps>
+			<isGoodWeapon>true</isGoodWeapon>
+			<solid>true</solid>
+			<partEfficiency>1.50</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+	
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFAdvBionicPowerLeg</defName>
+		<label>advanced bionic power leg</label>
+		<description>A highly advanced artificial leg made using cutting edge ultratech techniques.  It provides smooth micrometre precision motor control with speed fast enough to keep pace with cars.  The synthetic flesh looks and feels just like natural flesh, but it’s as hard as plasteel.  Through the use of a lattice-dust healing system its capable of repairing itself over time.\n\nThe leg has a reinforced design for enhanced durability and makes use of an isolated self-charging power system to significantly increase the strength beyond the normal output for use in close quarters combat.  It houses sets of retractable crystal-metallic spikes in the knee and foot; they’re infused with mechanites that maintains a mono-molecular cutting edge for cleaving through ultratech armor.</description>
+		<descriptionHyperlinks>
+			<HediffDef>FSFAdvBionicPowerLeg</HediffDef>
+			<RecipeDef>InstallFSFAdvBionicPowerLeg</RecipeDef>
+		</descriptionHyperlinks>
+		<costList>
+			<Plasteel>30</Plasteel>
+			<ComponentSpacer>12</ComponentSpacer>
+		</costList>
+		<butcherProducts>
+			<Plasteel>30</Plasteel>
+			<ComponentSpacer>12</ComponentSpacer>
+		</butcherProducts>
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>FSFAdvancedSpecializedLimbs</li>
+			</researchPrerequisites>
+		</recipeMaker>
+		<statBases>
+			<Mass>10</Mass>
+		</statBases>
+	</ThingDef>
+	
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallFSFAdvBionicPowerLeg</defName>
+		<label>install advanced bionic power leg</label>
+		<description>Install an advanced bionic power leg.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAdvBionicPowerLeg</ThingDef>
+			<HediffDef>FSFAdvBionicPowerLeg</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing advanced bionic power leg.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFAdvBionicPowerLeg</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFAdvBionicPowerLeg</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Leg</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFAdvBionicPowerLeg</addsHediff>
+		<uiIconThing>FSFAdvBionicPowerLeg</uiIconThing>
+	</RecipeDef>
+
+</Defs>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+	
+	<!-- Patch Metalhorror Implantation Hediff -->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/HediffDef[defName = "MetalhorrorImplant"]/comps</xpath>
+				<value>
+					<li Class="HediffCompProperties_RemoveIfOtherHediff">
+						<hediffs>
+							<li>FSFImplantMechanitesImmunity</li>
+						</hediffs>
+					</li>
+				</value>
+			</li>
+	
+		</operations>
+	</Operation>
+	
+</Patch>

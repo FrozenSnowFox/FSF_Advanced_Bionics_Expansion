@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- Advanced Bionics Research -->
+
+	<ResearchProjectDef ParentName="BaseBodyPartEmpire_TierB">
+		<defName>FSFAdvancedBionics</defName>
+		<label>Advanced Bionics</label>
+		<description>Craft high-tech bionic body parts to replace lost limbs and eyes. Requires a skilled doctor to attach.</description>
+		<prerequisites>
+			<li>Bionics</li>
+		</prerequisites>
+		<researchViewX>16.00</researchViewX>
+		<researchViewY>5.40</researchViewY>
+	</ResearchProjectDef>
+	
+	<!-- Advanced Specialized Limbs Research -->
+
+	<ResearchProjectDef ParentName="BaseBodyPartEmpire_TierB">
+		<defName>FSFAdvancedSpecializedLimbs</defName>
+		<label>Advanced Specialized Limbs</label>
+		<description>Craft high-tech specialized bionic limbs built for specific purposes - both combat and labor.</description>
+		<prerequisites>
+			<li>FSFAdvancedBionics</li>
+		</prerequisites>
+		<researchViewX>17.00</researchViewX>
+		<researchViewY>5.40</researchViewY>
+	</ResearchProjectDef>
+	
+	<!-- Advanced Body Frames Research -->
+
+	<ResearchProjectDef ParentName="BaseBodyPartEmpire_TierB">
+		<defName>FSFAdvancedBodyFramesResearch</defName>
+		<label>Advanced Body Frames</label>
+		<description>Craft high-tech frames that replace a persons skeletal structure and some of the surrounding tissue.</description>
+		<prerequisites>
+			<li>FSFAdvancedBionics</li>
+		</prerequisites>
+		<researchViewX>18.00</researchViewX>
+		<researchViewY>5.40</researchViewY>
+	</ResearchProjectDef>
+	
+	<!-- Advanced Environmental Implants Research -->
+
+	<ResearchProjectDef ParentName="BaseBodyPartEmpire_TierB">
+		<defName>FSFResearchEnvironmentalImplants</defName>
+		<label>Advanced Environmental Implants</label>
+		<description>Craft high-tech implants that assist in dealing with environmental hazards.</description>
+		<prerequisites>
+			<li>FSFAdvancedBionics</li>
+		</prerequisites>
+		<researchViewX>17.00</researchViewX>
+		<researchViewY>6.25</researchViewY>
+	</ResearchProjectDef>
+	
+	<!-- Advanced Combat Implants Research -->
+
+	<ResearchProjectDef ParentName="BaseBodyPartEmpire_TierB">
+		<defName>FSFResearchCombatImplants</defName>
+		<label>Advanced Combat Implants</label>
+		<description>Craft high-tech brain implants that assist the user in processing information in combat scenarios.</description>
+		<prerequisites>
+			<li>FSFAdvancedBionics</li>
+		</prerequisites>
+		<researchViewX>18.00</researchViewX>
+		<researchViewY>6.25</researchViewY>
+	</ResearchProjectDef>
+
+</Defs>

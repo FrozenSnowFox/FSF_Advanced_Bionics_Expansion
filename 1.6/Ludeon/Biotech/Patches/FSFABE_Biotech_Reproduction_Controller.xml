@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+	
+	<!-- Patch Negative Pregnancy Hediffs to be removed with Reproduction Controller -->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/HediffDef[defName = "MorningSickness"]/comps</xpath>
+				<value>
+					<li Class="HediffCompProperties_RemoveIfOtherHediff">
+						<hediffs>
+							<li>FSFImplantReproduction</li>
+						</hediffs>
+					</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/HediffDef[defName = "PregnancyMood"]/comps</xpath>
+				<value>
+					<li Class="HediffCompProperties_RemoveIfOtherHediff">
+						<hediffs>
+							<li>FSFImplantReproduction</li>
+						</hediffs>
+					</li>
+				</value>
+			</li>
+	
+		</operations>
+	</Operation>
+	
+</Patch>

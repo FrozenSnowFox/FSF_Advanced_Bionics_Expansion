@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+	<!-- Mechanites Healing -->
+
+	<HediffDef ParentName="FSFImplantHediffAdvBase">
+		<defName>FSFImplantMechanitesHealing</defName>
+		<label>healing mechanites</label>
+		<labelNoun>healing mechanites</labelNoun>
+		<description>A swarm of healing mechanites.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantMechanitesHealing</ThingDef></descriptionHyperlinks>
+		<comps>
+			<li Class="AnimalBehaviours.HediffCompProperties_Regeneration">
+				<rateInTicks>20</rateInTicks>
+			</li>
+		</comps>
+		<tags><li>FSFImplantMechanites</li></tags>
+	</HediffDef>
+
+	<ThingDef ParentName="FSFMechSerumBase">
+		<defName>FSFImplantMechanitesHealing</defName>
+		<label>healing mechanites</label>
+		<description>A dose of mechanites designed to rapidly heal injuries within the host.  Despite how powerful they are they are unable to heal lost limbs, organs or scarred tissue.  Due to how mechanites work only one strain can exist harmoniously inside the host’s body.  However, it is possible to remove a mechanite strain with surgery.</description>
+		<graphicData>
+			<texPath>Things/Item/Special/MechSerumHealer</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<costList>
+			<Neutroamine>10</Neutroamine>
+			<MedicineUltratech>20</MedicineUltratech>
+			<ComponentSpacer>4</ComponentSpacer>
+		</costList>
+	</ThingDef>
+	
+	<RecipeDef ParentName="FSFMechSerumSurgeryInstallBase">
+		<defName>InstallFSFImplantMechanitesHealing</defName>
+		<label>administer healing mechanite serum</label>
+		<description>Administer a healing mechanite serum.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantMechanitesHealing</ThingDef>
+			<HediffDef>FSFImplantMechanitesHealing</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Administering healing mechanite serum.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFImplantMechanitesHealing</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFImplantMechanitesHealing</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Torso</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFImplantMechanitesHealing</addsHediff>
+		<incompatibleWithHediffTags>
+			<li>FSFImplantMechanites</li>
+		</incompatibleWithHediffTags>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="FSFMechSerumSurgeryRemoveBase">
+		<defName>RemoveFSFImplantMechanitesHealing</defName>
+		<label>remove and destroy healing mechanites</label>
+		<description>Remove and destroy healing mechanites.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantMechanitesHealing</ThingDef></descriptionHyperlinks>
+		<jobString>Removing and destroying healing mechanites.</jobString>
+		<removesHediff>FSFImplantMechanitesHealing</removesHediff>
+	</RecipeDef>
+		
+</Defs>

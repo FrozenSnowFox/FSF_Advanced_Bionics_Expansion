@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+	<!-- Archotech Medic Arm -->
+	
+	<HediffDef ParentName="FSFAddedBodyPartArchotech">
+		<defName>FSFArchotechMedicArm</defName>
+		<label>archotech medic arm</label>
+		<labelNoun>a archotech medic arm</labelNoun>
+		<description>An installed archotech medic arm.</description>
+		<descriptionHyperlinks><ThingDef>FSFArchotechMedicArm</ThingDef></descriptionHyperlinks>
+		<stages>
+			<li>
+				<statOffsets>
+					<MedicalOperationSpeed>+0.9</MedicalOperationSpeed>
+					<MedicalTendSpeed>+0.9</MedicalTendSpeed>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>fist</label>
+						<capacities>
+							<li>Blunt</li>
+						</capacities>
+						<power>14</power>
+						<cooldownTime>2</cooldownTime>
+						<alwaysTreatAsWeapon>false</alwaysTreatAsWeapon>
+						<soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
+						<soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
+					</li>
+				</tools>
+			</li>
+			<li Class="HediffCompProperties_GiveAbility">
+				<abilityDefs>
+					<li>FSFArchotechMedic</li>
+					<li>FSFArchotechHealSerum</li>
+				</abilityDefs>
+			</li>
+        	<li MayRequire="V1024.EBFramework" Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust">
+            	<scaleAdjustment>1.0</scaleAdjustment>
+        	</li>
+		</comps>
+		<spawnThingOnRemoved>FSFArchotechMedicArm</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>2.0</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+		<tags><li>FSFAdvBionicMedic</li></tags>
+	</HediffDef>
+	
+	<ThingDef ParentName="BodyPartArchotechBase">
+		<defName>FSFArchotechMedicArm</defName>
+		<label>archotech medic arm</label>
+		<description>An artifical arm built by an archotech with a built-in gel system and injectable nanites designed for rapidly tending wounds. It's strong enough to crush a thick hardwood branch in its hand, and precise enough to write a sonnet on a grain of rice. It looks and feels like natural flesh, but it's harder to damage than plasteel. Even if it is harmed, it repairs itself over time. Its internal workings are a mystery to all human minds.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFArchotechMedicArm</RecipeDef></descriptionHyperlinks>
+		<thingSetMakerTags>
+			<li>RewardStandardMidFreq</li>
+		</thingSetMakerTags>
+		<statBases>
+			<MarketValue>6000</MarketValue>
+			<Mass>4</Mass>
+		</statBases>
+	</ThingDef>
+	
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallFSFArchotechMedicArm</defName>
+		<label>install archotech medic arm</label>
+		<description>Install an archotech medic arm.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFArchotechMedicArm</ThingDef>
+			<HediffDef>FSFArchotechMedicArm</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing archotech medic arm.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFArchotechMedicArm</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFArchotechMedicArm</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Shoulder</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFArchotechMedicArm</addsHediff>
+		<incompatibleWithHediffTags>
+			<li>FSFAdvBionicMedic</li>
+		</incompatibleWithHediffTags>
+	</RecipeDef>
+	
+	<AbilityDef ParentName="AbilityTouchBase">
+		<defName>FSFArchotechMedic</defName>
+		<label>administer medical care</label>
+		<description>Use special glands in the wrists to secrete a medical gel to quickly tend someone's wounds. The gel itself is filled with short lived nanites that promote healing.</description>
+		<iconPath>UI/Abilities/FSFArchotechMedic</iconPath>
+		<cooldownTicksRange>20000</cooldownTicksRange>
+		<cooldownPerCharge>true</cooldownPerCharge>
+		<charges>3</charges>
+		<aiCanUse>false</aiCanUse>
+		<stunTargetWhileCasting>true</stunTargetWhileCasting>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<warmupMote>Mote_CoagulateStencil</warmupMote>
+		<warmupEffecter>Coagulate</warmupEffecter>
+		<warmupStartSound>Coagulate_Cast</warmupStartSound>
+		<jobDef>CastAbilityOnThingMelee</jobDef>
+		<displayOrder>400</displayOrder>
+		<hostile>false</hostile>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
+			<drawAimPie>false</drawAimPie>
+			<range>-1</range>
+			<warmupTime>1</warmupTime>
+			<targetParams>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetSelf>true</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetMechs>false</canTargetMechs>
+				<canTargetBloodfeeders>true</canTargetBloodfeeders>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="CompProperties_AbilityCoagulate">
+				<tendQualityRange>0.8~1.2</tendQualityRange>
+			</li>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>FSFEffectArchotechMedic</hediffDef>
+				<severity>1</severity>
+				<applyGoodwillImpactToLodgers>False</applyGoodwillImpactToLodgers>
+			</li>
+		</comps>
+	</AbilityDef>
+	
+	<HediffDef>
+		<defName>FSFEffectArchotechMedic</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>healing nanites</label>
+		<description>A swarm of short lived nanites that circulate around the body tending wounds and fighting off harmful conditions.</description>
+		<descriptionHyperlinks><ThingDef>FSFArchotechMedicArm</ThingDef></descriptionHyperlinks>
+		<isBad>false</isBad>
+		<maxSeverity>1</maxSeverity>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-1</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<statFactors>
+					<InjuryHealingFactor>4</InjuryHealingFactor>
+					<ImmunityGainSpeed>2</ImmunityGainSpeed>
+				</statFactors>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<AbilityDef ParentName="AbilityTouchBase">
+		<defName>FSFArchotechHealSerum</defName>
+		<label>administer healing serum</label>
+		<description>Simply through touch a dose of super mechanites can be passed through pores in the skin.  The mechanites are tuned to heal health conditions, they will target and heal the single worst health condition affecting someone at any given time. Works even on health conditions that would otherwise be incurable. The mechanites can even transmute themselves into organic matter, forming new limbs or organs as needed.</description>
+		<iconPath>UI/Abilities/FSFArchotechHealSerum</iconPath>
+		<cooldownTicksRange>900000</cooldownTicksRange>
+		<cooldownPerCharge>true</cooldownPerCharge>
+		<charges>1</charges>
+		<aiCanUse>false</aiCanUse>
+		<stunTargetWhileCasting>true</stunTargetWhileCasting>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<warmupMote>Mote_CoagulateStencil</warmupMote>
+		<warmupEffecter>Coagulate</warmupEffecter>
+		<warmupStartSound>Coagulate_Cast</warmupStartSound>
+		<jobDef>CastAbilityOnThingMelee</jobDef>
+		<displayOrder>400</displayOrder>
+		<hostile>false</hostile>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
+			<drawAimPie>false</drawAimPie>
+			<range>-1</range>
+			<warmupTime>1</warmupTime>
+			<targetParams>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetSelf>true</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetMechs>false</canTargetMechs>
+				<canTargetBloodfeeders>true</canTargetBloodfeeders>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="CompProperties_AbilityFixWorstHealthCondition" />
+		</comps>
+	</AbilityDef>
+
+</Defs>

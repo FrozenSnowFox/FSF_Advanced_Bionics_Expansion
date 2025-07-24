@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+	<!-- Archotech Implant Torso Immortal -->
+
+	<HediffDef ParentName="FSFImplantHediffArchotechBase">
+		<defName>FSFArchotechImplantTorsoImmortal</defName>
+		<label>immortality core</label>
+		<labelNoun>a immortality core</labelNoun>
+		<description>An installed immortality core.  A small durable core of archotech design said to provide its host with a million lives. Once implanted, upon dying the device repairs broken-down tissue and kickstarts the body back to life. The only flaw in its design is that the regeneration capabilities only trigger upon death. That being the case hosts may find themselves intentionally ending their lives to quickly regenerate parts of their body.  Once implanted the core cannot be removed without damaging the device rendering it inert.</description>
+		<descriptionHyperlinks><ThingDef>FSFArchotechImplantTorsoImmortal</ThingDef></descriptionHyperlinks>
+		<comps>
+			<li Class="VEF.AnimalBehaviours.HediffCompProperties_Resurrect">
+				<livesLeft>1000000</livesLeft>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<ThingDef ParentName="BodyPartArchotechBase">
+		<defName>FSFArchotechImplantTorsoImmortal</defName>
+		<label>immortality core</label>
+		<description>A small durable core of archotech design said to provide its host with a million lives. Once implanted, upon dying the device repairs broken-down tissue and kickstarts the body back to life. The only flaw in its design is that the regeneration capabilities only trigger upon death. That being the case hosts may find themselves intentionally ending their lives to quickly regenerate parts of their body.  Once implanted the core cannot be removed without damaging the device rendering it inert.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFArchotechImplantTorsoImmortal</RecipeDef></descriptionHyperlinks>
+		<statBases>
+			<MarketValue>10000</MarketValue>
+			<Mass>0.3</Mass>
+		</statBases>
+		<thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>InstallFSFArchotechImplantTorsoImmortal</defName>
+		<label>install immortality core</label>
+		<description>Install a immortality core.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFArchotechImplantTorsoImmortal</ThingDef>
+			<HediffDef>FSFArchotechImplantTorsoImmortal</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing immortality core.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFArchotechImplantTorsoImmortal</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFArchotechImplantTorsoImmortal</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Torso</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFArchotechImplantTorsoImmortal</addsHediff>
+		<uiIconThing>FSFArchotechImplantTorsoImmortal</uiIconThing>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemoveFSFArchotechImplantTorsoImmortal</defName>
+		<label>remove and destroy immortality core</label>
+		<description>Remove and destroy immortality core.</description>
+		<descriptionHyperlinks><ThingDef>FSFArchotechImplantTorsoImmortal</ThingDef></descriptionHyperlinks>
+		<jobString>Removing and destroying immortality core.</jobString>
+		<removesHediff>FSFArchotechImplantTorsoImmortal</removesHediff>
+	</RecipeDef>
+		
+</Defs>

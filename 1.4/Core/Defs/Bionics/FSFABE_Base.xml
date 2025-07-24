@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	
+	<!-- Advanced Bionic Cost Calculation
+
+ 		Plasteeel $9.00
+		Advanced Components $200.00
+		Hyperweave $9.00
+		AI Persona Core $4000.00
+		Neutroamine $6.00
+
+		Archotech Tier (Advanced Bionics Material Price x 2) (Previously had Material Price + $1000 x 2)
+
+		Texture Icon Colour #93B9DF
+
+		Note to Self: Recipes must have Human as a recipeUsers otherwise they won't show.
+
+	-->
+	
+	<!-- Advanced Bionic Base -->	
+	
+	<ThingDef Name="FSFBodyPartAdvBionicBase" ParentName="BodyPartBase" Abstract="True">
+		<techLevel>Ultra</techLevel>
+		<thingCategories>
+			<li>BodyPartsUltra</li>
+		</thingCategories>
+		<graphicData>
+			<texPath>Things/Item/Health/HealthItem</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.80</drawSize>
+			<color>(144,98,179)</color>
+		</graphicData>
+		<tradeTags>
+			<li>Bionic</li>
+			<li MayRequire="Ludeon.RimWorld.Royalty">ImplantEmpireCommon</li>
+		</tradeTags>
+		<techHediffsTags>
+			<li>Advanced</li>
+			<li MayRequire="Ludeon.RimWorld.Royalty">ImplantEmpireCommon</li>
+		</techHediffsTags>
+		<statBases>
+			<WorkToMake>30000</WorkToMake>
+		</statBases>
+		<recipeMaker>
+			<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+			<workSkill>Crafting</workSkill>
+			<effectWorking>Smith</effectWorking>
+			<soundWorking>Recipe_Smith</soundWorking>
+			<unfinishedThingDef>UnfinishedHealthItemBionic</unfinishedThingDef>
+			<skillRequirements>
+				<Crafting>10</Crafting>
+			</skillRequirements>
+			<researchPrerequisites>
+				<li>FSFAdvancedBionics</li>
+			</researchPrerequisites>
+			<recipeUsers>
+				<li>FabricationBench</li>
+			</recipeUsers>
+		</recipeMaker>
+	</ThingDef>
+	
+	<!-- Mechanite Serum Item Base -->
+	
+	<ThingDef Name="FSFMechSerumBase" ParentName="FSFBodyPartAdvBionicBase" Abstract="True">
+		<thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+		<graphicData>
+			<texPath>Things/Item/Special/MechSerumHealer</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<drawGUIOverlay>true</drawGUIOverlay>
+		<stackLimit>10</stackLimit>
+		<statBases>
+			<MarketValue>2000</MarketValue>
+			<Mass>0.2</Mass>
+		</statBases>
+		<recipeMaker>
+			<skillRequirements>
+				<Crafting>12</Crafting>
+				<Medicine>12</Medicine>
+			</skillRequirements>
+			<researchPrerequisites>
+				<li>FSFResearchImplantsMechanites</li>
+			</researchPrerequisites>
+		</recipeMaker>
+	</ThingDef>
+	
+	<!-- Mechanite Serum Surgery Install Base -->
+	
+	<RecipeDef Name="FSFMechSerumSurgeryInstallBase" ParentName="SurgeryInstallImplantBase" Abstract="True">
+		<workAmount>100</workAmount>
+		<surgeryIgnoreEnvironment>true</surgeryIgnoreEnvironment>
+		<surgerySuccessChanceFactor>5</surgerySuccessChanceFactor>
+		<skillRequirements>
+			<Medicine>0</Medicine>
+		</skillRequirements>
+	</RecipeDef>
+	
+	<!-- Mechanite Serum Surgery Remove Base -->
+	
+	<RecipeDef Name="FSFMechSerumSurgeryRemoveBase" ParentName="SurgeryRemoveImplantBase" Abstract="True">
+		<workAmount>10000</workAmount>
+		<skillRequirements>
+			<Medicine>12</Medicine>
+		</skillRequirements>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>MedicineUltratech</li>
+					</thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<categories>
+				<li>Medicine</li>
+			</categories>
+		</fixedIngredientFilter>
+		<researchPrerequisites>
+			<li>FSFResearchImplantsMechanites</li>
+		</researchPrerequisites>
+	</RecipeDef>
+	
+	<!-- Advanced Bionic Color Label -->
+	
+	<HediffDef Name="FSFAddedBodyPartAdvBionic" ParentName="AddedBodyPartBase" Abstract="True">
+		<hediffClass>Hediff_AddedPart</hediffClass>
+		<defaultLabelColor>(144,98,179)</defaultLabelColor>
+		<isBad>false</isBad>
+		<priceImpact>true</priceImpact>
+    	<countsAsAddedPartOrImplant>true</countsAsAddedPartOrImplant>
+	</HediffDef>
+	
+	<!-- Advanced Bionic Implant Color Label -->
+	
+	<HediffDef Name="FSFImplantHediffAdvBase" ParentName="ImplantHediffBase" Abstract="True">
+		<hediffClass>Hediff_Implant</hediffClass>
+		<defaultLabelColor>(144,98,179)</defaultLabelColor>
+		<isBad>false</isBad>
+		<priceImpact>true</priceImpact>
+	</HediffDef>
+	
+	<!-- Archotech Color Label -->
+	
+	<HediffDef Name="FSFAddedBodyPartArchotech" ParentName="AddedBodyPartBase" Abstract="True">
+		<hediffClass>Hediff_AddedPart</hediffClass>
+		<defaultLabelColor>(82,190,128)</defaultLabelColor>
+		<isBad>false</isBad>
+		<priceImpact>true</priceImpact>
+    	<countsAsAddedPartOrImplant>true</countsAsAddedPartOrImplant>
+	</HediffDef>
+	
+	<!-- Archotech Implant Color Label -->
+	
+	<HediffDef Name="FSFImplantHediffArchotechBase" ParentName="ImplantHediffBase" Abstract="True">
+		<hediffClass>Hediff_Implant</hediffClass>
+		<defaultLabelColor>(82,190,128)</defaultLabelColor>
+		<isBad>false</isBad>
+		<priceImpact>true</priceImpact>
+	</HediffDef>
+
+</Defs>

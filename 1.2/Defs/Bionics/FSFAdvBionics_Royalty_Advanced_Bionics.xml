@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	
+  <!-- Gastro-analyzer -->
+
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>GastroAnalyzer</defName>
+    <label>gastro-analyzer</label>
+    <labelNoun>a gastro-analyzer</labelNoun>
+    <description>An installed gastro-analyzer.</description>
+    <descriptionHyperlinks><ThingDef>GastroAnalyzer</ThingDef></descriptionHyperlinks>
+    <addedPartProps>
+      <solid>true</solid>
+    </addedPartProps>
+    <stages>
+      <li>
+        <statOffsets>
+          <CookSpeed>5</CookSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+    <spawnThingOnRemoved>GastroAnalyzer</spawnThingOnRemoved>
+  </HediffDef>
+
+  <ThingDef ParentName="BodyPartBionicImperialBase">
+    <defName>GastroAnalyzer</defName>
+    <label>gastro-analyzer</label>
+    <description>This bionic nose implant enhances the sense of smell, with a focus towards food-related smells. A multi-layered ultrafine absorption mesh detects compounds in the air. A microprocessor formats the readings into an olfactory nerve signal to send to the brain through a nerve-link interface. The result is that the user can smell foods with a depth, richness, and precision unknown among unenhanced humans, allowing them to cook more effectively. The whole unit is small enough to be installed in the nose without affecting the user's appearance.</description>
+    <descriptionHyperlinks><RecipeDef>InstallGastroAnalyzer</RecipeDef></descriptionHyperlinks>
+    <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+    <costList>
+      <Plasteel>15</Plasteel>
+      <ComponentSpacer>3</ComponentSpacer>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>MolecularAnalysis</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+    <defName>InstallGastroAnalyzer</defName>
+    <label>install gastro-analyzer</label>
+    <description>Install a gastro-analyzer.</description>
+    <descriptionHyperlinks><ThingDef>GastroAnalyzer</ThingDef></descriptionHyperlinks>
+    <jobString>Installing gastro-analyzer.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>GastroAnalyzer</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>GastroAnalyzer</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Nose</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>GastroAnalyzer</addsHediff>
+  </RecipeDef>
+	
+  <!-- Immunoenhancer -->
+	
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>Immunoenhancer</defName>
+    <label>immunoenhancer</label>
+    <labelNoun>an immunoenhancer</labelNoun>
+    <description>An installed immunoenhancer.</description>
+    <descriptionHyperlinks><ThingDef>Immunoenhancer</ThingDef></descriptionHyperlinks>
+    <spawnThingOnRemoved>Immunoenhancer</spawnThingOnRemoved>
+	<addedPartProps>
+		<solid>true</solid>
+		<partEfficiency>1.50</partEfficiency>
+		<betterThanNatural>true</betterThanNatural>
+	</addedPartProps>
+    <stages>
+      <li>
+        <statOffsets>
+          <ImmunityGainSpeed>0.08</ImmunityGainSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <ThingDef ParentName="BodyPartBionicImperialBase">
+    <defName>Immunoenhancer</defName>
+    <label>immunoenhancer</label>
+    <description>An analysis computer inspects the bloodstream, classifies pathogens, and rapidly prompts the body’s natural immune system to respond to them faster than it could alone. This speeds immunity gain significantly.</description>
+    <descriptionHyperlinks><RecipeDef>InstallImmunoenhancer</RecipeDef></descriptionHyperlinks>
+    <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+    <costList>
+      <Plasteel>10</Plasteel>
+      <ComponentSpacer>12</ComponentSpacer>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>MolecularAnalysis</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+    <defName>InstallImmunoenhancer</defName>
+    <label>install immunoenhancer</label>
+    <description>Install an immunoenhancer.</description>
+    <descriptionHyperlinks><ThingDef>Immunoenhancer</ThingDef></descriptionHyperlinks>
+    <jobString>Installing immunoenhancer.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Immunoenhancer</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Immunoenhancer</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Kidney</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>Immunoenhancer</addsHediff>
+  </RecipeDef>
+
+</Defs>

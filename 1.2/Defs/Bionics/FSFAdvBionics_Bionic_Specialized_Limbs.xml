@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+	<!-- Bionic Construction Arm -->
+	
+	<HediffDef ParentName="AddedBodyPartBase">
+		<defName>FSFBionicConstructionArm</defName>
+		<label>bionic construction arm</label>
+		<labelNoun>a bionic construction arm</labelNoun>
+		<description>An installed bionic construction arm.</description>
+		<descriptionHyperlinks><ThingDef>FSFBionicConstructionArm</ThingDef></descriptionHyperlinks>
+		<stages>
+			<li>
+				<statOffsets>
+					<ConstructionSpeed>1.25</ConstructionSpeed>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>fist</label>
+						<capacities>
+							<li>Blunt</li>
+						</capacities>
+						<power>12</power>
+						<cooldownTime>2</cooldownTime>
+						<soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
+						<soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
+					</li>
+				</tools>
+			</li>
+		</comps>
+		<spawnThingOnRemoved>FSFBionicConstructionArm</spawnThingOnRemoved>
+		<addedPartProps>
+			<isGoodWeapon>true</isGoodWeapon>
+			<solid>true</solid>
+			<partEfficiency>1.25</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+	
+	<ThingDef ParentName="BodyPartBionicBase">
+		<defName>FSFBionicConstructionArm</defName>
+		<label>bionic construction arm</label>
+		<description>An advanced artificial arm with multiple built-in tools used in general construction work. Silenced mini-servos give great strength, while the biogel nerve-link gives exquisite control. A lattice-dust healing system allows it to recover from damage.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFBionicConstructionArm</RecipeDef></descriptionHyperlinks>
+		<costList>
+			<Steel>60</Steel>
+			<ComponentIndustrial>8</ComponentIndustrial>
+			<BionicArm>1</BionicArm>
+			<ComponentSpacer>3</ComponentSpacer>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite>SpecializedLimbs</researchPrerequisite>
+		</recipeMaker>
+		<thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+		<statBases>
+			<Mass>6</Mass>
+		</statBases>
+		<techHediffsTags>
+			<li>Advanced</li>
+			<li>AdvancedWeapon</li>
+		</techHediffsTags>
+	</ThingDef>
+	
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallFSFBionicConstructionArm</defName>
+		<label>install bionic construction arm</label>
+		<description>Install a bionic construction arm.</description>
+		<descriptionHyperlinks><ThingDef>FSFBionicConstructionArm</ThingDef></descriptionHyperlinks>
+		<jobString>Installing bionic construction arm.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFBionicConstructionArm</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFBionicConstructionArm</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Shoulder</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFBionicConstructionArm</addsHediff>
+	</RecipeDef>
+
+</Defs>

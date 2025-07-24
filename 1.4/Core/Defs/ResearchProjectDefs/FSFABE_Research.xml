@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+	<ResearchProjectDef Abstract="True" Name="FSFABEResearchBase">
+		<baseCost>2000</baseCost>
+		<techLevel>Ultra</techLevel>
+		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+		<requiredResearchFacilities>
+			<li>MultiAnalyzer</li>
+		</requiredResearchFacilities>
+	</ResearchProjectDef>
+
+	<!-- Advanced Bionics Research -->
+
+	<ResearchProjectDef ParentName="FSFABEResearchBase">
+		<defName>FSFAdvancedBionics</defName>
+		<label>Advanced Bionics</label>
+		<description>Craft high-tech bionic body parts to replace lost limbs and eyes. Requires a skilled doctor to attach.</description>
+		<prerequisites>
+			<li>Bionics</li>
+		</prerequisites>
+		<researchViewX>16.00</researchViewX>
+		<researchViewY>5.40</researchViewY>
+	</ResearchProjectDef>
+	
+	<!-- Advanced Specialized Limbs Research -->
+
+	<ResearchProjectDef ParentName="FSFABEResearchBase">
+		<defName>FSFAdvancedSpecializedLimbs</defName>
+		<label>Advanced Specialized Limbs</label>
+		<description>Craft high-tech specialized bionic limbs built for specific purposes - both combat and labor.</description>
+		<prerequisites>
+			<li>FSFAdvancedBionics</li>
+		</prerequisites>
+		<researchViewX>17.00</researchViewX>
+		<researchViewY>5.40</researchViewY>
+	</ResearchProjectDef>
+	
+	<!-- Mechanite Implants Research -->
+
+	<ResearchProjectDef ParentName="FSFABEResearchBase">
+		<defName>FSFResearchImplantsMechanites</defName>
+		<label>Mechanite Serums</label>
+		<description>Craft self-replicating mechanites to enhance the body is various ways.</description>
+		<researchViewX>18.00</researchViewX>
+		<researchViewY>5.40</researchViewY>
+	</ResearchProjectDef>
+	
+	<!-- Advanced Environmental Implants Research -->
+
+	<ResearchProjectDef ParentName="FSFABEResearchBase">
+		<defName>FSFResearchEnvironmentalImplants</defName>
+		<label>Environmental Implants</label>
+		<description>Craft high-tech implants that assist in dealing with environmental hazards.</description>
+		<prerequisites>
+			<li>Fabrication</li>
+			<li>Prosthetics</li>			
+		</prerequisites>
+		<researchViewX>17.00</researchViewX>
+		<researchViewY>6.25</researchViewY>
+	</ResearchProjectDef>
+	
+	<!-- Advanced Combat Implants Research -->
+
+	<ResearchProjectDef ParentName="FSFABEResearchBase">
+		<defName>FSFResearchCombatImplants</defName>
+		<label>Advanced Brain Implants</label>
+		<description>Craft high-tech brain implants that assist the user in processing information.</description>
+		<prerequisites>
+			<li>Fabrication</li>
+			<li>Prosthetics</li>
+		</prerequisites>
+		<researchViewX>18.00</researchViewX>
+		<researchViewY>6.25</researchViewY>
+	</ResearchProjectDef>
+
+</Defs>

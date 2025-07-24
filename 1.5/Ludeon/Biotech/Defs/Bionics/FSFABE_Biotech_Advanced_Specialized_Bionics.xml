@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+	<!-- Advanced Bionic Medic Arm -->
+	
+	<HediffDef ParentName="FSFAddedBodyPartAdvBionic">
+		<defName>FSFAdvBionicMedicArm</defName>
+		<label>advanced bionic medic arm</label>
+		<labelNoun>a advanced bionic medic arm</labelNoun>
+		<description>An installed advanced bionic medic arm.  A highly advanced artificial arm made using cutting edge ultratech techniques.  It provides smooth micrometre precision motor control with strength capable of crushing hardwood branches.  The synthetic flesh looks and feels just like natural flesh, but it’s as hard as plasteel.  Through the use of a lattice-dust healing system its capable of repairing itself over time.\n\nThe arm houses a wide range of surgical tools attached to telescoping appendages capable of independent movement.  It allows the user to perform several tasks simultaneously greatly increasing their working speed.  It’s also fitted with a small self-replenishing medical gel system that can be secreted from the wrists to rapidly tend wounds.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAdvBionicMedicArm</ThingDef>
+			<AbilityDef>FSFAdvBionicMedic</AbilityDef>
+			<RecipeDef>InstallFSFAdvBionicMedicArm</RecipeDef>
+		</descriptionHyperlinks>
+		<abilities>
+			<li>FSFAdvBionicMedic</li>
+		</abilities>
+		<stages>
+			<li>
+				<statOffsets>
+					<MedicalOperationSpeed>+1.6</MedicalOperationSpeed>
+					<MedicalTendSpeed>+1.6</MedicalTendSpeed>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>fist</label>
+						<capacities>
+							<li>Blunt</li>
+						</capacities>
+						<power>16</power>
+						<armorPenetration>0.5</armorPenetration>
+						<cooldownTime>2</cooldownTime>
+						<alwaysTreatAsWeapon>false</alwaysTreatAsWeapon>
+						<soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
+						<soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
+					</li>
+				</tools>
+			</li>
+        	<li MayRequire="V1024.EBFramework" Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust">
+            	<scaleAdjustment>0.5</scaleAdjustment>
+        	</li>
+		</comps>
+		<spawnThingOnRemoved>FSFAdvBionicMedicArm</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.50</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+	
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFAdvBionicMedicArm</defName>
+		<label>advanced bionic medic arm</label>
+		<description>A highly advanced artificial arm made using cutting edge ultratech techniques.  It provides smooth micrometre precision motor control with strength capable of crushing hardwood branches.  The synthetic flesh looks and feels just like natural flesh, but it’s as hard as plasteel.  Through the use of a lattice-dust healing system its capable of repairing itself over time.\n\nThe arm houses a wide range of surgical tools attached to telescoping appendages capable of independent movement.  It allows the user to perform several tasks simultaneously greatly increasing their working speed.  It’s also fitted with a small self-replenishing medical gel system that can be secreted from the wrists to rapidly tend wounds.</description>
+		<descriptionHyperlinks>
+			<HediffDef>FSFAdvBionicMedicArm</HediffDef>
+			<AbilityDef>FSFAdvBionicMedic</AbilityDef>
+			<RecipeDef>InstallFSFAdvBionicMedicArm</RecipeDef>
+		</descriptionHyperlinks>
+		<thingSetMakerTags>
+			<li>RewardStandardMidFreq</li>
+		</thingSetMakerTags>
+		<costList>
+			<Plasteel>60</Plasteel>
+			<ComponentSpacer>12</ComponentSpacer>
+			<Neutroamine>10</Neutroamine>
+		</costList>
+		<butcherProducts>
+			<Plasteel>60</Plasteel>
+			<ComponentSpacer>12</ComponentSpacer>
+		</butcherProducts>
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>FSFAdvancedSpecializedLimbs</li>
+			</researchPrerequisites>
+		</recipeMaker>
+		<statBases>
+			<Mass>10</Mass>
+		</statBases>
+	</ThingDef>
+	
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallFSFAdvBionicMedicArm</defName>
+		<label>install advanced bionic medic arm</label>
+		<description>Install an advanced bionic medic arm.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAdvBionicMedicArm</ThingDef>
+			<HediffDef>FSFAdvBionicMedicArm</HediffDef>
+			<AbilityDef>FSFAdvBionicMedic</AbilityDef>
+		</descriptionHyperlinks>
+		<jobString>Installing advanced bionic medic arm.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFAdvBionicMedicArm</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFAdvBionicMedicArm</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Shoulder</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFAdvBionicMedicArm</addsHediff>
+		<uiIconThing>FSFAdvBionicMedicArm</uiIconThing>
+	</RecipeDef>
+	
+	<AbilityDef ParentName="AbilityTouchBase">
+		<defName>FSFAdvBionicMedic</defName>
+		<label>administer medical care</label>
+		<description>Use special glands in the wrists to secrete a medical gel to quickly tend someone's wounds.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAdvBionicMedicArm</ThingDef>
+			<HediffDef>FSFAdvBionicMedicArm</HediffDef>
+			<RecipeDef>InstallFSFAdvBionicMedicArm</RecipeDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/Abilities/FSFArchotechMedic</iconPath>
+		<cooldownTicksRange>20000</cooldownTicksRange>
+		<cooldownPerCharge>true</cooldownPerCharge>
+		<charges>3</charges>
+		<aiCanUse>true</aiCanUse>
+		<stunTargetWhileCasting>true</stunTargetWhileCasting>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<warmupMote>Mote_CoagulateStencil</warmupMote>
+		<warmupEffecter>Coagulate</warmupEffecter>
+		<warmupStartSound>Coagulate_Cast</warmupStartSound>
+		<jobDef>CastAbilityOnThingMelee</jobDef>
+		<displayOrder>400</displayOrder>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
+			<drawAimPie>false</drawAimPie>
+			<range>-1</range>
+			<warmupTime>1</warmupTime>
+			<targetParams>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetSelf>true</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetMechs>false</canTargetMechs>
+				<canTargetBloodfeeders>true</canTargetBloodfeeders>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="CompProperties_AbilityCoagulate">
+				<tendQualityRange>0.7~1.0</tendQualityRange>
+			</li>
+		</comps>
+	</AbilityDef>
+	
+	<!-- Advanced Bionic Acid Jaw -->
+	
+	<HediffDef ParentName="FSFAddedBodyPartAdvBionic">
+		<defName>FSFAdvBionicAcidJaw</defName>
+		<label>advanced bionic acid jaw</label>
+		<labelNoun>a advanced bionic acid jaw</labelNoun>
+		<description>An installed advanced bionic acid jaw.  A highly advanced artificial jaw made using cutting edge ultratech techniques.  It has a crushing strength capable of shattering bones and crushing hardwood branches.  The synthetic flesh looks and feels just like natural flesh, but it’s as hard as plasteel.  Through the use of a lattice-dust healing system its capable of repairing itself over time.\n\nThe jaw has a reinforced design for enhanced durability and housed within it is small self-replenishing pouch of acid.  This pouch allows the user to discharge acid to enhance their bite.  By expending a large amount of the acid stored within the user can even spray acid in front of them.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAdvBionicAcidJaw</ThingDef>
+			<AbilityDef>FSFAdvBionicAcidJaw</AbilityDef>
+			<RecipeDef>InstallFSFAdvBionicAcidJaw</RecipeDef>
+		</descriptionHyperlinks>
+		<abilities>
+			<li>FSFAdvBionicAcidJaw</li>
+		</abilities>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>teeth</label>
+						<capacities>
+							<li>Bite</li>
+						</capacities>
+						<power>16</power>
+						<armorPenetration>0.75</armorPenetration>
+						<cooldownTime>2</cooldownTime>
+						<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+						<linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+						<extraMeleeDamages>
+							<li>
+								<def>AcidBurn</def>
+								<amount>16</amount>
+								<armorPenetration>1.0</armorPenetration>
+							</li>
+						</extraMeleeDamages>
+					</li>
+				</tools>
+			</li>
+        	<li MayRequire="V1024.EBFramework" Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust">
+            	<scaleAdjustment>0.75</scaleAdjustment>
+        	</li>
+		</comps>
+		<spawnThingOnRemoved>FSFAdvBionicAcidJaw</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.50</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+	
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFAdvBionicAcidJaw</defName>
+		<label>advanced bionic acid jaw</label>
+		<description>A highly advanced artificial jaw made using cutting edge ultratech techniques.  It has a crushing strength capable of shattering bones and crushing hardwood branches.  The synthetic flesh looks and feels just like natural flesh, but it’s as hard as plasteel.  Through the use of a lattice-dust healing system its capable of repairing itself over time.\n\nThe jaw has a reinforced design for enhanced durability and housed within it is small self-replenishing pouch of acid.  This pouch allows the user to discharge acid to enhance their bite.  By expending a large amount of the acid stored within the user can even spray acid in front of them.</description>
+		<descriptionHyperlinks>
+			<HediffDef>FSFAdvBionicAcidJaw</HediffDef>
+			<AbilityDef>FSFAdvBionicAcidJaw</AbilityDef>
+			<RecipeDef>InstallFSFAdvBionicAcidJaw</RecipeDef>
+		</descriptionHyperlinks>
+		<thingSetMakerTags>
+			<li>RewardStandardLowFreq</li>
+		</thingSetMakerTags>
+		<costList>
+			<Plasteel>10</Plasteel>
+			<ComponentSpacer>9</ComponentSpacer>
+		</costList>
+		<butcherProducts>
+			<Plasteel>10</Plasteel>
+			<ComponentSpacer>9</ComponentSpacer>
+		</butcherProducts>
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>FSFAdvancedSpecializedLimbs</li>
+			</researchPrerequisites>
+		</recipeMaker>
+		<statBases>
+			<Mass>2.25</Mass>
+		</statBases>
+	</ThingDef>
+	
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallFSFAdvBionicAcidJaw</defName>
+		<label>install advanced bionic acid jaw</label>
+		<description>Install an advanced bionic acid jaw.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAdvBionicAcidJaw</ThingDef>
+			<HediffDef>FSFAdvBionicAcidJaw</HediffDef>
+			<AbilityDef>FSFAdvBionicAcidJaw</AbilityDef>
+		</descriptionHyperlinks>
+		<jobString>Installing advanced bionic acid jaw.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFAdvBionicAcidJaw</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFAdvBionicAcidJaw</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Jaw</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFAdvBionicAcidJaw</addsHediff>
+		<uiIconThing>FSFAdvBionicAcidJaw</uiIconThing>
+	</RecipeDef>
+	
+	<AbilityDef>
+		<defName>FSFAdvBionicAcidJaw</defName>
+		<label>acid spray</label>
+		<description>Spray a sticky acid substance from the mouth all over the target area. The acid will stick to targets and burn them over time.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAdvBionicAcidJaw</ThingDef>
+			<HediffDef>FSFAdvBionicAcidJaw</HediffDef>
+			<AbilityDef>FSFAdvBionicAcidJaw</AbilityDef>
+			<RecipeDef>InstallFSFAdvBionicAcidJaw</RecipeDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/Abilities/AcidSpray</iconPath>
+		<cooldownTicksRange>60000</cooldownTicksRange>
+		<cooldownPerCharge>true</cooldownPerCharge>
+		<charges>3</charges>
+		<aiCanUse>true</aiCanUse>
+		<displayOrder>300</displayOrder>
+		<warmupStartSound>AcidSpray_Warmup</warmupStartSound>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<range>8.9</range>
+			<warmupTime>0.5</warmupTime>
+			<soundCast>AcidSpray_Resolve</soundCast>
+			<targetParams>
+				<canTargetLocations>true</canTargetLocations>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="CompProperties_AbilitySprayLiquid">
+				<projectileDef>Proj_Acid</projectileDef>
+				<numCellsToHit>9</numCellsToHit>
+				<sprayEffecter>AcidSpray_Directional</sprayEffecter>
+			</li>
+		</comps>
+	</AbilityDef>
+	
+	<!-- Advanced Bionic Flame Jaw -->
+	
+	<HediffDef ParentName="FSFAddedBodyPartAdvBionic">
+		<defName>FSFAdvBionicFlameJaw</defName>
+		<label>advanced bionic flame jaw</label>
+		<labelNoun>a advanced bionic flame jaw</labelNoun>
+		<description>An installed advanced bionic flame jaw.  A highly advanced artificial jaw made using cutting edge ultratech techniques.  It has a crushing strength capable of shattering bones and crushing hardwood branches.  The synthetic flesh looks and feels just like natural flesh, but it’s as hard as plasteel.  Through the use of a lattice-dust healing system its capable of repairing itself over time.\n\nThe jaw has a reinforced design for enhanced durability and housed within it is small self-replenishing pouch of chemfuel.  This pouch allows the user to discharge flames to enhance their bite.  By expending a large amount of the chemfuel stored within the user can even spew a long jet of flames in front of them.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAdvBionicFlameJaw</ThingDef>
+			<HediffDef>FSFAdvBionicFlameJaw</HediffDef>
+			<AbilityDef>FSFAdvBionicFlameJaw</AbilityDef>
+		</descriptionHyperlinks>
+		<abilities>
+			<li>FSFAdvBionicFlameJaw</li>
+		</abilities>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>teeth</label>
+						<capacities>
+							<li>Bite</li>
+						</capacities>
+						<power>16</power>
+						<armorPenetration>0.75</armorPenetration>
+						<cooldownTime>2</cooldownTime>
+						<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+						<linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+						<extraMeleeDamages>
+							<li>
+								<def>Flame</def>
+								<amount>16</amount>
+								<armorPenetration>1.0</armorPenetration>
+							</li>
+						</extraMeleeDamages>
+					</li>
+				</tools>
+			</li>
+        	<li MayRequire="V1024.EBFramework" Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust">
+            	<scaleAdjustment>0.75</scaleAdjustment>
+        	</li>
+		</comps>
+		<spawnThingOnRemoved>FSFAdvBionicFlameJaw</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.50</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+	
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFAdvBionicFlameJaw</defName>
+		<label>advanced bionic flame jaw</label>
+		<description>A highly advanced artificial jaw made using cutting edge ultratech techniques.  It has a crushing strength capable of shattering bones and crushing hardwood branches.  The synthetic flesh looks and feels just like natural flesh, but it’s as hard as plasteel.  Through the use of a lattice-dust healing system its capable of repairing itself over time.\n\nThe jaw has a reinforced design for enhanced durability and housed within it is small self-replenishing pouch of chemfuel.  This pouch allows the user to discharge flames to enhance their bite.  By expending a large amount of the chemfuel stored within the user can even spew a long jet of flames in front of them.</description>
+		<descriptionHyperlinks>
+			<HediffDef>FSFAdvBionicFlameJaw</HediffDef>
+			<AbilityDef>FSFAdvBionicFlameJaw</AbilityDef>
+			<RecipeDef>InstallFSFAdvBionicFlameJaw</RecipeDef>
+		</descriptionHyperlinks>
+		<thingSetMakerTags>
+			<li>RewardStandardLowFreq</li>
+		</thingSetMakerTags>
+		<costList>
+			<Plasteel>10</Plasteel>
+			<ComponentSpacer>9</ComponentSpacer>
+		</costList>
+		<butcherProducts>
+			<Plasteel>10</Plasteel>
+			<ComponentSpacer>9</ComponentSpacer>
+		</butcherProducts>
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>FSFAdvancedSpecializedLimbs</li>
+			</researchPrerequisites>
+		</recipeMaker>
+		<statBases>
+			<Mass>2.25</Mass>
+		</statBases>
+	</ThingDef>
+	
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallFSFAdvBionicFlameJaw</defName>
+		<label>install advanced bionic flame jaw</label>
+		<description>Install an advanced bionic flame jaw.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAdvBionicFlameJaw</ThingDef>
+			<HediffDef>FSFAdvBionicFlameJaw</HediffDef>
+			<AbilityDef>FSFAdvBionicFlameJaw</AbilityDef>
+		</descriptionHyperlinks>
+		<jobString>Installing advanced bionic flame jaw.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFAdvBionicFlameJaw</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFAdvBionicFlameJaw</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Jaw</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFAdvBionicFlameJaw</addsHediff>
+		<uiIconThing>FSFAdvBionicFlameJaw</uiIconThing>
+	</RecipeDef>
+	
+	<AbilityDef>
+		<defName>FSFAdvBionicFlameJaw</defName>
+		<label>fire spew</label>
+		<description>Spit a stream of sticky, flammable bile from the mouth. The bile can ignite anything or anyone it hits, and also form flaming pools on the ground.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAdvBionicFlameJaw</ThingDef>
+			<HediffDef>FSFAdvBionicFlameJaw</HediffDef>
+			<AbilityDef>FSFAdvBionicFlameJaw</AbilityDef>
+			<RecipeDef>InstallFSFAdvBionicFlameJaw</RecipeDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/Abilities/FireSpew</iconPath>
+		<cooldownTicksRange>60000</cooldownTicksRange>
+		<cooldownPerCharge>true</cooldownPerCharge>
+		<charges>3</charges>
+		<aiCanUse>true</aiCanUse>
+		<warmupStartSound>FireSpew_Warmup</warmupStartSound>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<range>7.9</range>
+			<warmupTime>1</warmupTime>
+			<soundCast>FireSpew_Resolve</soundCast>
+			<targetParams>
+				<canTargetLocations>true</canTargetLocations>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="CompProperties_AbilityFireSpew">
+				<range>7.9</range>
+				<lineWidthEnd>3</lineWidthEnd>
+				<filthDef>Filth_FlammableBile</filthDef>
+				<effecterDef>Fire_Spew</effecterDef>
+				<canHitFilledCells>true</canHitFilledCells>
+			</li>
+		</comps>
+	</AbilityDef>
+
+</Defs>

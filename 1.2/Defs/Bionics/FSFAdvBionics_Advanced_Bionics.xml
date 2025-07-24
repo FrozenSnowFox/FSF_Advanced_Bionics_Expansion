@@ -1,0 +1,787 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	
+	<!-- Advanced Bionic Base -->	
+	
+	<ThingDef Name="FSFBodyPartAdvBionicBase" ParentName="BodyPartBionicImperialBase" Abstract="True">
+		<techLevel>Ultra</techLevel>
+		<graphicData>
+			<texPath>Things/Item/Health/HealthItem</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.80</drawSize>
+			<color>(144,98,179)</color>
+		</graphicData>
+		<recipeMaker>
+			<researchPrerequisite>FSFAdvancedBionics</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+	
+	<!-- Advanced Bionic Cost Calculation
+
+ 		Plasteeel $9.00
+		Advanced Components $200.00
+		Hyperweave $9.00
+		AI Persona Core $4000.00
+
+		Advanced Bionics Tier $1000.00
+		Archotech Tier (Advanced Bionics Price +$1000.00 x 2)
+
+	-->
+	
+	<!-- Advanced Bionic Ear -->
+	
+	<HediffDef ParentName="FSFAddedBodyPartAdvBionic">
+		<defName>FSFAdvBionicEar</defName>
+		<label>advanced bionic ear</label>
+		<labelNoun>a advanced bionic ear</labelNoun>
+		<description>An installed advanced bionic ear.</description>
+		<descriptionHyperlinks><ThingDef>FSFAdvBionicEar</ThingDef></descriptionHyperlinks>
+		<spawnThingOnRemoved>FSFAdvBionicEar</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.50</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+	
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFAdvBionicEar</defName>
+		<label>advanced bionic ear</label>
+		<description>An advanced artificial ear. It looks and feels like natural flesh, but it's harder to damage than plasteel. Even if it is harmed, it repairs itself over time.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFAdvBionicEar</RecipeDef></descriptionHyperlinks>
+		<thingSetMakerTags>
+			<li>RewardStandardLowFreq</li>
+		</thingSetMakerTags>
+		<costList>
+			<Plasteel>10</Plasteel>
+			<ComponentSpacer>6</ComponentSpacer>
+		</costList>
+		<statBases>
+			<Mass>0.1</Mass>
+		</statBases>
+	</ThingDef>
+	
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallFSFAdvBionicEar</defName>
+		<label>install advanced bionic ear</label>
+		<description>Install an advanced bionic ear.</description>
+    	<descriptionHyperlinks><ThingDef>FSFAdvBionicEar</ThingDef></descriptionHyperlinks>
+		<jobString>Installing advanced bionic ear.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFAdvBionicEar</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFAdvBionicEar</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Ear</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFAdvBionicEar</addsHediff>
+	</RecipeDef>
+	
+	<!-- Advanced Bionic Eye -->
+	
+	<HediffDef ParentName="FSFAddedBodyPartAdvBionic">
+		<defName>FSFAdvBionicEye</defName>
+		<label>advanced bionic eye</label>
+		<labelNoun>an advanced bionic eye</labelNoun>
+		<description>An installed advanced bionic eye.</description>
+		<descriptionHyperlinks><ThingDef>FSFAdvBionicEye</ThingDef></descriptionHyperlinks>
+		<spawnThingOnRemoved>FSFAdvBionicEye</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.50</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+	
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFAdvBionicEye</defName>
+		<label>advanced bionic eye</label>
+		<description>An advanced artifical eye. It perceives every type of electromagnetic radiation, including radio waves, infrared, light, x-rays, and gamma rays. Its visual acuity is precise enough to read handwriting from twenty meters away. It can emit various wavelengths of radiation like a flashlight, and has an internal subpersona AI which helps highlight useful visual information. Externally, it looks like a natural human eye, except it can change color at will.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFAdvBionicEye</RecipeDef></descriptionHyperlinks>
+		<thingSetMakerTags>
+			<li>RewardStandardMidFreq</li>
+		</thingSetMakerTags>
+		<costList>
+			<Plasteel>10</Plasteel>
+			<ComponentSpacer>8</ComponentSpacer>
+		</costList>
+		<statBases>
+			<Mass>0.3</Mass>
+		</statBases>
+	</ThingDef>	
+	
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallFSFAdvBionicEye</defName>
+		<label>install advanced bionic eye</label>
+		<description>Install an advanced bionic eye.</description>
+    	<descriptionHyperlinks><ThingDef>FSFAdvBionicEye</ThingDef></descriptionHyperlinks>
+		<jobString>Installing advanced bionic eye.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFAdvBionicEye</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFAdvBionicEye</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Eye</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFAdvBionicEye</addsHediff>
+	</RecipeDef>
+	
+	<!-- Advanced Bionic Jaw -->
+	
+	<HediffDef ParentName="FSFAddedBodyPartAdvBionic">
+		<defName>FSFAdvBionicJaw</defName>
+		<label>advanced bionic jaw</label>
+		<labelNoun>a advanced bionic jaw</labelNoun>
+		<description>An installed advanced bionic jaw.</description>
+		<descriptionHyperlinks><ThingDef>FSFAdvBionicJaw</ThingDef></descriptionHyperlinks>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>teeth</label>
+						<capacities>
+							<li>Bite</li>
+						</capacities>
+						<power>10.2</power>
+						<cooldownTime>2</cooldownTime>
+						<linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+						<chanceFactor>0.07</chanceFactor>
+					</li>
+				</tools>
+			</li>
+		</comps>
+		<spawnThingOnRemoved>FSFAdvBionicJaw</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.50</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+	
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFAdvBionicJaw</defName>
+		<label>advanced bionic jaw</label>
+		<description>An advanced artificial jaw. It looks and feels like natural flesh, but it's harder to damage than plasteel. Even if it is harmed, it repairs itself over time.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFAdvBionicJaw</RecipeDef></descriptionHyperlinks>
+		<thingSetMakerTags>
+			<li>RewardStandardLowFreq</li>
+		</thingSetMakerTags>
+		<costList>
+			<Plasteel>10</Plasteel>
+			<ComponentSpacer>6</ComponentSpacer>
+		</costList>
+		<statBases>
+			<Mass>1.5</Mass>
+		</statBases>
+	</ThingDef>
+	
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallFSFAdvBionicJaw</defName>
+		<label>install advanced bionic jaw</label>
+		<description>Install an advanced bionic jaw.</description>
+    	<descriptionHyperlinks><ThingDef>FSFAdvBionicJaw</ThingDef></descriptionHyperlinks>
+		<jobString>Installing advanced bionic jaw.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFAdvBionicJaw</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFAdvBionicJaw</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Jaw</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFAdvBionicJaw</addsHediff>
+	</RecipeDef>
+	
+	<!-- Advanced Bionic Arm -->
+	
+	<HediffDef ParentName="FSFAddedBodyPartAdvBionic">
+		<defName>FSFAdvBionicArm</defName>
+		<label>advanced bionic arm</label>
+		<labelNoun>an advanced bionic arm</labelNoun>
+		<description>An installed advanced bionic arm.</description>
+		<descriptionHyperlinks><ThingDef>FSFAdvBionicArm</ThingDef></descriptionHyperlinks>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>fist</label>
+						<capacities>
+							<li>Blunt</li>
+						</capacities>
+						<power>14</power>
+						<cooldownTime>2</cooldownTime>
+						<soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
+						<soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
+					</li>
+				</tools>
+			</li>
+		</comps>
+		<spawnThingOnRemoved>FSFAdvBionicArm</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.50</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+	
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFAdvBionicArm</defName>
+		<label>advanced bionic arm</label>
+		<description>An advanced artifical arm. It's strong enough to crush a thick hardwood branch in its hand, and precise enough to write a sonnet on a grain of rice. It looks and feels like natural flesh, but it's harder to damage than plasteel. Even if it is harmed, it repairs itself over time.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFAdvBionicArm</RecipeDef></descriptionHyperlinks>
+		<thingSetMakerTags>
+			<li>RewardStandardMidFreq</li>
+		</thingSetMakerTags>
+		<costList>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>8</ComponentSpacer>
+		</costList>
+		<statBases>
+			<Mass>4</Mass>
+		</statBases>
+	</ThingDef>
+	
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallFSFAdvBionicArm</defName>
+		<label>install advanced bionic arm</label>
+		<description>Install an advanced bionic arm.</description>
+    	<descriptionHyperlinks><ThingDef>FSFAdvBionicArm</ThingDef></descriptionHyperlinks>
+    	<jobString>Installing advanced bionic arm.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFAdvBionicArm</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFAdvBionicArm</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Shoulder</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFAdvBionicArm</addsHediff>
+	</RecipeDef>
+	
+	<!-- Advanced Bionic Spine -->
+	
+	<HediffDef ParentName="FSFAddedBodyPartAdvBionic">
+		<defName>FSFAdvBionicSpine</defName>
+		<label>advanced bionic spine</label>
+		<labelNoun>a advanced bionic spine</labelNoun>
+		<description>An installed advanced bionic spine.</description>
+		<descriptionHyperlinks><ThingDef>FSFAdvBionicSpine</ThingDef></descriptionHyperlinks>
+		<spawnThingOnRemoved>FSFAdvBionicSpine</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.50</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+	
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFAdvBionicSpine</defName>
+		<label>advanced bionic spine</label>
+		<description>An advanced artificial spine. It looks and feels like natural flesh, but it's harder to damage than plasteel. Even if it is harmed, it repairs itself over time.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFAdvBionicSpine</RecipeDef></descriptionHyperlinks>
+		<thingSetMakerTags>
+			<li>RewardStandardMidFreq</li>
+		</thingSetMakerTags>
+		<costList>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>8</ComponentSpacer>
+		</costList>
+		<statBases>
+			<Mass>2</Mass>
+		</statBases>
+	</ThingDef>
+	
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallFSFAdvBionicSpine</defName>
+		<label>install advanced bionic spine</label>
+		<description>Install an advanced bionic spine.</description>
+    	<descriptionHyperlinks><ThingDef>FSFAdvBionicSpine</ThingDef></descriptionHyperlinks>
+		<jobString>Installing advanced bionic spine.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFAdvBionicSpine</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFAdvBionicSpine</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Spine</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFAdvBionicSpine</addsHediff>
+	</RecipeDef>
+	
+	<!-- Advanced Bionic Heart -->
+	
+	<HediffDef ParentName="FSFAddedBodyPartAdvBionic">
+		<defName>FSFAdvBionicHeart</defName>
+		<label>advanced bionic heart</label>
+		<labelNoun>a advanced bionic heart</labelNoun>
+		<description>An installed advanced bionic heart.</description>
+		<descriptionHyperlinks><ThingDef>FSFAdvBionicHeart</ThingDef></descriptionHyperlinks>
+		<spawnThingOnRemoved>FSFAdvBionicHeart</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.50</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+	
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFAdvBionicHeart</defName>
+		<label>advanced bionic heart</label>
+		<description>An advanced artificial heart. It looks and feels like natural flesh, but it's harder to damage than plasteel. Even if it is harmed, it repairs itself over time.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFAdvBionicHeart</RecipeDef></descriptionHyperlinks>
+		<thingSetMakerTags>
+			<li>RewardStandardLowFreq</li>
+		</thingSetMakerTags>
+		<costList>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>6</ComponentSpacer>
+		</costList>
+		<statBases>
+			<Mass>2</Mass>
+		</statBases>
+	</ThingDef>
+	
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallFSFAdvBionicHeart</defName>
+		<label>install advanced bionic heart</label>
+		<description>Install an advanced bionic heart.</description>
+    	<descriptionHyperlinks><ThingDef>FSFAdvBionicHeart</ThingDef></descriptionHyperlinks>
+		<jobString>Installing advanced bionic heart.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFAdvBionicHeart</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFAdvBionicHeart</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Heart</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFAdvBionicHeart</addsHediff>
+	</RecipeDef>
+	
+	<!-- Advanced Bionic Lung -->
+	
+	<HediffDef ParentName="FSFAddedBodyPartAdvBionic">
+		<defName>FSFAdvBionicLung</defName>
+		<label>advanced bionic lung</label>
+		<labelNoun>a advanced bionic lung</labelNoun>
+		<description>An installed advanced bionic lung.</description>
+		<descriptionHyperlinks><ThingDef>FSFAdvBionicLung</ThingDef></descriptionHyperlinks>
+		<spawnThingOnRemoved>FSFAdvBionicLung</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.50</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+	
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFAdvBionicLung</defName>
+		<label>advanced bionic lung</label>
+		<description>An advanced artificial lung. It looks and feels like natural flesh, but it's harder to damage than plasteel. Even if it is harmed, it repairs itself over time.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFAdvBionicLung</RecipeDef></descriptionHyperlinks>
+		<thingSetMakerTags>
+			<li>RewardStandardLowFreq</li>
+		</thingSetMakerTags>
+		<costList>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>6</ComponentSpacer>
+		</costList>
+		<statBases>
+			<Mass>2</Mass>
+		</statBases>
+	</ThingDef>
+	
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallFSFAdvBionicLung</defName>
+		<label>install advanced bionic lung</label>
+		<description>Install an advanced bionic lung.</description>
+    	<descriptionHyperlinks><ThingDef>FSFAdvBionicLung</ThingDef></descriptionHyperlinks>
+		<jobString>Installing advanced bionic lung.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFAdvBionicLung</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFAdvBionicLung</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Lung</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFAdvBionicLung</addsHediff>
+	</RecipeDef>
+	
+	<!-- Advanced Bionic Kidney -->
+	
+	<HediffDef ParentName="FSFAddedBodyPartAdvBionic">
+		<defName>FSFAdvBionicKidney</defName>
+		<label>advanced bionic kidney</label>
+		<labelNoun>a advanced bionic kidney</labelNoun>
+		<description>An installed advanced bionic kidney.</description>
+		<descriptionHyperlinks><ThingDef>FSFAdvBionicKidney</ThingDef></descriptionHyperlinks>
+		<spawnThingOnRemoved>FSFAdvBionicKidney</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.50</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+	
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFAdvBionicKidney</defName>
+		<label>advanced bionic kidney</label>
+		<description>An advanced artificial kidney. It looks and feels like natural flesh, but it's harder to damage than plasteel. Even if it is harmed, it repairs itself over time.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFAdvBionicKidney</RecipeDef></descriptionHyperlinks>
+		<thingSetMakerTags>
+			<li>RewardStandardLowFreq</li>
+		</thingSetMakerTags>
+		<costList>
+			<Plasteel>10</Plasteel>
+			<ComponentSpacer>6</ComponentSpacer>
+		</costList>
+		<statBases>
+			<Mass>2</Mass>
+		</statBases>
+	</ThingDef>
+	
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallFSFAdvBionicKidney</defName>
+		<label>install advanced bionic kidney</label>
+		<description>Install an advanced bionic kidney.</description>
+    	<descriptionHyperlinks><ThingDef>FSFAdvBionicKidney</ThingDef></descriptionHyperlinks>
+		<jobString>Installing advanced bionic kidney.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFAdvBionicKidney</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFAdvBionicKidney</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Kidney</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFAdvBionicKidney</addsHediff>
+	</RecipeDef>
+	
+	<!-- Advanced Bionic Liver -->
+	
+	<HediffDef ParentName="FSFAddedBodyPartAdvBionic">
+		<defName>FSFAdvBionicLiver</defName>
+		<label>advanced bionic liver</label>
+		<labelNoun>a advanced bionic liver</labelNoun>
+		<description>An installed advanced bionic liver.</description>
+		<descriptionHyperlinks><ThingDef>FSFAdvBionicLiver</ThingDef></descriptionHyperlinks>
+		<spawnThingOnRemoved>FSFAdvBionicLiver</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.50</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+	
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFAdvBionicLiver</defName>
+		<label>advanced bionic liver</label>
+		<description>An advanced artificial liver. It looks and feels like natural flesh, but it's harder to damage than plasteel. Even if it is harmed, it repairs itself over time.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFAdvBionicLiver</RecipeDef></descriptionHyperlinks>
+		<thingSetMakerTags>
+			<li>RewardStandardLowFreq</li>
+		</thingSetMakerTags>
+		<costList>
+			<Plasteel>10</Plasteel>
+			<ComponentSpacer>6</ComponentSpacer>
+		</costList>
+		<statBases>
+			<Mass>2</Mass>
+		</statBases>
+	</ThingDef>
+	
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallFSFAdvBionicLiver</defName>
+		<label>install advanced bionic liver</label>
+		<description>Install an advanced bionic liver.</description>
+    	<descriptionHyperlinks><ThingDef>FSFAdvBionicLiver</ThingDef></descriptionHyperlinks>
+		<jobString>Installing advanced bionic liver.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFAdvBionicLiver</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFAdvBionicLiver</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Liver</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFAdvBionicLiver</addsHediff>
+	</RecipeDef>
+	
+	<!-- Advanced Bionic Stomach -->
+	
+	<HediffDef ParentName="FSFAddedBodyPartAdvBionic">
+		<defName>FSFAdvBionicStomach</defName>
+		<label>advanced bionic stomach</label>
+		<labelNoun>a advanced bionic stomach</labelNoun>
+		<description>An installed advanced bionic stomach.</description>
+		<descriptionHyperlinks><ThingDef>FSFAdvBionicStomach</ThingDef></descriptionHyperlinks>
+		<spawnThingOnRemoved>FSFAdvBionicStomach</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.50</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+	
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFAdvBionicStomach</defName>
+		<label>advanced bionic stomach</label>
+		<description>An advanced artificial stomach. It looks and feels like natural flesh, but it's harder to damage than plasteel. Even if it is harmed, it repairs itself over time.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFAdvBionicStomach</RecipeDef></descriptionHyperlinks>
+		<thingSetMakerTags>
+			<li>RewardStandardLowFreq</li>
+		</thingSetMakerTags>
+		<costList>
+			<Plasteel>10</Plasteel>
+			<ComponentSpacer>6</ComponentSpacer>
+		</costList>
+		<statBases>
+			<Mass>2</Mass>
+		</statBases>
+	</ThingDef>
+	
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallFSFAdvBionicStomach</defName>
+		<label>install advanced bionic stomach</label>
+		<description>Install an advanced bionic stomach.</description>
+    	<descriptionHyperlinks><ThingDef>FSFAdvBionicStomach</ThingDef></descriptionHyperlinks>
+		<jobString>Installing advanced bionic stomach.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFAdvBionicStomach</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFAdvBionicStomach</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Stomach</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFAdvBionicStomach</addsHediff>
+	</RecipeDef>
+	
+	<!-- Advanced Bionic Leg -->
+	
+	<HediffDef ParentName="FSFAddedBodyPartAdvBionic">
+		<defName>FSFAdvBionicLeg</defName>
+		<label>advanced bionic leg</label>
+		<labelNoun>an advanced bionic leg</labelNoun>
+		<description>An installed advanced bionic leg.</description>
+		<descriptionHyperlinks><ThingDef>FSFAdvBionicLeg</ThingDef></descriptionHyperlinks>
+		<spawnThingOnRemoved>FSFAdvBionicLeg</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.50</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+	
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFAdvBionicLeg</defName>
+		<label>advanced bionic leg</label>
+		<description>An artifical leg. It looks and feels like natural flesh, but a pair of these can move the user as fast as a decent car, and it's harder to damage than plasteel. Even if it is harmed, it repairs itself over time.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFAdvBionicLeg</RecipeDef></descriptionHyperlinks>
+		<thingSetMakerTags>
+			<li>RewardStandardMidFreq</li>
+		</thingSetMakerTags>
+		<costList>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>8</ComponentSpacer>
+		</costList>
+		<statBases>
+			<Mass>7</Mass>
+		</statBases>
+	</ThingDef>
+	
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallFSFAdvBionicLeg</defName>
+		<label>install advanced bionic leg</label>
+		<description>Install an advanced bionic leg.</description>
+    	<descriptionHyperlinks><ThingDef>FSFAdvBionicLeg</ThingDef></descriptionHyperlinks>
+		<jobString>Installing advanced bionic leg.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFAdvBionicLeg</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFAdvBionicLeg</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Leg</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFAdvBionicLeg</addsHediff>
+	</RecipeDef>
+	
+	<!-- Positronic Brain -->
+	
+	<HediffDef ParentName="FSFAddedBodyPartAdvBionic">
+		<defName>FSFAdvBionicBrain</defName>
+		<label>positronic brain</label>
+		<labelNoun>a positronic brain</labelNoun>
+		<description>An installed positronic brain.</description>
+		<descriptionHyperlinks><ThingDef>FSFAdvBionicBrain</ThingDef></descriptionHyperlinks>
+		<spawnThingOnRemoved>FSFAdvBionicBrain</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.0</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+	
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFAdvBionicBrain</defName>
+		<label>positronic brain</label>
+		<description>An extremely sophisticated computation device designed to house a human or artificial intelligence.  It’s primarily used to transfer a person’s consciousness to fight against the slow endless march of time and its effects on organic body parts.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFAdvBionicBrain</RecipeDef></descriptionHyperlinks>
+		<thingSetMakerTags>
+			<li>RewardStandardLowFreq</li>
+		</thingSetMakerTags>
+		<costList>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>20</ComponentSpacer>
+		</costList>
+		<statBases>
+			<Mass>2</Mass>
+		</statBases>
+		<recipeMaker>
+			<researchPrerequisite>BrainWiring</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+	
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallFSFAdvBionicBrain</defName>
+		<label>install positronic brain</label>
+		<description>Install an positronic brain.</description>
+    	<descriptionHyperlinks><ThingDef>FSFAdvBionicBrain</ThingDef></descriptionHyperlinks>
+		<jobString>Installing positronic brain.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFAdvBionicBrain</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFAdvBionicBrain</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Brain</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFAdvBionicBrain</addsHediff>
+	</RecipeDef>
+
+</Defs>

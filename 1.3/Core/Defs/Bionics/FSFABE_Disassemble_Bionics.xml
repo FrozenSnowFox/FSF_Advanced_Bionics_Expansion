@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	
+	<!-- Disassemble Bionic Efficiency -->
+	
+  <StatDef ParentName="ButcheryEfficiencyBase">
+    <defName>FSFDisassembleBionicEfficiency</defName>
+    <label>disassemble bionic efficiency</label>
+    <description>The amount of materials yielded when this person disassembles a bionic for resources.</description>
+    <maxValue>0.75</maxValue>
+    <skillNeedFactors>
+      <li Class="SkillNeed_BaseBonus">
+        <skill>Crafting</skill>
+        <baseValue>0.50</baseValue>
+        <bonusPerLevel>0.025</bonusPerLevel>
+      </li>
+    </skillNeedFactors>
+  </StatDef>
+	
+	<!-- Disassemble Bionic Recipe -->
+
+	<RecipeDef>
+		<defName>FSFDisassembleBionic</defName>
+		<label>disassemble bionic</label>
+		<description>Use a variety of tools to carefully disassemble bionics into their base components.</description>
+		<jobString>Disassembling bionic.</jobString>
+		<workAmount>2500</workAmount>
+		<workSkill>Crafting</workSkill>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<efficiencyStat>FSFDisassembleBionicEfficiency</efficiencyStat>
+		<effectWorking>Smith</effectWorking>
+		<soundWorking>Recipe_Smith</soundWorking>
+		<researchPrerequisites>
+			<li>Prosthetics</li>
+		</researchPrerequisites>
+		<recipeUsers>
+			<li>TableMachining</li>
+			<li>FabricationBench</li>
+			<li MayRequire="syrchalis.prosthetictable">TableSyrProsthetics</li>
+		</recipeUsers>
+		<specialProducts>
+			<li>Butchery</li>
+		</specialProducts>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>BodyPartsProsthetic</li>
+						<li>BodyPartsBionic</li>
+						<li>BodyPartsUltra</li>
+					</categories>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<categories>
+				<li>BodyPartsProsthetic</li>
+				<li>BodyPartsBionic</li>
+				<li>BodyPartsUltra</li>
+			</categories>
+			<disallowedThingDefs>
+				<li MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">FSFImplantTorsoResurrect</li>
+			</disallowedThingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+
+</Defs>

@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	
+  <!-- Psychic Attuner -->
+	
+	<AbilityDef>
+		<defName>FSFPsychicAttunerControls</defName>
+		<label>psychic attuner control interface</label>
+		<description>Enables the control interface for the psychic attuner allowing a new mode to be selected.</description>
+		<iconPath>UI/Abilities/FSFPsychicAttunerControls</iconPath>
+		<aiCanUse>false</aiCanUse>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<showWhenDrafted>false</showWhenDrafted>
+		<hostile>false</hostile>
+		<jobDef>CastAbilityOnThing</jobDef>
+		<targetRequired>False</targetRequired>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
+			<drawAimPie>False</drawAimPie>
+		</verbProperties>
+	    <comps>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>FSFPsychicAttunerControls</hediffDef>
+        		<onlyApplyToSelf>True</onlyApplyToSelf>
+				<onlyBrain>True</onlyBrain>
+			</li>
+		</comps>
+	</AbilityDef>
+	
+	<HediffDef ParentName="FSFImplantHediffArchotechBase">
+		<defName>FSFPsychicAttunerControls</defName>
+		<label>psychic attuner (control interface)</label>
+		<description>The control interface of the psychic attuner has been activated and will remain active until a new mode is selected.</description>
+		<descriptionHyperlinks><ThingDef>PsychicSensitizer</ThingDef></descriptionHyperlinks>
+		<hediffClass>HediffWithComps</hediffClass>
+		<isBad>false</isBad>
+		<initialSeverity>1</initialSeverity>
+		<comps>
+			<li Class="HediffCompProperties_GiveAbility">
+				<abilityDefs>
+					<li>FSFPsychicAttunerSensitizer</li>
+					<li>FSFPsychicAttunerDampener</li>
+					<li>FSFPsychicAttunerHeatSink</li>				
+				</abilityDefs>
+			</li>
+		</comps>
+		<tags><li>FSFPsychicAttuner</li></tags>
+	</HediffDef>
+	
+	<HediffDef ParentName="FSFImplantHediffArchotechBase">
+		<defName>PsychicSensitizer</defName>
+		<label>psychic attuner (psychic sensitizer)</label>
+		<labelNoun>a psychic attuner</labelNoun>
+		<description>An installed psychic attuner implant currently set to the psychic sensitizer mode which provides the user with extra psychic sensitivity.</description>
+		<descriptionHyperlinks><ThingDef>PsychicSensitizer</ThingDef></descriptionHyperlinks>
+		<spawnThingOnRemoved>PsychicSensitizer</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<statOffsets>
+					<PsychicSensitivity>0.25</PsychicSensitivity>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_RemoveIfOtherHediff">
+				<otherHediff>FSFPsychicAttunerControls</otherHediff>
+			</li>
+			<li Class="HediffCompProperties_GiveAbility">
+				<abilityDef>FSFPsychicAttunerControls</abilityDef>
+			</li>
+		</comps>
+		<tags><li>FSFPsychicAttuner</li></tags>
+  </HediffDef>
+
+	<ThingDef ParentName="BodyPartRoyalBase">
+		<defName>PsychicSensitizer</defName>
+		<label>psychic attuner</label>
+		<description>This brain implant interfaces with the parts of the brain related to psychic phenomena.  It has several different modes and depending on the mode active it can act as a psychic sensitizer which increases psychic sensitivity, psychic dampener which blocks all psychic sensitivity or psychic heatsink which helps rapidly cool neural heat.</description>
+		<descriptionHyperlinks><RecipeDef>InstallPsychicSensitizer</RecipeDef></descriptionHyperlinks>
+		<statBases>
+			<MarketValue>1000</MarketValue>
+		</statBases>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>InstallPsychicSensitizer</defName>
+		<label>install psychic attuner</label>
+		<description>Install a psychic attuner.</description>
+		<descriptionHyperlinks>
+			<ThingDef>PsychicSensitizer</ThingDef>
+			<HediffDef>PsychicSensitizer</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing psychic attuner.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>PsychicSensitizer</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>PsychicSensitizer</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Brain</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>PsychicSensitizer</addsHediff>
+		<incompatibleWithHediffTags>
+			<li>FSFPsychicAttuner</li>
+		</incompatibleWithHediffTags>
+	</RecipeDef>
+  
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemovePsychicSensitizer</defName>
+		<label>remove psychic attuner</label>
+		<description>Remove psychic attuner.</description>
+		<descriptionHyperlinks>
+			<ThingDef>PsychicSensitizer</ThingDef>
+			<HediffDef>PsychicSensitizer</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Removing psychic attuner.</jobString>
+		<removesHediff>PsychicSensitizer</removesHediff>
+	</RecipeDef>
+	
+	<AbilityDef>
+		<defName>FSFPsychicAttunerSensitizer</defName>
+		<label>psychic sensitizer</label>
+		<description>Sets the psychic attuner to the psychic sensitizer mode which provides the user with extra psychic sensitivity.</description>
+		<iconPath>UI/Abilities/FSFPsychicAttunerSensitizer</iconPath>
+		<aiCanUse>false</aiCanUse>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<showWhenDrafted>false</showWhenDrafted>
+		<hostile>false</hostile>
+		<jobDef>CastAbilityOnThing</jobDef>
+		<targetRequired>False</targetRequired>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
+			<drawAimPie>False</drawAimPie>
+		</verbProperties>
+	    <comps>
+			<li Class="CompProperties_AbilityRemoveHediff">
+				<compClass>CompAbilityEffect_RemoveHediff</compClass>
+				<hediffDef>FSFPsychicAttunerControls</hediffDef>
+				<applyToSelf>true</applyToSelf>
+			</li>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>PsychicSensitizer</hediffDef>
+        		<onlyApplyToSelf>True</onlyApplyToSelf>
+				<onlyBrain>True</onlyBrain>
+			</li>
+		</comps>
+	</AbilityDef>
+	
+	<AbilityDef>
+		<defName>FSFPsychicAttunerDampener</defName>
+		<label>psychic dampener</label>
+		<description>Sets the psychic attuner to the psychic dampener mode which completely blocks all psychic sensitivity for the user.</description>
+		<iconPath>UI/Abilities/FSFPsychicAttunerDampener</iconPath>
+		<aiCanUse>false</aiCanUse>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<showWhenDrafted>false</showWhenDrafted>
+		<hostile>false</hostile>
+		<jobDef>CastAbilityOnThing</jobDef>
+		<targetRequired>False</targetRequired>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
+			<drawAimPie>False</drawAimPie>
+		</verbProperties>
+	    <comps>
+			<li Class="CompProperties_AbilityRemoveHediff">
+				<compClass>CompAbilityEffect_RemoveHediff</compClass>
+				<hediffDef>FSFPsychicAttunerControls</hediffDef>
+				<applyToSelf>true</applyToSelf>
+			</li>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>FSFPsychicAttunerDampener</hediffDef>
+        		<onlyApplyToSelf>True</onlyApplyToSelf>
+				<onlyBrain>True</onlyBrain>
+			</li>
+		</comps>
+	</AbilityDef>
+	
+	<HediffDef ParentName="FSFImplantHediffArchotechBase">
+		<defName>FSFPsychicAttunerDampener</defName>
+		<label>psychic attuner (psychic dampener)</label>
+		<labelNoun>a psychic attuner</labelNoun>
+		<description>An installed psychic attuner implant currently set to the psychic dampener mode which blocks all psychic sensitivity for the user.</description>
+		<descriptionHyperlinks><ThingDef>PsychicSensitizer</ThingDef></descriptionHyperlinks>
+		<spawnThingOnRemoved>PsychicSensitizer</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<statOffsets>
+					<PsychicSensitivity>-100.0</PsychicSensitivity>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_RemoveIfOtherHediff">
+				<otherHediff>FSFPsychicAttunerControls</otherHediff>
+			</li>
+			<li Class="HediffCompProperties_GiveAbility">
+				<abilityDef>FSFPsychicAttunerControls</abilityDef>
+			</li>
+		</comps>
+		<tags><li>FSFPsychicAttuner</li></tags>
+	</HediffDef>
+	
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemoveFSFPsychicAttunerDampener</defName>
+		<label>remove psychic attuner</label>
+		<description>Remove psychic attuner.</description>
+		<descriptionHyperlinks>
+			<ThingDef>PsychicSensitizer</ThingDef>
+			<HediffDef>PsychicSensitizer</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Removing psychic attuner.</jobString>
+		<removesHediff>FSFPsychicAttunerDampener</removesHediff>
+	</RecipeDef>
+	
+	<AbilityDef>
+		<defName>FSFPsychicAttunerHeatSink</defName>
+		<label>psychic heatsink</label>
+		<description>Sets the psychic attuner to the psychic heatsink mode which helps rapidly cool neural heat for the user.</description>
+		<iconPath>UI/Abilities/FSFPsychicHeatSink</iconPath>
+		<aiCanUse>false</aiCanUse>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<showWhenDrafted>false</showWhenDrafted>
+		<hostile>false</hostile>
+		<jobDef>CastAbilityOnThing</jobDef>
+		<targetRequired>False</targetRequired>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
+			<drawAimPie>False</drawAimPie>
+		</verbProperties>
+	    <comps>
+			<li Class="CompProperties_AbilityRemoveHediff">
+				<compClass>CompAbilityEffect_RemoveHediff</compClass>
+				<hediffDef>FSFPsychicAttunerControls</hediffDef>
+				<applyToSelf>true</applyToSelf>
+			</li>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>FSFPsychicAttunerHeatSink</hediffDef>
+        		<onlyApplyToSelf>True</onlyApplyToSelf>
+				<onlyBrain>True</onlyBrain>
+			</li>
+		</comps>
+	</AbilityDef>
+	
+	<HediffDef ParentName="FSFImplantHediffArchotechBase">
+		<defName>FSFPsychicAttunerHeatSink</defName>
+		<label>psychic attuner (heatsink)</label>
+		<labelNoun>a psychic attuner</labelNoun>
+		<description>An installed psychic attuner implant currently set to the psychic heatsink mode which helps rapidly cool neural heat for the user.</description>
+		<descriptionHyperlinks><ThingDef>PsychicSensitizer</ThingDef></descriptionHyperlinks>
+		<spawnThingOnRemoved>PsychicSensitizer</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<statOffsets>
+					<PsychicEntropyRecoveryRate>0.75</PsychicEntropyRecoveryRate>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_RemoveIfOtherHediff">
+				<otherHediff>FSFPsychicAttunerControls</otherHediff>
+			</li>
+			<li Class="HediffCompProperties_GiveAbility">
+				<abilityDef>FSFPsychicAttunerControls</abilityDef>
+			</li>
+		</comps>
+		<tags><li>FSFPsychicAttuner</li></tags>
+	</HediffDef>
+	
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemoveFSFPsychicAttunerHeatSink</defName>
+		<label>remove psychic attuner</label>
+		<description>Remove psychic attuner.</description>
+		<descriptionHyperlinks>
+			<ThingDef>PsychicSensitizer</ThingDef>
+			<HediffDef>PsychicSensitizer</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Removing psychic attuner.</jobString>
+		<removesHediff>FSFPsychicAttunerHeatSink</removesHediff>
+	</RecipeDef>
+
+</Defs>

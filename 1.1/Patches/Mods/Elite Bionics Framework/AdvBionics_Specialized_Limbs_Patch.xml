@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+
+	<!-- Advanced Bionics -->
+	
+	<Operation Class="PatchOperationFindMod">
+		
+    	<mods>
+        	<li>Elite Bionics Framework</li>
+    	</mods>
+		
+    	<match Class="PatchOperationSequence">
+        <success>Always</success>
+        <operations>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/HediffDef[defName = "FSFAdvBionicPowerArm"]/comps</xpath>
+				<value>
+        			<li Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust">
+            			<scaleAdjustment>0.75</scaleAdjustment>
+        			</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/HediffDef[defName = "FSFAdvBionicTaserArm"]/comps</xpath>
+				<value>
+        			<li Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust">
+            			<scaleAdjustment>0.75</scaleAdjustment>
+        			</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/HediffDef[defName = "FSFAdvBionicDrillArm"]/comps</xpath>
+				<value>
+        			<li Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust">
+            			<scaleAdjustment>0.5</scaleAdjustment>
+        			</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/HediffDef[defName = "FSFAdvBionicFieldArm"]/comps</xpath>
+				<value>
+        			<li Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust">
+            			<scaleAdjustment>0.5</scaleAdjustment>
+        			</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/HediffDef[defName = "FSFAdvBionicConstructionArm"]/comps</xpath>
+				<value>
+        			<li Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust">
+            			<scaleAdjustment>0.5</scaleAdjustment>
+        			</li>
+				</value>
+			</li>
+			
+        </operations>
+    	</match>
+	
+	</Operation>
+	
+</Patch>

@@ -1,0 +1,798 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	
+	<!-- AI Module Core -->
+	
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFAIModuleCore</defName>
+		<label>AI assistant microcomputer</label>
+		<description>The AI Assistant is an advanced, multi-functional tool designed to support the daily tasks and well-being of the user.  It comes in the form of a microcomputer that attaches directly to the user's brain.  Initially the AI Assistant is only equipped with some basic functionalities.  However, its true potential is unlocked through the installation of specialized software modules, which greatly expand its functionality and enables it to offer expert guidance in a wide range of fields.\n\nFor ease-of-use the microcomputer is designed to be self-installable via a small handheld injector.  After injection the unit releases a web of ultrafine wires across the host’s brain to thoroughly attach and integrate itself with the host.  Due to the way the AI assistant microcomputer integrates itself with the host it cannot be removed.</description>
+		<descriptionHyperlinks>
+			<HediffDef>FSFAIModuleCore</HediffDef>
+			<AbilityDef>FSFAIModuleCorePainstopperOn</AbilityDef>
+			<ThingDef>FSFAIModuleAnimals</ThingDef>
+			<HediffDef>FSFAIModuleAnimals</HediffDef>
+			<ThingDef>FSFAIModuleConstruction</ThingDef>
+			<HediffDef>FSFAIModuleConstruction</HediffDef>
+			<ThingDef>FSFAIModuleCooking</ThingDef>
+			<HediffDef>FSFAIModuleCooking</HediffDef>
+			<ThingDef>FSFAIModuleCrafting</ThingDef>
+			<HediffDef>FSFAIModuleCrafting</HediffDef>
+			<ThingDef>FSFAIModuleIntellectual</ThingDef>
+			<HediffDef>FSFAIModuleIntellectual</HediffDef>
+			<ThingDef>FSFAIModuleMedical</ThingDef>
+			<HediffDef>FSFAIModuleMedical</HediffDef>
+			<ThingDef>FSFAIModuleMining</ThingDef>
+			<HediffDef>FSFAIModuleMining</HediffDef>
+			<ThingDef>FSFAIModuleMelee</ThingDef>
+			<HediffDef>FSFAIModuleMelee</HediffDef>
+			<ThingDef>FSFAIModulePlants</ThingDef>
+			<HediffDef>FSFAIModulePlants</HediffDef>
+			<ThingDef>FSFAIModuleShooting</ThingDef>
+			<HediffDef>FSFAIModuleShooting</HediffDef>
+			<ThingDef>FSFAIModuleSocial</ThingDef>
+			<HediffDef>FSFAIModuleSocial</HediffDef>
+			<ThingDef MayRequire="Ludeon.RimWorld.Anomaly">FSFAIModuleArtistic</ThingDef>
+			<HediffDef MayRequire="Ludeon.RimWorld.Anomaly">FSFAIModuleArtistic</HediffDef>
+		</descriptionHyperlinks>
+		<graphicData>
+			<texPath>Things/Item/Special/MechSerumHealer</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<thingCategories Inherit="False">
+			<li>FSFBodyPartsAIModule</li>
+		</thingCategories>
+		<thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+		<statBases>
+			<MarketValue>2000</MarketValue>
+		</statBases>
+		<costList>
+			<Plasteel>10</Plasteel>
+			<ComponentSpacer>5</ComponentSpacer>
+		</costList>
+		<recipeMaker>
+			<skillRequirements>
+				<Crafting>12</Crafting>
+			</skillRequirements>
+			<researchPrerequisites>
+				<li>FSFAIModule</li>
+			</researchPrerequisites>
+		</recipeMaker>
+		<comps>
+			<li Class="CompProperties_Forbiddable"/>
+			<li Class="CompProperties_Usable">
+				<compClass>CompUsableImplant</compClass>
+				<useJob>FSFInstallFSFAIModule</useJob>
+				<useLabel>Install {0_label}</useLabel>
+			</li>
+			<li Class="CompProperties_UseEffectInstallImplant">
+				<compClass>CompUseEffect_InstallImplant</compClass>
+				<hediffDef>FSFAIModuleCore</hediffDef>
+				<bodyPart>Brain</bodyPart>
+			</li>
+			<li Class="CompProperties_UseEffectPlaySound">
+				<soundOnUsed>MechSerumUsed</soundOnUsed>
+			</li>
+			<li Class="CompProperties_UseEffectDestroySelf" />
+		</comps>
+	</ThingDef>
+  
+	<HediffDef ParentName="FSFImplantHediffAdvBase">
+		<defName>FSFAIModuleCore</defName>
+		<hediffClass>Hediff_Implant</hediffClass>
+		<label>AI assistant</label>
+		<description>An installed AI assistant.  The AI Assistant is an advanced, multi-functional tool designed to support the daily tasks and well-being of the user.  It comes in the form of a microcomputer that attaches directly to the user's brain.  Initially the AI Assistant is only equipped with some basic functionalities.  However, its true potential is unlocked through the installation of specialized software modules, which greatly expand its functionality and enables it to offer expert guidance in a wide range of fields.\n\nFor ease-of-use the microcomputer is designed to be self-installable via a small handheld injector.  After injection the unit releases a web of ultrafine wires across the host’s brain to thoroughly attach and integrate itself with the host.  Due to the way the AI assistant microcomputer integrates itself with the host it cannot be removed.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAIModuleCore</ThingDef>
+			<AbilityDef>FSFAIModuleCorePainstopperOn</AbilityDef>
+			<ThingDef>FSFAIModuleAnimals</ThingDef>
+			<HediffDef>FSFAIModuleAnimals</HediffDef>
+			<ThingDef>FSFAIModuleConstruction</ThingDef>
+			<HediffDef>FSFAIModuleConstruction</HediffDef>
+			<ThingDef>FSFAIModuleCooking</ThingDef>
+			<HediffDef>FSFAIModuleCooking</HediffDef>
+			<ThingDef>FSFAIModuleCrafting</ThingDef>
+			<HediffDef>FSFAIModuleCrafting</HediffDef>
+			<ThingDef>FSFAIModuleIntellectual</ThingDef>
+			<HediffDef>FSFAIModuleIntellectual</HediffDef>
+			<ThingDef>FSFAIModuleMedical</ThingDef>
+			<HediffDef>FSFAIModuleMedical</HediffDef>
+			<ThingDef>FSFAIModuleMining</ThingDef>
+			<HediffDef>FSFAIModuleMining</HediffDef>
+			<ThingDef>FSFAIModuleMelee</ThingDef>
+			<HediffDef>FSFAIModuleMelee</HediffDef>
+			<ThingDef>FSFAIModulePlants</ThingDef>
+			<HediffDef>FSFAIModulePlants</HediffDef>
+			<ThingDef>FSFAIModuleShooting</ThingDef>
+			<HediffDef>FSFAIModuleShooting</HediffDef>
+			<ThingDef>FSFAIModuleSocial</ThingDef>
+			<HediffDef>FSFAIModuleSocial</HediffDef>
+			<ThingDef MayRequire="Ludeon.RimWorld.Anomaly">FSFAIModuleArtistic</ThingDef>
+			<HediffDef MayRequire="Ludeon.RimWorld.Anomaly">FSFAIModuleArtistic</HediffDef>
+		</descriptionHyperlinks>
+		<duplicationAllowed>false</duplicationAllowed>
+		<abilities>
+			<li>FSFAIModuleCoreControls</li>
+		</abilities>
+		<comps>
+			<li Class="HediffCompProperties_ReactOnDamage">
+				<damageDefIncoming>EMP</damageDefIncoming>
+				<createHediff>BrainShock</createHediff>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	<AbilityDef>
+		<defName>FSFAIModuleCoreControls</defName>
+		<label>AI assistant control interface</label>
+		<description>Temporarily enables the control interface for the AI assistant allowing various settings to be enabled.</description>
+		<iconPath>UI/Abilities/FSFAIModuleCoreControls</iconPath>
+		<aiCanUse>false</aiCanUse>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<showWhenDrafted>false</showWhenDrafted>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<jobDef>CastAbilityOnThing</jobDef>
+		<targetRequired>False</targetRequired>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
+			<drawAimPie>False</drawAimPie>
+		</verbProperties>
+	    <comps>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>FSFAIModuleCoreControls</hediffDef>
+        		<onlyApplyToSelf>True</onlyApplyToSelf>
+				<onlyBrain>True</onlyBrain>
+        		<replaceExisting>true</replaceExisting>
+			</li>
+		</comps>
+	</AbilityDef>
+	
+	<HediffDef>
+		<defName>FSFAIModuleCoreControls</defName>
+		<label>AI assistant (control interface)</label>
+		<description>The control interface of the AI assistant has been temporarily activated.  It will automatically deactivate after some time has passed.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAIModuleCore</ThingDef>
+		</descriptionHyperlinks>
+		<hediffClass>HediffWithComps</hediffClass>
+		<defaultLabelColor>(144,98,179)</defaultLabelColor>
+		<duplicationAllowed>false</duplicationAllowed>
+		<isBad>false</isBad>
+		<initialSeverity>0.05</initialSeverity>
+		<abilities>
+			<li>FSFAIModuleCorePainstopperOn</li>
+			<li>FSFAIModuleCorePainstopperOff</li>
+		</abilities>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-1.0</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	<AbilityDef>
+		<defName>FSFAIModuleCorePainstopperOn</defName>
+		<label>enable painstopper</label>
+		<description>Enables the painstopper function which completely nullifies the users perception of pain.</description>
+		<iconPath>UI/Abilities/FSFAIModuleCorePainstopperOn</iconPath>
+		<aiCanUse>false</aiCanUse>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<showWhenDrafted>false</showWhenDrafted>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<jobDef>CastAbilityOnThing</jobDef>
+		<targetRequired>False</targetRequired>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
+			<drawAimPie>False</drawAimPie>
+		</verbProperties>
+	    <comps>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+	    	    <hediffDef>FSFAIModuleCorePainstopper</hediffDef>
+				<severity>1</severity>
+				<onlyBrain>True</onlyBrain>
+        		<replaceExisting>True</replaceExisting>
+			</li>
+		</comps>
+	</AbilityDef>
+	
+	<AbilityDef>
+		<defName>FSFAIModuleCorePainstopperOff</defName>
+		<label>disable painstopper</label>
+		<description>Disables the painstopper function allowing the user to once again perceive the sensation of pain.</description>
+		<iconPath>UI/Abilities/FSFAIModuleCorePainstopperOff</iconPath>
+		<aiCanUse>false</aiCanUse>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<showWhenDrafted>false</showWhenDrafted>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<jobDef>CastAbilityOnThing</jobDef>
+		<targetRequired>False</targetRequired>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
+			<drawAimPie>False</drawAimPie>
+		</verbProperties>
+	    <comps>
+			<li Class="CompProperties_AbilityRemoveHediff">
+				<compClass>CompAbilityEffect_RemoveHediff</compClass>
+				<hediffDef>FSFAIModuleCorePainstopper</hediffDef>
+				<applyToSelf>true</applyToSelf>
+			</li>
+		</comps>
+	</AbilityDef>
+	
+	<HediffDef>
+		<defName>FSFAIModuleCorePainstopper</defName>
+		<label>painstopper (AI assistant)</label>
+		<description>Through the use of the AI assistant the user has had their perception of pain completely nullified. This effect can be removed by reconfiguring the AI assistant.</description>
+		<descriptionHyperlinks><ThingDef>FSFAIModuleCore</ThingDef></descriptionHyperlinks>
+		<hediffClass>HediffWithComps</hediffClass>
+		<defaultLabelColor>(144,98,179)</defaultLabelColor>
+		<duplicationAllowed>false</duplicationAllowed>
+		<isBad>false</isBad>
+		<stages>
+			<li>
+				<painFactor>0</painFactor>
+			</li>
+		</stages>
+  </HediffDef>
+	
+	<!-- AI Module Animals Module -->
+
+	<ThingDef ParentName="FSFAIModuleItemUpgradeBase">
+		<defName>FSFAIModuleAnimals</defName>
+		<label>AI assistant animals module</label>
+		<description>The animals module enriches the AI Assistant with a vast database of animal-related information.  This includes detailed profiles on animal species, their behaviors, dietary needs, habitats, and breeding patterns.  It allows the AI Assistant to provide instant insights and strategic advice to the user when interacting with animals.\n\nFor ease-of-use AI modules are packaged in a small handheld device.  When in close proximity with an AI assistant microcomputer the unit can be enabled to wirelessly transfer its data.  Due to the way the modules are designed however, they can only be used once.</description>
+		<descriptionHyperlinks>
+			<HediffDef>FSFAIModuleAnimals</HediffDef>
+		</descriptionHyperlinks>
+		<comps>
+			<li Class="CompProperties_Usable">
+				<compClass>CompUsableImplant</compClass>
+				<useJob>FSFInstallFSFAIModule</useJob>
+				<useLabel>Install animals module</useLabel>
+				<userMustHaveHediff>FSFAIModuleCore</userMustHaveHediff>
+			</li>
+			<li Class="CompProperties_UseEffectInstallImplant">
+				<hediffDef>FSFAIModuleAnimals</hediffDef>
+				<bodyPart>Brain</bodyPart>
+				<canUpgrade>false</canUpgrade>
+				<maxSeverity>1</maxSeverity>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	<HediffDef ParentName="FSFAIModuleHediffUpgradeBase">
+		<defName>FSFAIModuleAnimals</defName>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAIModuleAnimals</ThingDef>
+		</descriptionHyperlinks>
+		<label>animals module</label>
+		<description>An installed animals module.  The animals module enriches the AI Assistant with a vast database of animal-related information.  This includes detailed profiles on animal species, their behaviors, dietary needs, habitats, and breeding patterns.  It allows the AI Assistant to provide instant insights and strategic advice to the user when interacting with animals.\n\nFor ease-of-use AI modules are packaged in a small handheld device.  When in close proximity with an AI assistant microcomputer the unit can be enabled to wirelessly transfer its data.  Due to the way the modules are designed however, they can only be used once.</description>
+		<aptitudes>
+			<Animals MayRequire="Ludeon.RimWorld.Anomaly">4</Animals>
+		</aptitudes>
+		<stages>
+			<li>
+				<minSeverity>1</minSeverity>
+				<statOffsets>
+					<VSE_AttackOnFailChanceFactor MayRequire="vanillaexpanded.skills">-0.1</VSE_AttackOnFailChanceFactor>
+					<AnimalGatherSpeed>+0.2</AnimalGatherSpeed>
+					<AnimalGatherYield>+0.2</AnimalGatherYield>
+					<AnimalProductsSellImprovement MayRequire="Ludeon.RimWorld.Ideology">+0.2</AnimalProductsSellImprovement>
+					<HuntingStealth>+0.2</HuntingStealth>
+					<VCEF_FishingSpeedFactor MayRequire="vanillaexpanded.skills,VanillaExpanded.VCEF">+0.2</VCEF_FishingSpeedFactor>
+					<VCEF_FishingYieldFactor MayRequire="vanillaexpanded.skills,VanillaExpanded.VCEF">+0.2</VCEF_FishingYieldFactor>
+					<TameAnimalChance>+0.1</TameAnimalChance>
+					<TrainAnimalChance>+0.1</TrainAnimalChance>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<!-- AI Module Construction Module -->
+
+	<ThingDef ParentName="FSFAIModuleItemUpgradeBase">
+		<defName>FSFAIModuleConstruction</defName>
+		<label>AI assistant construction module</label>
+		<description>The construction module enriches the AI Assistant with a comprehensive library of architectural designs, structural engineering principles, and advanced building techniques.  It allows the AI Assistant to provide real-time guidance and visual feedback on construction projects, from planning and material selection to execution and maintenance.\n\nFor ease-of-use AI modules are packaged in a small handheld device.  When in close proximity with an AI assistant microcomputer the unit can be enabled to wirelessly transfer its data.  Due to the way the modules are designed however, they can only be used once.</description>
+		<descriptionHyperlinks>
+			<HediffDef>FSFAIModuleConstruction</HediffDef>
+		</descriptionHyperlinks>
+		<comps>
+			<li Class="CompProperties_Usable">
+				<compClass>CompUsableImplant</compClass>
+				<useJob>FSFInstallFSFAIModule</useJob>
+				<useLabel>Install construction module</useLabel>
+				<userMustHaveHediff>FSFAIModuleCore</userMustHaveHediff>
+			</li>
+			<li Class="CompProperties_UseEffectInstallImplant">
+				<hediffDef>FSFAIModuleConstruction</hediffDef>
+				<bodyPart>Brain</bodyPart>
+				<canUpgrade>false</canUpgrade>
+				<maxSeverity>1</maxSeverity>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	<HediffDef ParentName="FSFAIModuleHediffUpgradeBase">
+		<defName>FSFAIModuleConstruction</defName>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAIModuleConstruction</ThingDef>
+		</descriptionHyperlinks>
+		<label>construction module</label>
+		<description>An installed construction module.  The construction module enriches the AI Assistant with a comprehensive library of architectural designs, structural engineering principles, and advanced building techniques.  It allows the AI Assistant to provide real-time guidance and visual feedback on construction projects, from planning and material selection to execution and maintenance.\n\nFor ease-of-use AI modules are packaged in a small handheld device.  When in close proximity with an AI assistant microcomputer the unit can be enabled to wirelessly transfer its data.  Due to the way the modules are designed however, they can only be used once.</description>
+		<aptitudes>
+			<Construction MayRequire="Ludeon.RimWorld.Anomaly">4</Construction>
+		</aptitudes>
+		<stages>
+			<li>
+				<minSeverity>1</minSeverity>
+				<statOffsets>
+					<VSE_ConstructQuality MayRequire="vanillaexpanded.skills">+0.2</VSE_ConstructQuality>
+					<ConstructionSpeed>+0.2</ConstructionSpeed>
+					<ConstructSuccessChance>+0.2</ConstructSuccessChance>
+					<FixBrokenDownBuildingSuccessChance>+0.2</FixBrokenDownBuildingSuccessChance>
+					<SmoothingSpeed>+0.2</SmoothingSpeed>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<!-- AI Module Cooking Module -->
+
+	<ThingDef ParentName="FSFAIModuleItemUpgradeBase">
+		<defName>FSFAIModuleCooking</defName>
+		<label>AI assistant cooking module</label>
+		<description>The cooking module enriches the AI Assistant with an extensive database of recipes, cooking techniques, and nutritional information.  It allows the AI Assistant to provide detailed culinary guidance and creative meal planning to improve the quality and variety of food.\n\nFor ease-of-use AI modules are packaged in a small handheld device.  When in close proximity with an AI assistant microcomputer the unit can be enabled to wirelessly transfer its data.  Due to the way the modules are designed however, they can only be used once.</description>
+		<descriptionHyperlinks>
+			<HediffDef>FSFAIModuleCooking</HediffDef>
+		</descriptionHyperlinks>
+		<comps>
+			<li Class="CompProperties_Usable">
+				<compClass>CompUsableImplant</compClass>
+				<useJob>FSFInstallFSFAIModule</useJob>
+				<useLabel>Install cooking module</useLabel>
+				<userMustHaveHediff>FSFAIModuleCore</userMustHaveHediff>
+			</li>
+			<li Class="CompProperties_UseEffectInstallImplant">
+				<hediffDef>FSFAIModuleCooking</hediffDef>
+				<bodyPart>Brain</bodyPart>
+				<canUpgrade>false</canUpgrade>
+				<maxSeverity>1</maxSeverity>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	<HediffDef ParentName="FSFAIModuleHediffUpgradeBase">
+		<defName>FSFAIModuleCooking</defName>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAIModuleCooking</ThingDef>
+		</descriptionHyperlinks>
+		<label>cooking module</label>
+		<description>An installed cooking module.  The cooking module enriches the AI Assistant with an extensive database of recipes, cooking techniques, and nutritional information.  It allows the AI Assistant to provide detailed culinary guidance and creative meal planning to improve the quality and variety of food.\n\nFor ease-of-use AI modules are packaged in a small handheld device.  When in close proximity with an AI assistant microcomputer the unit can be enabled to wirelessly transfer its data.  Due to the way the modules are designed however, they can only be used once.</description>
+		<aptitudes>
+			<Cooking MayRequire="Ludeon.RimWorld.Anomaly">4</Cooking>
+		</aptitudes>
+		<stages>
+			<li>
+				<minSeverity>1</minSeverity>
+				<statOffsets>
+					<ButcheryFleshSpeed>+0.2</ButcheryFleshSpeed>
+					<ButcheryFleshEfficiency>+0.2</ButcheryFleshEfficiency>
+					<CookSpeed>+3</CookSpeed>
+					<DrugCookingSpeed>+0.2</DrugCookingSpeed>
+					<FoodPoisonChance>-0.2</FoodPoisonChance>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<!-- AI Module Crafting Module -->
+
+	<ThingDef ParentName="FSFAIModuleItemUpgradeBase">
+		<defName>FSFAIModuleCrafting</defName>
+		<label>AI assistant production module</label>
+		<description>The production module enriches the AI Assistant with an extensive database of crafting techniques, schematics, and materials science.  It allows the AI Assistant to provide real-time guidance and visual feedback to improve the craftsmanship and efficiency of production processes.\n\nFor ease-of-use AI modules are packaged in a small handheld device.  When in close proximity with an AI assistant microcomputer the unit can be enabled to wirelessly transfer its data.  Due to the way the modules are designed however, they can only be used once.</description>
+		<descriptionHyperlinks>
+			<HediffDef>FSFAIModuleCrafting</HediffDef>
+		</descriptionHyperlinks>
+		<comps>
+			<li Class="CompProperties_Usable">
+				<compClass>CompUsableImplant</compClass>
+				<useJob>FSFInstallFSFAIModule</useJob>
+				<useLabel>Install production module</useLabel>
+				<userMustHaveHediff>FSFAIModuleCore</userMustHaveHediff>
+			</li>
+			<li Class="CompProperties_UseEffectInstallImplant">
+				<hediffDef>FSFAIModuleCrafting</hediffDef>
+				<bodyPart>Brain</bodyPart>
+				<canUpgrade>false</canUpgrade>
+				<maxSeverity>1</maxSeverity>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	<HediffDef ParentName="FSFAIModuleHediffUpgradeBase">
+		<defName>FSFAIModuleCrafting</defName>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAIModuleCrafting</ThingDef>
+		</descriptionHyperlinks>
+		<label>production module</label>
+		<description>An installed production module.  The production module enriches the AI Assistant with an extensive database of crafting techniques, schematics, and materials science.  It allows the AI Assistant to provide real-time guidance and visual feedback to improve the craftsmanship and efficiency of production processes.\n\nFor ease-of-use AI modules are packaged in a small handheld device.  When in close proximity with an AI assistant microcomputer the unit can be enabled to wirelessly transfer its data.  Due to the way the modules are designed however, they can only be used once.</description>
+		<aptitudes>
+			<Crafting MayRequire="Ludeon.RimWorld.Anomaly">4</Crafting>
+		</aptitudes>
+		<stages>
+			<li>
+				<minSeverity>1</minSeverity>
+				<statOffsets>
+					<FSFBionicsCraftingSpeed MayRequire="vanillaexpanded.skills">+0.2</FSFBionicsCraftingSpeed>
+					<VSE_ComponentCraftingSpeed MayRequire="vanillaexpanded.skills">+0.2</VSE_ComponentCraftingSpeed>
+					<VSE_CraftingQuality MayRequire="vanillaexpanded.skills">+0.2</VSE_CraftingQuality>
+					<DrugSynthesisSpeed>+0.2</DrugSynthesisSpeed>
+					<GeneralLaborSpeed>+0.2</GeneralLaborSpeed>
+					<SmeltingSpeed>+0.2</SmeltingSpeed>
+					<VSE_TailoringSpeed MayRequire="vanillaexpanded.skills">+0.2</VSE_TailoringSpeed>
+					<VSE_WeaponCreationSpeed MayRequire="vanillaexpanded.skills">+0.2</VSE_WeaponCreationSpeed>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<!-- AI Module Intellectual Module -->
+
+	<ThingDef ParentName="FSFAIModuleItemUpgradeBase">
+		<defName>FSFAIModuleIntellectual</defName>
+		<label>AI assistant intellectual module</label>
+		<description>The intellectual module enriches the AI Assistant with a vast repository of scientific knowledge, research methodologies, and advanced technological operations.  It allows the AI Assistant to provide detailed insights, procedural guidance, and real-time analytical support to boost the efficiency and accuracy of intellectual endeavors.\n\nFor ease-of-use AI modules are packaged in a small handheld device.  When in close proximity with an AI assistant microcomputer the unit can be enabled to wirelessly transfer its data.  Due to the way the modules are designed however, they can only be used once.</description>
+		<descriptionHyperlinks>
+			<HediffDef>FSFAIModuleIntellectual</HediffDef>
+		</descriptionHyperlinks>
+		<comps>
+			<li Class="CompProperties_Usable">
+				<compClass>CompUsableImplant</compClass>
+				<useJob>FSFInstallFSFAIModule</useJob>
+				<useLabel>Install intellectual module</useLabel>
+				<userMustHaveHediff>FSFAIModuleCore</userMustHaveHediff>
+			</li>
+			<li Class="CompProperties_UseEffectInstallImplant">
+				<hediffDef>FSFAIModuleIntellectual</hediffDef>
+				<bodyPart>Brain</bodyPart>
+				<canUpgrade>false</canUpgrade>
+				<maxSeverity>1</maxSeverity>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	<HediffDef ParentName="FSFAIModuleHediffUpgradeBase">
+		<defName>FSFAIModuleIntellectual</defName>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAIModuleIntellectual</ThingDef>
+		</descriptionHyperlinks>
+		<label>intellectual module</label>
+		<description>An installed intellectual module.  The intellectual module enriches the AI Assistant with a vast repository of scientific knowledge, research methodologies, and advanced technological operations.  It allows the AI Assistant to provide detailed insights, procedural guidance, and real-time analytical support to boost the efficiency and accuracy of intellectual endeavors.\n\nFor ease-of-use AI modules are packaged in a small handheld device.  When in close proximity with an AI assistant microcomputer the unit can be enabled to wirelessly transfer its data.  Due to the way the modules are designed however, they can only be used once.</description>
+		<aptitudes>
+			<Intellectual MayRequire="Ludeon.RimWorld.Anomaly">4</Intellectual>
+		</aptitudes>
+		<stages>
+			<li>
+				<minSeverity>1</minSeverity>
+				<statOffsets>
+					<ActivitySuppressionRate MayRequire="Ludeon.RimWorld.Anomaly">+0.1</ActivitySuppressionRate>
+					<EntityStudyRate MayRequire="Ludeon.RimWorld.Anomaly">+0.2</EntityStudyRate>
+					<FieldResearchSpeedMultiplier MayRequire="PeteTimesSix.ResearchReinvented">+0.2</FieldResearchSpeedMultiplier>
+					<GlobalLearningFactor>+0.2</GlobalLearningFactor>
+					<HackingSpeed MayRequire="Ludeon.RimWorld.Ideology">+0.2</HackingSpeed>
+					<Hauts_InstructiveAbility MayRequire="vanillaexpanded.skills,Hautarche.HautsFramework">+0.2</Hauts_InstructiveAbility>
+					<LearningRateFactor MayRequire="Ludeon.RimWorld.Biotech">0.2</LearningRateFactor>
+					<ReadingSpeed>+0.2</ReadingSpeed>
+					<ResearchSpeed>+0.2</ResearchSpeed>
+					<StudyEfficiency MayRequire="Ludeon.RimWorld.Anomaly">+0.2</StudyEfficiency>
+					<VBE_WritingSpeed MayRequire="vanillaexpanded.skills,VanillaExpanded.VBooksE">+0.2</VBE_WritingSpeed>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<!-- AI Module Medical Module -->
+
+	<ThingDef ParentName="FSFAIModuleItemUpgradeBase">
+		<defName>FSFAIModuleMedical</defName>
+		<label>AI assistant medical module</label>
+		<description>The medical module enriches the AI Assistant with an extensive medical database, diagnostic algorithms, and procedural protocols.  It allows the AI Assistant to provide real-time medical advice, detailed treatment plans, and proactive health management to ensure the well-being of patients.\n\nFor ease-of-use AI modules are packaged in a small handheld device.  When in close proximity with an AI assistant microcomputer the unit can be enabled to wirelessly transfer its data.  Due to the way the modules are designed however, they can only be used once.</description>
+		<descriptionHyperlinks>
+			<HediffDef>FSFAIModuleMedical</HediffDef>
+		</descriptionHyperlinks>
+		<comps>
+			<li Class="CompProperties_Usable">
+				<compClass>CompUsableImplant</compClass>
+				<useJob>FSFInstallFSFAIModule</useJob>
+				<useLabel>Install medical module</useLabel>
+				<userMustHaveHediff>FSFAIModuleCore</userMustHaveHediff>
+			</li>
+			<li Class="CompProperties_UseEffectInstallImplant">
+				<hediffDef>FSFAIModuleMedical</hediffDef>
+				<bodyPart>Brain</bodyPart>
+				<canUpgrade>false</canUpgrade>
+				<maxSeverity>1</maxSeverity>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	<HediffDef ParentName="FSFAIModuleHediffUpgradeBase">
+		<defName>FSFAIModuleMedical</defName>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAIModuleMedical</ThingDef>
+		</descriptionHyperlinks>
+		<label>medical module</label>
+		<description>An installed medical module.  The medical module enriches the AI Assistant with an extensive medical database, diagnostic algorithms, and procedural protocols.  It allows the AI Assistant to provide real-time medical advice, detailed treatment plans, and proactive health management to ensure the well-being of patients.\n\nFor ease-of-use AI modules are packaged in a small handheld device.  When in close proximity with an AI assistant microcomputer the unit can be enabled to wirelessly transfer its data.  Due to the way the modules are designed however, they can only be used once.</description>
+		<aptitudes>
+			<Medicine MayRequire="Ludeon.RimWorld.Anomaly">4</Medicine>
+		</aptitudes>
+		<stages>
+			<li>
+				<minSeverity>1</minSeverity>
+				<statOffsets>
+					<MedicalOperationSpeed>+0.2</MedicalOperationSpeed>
+					<MedicalSurgerySuccessChance>+0.1</MedicalSurgerySuccessChance>
+					<MedicalTendSpeed>+0.2</MedicalTendSpeed>
+					<MedicalTendQuality>+0.1</MedicalTendQuality>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<!-- AI Module Mining Module -->
+
+	<ThingDef ParentName="FSFAIModuleItemUpgradeBase">
+		<defName>FSFAIModuleMining</defName>
+		<label>AI assistant mining module</label>
+		<description>The mining module enriches the AI Assistant with advanced geological analysis, extraction techniques, and safety protocols.  It allows the AI Assistant to provide real-time guidance and strategic insights to maximize resource yield and minimize operational risks.\n\nFor ease-of-use AI modules are packaged in a small handheld device.  When in close proximity with an AI assistant microcomputer the unit can be enabled to wirelessly transfer its data.  Due to the way the modules are designed however, they can only be used once.</description>
+		<descriptionHyperlinks>
+			<HediffDef>FSFAIModuleMining</HediffDef>
+		</descriptionHyperlinks>
+		<comps>
+			<li Class="CompProperties_Usable">
+				<compClass>CompUsableImplant</compClass>
+				<useJob>FSFInstallFSFAIModule</useJob>
+				<useLabel>Install mining module</useLabel>
+				<userMustHaveHediff>FSFAIModuleCore</userMustHaveHediff>
+			</li>
+			<li Class="CompProperties_UseEffectInstallImplant">
+				<hediffDef>FSFAIModuleMining</hediffDef>
+				<bodyPart>Brain</bodyPart>
+				<canUpgrade>false</canUpgrade>
+				<maxSeverity>1</maxSeverity>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	<HediffDef ParentName="FSFAIModuleHediffUpgradeBase">
+		<defName>FSFAIModuleMining</defName>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAIModuleMining</ThingDef>
+		</descriptionHyperlinks>
+		<label>mining module</label>
+		<description>An installed mining module.  The mining module enriches the AI Assistant with advanced geological analysis, extraction techniques, and safety protocols.  It allows the AI Assistant to provide real-time guidance and strategic insights to maximize resource yield and minimize operational risks.\n\nFor ease-of-use AI modules are packaged in a small handheld device.  When in close proximity with an AI assistant microcomputer the unit can be enabled to wirelessly transfer its data.  Due to the way the modules are designed however, they can only be used once.</description>
+		<aptitudes>
+			<Mining MayRequire="Ludeon.RimWorld.Anomaly">4</Mining>
+		</aptitudes>
+		<stages>
+			<li>
+				<minSeverity>1</minSeverity>
+				<statOffsets>
+					<DeepDrillingSpeed>+0.2</DeepDrillingSpeed>
+					<MiningSpeed>+0.2</MiningSpeed>
+					<MiningYield>+0.2</MiningYield>
+					<VSE_RockChunkChance MayRequire="vanillaexpanded.skills">+0.2</VSE_RockChunkChance>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<!-- AI Module Melee Module -->
+
+	<ThingDef ParentName="FSFAIModuleItemUpgradeBase">
+		<defName>FSFAIModuleMelee</defName>
+		<label>AI assistant Melee module</label>
+		<description>The Melee module enriches the AI Assistant with a comprehensive database of combat techniques, tactical maneuvers, and situational strategies.  It allows the AI Assistant to provide real-time tactical advice, training simulations, and performance feedback to improve the combat readiness and proficiency of the user.\n\nFor ease-of-use AI modules are packaged in a small handheld device.  When in close proximity with an AI assistant microcomputer the unit can be enabled to wirelessly transfer its data.  Due to the way the modules are designed however, they can only be used once.</description>
+		<descriptionHyperlinks>
+			<HediffDef>FSFAIModuleMelee</HediffDef>
+		</descriptionHyperlinks>
+		<comps>
+			<li Class="CompProperties_Usable">
+				<compClass>CompUsableImplant</compClass>
+				<useJob>FSFInstallFSFAIModule</useJob>
+				<useLabel>Install Melee module</useLabel>
+				<userMustHaveHediff>FSFAIModuleCore</userMustHaveHediff>
+			</li>
+			<li Class="CompProperties_UseEffectInstallImplant">
+				<hediffDef>FSFAIModuleMelee</hediffDef>
+				<bodyPart>Brain</bodyPart>
+				<canUpgrade>false</canUpgrade>
+				<maxSeverity>1</maxSeverity>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	<HediffDef ParentName="FSFAIModuleHediffUpgradeBase">
+		<defName>FSFAIModuleMelee</defName>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAIModuleMelee</ThingDef>
+		</descriptionHyperlinks>
+		<label>Melee module</label>
+		<description>An installed Melee module.  The Melee module enriches the AI Assistant with a comprehensive database of combat techniques, tactical maneuvers, and situational strategies.  It allows the AI Assistant to provide real-time tactical advice, training simulations, and performance feedback to improve the combat readiness and proficiency of the user.\n\nFor ease-of-use AI modules are packaged in a small handheld device.  When in close proximity with an AI assistant microcomputer the unit can be enabled to wirelessly transfer its data.  Due to the way the modules are designed however, they can only be used once.</description>
+		<aptitudes>
+			<Melee MayRequire="Ludeon.RimWorld.Anomaly">4</Melee>
+		</aptitudes>
+		<stages>
+			<li>
+				<minSeverity>1</minSeverity>
+				<statOffsets>
+					<MeleeDodgeChance>15</MeleeDodgeChance>
+					<MeleeHitChance>4</MeleeHitChance>
+				</statOffsets>
+				<statFactors>
+					<PawnTrapSpringChance>0.1</PawnTrapSpringChance>
+				</statFactors>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<!-- AI Module Plants Module -->
+
+	<ThingDef ParentName="FSFAIModuleItemUpgradeBase">
+		<defName>FSFAIModulePlants</defName>
+		<label>AI assistant plants module</label>
+		<description>The plant module enriches the AI Assistant with comprehensive knowledge of agronomy and horticulture.  It allows the AI Assistant to provide real-time guidance, strategic planning, and performance feedback to maximize crop yields and maintain soil health.\n\nFor ease-of-use AI modules are packaged in a small handheld device.  When in close proximity with an AI assistant microcomputer the unit can be enabled to wirelessly transfer its data.  Due to the way the modules are designed however, they can only be used once.</description>
+		<descriptionHyperlinks>
+			<HediffDef>FSFAIModulePlants</HediffDef>
+		</descriptionHyperlinks>
+		<comps>
+			<li Class="CompProperties_Usable">
+				<compClass>CompUsableImplant</compClass>
+				<useJob>FSFInstallFSFAIModule</useJob>
+				<useLabel>Install plants module</useLabel>
+				<userMustHaveHediff>FSFAIModuleCore</userMustHaveHediff>
+			</li>
+			<li Class="CompProperties_UseEffectInstallImplant">
+				<hediffDef>FSFAIModulePlants</hediffDef>
+				<bodyPart>Brain</bodyPart>
+				<canUpgrade>false</canUpgrade>
+				<maxSeverity>1</maxSeverity>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	<HediffDef ParentName="FSFAIModuleHediffUpgradeBase">
+		<defName>FSFAIModulePlants</defName>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAIModulePlants</ThingDef>
+		</descriptionHyperlinks>
+		<label>plants module</label>
+		<description>An installed plants module.  The plant module enriches the AI Assistant with comprehensive knowledge of agronomy and horticulture.  It allows the AI Assistant to provide real-time guidance, strategic planning, and performance feedback to maximize crop yields and maintain soil health.\n\nFor ease-of-use AI modules are packaged in a small handheld device.  When in close proximity with an AI assistant microcomputer the unit can be enabled to wirelessly transfer its data.  Due to the way the modules are designed however, they can only be used once.</description>
+		<aptitudes>
+			<Plants MayRequire="Ludeon.RimWorld.Anomaly">4</Plants>
+		</aptitudes>
+		<stages>
+			<li>
+				<minSeverity>1</minSeverity>
+				<statOffsets>
+					<ForagedNutritionPerDay>+3.2</ForagedNutritionPerDay>
+					<DrugHarvestYield>+0.2</DrugHarvestYield>
+					<PlantHarvestYield>+0.2</PlantHarvestYield>
+					<PlantWorkSpeed>+0.2</PlantWorkSpeed>
+					<PruningSpeed MayRequire="Ludeon.RimWorld.Ideology">+0.1</PruningSpeed>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<!-- AI Module Shooting Module -->
+
+	<ThingDef ParentName="FSFAIModuleItemUpgradeBase">
+		<defName>FSFAIModuleShooting</defName>
+		<label>AI assistant shooting module</label>
+		<description>The shooting module enriches the AI Assistant with an extensive database of shooting techniques, ballistics, and tactical strategies.  It allows the AI Assistant to provide real-time targeting assistance, training simulations, and performance analysis to enhance shooting proficiency and combat readiness.\n\nFor ease-of-use AI modules are packaged in a small handheld device.  When in close proximity with an AI assistant microcomputer the unit can be enabled to wirelessly transfer its data.  Due to the way the modules are designed however, they can only be used once.</description>
+		<descriptionHyperlinks>
+			<HediffDef>FSFAIModuleShooting</HediffDef>
+		</descriptionHyperlinks>
+		<comps>
+			<li Class="CompProperties_Usable">
+				<compClass>CompUsableImplant</compClass>
+				<useJob>FSFInstallFSFAIModule</useJob>
+				<useLabel>Install shooting module</useLabel>
+				<userMustHaveHediff>FSFAIModuleCore</userMustHaveHediff>
+			</li>
+			<li Class="CompProperties_UseEffectInstallImplant">
+				<hediffDef>FSFAIModuleShooting</hediffDef>
+				<bodyPart>Brain</bodyPart>
+				<canUpgrade>false</canUpgrade>
+				<maxSeverity>1</maxSeverity>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	<HediffDef ParentName="FSFAIModuleHediffUpgradeBase">
+		<defName>FSFAIModuleShooting</defName>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAIModuleShooting</ThingDef>
+		</descriptionHyperlinks>
+		<label>shooting module</label>
+		<description>An installed shooting module.  The shooting module enriches the AI Assistant with an extensive database of shooting techniques, ballistics, and tactical strategies.  It allows the AI Assistant to provide real-time targeting assistance, training simulations, and performance analysis to enhance shooting proficiency and combat readiness.\n\nFor ease-of-use AI modules are packaged in a small handheld device.  When in close proximity with an AI assistant microcomputer the unit can be enabled to wirelessly transfer its data.  Due to the way the modules are designed however, they can only be used once.</description>
+		<aptitudes>
+			<Shooting MayRequire="Ludeon.RimWorld.Anomaly">4</Shooting>
+		</aptitudes>
+		<stages>
+			<li>
+				<minSeverity>1</minSeverity>
+				<statOffsets>
+					<AimingDelayFactor>-0.25</AimingDelayFactor>
+					<MortarMissRadiusFactor>-0.125</MortarMissRadiusFactor>
+					<ShootingAccuracyPawn>+5</ShootingAccuracyPawn>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<!-- AI Module Social Module -->
+
+	<ThingDef ParentName="FSFAIModuleItemUpgradeBase">
+		<defName>FSFAIModuleSocial</defName>
+		<label>AI assistant social module</label>
+		<description>The social module enriches the AI Assistant with a comprehensive understanding of social dynamics, communication techniques, and conflict resolution strategies.  It allows the AI Assistant to provide real-time guidance, training, and feedback to enhance social interactions and community building.\n\nFor ease-of-use AI modules are packaged in a small handheld device.  When in close proximity with an AI assistant microcomputer the unit can be enabled to wirelessly transfer its data.  Due to the way the modules are designed however, they can only be used once.</description>
+		<descriptionHyperlinks>
+			<HediffDef>FSFAIModuleSocial</HediffDef>
+		</descriptionHyperlinks>
+		<comps>
+			<li Class="CompProperties_Usable">
+				<compClass>CompUsableImplant</compClass>
+				<useJob>FSFInstallFSFAIModule</useJob>
+				<useLabel>Install social module</useLabel>
+				<userMustHaveHediff>FSFAIModuleCore</userMustHaveHediff>
+			</li>
+			<li Class="CompProperties_UseEffectInstallImplant">
+				<hediffDef>FSFAIModuleSocial</hediffDef>
+				<bodyPart>Brain</bodyPart>
+				<canUpgrade>false</canUpgrade>
+				<maxSeverity>1</maxSeverity>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	<HediffDef ParentName="FSFAIModuleHediffUpgradeBase">
+		<defName>FSFAIModuleSocial</defName>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAIModuleSocial</ThingDef>
+		</descriptionHyperlinks>
+		<label>social module</label>
+		<description>An installed social module.  The social module enriches the AI Assistant with a comprehensive understanding of social dynamics, communication techniques, and conflict resolution strategies.  It allows the AI Assistant to provide real-time guidance, training, and feedback to enhance social interactions and community building.\n\nFor ease-of-use AI modules are packaged in a small handheld device.  When in close proximity with an AI assistant microcomputer the unit can be enabled to wirelessly transfer its data.  Due to the way the modules are designed however, they can only be used once.</description>
+		<aptitudes>
+			<Social MayRequire="Ludeon.RimWorld.Anomaly">4</Social>
+		</aptitudes>
+		<stages>
+			<li>
+				<minSeverity>1</minSeverity>
+				<statOffsets>
+					<ActivitySuppressionRate MayRequire="Ludeon.RimWorld.Anomaly">+0.1</ActivitySuppressionRate>
+					<ArrestSuccessChance>+0.2</ArrestSuccessChance>
+					<ConversionPower MayRequire="Ludeon.RimWorld.Ideology">+0.2</ConversionPower>
+					<NegotiationAbility>+0.2</NegotiationAbility>
+					<SocialImpact>+0.2</SocialImpact>
+					<SuppressionPower MayRequire="Ludeon.RimWorld.Ideology">+0.2</SuppressionPower>
+					<TradePriceImprovement>+0.1</TradePriceImprovement>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+</Defs>

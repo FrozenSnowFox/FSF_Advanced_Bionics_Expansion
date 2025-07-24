@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			
+			<li Class="PatchOperationTest">
+				<xpath>/Defs/ThingDef[defName = "PsychicReader"]</xpath>
+			</li>
+
+	<!-- Add Royalty Research to Suppression Module -->
+		
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName = "FSFImplantBrainSuppression"]/recipeMaker/researchPrerequisite</xpath>
+				<value>
+					<researchPrerequisite>BrainWiring</researchPrerequisite>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+	
+</Patch>

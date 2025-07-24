@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+	<!-- Implant Torso Resurrect -->
+
+	<HediffDef ParentName="FSFImplantHediffAdvBase">
+		<defName>FSFImplantTorsoResurrect</defName>
+		<label>resurrection core</label>
+		<labelNoun>a resurrection core</labelNoun>
+		<description>An installed resurrection core.  A small durable core which contains a one-use super-dose of mechanites tuned to resurrect the dead. Once implanted, upon dying the mechanites repair broken-down tissue and kickstart the body back to life.  A core will give a readout on the remaining lives left, if the user has only one life remaining the core is already spent making it inert and incapable of bringing them back to life again.  At that point the core must be removed before it can be replaced with a new core.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantTorsoResurrect</ThingDef>
+			<RecipeDef>FSFImplantTorsoResurrect</RecipeDef>
+			<RecipeDef>InstallFSFImplantTorsoResurrect</RecipeDef>
+			<RecipeDef>RemoveFSFImplantTorsoResurrect</RecipeDef>
+		</descriptionHyperlinks>
+		<comps>
+			<li Class="VEF.AnimalBehaviours.HediffCompProperties_Resurrect">
+				<livesLeft>2</livesLeft>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<ThingDef ParentName="BodyPartBase">
+		<defName>FSFImplantTorsoResurrect</defName>
+		<label>resurrection core</label>
+		<description>A small durable core which contains a one-use super-dose of mechanites tuned to resurrect the dead. Once implanted, upon dying the mechanites repair broken-down tissue and kickstart the body back to life.  A core will give a readout on the remaining lives left, if the user has only one life remaining the core is already spent making it inert and incapable of bringing them back to life again.  At that point the core must be removed before it can be replaced with a new core.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantTorsoResurrect</ThingDef>
+			<RecipeDef>FSFImplantTorsoResurrect</RecipeDef>
+			<RecipeDef>InstallFSFImplantTorsoResurrect</RecipeDef>
+			<RecipeDef>RemoveFSFImplantTorsoResurrect</RecipeDef>
+		</descriptionHyperlinks>
+		<statBases>
+			<MarketValue>2500</MarketValue>
+			<Mass>0.3</Mass>
+		</statBases>
+		<techLevel>Ultra</techLevel>
+		<thingCategories>
+			<li>BodyPartsUltra</li>
+		</thingCategories>
+		<graphicData>
+			<texPath>Things/Item/Health/HealthItem</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.80</drawSize>
+			<color>(144,98,179)</color>
+		</graphicData>
+		<tradeTags>
+			<li>Bionic</li>
+			<li MayRequire="Ludeon.RimWorld.Royalty">ImplantEmpireCommon</li>
+		</tradeTags>
+		<techHediffsTags>
+			<li>Advanced</li>
+			<li MayRequire="Ludeon.RimWorld.Royalty">ImplantEmpireCommon</li>
+		</techHediffsTags>
+	</ThingDef>
+	
+	<RecipeDef>
+		<defName>FSFImplantTorsoResurrect</defName>
+		<label>make resurrection core</label>
+		<description>Make a resurrection core.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantTorsoResurrect</ThingDef>
+			<HediffDef>FSFImplantTorsoResurrect</HediffDef>
+			<RecipeDef>InstallFSFImplantTorsoResurrect</RecipeDef>
+			<RecipeDef>RemoveFSFImplantTorsoResurrect</RecipeDef>
+		</descriptionHyperlinks>
+		<jobString>Making resurrection core.</jobString>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<workSkill>Crafting</workSkill>
+		<effectWorking>Smith</effectWorking>
+		<soundWorking>Recipe_Smith</soundWorking>
+		<unfinishedThingDef>UnfinishedHealthItemBionic</unfinishedThingDef>
+		<workAmount>30000</workAmount>
+		<skillRequirements>
+			<Crafting>10</Crafting>
+		</skillRequirements>
+		<researchPrerequisite>FSFMechaniteSerums</researchPrerequisite>
+		<recipeUsers>
+			<li>FabricationBench</li>
+			<li MayRequire="syrchalis.prosthetictable">TableSyrProsthetics</li>
+		</recipeUsers>
+		<allowMixingIngredients>true</allowMixingIngredients>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Plasteel</li>
+					</thingDefs>
+				</filter>
+				<count>15</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ComponentSpacer</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>MechSerumResurrector</li>
+						<li MayRequire="VanillaExpanded.VCookE">VCE_DigestibleResurrectorNanites</li>
+						<li MayRequire="VanillaExpanded.VAEAccessories">VAEA_Apparel_RessurectorBelt</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<defaultIngredientFilter>
+			<thingDefs>
+				<li>Plasteel</li>
+				<li>ComponentSpacer</li>
+				<li>MechSerumResurrector</li>
+				<li MayRequire="VanillaExpanded.VCookE">VCE_DigestibleResurrectorNanites</li>
+				<li MayRequire="VanillaExpanded.VAEAccessories">VAEA_Apparel_RessurectorBelt</li>
+			</thingDefs>
+		</defaultIngredientFilter>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>MechSerumResurrector</li>
+				<li MayRequire="VanillaExpanded.VCookE">VCE_DigestibleResurrectorNanites</li>
+				<li MayRequire="VanillaExpanded.VAEAccessories">VAEA_Apparel_RessurectorBelt</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<FSFImplantTorsoResurrect>1</FSFImplantTorsoResurrect>
+		</products>
+	</RecipeDef>
+
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>InstallFSFImplantTorsoResurrect</defName>
+		<label>install resurrection core</label>
+		<description>Install a resurrection core.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantTorsoResurrect</ThingDef>
+			<HediffDef>FSFImplantTorsoResurrect</HediffDef>
+			<RecipeDef>FSFImplantTorsoResurrect</RecipeDef>
+			<RecipeDef>RemoveFSFImplantTorsoResurrect</RecipeDef>
+		</descriptionHyperlinks>
+		<jobString>Installing resurrection core.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFImplantTorsoResurrect</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFImplantTorsoResurrect</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Torso</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFImplantTorsoResurrect</addsHediff>
+		<uiIconThing>FSFImplantTorsoResurrect</uiIconThing>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemoveFSFImplantTorsoResurrect</defName>
+		<label>remove and destroy resurrection core</label>
+		<description>Remove and destroy resurrection core.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantTorsoResurrect</ThingDef>
+			<HediffDef>FSFImplantTorsoResurrect</HediffDef>
+			<RecipeDef>FSFImplantTorsoResurrect</RecipeDef>
+			<RecipeDef>InstallFSFImplantTorsoResurrect</RecipeDef>
+		</descriptionHyperlinks>
+		<jobString>Removing and destroying resurrection core.</jobString>
+		<removesHediff>FSFImplantTorsoResurrect</removesHediff>
+	</RecipeDef>
+		
+</Defs>

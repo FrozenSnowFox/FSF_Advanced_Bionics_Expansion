@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	
+	<Operation Class="XmlExtensions.OptionalPatch">
+		<modId>FrozenSnowFox.FrozenSnowFoxAdvancedBionicsExpansion</modId>
+		<key>FSFABEUltratechTraderOn</key>
+		<defaultValue>false</defaultValue>
+		<caseTrue>
+			
+		<!-- Option is nested so patch isn't always run -->
+	
+	<Operation Class="XmlExtensions.UseSettings">
+		<modId>FrozenSnowFox.FrozenSnowFoxAdvancedBionicsExpansion</modId>
+		<keys>
+			<li>FSFABEUltratechTraderCommonality</li>
+		</keys>
+		<defaultValues>
+			<li>1.0</li>
+		</defaultValues>
+		<apply>
+			
+		<Operation Class="PatchOperationSequence">
+			<success>Normal</success>
+			<operations>
+				
+		<!-- Ultratech Orbital Trader Commonality -->
+			
+ 		<li Class="PatchOperationReplace">
+			<xpath>/Defs/TraderKindDef[defName = "FSF_Orbital_Ultratech"]/commonality</xpath>
+			<value>
+				<commonality>{FSFABEUltratechTraderCommonality}</commonality>
+			</value>
+		</li>
+				
+			</operations>
+		</Operation>
+			
+		</apply>
+	</Operation>
+			
+		</caseTrue>
+	</Operation>
+
+</Patch>

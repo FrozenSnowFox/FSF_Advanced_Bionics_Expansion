@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+	
+  	<!-- Update Various Information For Royalty -->
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			
+  			<!-- Replace Advanced Power Arm Sounds to Royalty Sounds -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/HediffDef[defName = "FSFAdvBionicPowerArm"]/comps/li[@Class = "HediffCompProperties_VerbGiver"]/tools/li[2]/soundMeleeHit</xpath>
+				<value>
+					<soundMeleeHit>MeleeHit_BionicSlash</soundMeleeHit>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/HediffDef[defName = "FSFAdvBionicPowerArm"]/comps/li[@Class = "HediffCompProperties_VerbGiver"]/tools/li[2]/soundMeleeMiss</xpath>
+				<value>
+					<soundMeleeMiss>MeleeMiss_BionicSlash</soundMeleeMiss>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/HediffDef[defName = "FSFAdvBionicPowerArm"]/comps/li[@Class = "HediffCompProperties_VerbGiver"]/tools/li[3]/soundMeleeHit</xpath>
+				<value>
+					<soundMeleeHit>MeleeHit_BionicSlash</soundMeleeHit>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/HediffDef[defName = "FSFAdvBionicPowerArm"]/comps/li[@Class = "HediffCompProperties_VerbGiver"]/tools/li[3]/soundMeleeMiss</xpath>
+				<value>
+					<soundMeleeMiss>MeleeMiss_BionicSlash</soundMeleeMiss>
+				</value>
+			</li>
+			
+			<!-- Replace Archotech Power Arm Sounds to Royalty Sounds -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/HediffDef[defName = "FSFArchotechPowerArm"]/comps/li[@Class = "HediffCompProperties_VerbGiver"]/tools/li[2]/soundMeleeHit</xpath>
+				<value>
+					<soundMeleeHit>MeleeHit_BionicSlash</soundMeleeHit>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/HediffDef[defName = "FSFArchotechPowerArm"]/comps/li[@Class = "HediffCompProperties_VerbGiver"]/tools/li[2]/soundMeleeMiss</xpath>
+				<value>
+					<soundMeleeMiss>MeleeMiss_BionicSlash</soundMeleeMiss>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/HediffDef[defName = "FSFArchotechPowerArm"]/comps/li[@Class = "HediffCompProperties_VerbGiver"]/tools/li[3]/soundMeleeHit</xpath>
+				<value>
+					<soundMeleeHit>MeleeHit_BionicSlash</soundMeleeHit>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/HediffDef[defName = "FSFArchotechPowerArm"]/comps/li[@Class = "HediffCompProperties_VerbGiver"]/tools/li[3]/soundMeleeMiss</xpath>
+				<value>
+					<soundMeleeMiss>MeleeMiss_BionicSlash</soundMeleeMiss>
+				</value>
+			</li>
+			
+			<!-- Replace Research Requirements -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName = "FSFAdvBionicBrain"]/recipeMaker/researchPrerequisite</xpath>
+				<value>
+					<researchPrerequisite>BrainWiring</researchPrerequisite>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName = "FSFBionicPowerArm"]/recipeMaker/researchPrerequisite</xpath>
+				<value>
+					<researchPrerequisite>SpecializedLimbs</researchPrerequisite>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName = "FSFBionicBreachArm"]/recipeMaker/researchPrerequisite</xpath>
+				<value>
+					<researchPrerequisite>SpecializedLimbs</researchPrerequisite>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName = "FSFImplantBrainAnimals"]/recipeMaker/researchPrerequisite</xpath>
+				<value>
+					<researchPrerequisite>NeuralComputation</researchPrerequisite>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName = "FSFImplantBrainMedical"]/recipeMaker/researchPrerequisite</xpath>
+				<value>
+					<researchPrerequisite>NeuralComputation</researchPrerequisite>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName = "FSFImplantBrainPlants"]/recipeMaker/researchPrerequisite</xpath>
+				<value>
+					<researchPrerequisite>NeuralComputation</researchPrerequisite>
+				</value>
+			</li>
+			
+			<!-- Replace Research Stuff -->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ResearchProjectDef[@Name = "FSFABEResearchBase"]</xpath>
+				<value>
+					<techprintCount>1</techprintCount>
+					<techprintCommonality>1</techprintCommonality>
+					<techprintMarketValue>2000</techprintMarketValue>
+					<heldByFactionCategoryTags><li>Empire</li></heldByFactionCategoryTags>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ResearchProjectDef[defName = "FSFResearchCombatImplants"]/label</xpath>
+				<value>
+					<label>Advanced Combat Implants</label>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ResearchProjectDef[defName = "FSFResearchCombatImplants"]/description</xpath>
+				<value>
+					<description>Craft high-tech brain implants that assist the user in processing information in combat scenarios.</description>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+	
+</Patch>

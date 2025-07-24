@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+	<!-- Implant Torso Worker -->
+
+	<HediffDef ParentName="FSFImplantHediffAdvBase">
+		<defName>FSFImplantTorsoWorker</defName>
+		<label>worker frame</label>
+		<labelNoun>a worker frame</labelNoun>
+		<description>An installed worker frame.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantTorsoWorker</ThingDef></descriptionHyperlinks>
+		<spawnThingOnRemoved>FSFImplantTorsoWorker</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<capMods>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.25</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>0.25</offset>
+					</li>
+				</capMods>
+				<statOffsets>
+					<Mass>+25.0</Mass>
+				</statOffsets>
+			</li>
+		</stages>
+		<tags><li>FSFImplantTorsoFrame</li></tags>
+	</HediffDef>
+
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFImplantTorsoWorker</defName>
+		<label>worker frame</label>
+		<description>A durable heavy plasteel frame designed to replace the skeleton and some of the surrounding tissue.  The modifications provide the user with greater mobility and manipulation at the expense of an increase in weight.  Not compatible with other body frames.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFImplantTorsoWorker</RecipeDef></descriptionHyperlinks>
+		<thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+		<costList>
+			<Plasteel>150</Plasteel>
+			<ComponentSpacer>10</ComponentSpacer>
+		</costList>
+		<butcherProducts>
+			<Plasteel>150</Plasteel>
+			<ComponentSpacer>10</ComponentSpacer>
+		</butcherProducts>
+		<statBases>
+			<Mass>25</Mass>
+		</statBases>
+		<recipeMaker>
+			<researchPrerequisite>FSFResearchAdvancedBodyFrames</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>InstallFSFImplantTorsoWorker</defName>
+		<label>install worker frame</label>
+		<description>Install a worker frame.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantTorsoWorker</ThingDef>
+			<HediffDef>FSFImplantTorsoWorker</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing worker frame.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFImplantTorsoWorker</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFImplantTorsoWorker</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Torso</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFImplantTorsoWorker</addsHediff>
+		<incompatibleWithHediffTags>
+			<li>FSFImplantTorsoFrame</li>
+		</incompatibleWithHediffTags>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemoveFSFImplantTorsoWorker</defName>
+		<label>remove worker frame</label>
+		<description>Remove worker frame.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantTorsoWorker</ThingDef></descriptionHyperlinks>
+		<jobString>Removing worker frame.</jobString>
+		<removesHediff>FSFImplantTorsoWorker</removesHediff>
+	</RecipeDef>
+	
+	<!-- Implant Torso Speed -->
+
+	<HediffDef ParentName="FSFImplantHediffAdvBase">
+		<defName>FSFImplantTorsoSpeed</defName>
+		<label>sprinter frame</label>
+		<labelNoun>a sprinter frame</labelNoun>
+		<description>An installed sprinter frame.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantTorsoSpeed</ThingDef></descriptionHyperlinks>
+		<spawnThingOnRemoved>FSFImplantTorsoSpeed</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>1.0</offset>
+					</li>
+				</capMods>
+				<statOffsets>
+					<MeleeDodgeChance>+10.0</MeleeDodgeChance>
+					<Mass>-10.0</Mass>
+				</statOffsets>
+			</li>
+		</stages>
+		<tags><li>FSFImplantTorsoFrame</li></tags>
+	</HediffDef>
+
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFImplantTorsoSpeed</defName>
+		<label>sprinter frame</label>
+		<description>A durable lightweight plasteel frame designed to replace the skeleton and some of the surrounding tissue.  The modifications provide the user with greater speed and agility while also decreasing their weight.  Not compatible with other body frames.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFImplantTorsoSpeed</RecipeDef></descriptionHyperlinks>
+		<thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+		<costList>
+			<Plasteel>100</Plasteel>
+			<ComponentSpacer>12</ComponentSpacer>
+		</costList>
+		<butcherProducts>
+			<Plasteel>100</Plasteel>
+			<ComponentSpacer>12</ComponentSpacer>
+		</butcherProducts>
+		<statBases>
+			<Mass>25</Mass>
+		</statBases>
+		<recipeMaker>
+			<researchPrerequisite>FSFResearchAdvancedBodyFrames</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>InstallFSFImplantTorsoSpeed</defName>
+		<label>install sprinter frame</label>
+		<description>Install a sprinter frame.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantTorsoSpeed</ThingDef>
+			<HediffDef>FSFImplantTorsoSpeed</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing sprinter frame.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFImplantTorsoSpeed</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFImplantTorsoSpeed</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Torso</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFImplantTorsoSpeed</addsHediff>
+		<incompatibleWithHediffTags>
+			<li>FSFImplantTorsoFrame</li>
+		</incompatibleWithHediffTags>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemoveFSFImplantTorsoSpeed</defName>
+		<label>remove sprinter frame</label>
+		<description>Remove sprinter frame.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantTorsoSpeed</ThingDef></descriptionHyperlinks>
+		<jobString>Removing sprinter frame.</jobString>
+		<removesHediff>FSFImplantTorsoSpeed</removesHediff>
+	</RecipeDef>
+	
+	
+	
+	
+	
+		
+	<!-- Implant Torso Climate Control -->
+	
+	<HediffDef ParentName="FSFImplantHediffAdvBase">
+		<defName>FSFImplantTorsoClimateControl</defName>
+		<label>climate control</label>
+		<labelNoun>a climate control</labelNoun>
+		<description>An installed climate control.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantTorsoClimateControl</ThingDef></descriptionHyperlinks>
+		<spawnThingOnRemoved>FSFImplantTorsoClimateControl</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<statOffsets>
+					<ComfyTemperatureMax>+25.0</ComfyTemperatureMax>
+					<ComfyTemperatureMin>-25.0</ComfyTemperatureMin>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFImplantTorsoClimateControl</defName>
+		<label>climate control</label>
+		<description>A small internal module designed to help regulate the bodies temperature allowing a person to endure harsher cold or heat without ill effects.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFImplantTorsoClimateControl</RecipeDef></descriptionHyperlinks>
+		<thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+		<costList>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>4</ComponentSpacer>
+		</costList>
+		<butcherProducts>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>4</ComponentSpacer>
+		</butcherProducts>
+		<recipeMaker>
+			<researchPrerequisite>FSFResearchEnvironmentalImplants</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>InstallFSFImplantTorsoClimateControl</defName>
+		<label>install climate control</label>
+		<description>Install a climate control.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantTorsoClimateControl</ThingDef>
+			<HediffDef>FSFImplantTorsoClimateControl</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing climate control.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFImplantTorsoClimateControl</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFImplantTorsoClimateControl</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Torso</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFImplantTorsoClimateControl</addsHediff>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemoveFSFImplantTorsoClimateControl</defName>
+		<label>remove climate control</label>
+		<description>Remove climate control.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantTorsoClimateControl</ThingDef></descriptionHyperlinks>
+		<jobString>Removing climate control.</jobString>
+		<removesHediff>FSFImplantTorsoClimateControl</removesHediff>
+	</RecipeDef>
+	
+	<!-- Implant Torso Respirator -->
+	
+	<HediffDef ParentName="FSFImplantHediffAdvBase">
+		<defName>FSFImplantTorsoRespirator</defName>
+		<label>internal respirator</label>
+		<labelNoun>a internal respirator</labelNoun>
+		<description>An installed internal respirator.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantTorsoRespirator</ThingDef></descriptionHyperlinks>
+		<spawnThingOnRemoved>FSFImplantTorsoRespirator</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<statOffsets>
+					<ToxicSensitivity>-1.0</ToxicSensitivity>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFImplantTorsoRespirator</defName>
+		<label>internal respirator</label>
+		<description>A small internal module that functions much like a gas mask.  It filters out harmful elements from the air before passing it on to the lungs.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFImplantTorsoRespirator</RecipeDef></descriptionHyperlinks>
+		<thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+		<costList>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>4</ComponentSpacer>
+		</costList>
+		<butcherProducts>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>4</ComponentSpacer>
+		</butcherProducts>
+		<recipeMaker>
+			<researchPrerequisite>FSFResearchEnvironmentalImplants</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>InstallFSFImplantTorsoRespirator</defName>
+		<label>install internal respirator</label>
+		<description>Install a internal respirator.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantTorsoRespirator</ThingDef>
+			<HediffDef>FSFImplantTorsoRespirator</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing internal respirator.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFImplantTorsoRespirator</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFImplantTorsoRespirator</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Torso</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFImplantTorsoRespirator</addsHediff>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemoveFSFImplantTorsoRespirator</defName>
+		<label>remove internal respirator</label>
+		<description>Remove internal respirator.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantTorsoRespirator</ThingDef></descriptionHyperlinks>
+		<jobString>Removing internal respirator.</jobString>
+		<removesHediff>FSFImplantTorsoRespirator</removesHediff>
+	</RecipeDef>
+		
+</Defs>

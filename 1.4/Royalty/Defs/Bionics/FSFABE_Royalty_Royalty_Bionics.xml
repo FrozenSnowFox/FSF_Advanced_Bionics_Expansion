@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	
+  <!-- List of Changes
+
+	Change GastroAnalyzer and Immunoenhancer to body parts. This means change hediff parent and recipedef parent.
+	Change all ThingDefs parent to FSFBodyPartAdvBionicBase used for advanced bionics.
+	Add butcherProducts to all ThingDefs for disassemble bionic recipe.
+	Change all stomach material costs to higher costs.
+ 
+  -->
+	
+  <!-- Neurocalculator -->
+
+  <ThingDef ParentName="FSFBodyPartAdvBionicBase">
+    <defName>Neurocalculator</defName>
+    <label>neurocalculator</label>
+    <description>A non-intelligent microcomputer controlled by a visual/tactile neural interface. It assists with memory and calculation, like a calculator and notepad embedded in the brain.</description>
+    <descriptionHyperlinks><RecipeDef>InstallNeurocalculator</RecipeDef></descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Item/Health/HealthItem</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.80</drawSize>
+      <color>(189,169,118)</color>
+    </graphicData>
+    <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+    <costList>
+      <Plasteel>15</Plasteel>
+      <ComponentSpacer>4</ComponentSpacer>
+    </costList>
+	<butcherProducts>
+      <Plasteel>15</Plasteel>
+      <ComponentSpacer>4</ComponentSpacer>
+	</butcherProducts>
+    <recipeMaker>
+      <researchPrerequisite>NeuralComputation</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+
+  <!-- Learning assistant -->
+  
+  <ThingDef ParentName="FSFBodyPartAdvBionicBase">
+    <defName>LearningAssistant</defName>
+    <label>learning assistant</label>
+    <description>A sensory recording system that replays important experiences during sleep, strengthening the formation of new memories.</description>
+    <descriptionHyperlinks><RecipeDef>InstallLearningAssistant</RecipeDef></descriptionHyperlinks>
+    <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+    <costList>
+      <Plasteel>15</Plasteel>
+      <ComponentSpacer>4</ComponentSpacer>
+    </costList>
+	<butcherProducts>
+      <Plasteel>15</Plasteel>
+      <ComponentSpacer>4</ComponentSpacer>
+	</butcherProducts>
+    <recipeMaker>
+      <researchPrerequisite>NeuralComputation</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+	
+  <!-- Gastro-analyzer -->
+
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>GastroAnalyzer</defName>
+    <label>gastro-analyzer</label>
+    <labelNoun>a gastro-analyzer</labelNoun>
+    <description>An installed gastro-analyzer.</description>
+    <descriptionHyperlinks><ThingDef>GastroAnalyzer</ThingDef></descriptionHyperlinks>
+    <addedPartProps>
+      <solid>true</solid>
+    </addedPartProps>
+    <stages>
+      <li>
+        <statOffsets>
+          <CookSpeed>5</CookSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+    <spawnThingOnRemoved>GastroAnalyzer</spawnThingOnRemoved>
+  </HediffDef>
+
+  <ThingDef ParentName="FSFBodyPartAdvBionicBase">
+    <defName>GastroAnalyzer</defName>
+    <label>gastro-analyzer</label>
+    <description>This bionic nose implant enhances the sense of smell, with a focus towards food-related smells. A multi-layered ultrafine absorption mesh detects compounds in the air. A microprocessor formats the readings into an olfactory nerve signal to send to the brain through a nerve-link interface. The result is that the user can smell foods with a depth, richness, and precision unknown among unenhanced humans, allowing them to cook more effectively. The whole unit is small enough to be installed in the nose without affecting the user's appearance.</description>
+    <descriptionHyperlinks><RecipeDef>InstallGastroAnalyzer</RecipeDef></descriptionHyperlinks>
+    <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+    <costList>
+      <Plasteel>15</Plasteel>
+      <ComponentSpacer>3</ComponentSpacer>
+    </costList>
+	<butcherProducts>
+      <Plasteel>15</Plasteel>
+      <ComponentSpacer>3</ComponentSpacer>
+	</butcherProducts>
+    <recipeMaker>
+      <researchPrerequisite>MolecularAnalysis</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+    <defName>InstallGastroAnalyzer</defName>
+    <label>install gastro-analyzer</label>
+    <description>Install a gastro-analyzer.</description>
+    <descriptionHyperlinks>
+      <ThingDef>GastroAnalyzer</ThingDef>
+      <HediffDef>GastroAnalyzer</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Installing gastro-analyzer.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>GastroAnalyzer</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>GastroAnalyzer</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Nose</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>GastroAnalyzer</addsHediff>
+  </RecipeDef>
+	
+  <!-- Immunoenhancer -->
+	
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>Immunoenhancer</defName>
+    <label>immunoenhancer</label>
+    <labelNoun>an immunoenhancer</labelNoun>
+    <description>An installed immunoenhancer.</description>
+    <descriptionHyperlinks><ThingDef>Immunoenhancer</ThingDef></descriptionHyperlinks>
+    <spawnThingOnRemoved>Immunoenhancer</spawnThingOnRemoved>
+	<addedPartProps>
+		<solid>true</solid>
+		<partEfficiency>1.50</partEfficiency>
+		<betterThanNatural>true</betterThanNatural>
+	</addedPartProps>
+    <stages>
+      <li>
+        <statOffsets>
+          <ImmunityGainSpeed>0.08</ImmunityGainSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <ThingDef ParentName="FSFBodyPartAdvBionicBase">
+    <defName>Immunoenhancer</defName>
+    <label>immunoenhancer</label>
+    <description>An analysis computer inspects the bloodstream, classifies pathogens, and rapidly prompts the body's natural immune system to respond to them faster than it could alone. This speeds immunity gain significantly.</description>
+    <descriptionHyperlinks><RecipeDef>InstallImmunoenhancer</RecipeDef></descriptionHyperlinks>
+    <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+    <costList>
+      <Plasteel>10</Plasteel>
+      <ComponentSpacer>6</ComponentSpacer>
+    </costList>
+	<butcherProducts>
+      <Plasteel>10</Plasteel>
+      <ComponentSpacer>6</ComponentSpacer>
+	</butcherProducts>
+    <recipeMaker>
+      <researchPrerequisite>MolecularAnalysis</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+    <defName>InstallImmunoenhancer</defName>
+    <label>install immunoenhancer</label>
+    <description>Install an immunoenhancer.</description>
+    <descriptionHyperlinks>
+      <ThingDef>Immunoenhancer</ThingDef>
+      <HediffDef>Immunoenhancer</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Installing immunoenhancer.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Immunoenhancer</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Immunoenhancer</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Kidney</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>Immunoenhancer</addsHediff>
+  </RecipeDef>
+	
+  <!-- Coagulator -->
+
+  <ThingDef ParentName="FSFBodyPartAdvBionicBase">
+    <defName>Coagulator</defName>
+    <label>coagulator</label>
+    <description>Releases coagulating factors in response to blood loss, reducing bleeding rates significantly.</description>
+    <descriptionHyperlinks><RecipeDef>InstallCoagulator</RecipeDef></descriptionHyperlinks>
+    <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+    <costList>
+      <Plasteel>15</Plasteel>
+      <ComponentSpacer>4</ComponentSpacer>
+    </costList>
+	<butcherProducts>
+      <Plasteel>15</Plasteel>
+      <ComponentSpacer>4</ComponentSpacer>
+	</butcherProducts>
+    <recipeMaker>
+      <researchPrerequisite>HealingFactors</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+
+  <!-- Healing enhancer -->
+
+  <ThingDef ParentName="FSFBodyPartAdvBionicBase">
+    <defName>HealingEnhancer</defName>
+    <label>healing enhancer</label>
+    <description>Releases nanomachines and healing factors that speed up wound healing. This implant only helps with physical wounds, and does nothing to combat disease or other health problems.</description>
+    <descriptionHyperlinks><RecipeDef>InstallHealingEnhancer</RecipeDef></descriptionHyperlinks>
+    <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+    <costList>
+      <Plasteel>15</Plasteel>
+      <ComponentSpacer>4</ComponentSpacer>
+    </costList>
+	<butcherProducts>
+      <Plasteel>15</Plasteel>
+      <ComponentSpacer>4</ComponentSpacer>
+	</butcherProducts>
+    <recipeMaker>
+      <researchPrerequisite>HealingFactors</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+
+  <!-- Toughskin gland -->
+
+  <ThingDef ParentName="FSFBodyPartAdvBionicBase">
+    <defName>ToughskinGland</defName>
+    <label>toughskin gland</label>
+    <description>This bionic gland releases chemicals and nanomachines that toughen the skin, making it somewhat more resistant to damage. While it doesn't add as much protection as some other skin-hardening glands, the toughskin gland has the advantage of not noticeably altering the user's appearance.</description>
+    <descriptionHyperlinks><RecipeDef>InstallToughskinGland</RecipeDef></descriptionHyperlinks>
+    <thingSetMakerTags><li>RewardStandardMidFreq</li></thingSetMakerTags>
+    <costList>
+      <Plasteel>15</Plasteel>
+      <ComponentSpacer>4</ComponentSpacer>
+    </costList>
+	<butcherProducts>
+      <Plasteel>15</Plasteel>
+      <ComponentSpacer>4</ComponentSpacer>
+	</butcherProducts>
+    <recipeMaker>
+      <researchPrerequisite>SkinHardening</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+
+  <!-- Armorskin gland -->
+
+  <ThingDef ParentName="FSFBodyPartAdvBionicBase">
+    <defName>ArmorskinGland</defName>
+    <label>armorskin gland</label>
+    <description>This bionic gland releases chemicals and nanomachines that toughen the skin and add flexible subdermal keratin plates at strategic points. This makes the user more resistant to damage across their whole body. Unfortunately, these changes make the skin appear leathery, with wrinkles across the whole body and face, which is generally considered ugly.</description>
+    <descriptionHyperlinks><RecipeDef>InstallArmorskinGland</RecipeDef></descriptionHyperlinks>
+    <thingSetMakerTags><li>RewardStandardMidFreq</li></thingSetMakerTags>
+    <costList>
+      <Plasteel>20</Plasteel>
+      <ComponentSpacer>6</ComponentSpacer>
+    </costList>
+	<butcherProducts>
+      <Plasteel>20</Plasteel>
+      <ComponentSpacer>6</ComponentSpacer>
+	</butcherProducts>
+    <recipeMaker>
+      <researchPrerequisite>SkinHardening</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+
+  <!-- Stoneskin gland -->
+
+  <ThingDef ParentName="FSFBodyPartAdvBionicBase">
+    <defName>StoneskinGland</defName>
+    <label>stoneskin gland</label>
+    <description>This bionic gland releases chemical and nanomachines that transform the user's skin into a built-in suit of armor. The whole epidermis thickens and hardens to resist burns, while jointed exterior keratin plates form everywhere they can - including the head and face. While it's very difficult to physically hurt someone using this implant, the plates and hard skin significantly reduces the user's physical attractiveness.</description>
+    <descriptionHyperlinks><RecipeDef>InstallStoneskinGland</RecipeDef></descriptionHyperlinks>
+    <thingSetMakerTags><li>RewardStandardMidFreq</li></thingSetMakerTags>
+    <costList>
+      <Plasteel>25</Plasteel>
+      <ComponentSpacer>8</ComponentSpacer>
+    </costList>
+	<butcherProducts>
+      <Plasteel>25</Plasteel>
+      <ComponentSpacer>8</ComponentSpacer>
+	</butcherProducts>
+    <recipeMaker>
+      <researchPrerequisite>SkinHardening</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+
+  <!-- Aesthetic shaper -->
+
+  <ThingDef ParentName="FSFBodyPartAdvBionicBase">
+    <defName>AestheticShaper</defName>
+    <label>aesthetic shaper</label>
+    <description>A sophisticated package of hormonal and mechanite influences shapes the muscles and fat on the body, adding non-functional aesthetic tissue where needed to achieve a desired appearance. This implant can be configured to form various body shapes according to the user's taste - or that of their partner.</description>
+    <descriptionHyperlinks><RecipeDef>InstallAestheticShaper</RecipeDef></descriptionHyperlinks>
+    <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+    <costList>
+      <Plasteel>15</Plasteel>
+      <ComponentSpacer>3</ComponentSpacer>
+    </costList>
+	<butcherProducts>
+      <Plasteel>15</Plasteel>
+      <ComponentSpacer>3</ComponentSpacer>
+	</butcherProducts>
+    <recipeMaker>
+      <researchPrerequisite>FleshShaping</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+
+  <!-- Aesthetic nose -->
+
+  <ThingDef ParentName="FSFBodyPartAdvBionicBase">
+    <defName>AestheticNose</defName>
+    <label>aesthetic nose</label>
+    <description>The nose is shaped to the user's desired form, matching prevalent beauty standards and enhancing physical impressions.</description>
+    <descriptionHyperlinks><RecipeDef>InstallAestheticNose</RecipeDef></descriptionHyperlinks>
+    <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+    <costList>
+      <Plasteel>10</Plasteel>
+      <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+	<butcherProducts>
+      <Plasteel>10</Plasteel>
+      <ComponentSpacer>2</ComponentSpacer>
+	</butcherProducts>
+    <recipeMaker>
+      <researchPrerequisite>FleshShaping</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+ 
+  <!-- Love enhancer -->
+
+  <ThingDef ParentName="FSFBodyPartAdvBionicBase">
+    <defName>LoveEnhancer</defName>
+    <label>love enhancer</label>
+    <description>Humans have always tried to use every new technology to enhance sexual satisfaction. Bionics were no exception. This implant makes physical and chemical changes to the body which enhance the experience of lovin' for both partners - both physically and psychologically. The implant unit can adapt to enhance both men and women upon being implanted.</description>
+    <descriptionHyperlinks><RecipeDef>InstallLoveEnhancer</RecipeDef></descriptionHyperlinks>
+    <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+    <costList>
+      <Plasteel>15</Plasteel>
+      <ComponentSpacer>4</ComponentSpacer>
+    </costList>
+	<butcherProducts>
+      <Plasteel>15</Plasteel>
+      <ComponentSpacer>4</ComponentSpacer>
+	</butcherProducts>
+    <recipeMaker>
+      <researchPrerequisite>FleshShaping</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+
+  <!-- Sterilizing stomach -->
+
+  <ThingDef ParentName="FSFBodyPartAdvBionicBase">
+    <defName>DetoxifierStomach</defName>
+    <label>sterilizing stomach</label>
+    <description>An artificial stomach replacement with a broad-spectrum filtration and sterilization system. It allows the user to eat almost anything without ever worrying about food poisoning.</description>
+    <descriptionHyperlinks><RecipeDef>InstallDetoxifierStomach</RecipeDef></descriptionHyperlinks>
+    <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+    <costList>
+      <Plasteel>10</Plasteel>
+      <ComponentSpacer>9</ComponentSpacer>
+    </costList>
+	<butcherProducts>
+      <Plasteel>10</Plasteel>
+      <ComponentSpacer>9</ComponentSpacer>
+	</butcherProducts>
+    <recipeMaker>
+      <researchPrerequisite>ArtificialMetabolism</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  
+  <!-- Reprocessor stomach -->
+
+  <ThingDef ParentName="FSFBodyPartAdvBionicBase">
+    <defName>ReprocessorStomach</defName>
+    <label>reprocessor stomach</label>
+    <description>An advanced chemical processing system breaks down nutrients the body could normally never use, leading to increased efficiency.</description>
+    <descriptionHyperlinks><RecipeDef>InstallReprocessorStomach</RecipeDef></descriptionHyperlinks>
+    <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+    <costList>
+      <Plasteel>10</Plasteel>
+      <ComponentSpacer>9</ComponentSpacer>
+    </costList>
+	<butcherProducts>
+      <Plasteel>10</Plasteel>
+      <ComponentSpacer>9</ComponentSpacer>
+	</butcherProducts>
+    <recipeMaker>
+      <researchPrerequisite>ArtificialMetabolism</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+
+  <!-- Nuclear stomach -->
+
+  <ThingDef ParentName="FSFBodyPartAdvBionicBase">
+    <defName>NuclearStomach</defName>
+    <label>nuclear stomach</label>
+    <description>A micro-nuclear reactor combined with complex chemical synthesis replaces the body's need for food energy. Food is required only to replace matter lost from the body, reducing the user's intake needs significantly. This artificial stomach cannot get food poisoning. However, there is little room to shield the reactor, so the radiation increases the risk of cancer.</description>
+    <descriptionHyperlinks><RecipeDef>InstallNuclearStomach</RecipeDef></descriptionHyperlinks>
+    <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+    <costList>
+      <Plasteel>10</Plasteel>
+      <ComponentSpacer>9</ComponentSpacer>
+    </costList>
+	<butcherProducts>
+      <Plasteel>10</Plasteel>
+      <ComponentSpacer>9</ComponentSpacer>
+	</butcherProducts>
+    <recipeMaker>
+      <researchPrerequisite>ArtificialMetabolism</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+
+
+  <!-- Circadian assistant -->
+
+  <ThingDef ParentName="FSFBodyPartAdvBionicBase">
+    <defName>CircadianAssistant</defName>
+    <label>circadian assistant</label>
+    <description>An artificial gland. Produces chemicals and nanomachines that clear toxin buildup from the brain.</description>
+    <descriptionHyperlinks><RecipeDef>InstallCircadianAssistant</RecipeDef></descriptionHyperlinks>
+    <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+    <costList>
+      <Plasteel>15</Plasteel>
+      <ComponentSpacer>4</ComponentSpacer>
+    </costList>
+	<butcherProducts>
+      <Plasteel>15</Plasteel>
+      <ComponentSpacer>4</ComponentSpacer>
+	</butcherProducts>
+    <recipeMaker>
+      <researchPrerequisite>CircadianInfluence</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+
+  <!-- Circadian half-cycler -->
+
+  <ThingDef ParentName="FSFBodyPartAdvBionicBase">
+    <defName>CircadianHalfCycler</defName>
+    <label>circadian half-cycler</label>
+    <description>A signal redirector which isolates half of the brain, allowing the other half to sleep while the user remains outwardly awake. By alternating brain halves, the user never needs to sleep. Unfortunately, two hemispheres are better than one - working with half a brain causes a reduction in consciousness.</description>
+    <descriptionHyperlinks><RecipeDef>InstallCircadianHalfCycler</RecipeDef></descriptionHyperlinks>
+    <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+    <costList>
+      <Plasteel>15</Plasteel>
+      <ComponentSpacer>4</ComponentSpacer>
+    </costList>
+	<butcherProducts>
+      <Plasteel>15</Plasteel>
+      <ComponentSpacer>4</ComponentSpacer>
+	</butcherProducts>
+    <recipeMaker>
+      <researchPrerequisite>CircadianInfluence</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+
+</Defs>

@@ -1,0 +1,815 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+	<!-- Brain Implant Melee Combat -->
+
+	<HediffDef ParentName="FSFImplantHediffAdvBase">
+		<defName>FSFImplantBrainMeleeCombat</defName>
+		<label>CQC assistant</label>
+		<labelNoun>a CQC assistant</labelNoun>
+		<description>An installed close quarters combat assistant.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantBrainMeleeCombat</ThingDef></descriptionHyperlinks>
+		<spawnThingOnRemoved>FSFImplantBrainMeleeCombat</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<statOffsets>
+					<MeleeDodgeChance>15</MeleeDodgeChance>
+					<MeleeHitChance>4</MeleeHitChance>
+				</statOffsets>
+				<statFactors>
+					<PawnTrapSpringChance>0.1</PawnTrapSpringChance>
+				</statFactors>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_ReactOnDamage">
+				<damageDefIncoming>EMP</damageDefIncoming>
+				<createHediff>BrainShock</createHediff>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<ThingDef ParentName="BodyPartBionicImperialBase">
+		<defName>FSFImplantBrainMeleeCombat</defName>
+		<label>CQC assistant</label>
+		<description>A low-intelligent microcomputer controlled by a visual/tactile neural interface. It assists with processing audible and visual cues in close quarters combat to aid the user in dodging and striking an opponent.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFImplantBrainMeleeCombat</RecipeDef></descriptionHyperlinks>
+		<graphicData>
+			<texPath>Things/Item/Health/HealthItem</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.80</drawSize>
+			<color>(189,169,118)</color>
+		</graphicData>
+		<thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+		<costList>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>4</ComponentSpacer>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite>FSFResearchCombatImplants</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>InstallFSFImplantBrainMeleeCombat</defName>
+		<label>install CQC assistant</label>
+		<description>Install a CQC assistant.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantBrainMeleeCombat</ThingDef></descriptionHyperlinks>
+		<jobString>Installing CQC assistant.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFImplantBrainMeleeCombat</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFImplantBrainMeleeCombat</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Brain</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFImplantBrainMeleeCombat</addsHediff>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemoveFSFImplantBrainMeleeCombat</defName>
+		<label>remove CQC assistant</label>
+		<description>Remove CQC assistant.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantBrainMeleeCombat</ThingDef></descriptionHyperlinks>
+		<jobString>Removing CQC assistant.</jobString>
+		<removesHediff>FSFImplantBrainMeleeCombat</removesHediff>
+	</RecipeDef>
+	
+	<!-- Brain Implant Ranged Combat -->
+
+	<HediffDef ParentName="FSFImplantHediffAdvBase">
+		<defName>FSFImplantBrainRangedCombat</defName>
+		<label>targeting assistant</label>
+		<labelNoun>a targeting assistant</labelNoun>
+		<description>An installed targeting assistant.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantBrainRangedCombat</ThingDef></descriptionHyperlinks>
+		<spawnThingOnRemoved>FSFImplantBrainRangedCombat</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<statOffsets>
+					<AimingDelayFactor>-0.25</AimingDelayFactor>
+					<ShootingAccuracyPawn>+5</ShootingAccuracyPawn>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_ReactOnDamage">
+				<damageDefIncoming>EMP</damageDefIncoming>
+				<createHediff>BrainShock</createHediff>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<ThingDef ParentName="BodyPartBionicImperialBase">
+		<defName>FSFImplantBrainRangedCombat</defName>
+		<label>targeting assistant</label>
+		<description>A low-intelligent microcomputer controlled by a visual/tactile neural interface. It assists with processing audible and visual information to aid the user in aiming faster and shooting more accurately.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFImplantBrainRangedCombat</RecipeDef></descriptionHyperlinks>
+		<graphicData>
+			<texPath>Things/Item/Health/HealthItem</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.80</drawSize>
+			<color>(189,169,118)</color>
+		</graphicData>
+		<thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+		<costList>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>4</ComponentSpacer>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite>FSFResearchCombatImplants</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>InstallFSFImplantBrainRangedCombat</defName>
+		<label>install targeting assistant</label>
+		<description>Install a targeting assistant.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantBrainRangedCombat</ThingDef></descriptionHyperlinks>
+		<jobString>Installing targeting assistant.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFImplantBrainRangedCombat</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFImplantBrainRangedCombat</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Brain</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFImplantBrainRangedCombat</addsHediff>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemoveFSFImplantBrainRangedCombat</defName>
+		<label>remove targeting assistant</label>
+		<description>Remove targeting assistant.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantBrainRangedCombat</ThingDef></descriptionHyperlinks>
+		<jobString>Removing targeting assistant.</jobString>
+		<removesHediff>FSFImplantBrainRangedCombat</removesHediff>
+	</RecipeDef>
+	
+	<!-- Brain Implant Animals -->
+
+	<HediffDef ParentName="FSFImplantHediffAdvBase">
+		<defName>FSFImplantBrainAnimals</defName>
+		<label>ethology assistant</label>
+		<labelNoun>a ethology assistant</labelNoun>
+		<description>An installed ethology assistant.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantBrainAnimals</ThingDef></descriptionHyperlinks>
+		<spawnThingOnRemoved>FSFImplantBrainAnimals</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<statOffsets>
+					<TameAnimalChance>+0.1</TameAnimalChance>
+					<TrainAnimalChance>+0.1</TrainAnimalChance>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_ReactOnDamage">
+				<damageDefIncoming>EMP</damageDefIncoming>
+				<createHediff>BrainShock</createHediff>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<ThingDef ParentName="BodyPartBionicImperialBase">
+		<defName>FSFImplantBrainAnimals</defName>
+		<label>ethology assistant</label>
+		<description>A low-intelligent microcomputer controlled by a visual/tactile neural interface. It assists with identifying important audible and visual cues emitted by animals to aid the user in animal handling.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFImplantBrainAnimals</RecipeDef></descriptionHyperlinks>
+		<graphicData>
+			<texPath>Things/Item/Health/HealthItem</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.80</drawSize>
+			<color>(189,169,118)</color>
+		</graphicData>
+		<thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+		<costList>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>4</ComponentSpacer>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite>NeuralComputation</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>InstallFSFImplantBrainAnimals</defName>
+		<label>install ethology assistant</label>
+		<description>Install a ethology assistant.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantBrainAnimals</ThingDef></descriptionHyperlinks>
+		<jobString>Installing ethology assistant.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFImplantBrainAnimals</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFImplantBrainAnimals</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Brain</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFImplantBrainAnimals</addsHediff>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemoveFSFImplantBrainAnimals</defName>
+		<label>remove ethology assistant</label>
+		<description>Remove ethology assistant.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantBrainAnimals</ThingDef></descriptionHyperlinks>
+		<jobString>Removing ethology assistant.</jobString>
+		<removesHediff>FSFImplantBrainAnimals</removesHediff>
+	</RecipeDef>
+	
+	<!-- Brain Implant Medical -->
+
+	<HediffDef ParentName="FSFImplantHediffAdvBase">
+		<defName>FSFImplantBrainMedical</defName>
+		<label>medical assistant</label>
+		<labelNoun>a medical assistant</labelNoun>
+		<description>An installed medical assistant.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantBrainMedical</ThingDef></descriptionHyperlinks>
+		<spawnThingOnRemoved>FSFImplantBrainMedical</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<statOffsets>
+					<MedicalOperationSpeed>+0.2</MedicalOperationSpeed>
+					<MedicalSurgerySuccessChance>+0.1</MedicalSurgerySuccessChance>
+					<MedicalTendSpeed>+0.2</MedicalTendSpeed>
+					<MedicalTendQuality>+0.1</MedicalTendQuality>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_ReactOnDamage">
+				<damageDefIncoming>EMP</damageDefIncoming>
+				<createHediff>BrainShock</createHediff>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<ThingDef ParentName="BodyPartBionicImperialBase">
+		<defName>FSFImplantBrainMedical</defName>
+		<label>medical assistant</label>
+		<description>A low-intelligent microcomputer controlled by a visual/tactile neural interface. With an immense medical database and a variety of analytical tools it helps the user diagnose ailments and perform surgery.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFImplantBrainMedical</RecipeDef></descriptionHyperlinks>
+		<graphicData>
+			<texPath>Things/Item/Health/HealthItem</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.80</drawSize>
+			<color>(189,169,118)</color>
+		</graphicData>
+		<thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+		<costList>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>4</ComponentSpacer>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite>NeuralComputation</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>InstallFSFImplantBrainMedical</defName>
+		<label>install medical assistant</label>
+		<description>Install a medical assistant.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantBrainMedical</ThingDef></descriptionHyperlinks>
+		<jobString>Installing medical assistant.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFImplantBrainMedical</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFImplantBrainMedical</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Brain</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFImplantBrainMedical</addsHediff>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemoveFSFImplantBrainMedical</defName>
+		<label>remove medical assistant</label>
+		<description>Remove medical assistant.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantBrainMedical</ThingDef></descriptionHyperlinks>
+		<jobString>Removing medical assistant.</jobString>
+		<removesHediff>FSFImplantBrainMedical</removesHediff>
+	</RecipeDef>
+	
+	<!-- Brain Implant Plants -->
+
+	<HediffDef ParentName="FSFImplantHediffAdvBase">
+		<defName>FSFImplantBrainPlants</defName>
+		<label>agricultural assistant</label>
+		<labelNoun>a agricultural assistant</labelNoun>
+		<description>An installed agricultural assistant.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantBrainPlants</ThingDef></descriptionHyperlinks>
+		<spawnThingOnRemoved>FSFImplantBrainPlants</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<statOffsets>
+					<ForagedNutritionPerDay>+3.2</ForagedNutritionPerDay>
+					<PlantWorkSpeed>+0.2</PlantWorkSpeed>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_ReactOnDamage">
+				<damageDefIncoming>EMP</damageDefIncoming>
+				<createHediff>BrainShock</createHediff>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<ThingDef ParentName="BodyPartBionicImperialBase">
+		<defName>FSFImplantBrainPlants</defName>
+		<label>agricultural assistant</label>
+		<description>A non-intelligent microcomputer controlled by a visual/tactile neural interface. With an immense agricultural database and a variety of analytical tools it helps the user better care for plants and forage for food.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFImplantBrainPlants</RecipeDef></descriptionHyperlinks>
+		<graphicData>
+			<texPath>Things/Item/Health/HealthItem</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.80</drawSize>
+			<color>(189,169,118)</color>
+		</graphicData>
+		<thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+		<costList>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>4</ComponentSpacer>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite>NeuralComputation</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>InstallFSFImplantBrainPlants</defName>
+		<label>install agricultural assistant</label>
+		<description>Install a agricultural assistant.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantBrainPlants</ThingDef></descriptionHyperlinks>
+		<jobString>Installing agricultural assistant.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFImplantBrainPlants</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFImplantBrainPlants</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Brain</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFImplantBrainPlants</addsHediff>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemoveFSFImplantBrainPlants</defName>
+		<label>remove agricultural assistant</label>
+		<description>Remove agricultural assistant.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantBrainPlants</ThingDef></descriptionHyperlinks>
+		<jobString>Removing agricultural assistant.</jobString>
+		<removesHediff>FSFImplantBrainPlants</removesHediff>
+	</RecipeDef>
+	
+	
+	
+	
+	
+	<!-- Implant Torso Worker -->
+
+	<HediffDef ParentName="FSFImplantHediffAdvBase">
+		<defName>FSFImplantTorsoWorker</defName>
+		<label>worker frame</label>
+		<labelNoun>a worker frame</labelNoun>
+		<description>An installed worker frame.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantTorsoWorker</ThingDef></descriptionHyperlinks>
+		<spawnThingOnRemoved>FSFImplantTorsoWorker</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<capMods>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.25</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>0.25</offset>
+					</li>
+				</capMods>
+				<statOffsets>
+					<Mass>+25.0</Mass>
+				</statOffsets>
+			</li>
+		</stages>
+		<tags><li>FSFImplantTorsoFrame</li></tags>
+	</HediffDef>
+
+	<ThingDef ParentName="BodyPartBionicImperialBase">
+		<defName>FSFImplantTorsoWorker</defName>
+		<label>worker frame</label>
+		<description>A durable heavy plasteel frame designed to replace the skeleton and some of the surrounding tissue.  The modifications provide the user with greater mobility and manipulation at the expense of an increase in weight.  Not compatible with other body frames.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFImplantTorsoWorker</RecipeDef></descriptionHyperlinks>
+		<thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+		<costList>
+			<Plasteel>150</Plasteel>
+			<ComponentSpacer>10</ComponentSpacer>
+		</costList>
+		<statBases>
+			<Mass>25</Mass>
+		</statBases>
+		<recipeMaker>
+			<researchPrerequisite>FSFAdvancedBodyFramesResearch</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>InstallFSFImplantTorsoWorker</defName>
+		<label>install worker frame</label>
+		<description>Install a worker frame.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantTorsoWorker</ThingDef></descriptionHyperlinks>
+		<jobString>Installing worker frame.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFImplantTorsoWorker</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFImplantTorsoWorker</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Torso</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFImplantTorsoWorker</addsHediff>
+		<incompatibleWithHediffTags>
+			<li>FSFImplantTorsoFrame</li>
+		</incompatibleWithHediffTags>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemoveFSFImplantTorsoWorker</defName>
+		<label>remove worker frame</label>
+		<description>Remove worker frame.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantTorsoWorker</ThingDef></descriptionHyperlinks>
+		<jobString>Removing worker frame.</jobString>
+		<removesHediff>FSFImplantTorsoWorker</removesHediff>
+	</RecipeDef>
+	
+	<!-- Implant Torso Speed -->
+
+	<HediffDef ParentName="FSFImplantHediffAdvBase">
+		<defName>FSFImplantTorsoSpeed</defName>
+		<label>sprinter frame</label>
+		<labelNoun>a sprinter frame</labelNoun>
+		<description>An installed sprinter frame.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantTorsoSpeed</ThingDef></descriptionHyperlinks>
+		<spawnThingOnRemoved>FSFImplantTorsoSpeed</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>1.0</offset>
+					</li>
+				</capMods>
+				<statOffsets>
+					<MeleeDodgeChance>+10.0</MeleeDodgeChance>
+					<Mass>-10.0</Mass>
+				</statOffsets>
+			</li>
+		</stages>
+		<tags><li>FSFImplantTorsoFrame</li></tags>
+	</HediffDef>
+
+	<ThingDef ParentName="BodyPartBionicImperialBase">
+		<defName>FSFImplantTorsoSpeed</defName>
+		<label>sprinter frame</label>
+		<description>A durable lightweight plasteel frame designed to replace the skeleton and some of the surrounding tissue.  The modifications provide the user with greater speed and agility while also decreasing their weight.  Not compatible with other body frames.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFImplantTorsoSpeed</RecipeDef></descriptionHyperlinks>
+		<thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+		<costList>
+			<Plasteel>100</Plasteel>
+			<ComponentSpacer>12</ComponentSpacer>
+		</costList>
+		<statBases>
+			<Mass>25</Mass>
+		</statBases>
+		<recipeMaker>
+			<researchPrerequisite>FSFAdvancedBodyFramesResearch</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>InstallFSFImplantTorsoSpeed</defName>
+		<label>install sprinter frame</label>
+		<description>Install a sprinter frame.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantTorsoSpeed</ThingDef></descriptionHyperlinks>
+		<jobString>Installing sprinter frame.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFImplantTorsoSpeed</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFImplantTorsoSpeed</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Torso</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFImplantTorsoSpeed</addsHediff>
+		<incompatibleWithHediffTags>
+			<li>FSFImplantTorsoFrame</li>
+		</incompatibleWithHediffTags>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemoveFSFImplantTorsoSpeed</defName>
+		<label>remove sprinter frame</label>
+		<description>Remove sprinter frame.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantTorsoSpeed</ThingDef></descriptionHyperlinks>
+		<jobString>Removing sprinter frame.</jobString>
+		<removesHediff>FSFImplantTorsoSpeed</removesHediff>
+	</RecipeDef>
+	
+	<!-- Implant Torso Psychic -->
+
+	<HediffDef ParentName="FSFImplantHediffAdvBase">
+		<defName>FSFImplantTorsoPsychic</defName>
+		<label>psychic frame</label>
+		<labelNoun>a psychic frame</labelNoun>
+		<description>An installed psychic frame.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantTorsoPsychic</ThingDef></descriptionHyperlinks>
+		<spawnThingOnRemoved>FSFImplantTorsoPsychic</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<statOffsets>
+					<PsychicSensitivity>0.50</PsychicSensitivity>
+					<PsychicEntropyRecoveryRate>0.083</PsychicEntropyRecoveryRate>
+				</statOffsets>
+			</li>
+		</stages>
+		<tags><li>FSFImplantTorsoFrame</li></tags>
+	</HediffDef>
+
+	<ThingDef ParentName="BodyPartBionicImperialBase">
+		<defName>FSFImplantTorsoPsychic</defName>
+		<label>psychic frame</label>
+		<description>A durable plasteel frame designed to replace the skeleton and some of the surrounding tissue.  The frame is embedded with special psychic focusing materials which enhances the user’s psychic sensitivity and helps dissipate psychic entropy.  Not compatible with other body frames.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFImplantTorsoPsychic</RecipeDef></descriptionHyperlinks>
+		<thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+		<costList>
+			<Plasteel>100</Plasteel>
+			<ComponentSpacer>10</ComponentSpacer>
+			<Gold>4</Gold>
+		</costList>
+		<statBases>
+			<Mass>25</Mass>
+		</statBases>
+		<recipeMaker>
+			<researchPrerequisite>FSFAdvancedBodyFramesResearch</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>InstallFSFImplantTorsoPsychic</defName>
+		<label>install psychic frame</label>
+		<description>Install a psychic frame.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantTorsoPsychic</ThingDef></descriptionHyperlinks>
+		<jobString>Installing psychic frame.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFImplantTorsoPsychic</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFImplantTorsoPsychic</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Torso</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFImplantTorsoPsychic</addsHediff>
+		<incompatibleWithHediffTags>
+			<li>FSFImplantTorsoFrame</li>
+		</incompatibleWithHediffTags>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemoveFSFImplantTorsoPsychic</defName>
+		<label>remove psychic frame</label>
+		<description>Remove psychic frame.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantTorsoPsychic</ThingDef></descriptionHyperlinks>
+		<jobString>Removing psychic frame.</jobString>
+		<removesHediff>FSFImplantTorsoPsychic</removesHediff>
+	</RecipeDef>
+	
+	
+	
+	
+	
+	
+	<!-- Implant Torso Climate Control -->
+	
+	<HediffDef ParentName="FSFImplantHediffAdvBase">
+		<defName>FSFImplantTorsoClimateControl</defName>
+		<label>climate control</label>
+		<labelNoun>a climate control</labelNoun>
+		<description>An installed climate control.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantTorsoClimateControl</ThingDef></descriptionHyperlinks>
+		<spawnThingOnRemoved>FSFImplantTorsoClimateControl</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<statOffsets>
+					<ComfyTemperatureMax>+25.0</ComfyTemperatureMax>
+					<ComfyTemperatureMin>-25.0</ComfyTemperatureMin>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<ThingDef ParentName="BodyPartBionicImperialBase">
+		<defName>FSFImplantTorsoClimateControl</defName>
+		<label>climate control</label>
+		<description>A small internal module designed to help regulate the bodies temperature allowing a person to endure harsher cold or heat without ill effects.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFImplantTorsoClimateControl</RecipeDef></descriptionHyperlinks>
+		<thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+		<costList>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>4</ComponentSpacer>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite>FSFResearchEnvironmentalImplants</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>InstallFSFImplantTorsoClimateControl</defName>
+		<label>install climate control</label>
+		<description>Install a climate control.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantTorsoClimateControl</ThingDef></descriptionHyperlinks>
+		<jobString>Installing climate control.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFImplantTorsoClimateControl</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFImplantTorsoClimateControl</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Torso</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFImplantTorsoClimateControl</addsHediff>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemoveFSFImplantTorsoClimateControl</defName>
+		<label>remove climate control</label>
+		<description>Remove climate control.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantTorsoClimateControl</ThingDef></descriptionHyperlinks>
+		<jobString>Removing climate control.</jobString>
+		<removesHediff>FSFImplantTorsoClimateControl</removesHediff>
+	</RecipeDef>
+	
+	<!-- Implant Torso Respirator -->
+	
+	<HediffDef ParentName="FSFImplantHediffAdvBase">
+		<defName>FSFImplantTorsoRespirator</defName>
+		<label>internal respirator</label>
+		<labelNoun>a internal respirator</labelNoun>
+		<description>An installed internal respirator.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantTorsoRespirator</ThingDef></descriptionHyperlinks>
+		<spawnThingOnRemoved>FSFImplantTorsoRespirator</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<statOffsets>
+					<ToxicSensitivity>-1.0</ToxicSensitivity>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<ThingDef ParentName="BodyPartBionicImperialBase">
+		<defName>FSFImplantTorsoRespirator</defName>
+		<label>internal respirator</label>
+		<description>A small internal module that functions much like a gas mask.  It filters out harmful elements from the air before passing it on to the lungs.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFImplantTorsoRespirator</RecipeDef></descriptionHyperlinks>
+		<thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+		<costList>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>4</ComponentSpacer>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite>FSFResearchEnvironmentalImplants</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>InstallFSFImplantTorsoRespirator</defName>
+		<label>install internal respirator</label>
+		<description>Install a internal respirator.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantTorsoRespirator</ThingDef></descriptionHyperlinks>
+		<jobString>Installing internal respirator.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFImplantTorsoRespirator</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFImplantTorsoRespirator</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Torso</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFImplantTorsoRespirator</addsHediff>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemoveFSFImplantTorsoRespirator</defName>
+		<label>remove internal respirator</label>
+		<description>Remove internal respirator.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantTorsoRespirator</ThingDef></descriptionHyperlinks>
+		<jobString>Removing internal respirator.</jobString>
+		<removesHediff>FSFImplantTorsoRespirator</removesHediff>
+	</RecipeDef>
+		
+</Defs>

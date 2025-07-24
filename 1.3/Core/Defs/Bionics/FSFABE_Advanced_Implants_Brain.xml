@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+	<!-- Brain Implant Melee Combat -->
+
+	<HediffDef ParentName="FSFImplantHediffAdvBase">
+		<defName>FSFImplantBrainMeleeCombat</defName>
+		<label>CQC assistant</label>
+		<labelNoun>a CQC assistant</labelNoun>
+		<description>An installed close quarters combat assistant.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantBrainMeleeCombat</ThingDef></descriptionHyperlinks>
+		<spawnThingOnRemoved>FSFImplantBrainMeleeCombat</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<statOffsets>
+					<MeleeDodgeChance>15</MeleeDodgeChance>
+					<MeleeHitChance>4</MeleeHitChance>
+				</statOffsets>
+				<statFactors>
+					<PawnTrapSpringChance>0.1</PawnTrapSpringChance>
+				</statFactors>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_ReactOnDamage">
+				<damageDefIncoming>EMP</damageDefIncoming>
+				<createHediff>BrainShock</createHediff>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFImplantBrainMeleeCombat</defName>
+		<label>CQC assistant</label>
+		<description>A low-intelligent microcomputer controlled by a visual/tactile neural interface. It assists with processing audible and visual cues in close quarters combat to aid the user in dodging and striking an opponent.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFImplantBrainMeleeCombat</RecipeDef></descriptionHyperlinks>
+		<graphicData>
+			<texPath>Things/Item/Health/HealthItem</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.80</drawSize>
+			<color>(189,169,118)</color>
+		</graphicData>
+		<thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+		<costList>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>4</ComponentSpacer>
+		</costList>
+		<butcherProducts>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>4</ComponentSpacer>
+		</butcherProducts>
+		<recipeMaker>
+			<researchPrerequisite>FSFResearchCombatImplants</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>InstallFSFImplantBrainMeleeCombat</defName>
+		<label>install CQC assistant</label>
+		<description>Install a CQC assistant.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantBrainMeleeCombat</ThingDef>
+			<HediffDef>FSFImplantBrainMeleeCombat</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing CQC assistant.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFImplantBrainMeleeCombat</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFImplantBrainMeleeCombat</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Brain</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFImplantBrainMeleeCombat</addsHediff>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemoveFSFImplantBrainMeleeCombat</defName>
+		<label>remove CQC assistant</label>
+		<description>Remove CQC assistant.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantBrainMeleeCombat</ThingDef></descriptionHyperlinks>
+		<jobString>Removing CQC assistant.</jobString>
+		<removesHediff>FSFImplantBrainMeleeCombat</removesHediff>
+	</RecipeDef>
+	
+	<!-- Brain Implant Ranged Combat -->
+
+	<HediffDef ParentName="FSFImplantHediffAdvBase">
+		<defName>FSFImplantBrainRangedCombat</defName>
+		<label>targeting assistant</label>
+		<labelNoun>a targeting assistant</labelNoun>
+		<description>An installed targeting assistant.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantBrainRangedCombat</ThingDef></descriptionHyperlinks>
+		<spawnThingOnRemoved>FSFImplantBrainRangedCombat</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<statOffsets>
+					<AimingDelayFactor>-0.25</AimingDelayFactor>
+					<ShootingAccuracyPawn>+5</ShootingAccuracyPawn>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_ReactOnDamage">
+				<damageDefIncoming>EMP</damageDefIncoming>
+				<createHediff>BrainShock</createHediff>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFImplantBrainRangedCombat</defName>
+		<label>targeting assistant</label>
+		<description>A low-intelligent microcomputer controlled by a visual/tactile neural interface. It assists with processing audible and visual information to aid the user in aiming faster and shooting more accurately.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFImplantBrainRangedCombat</RecipeDef></descriptionHyperlinks>
+		<graphicData>
+			<texPath>Things/Item/Health/HealthItem</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.80</drawSize>
+			<color>(189,169,118)</color>
+		</graphicData>
+		<thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+		<costList>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>4</ComponentSpacer>
+		</costList>
+		<butcherProducts>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>4</ComponentSpacer>
+		</butcherProducts>
+		<recipeMaker>
+			<researchPrerequisite>FSFResearchCombatImplants</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>InstallFSFImplantBrainRangedCombat</defName>
+		<label>install targeting assistant</label>
+		<description>Install a targeting assistant.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantBrainRangedCombat</ThingDef>
+			<HediffDef>FSFImplantBrainRangedCombat</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing targeting assistant.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFImplantBrainRangedCombat</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFImplantBrainRangedCombat</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Brain</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFImplantBrainRangedCombat</addsHediff>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemoveFSFImplantBrainRangedCombat</defName>
+		<label>remove targeting assistant</label>
+		<description>Remove targeting assistant.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantBrainRangedCombat</ThingDef></descriptionHyperlinks>
+		<jobString>Removing targeting assistant.</jobString>
+		<removesHediff>FSFImplantBrainRangedCombat</removesHediff>
+	</RecipeDef>
+	
+	<!-- Brain Implant Animals -->
+
+	<HediffDef ParentName="FSFImplantHediffAdvBase">
+		<defName>FSFImplantBrainAnimals</defName>
+		<label>ethology assistant</label>
+		<labelNoun>a ethology assistant</labelNoun>
+		<description>An installed ethology assistant.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantBrainAnimals</ThingDef></descriptionHyperlinks>
+		<spawnThingOnRemoved>FSFImplantBrainAnimals</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<statOffsets>
+					<AnimalGatherSpeed>+0.2</AnimalGatherSpeed>
+					<AnimalGatherYield>+0.2</AnimalGatherYield>
+					<TameAnimalChance>+0.1</TameAnimalChance>
+					<TrainAnimalChance>+0.1</TrainAnimalChance>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_ReactOnDamage">
+				<damageDefIncoming>EMP</damageDefIncoming>
+				<createHediff>BrainShock</createHediff>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFImplantBrainAnimals</defName>
+		<label>ethology assistant</label>
+		<description>A low-intelligent microcomputer controlled by a visual/tactile neural interface. It assists with identifying important audible and visual cues emitted by animals to aid the user in animal handling.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFImplantBrainAnimals</RecipeDef></descriptionHyperlinks>
+		<graphicData>
+			<texPath>Things/Item/Health/HealthItem</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.80</drawSize>
+			<color>(189,169,118)</color>
+		</graphicData>
+		<thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+		<costList>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>4</ComponentSpacer>
+		</costList>
+		<butcherProducts>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>4</ComponentSpacer>
+		</butcherProducts>
+		<recipeMaker>
+			<researchPrerequisite>FSFResearchCombatImplants</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>InstallFSFImplantBrainAnimals</defName>
+		<label>install ethology assistant</label>
+		<description>Install a ethology assistant.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantBrainAnimals</ThingDef>
+			<HediffDef>FSFImplantBrainAnimals</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing ethology assistant.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFImplantBrainAnimals</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFImplantBrainAnimals</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Brain</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFImplantBrainAnimals</addsHediff>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemoveFSFImplantBrainAnimals</defName>
+		<label>remove ethology assistant</label>
+		<description>Remove ethology assistant.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantBrainAnimals</ThingDef></descriptionHyperlinks>
+		<jobString>Removing ethology assistant.</jobString>
+		<removesHediff>FSFImplantBrainAnimals</removesHediff>
+	</RecipeDef>
+	
+	<!-- Brain Implant Medical -->
+
+	<HediffDef ParentName="FSFImplantHediffAdvBase">
+		<defName>FSFImplantBrainMedical</defName>
+		<label>medical assistant</label>
+		<labelNoun>a medical assistant</labelNoun>
+		<description>An installed medical assistant.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantBrainMedical</ThingDef></descriptionHyperlinks>
+		<spawnThingOnRemoved>FSFImplantBrainMedical</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<statOffsets>
+					<MedicalOperationSpeed>+0.2</MedicalOperationSpeed>
+					<MedicalSurgerySuccessChance>+0.1</MedicalSurgerySuccessChance>
+					<MedicalTendSpeed>+0.2</MedicalTendSpeed>
+					<MedicalTendQuality>+0.1</MedicalTendQuality>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_ReactOnDamage">
+				<damageDefIncoming>EMP</damageDefIncoming>
+				<createHediff>BrainShock</createHediff>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFImplantBrainMedical</defName>
+		<label>medical assistant</label>
+		<description>A low-intelligent microcomputer controlled by a visual/tactile neural interface. With an immense medical database and a variety of analytical tools it helps the user diagnose ailments and perform surgery.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFImplantBrainMedical</RecipeDef></descriptionHyperlinks>
+		<graphicData>
+			<texPath>Things/Item/Health/HealthItem</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.80</drawSize>
+			<color>(189,169,118)</color>
+		</graphicData>
+		<thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+		<costList>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>4</ComponentSpacer>
+		</costList>
+		<butcherProducts>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>4</ComponentSpacer>
+		</butcherProducts>
+		<recipeMaker>
+			<researchPrerequisite>FSFResearchCombatImplants</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>InstallFSFImplantBrainMedical</defName>
+		<label>install medical assistant</label>
+		<description>Install a medical assistant.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantBrainMedical</ThingDef>
+			<HediffDef>FSFImplantBrainMedical</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing medical assistant.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFImplantBrainMedical</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFImplantBrainMedical</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Brain</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFImplantBrainMedical</addsHediff>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemoveFSFImplantBrainMedical</defName>
+		<label>remove medical assistant</label>
+		<description>Remove medical assistant.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantBrainMedical</ThingDef></descriptionHyperlinks>
+		<jobString>Removing medical assistant.</jobString>
+		<removesHediff>FSFImplantBrainMedical</removesHediff>
+	</RecipeDef>
+	
+	<!-- Brain Implant Plants -->
+
+	<HediffDef ParentName="FSFImplantHediffAdvBase">
+		<defName>FSFImplantBrainPlants</defName>
+		<label>agricultural assistant</label>
+		<labelNoun>a agricultural assistant</labelNoun>
+		<description>An installed agricultural assistant.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantBrainPlants</ThingDef></descriptionHyperlinks>
+		<spawnThingOnRemoved>FSFImplantBrainPlants</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<statOffsets>
+					<ForagedNutritionPerDay>+3.2</ForagedNutritionPerDay>
+					<DrugHarvestYield>+0.2</DrugHarvestYield>
+					<PlantHarvestYield>+0.2</PlantHarvestYield>
+					<PlantWorkSpeed>+0.2</PlantWorkSpeed>
+					<PruningSpeed MayRequire="Ludeon.RimWorld.Ideology">+0.2</PruningSpeed>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_ReactOnDamage">
+				<damageDefIncoming>EMP</damageDefIncoming>
+				<createHediff>BrainShock</createHediff>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFImplantBrainPlants</defName>
+		<label>agricultural assistant</label>
+		<description>A non-intelligent microcomputer controlled by a visual/tactile neural interface. With an immense agricultural database and a variety of analytical tools it helps the user better care for plants and forage for food.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFImplantBrainPlants</RecipeDef></descriptionHyperlinks>
+		<graphicData>
+			<texPath>Things/Item/Health/HealthItem</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.80</drawSize>
+			<color>(189,169,118)</color>
+		</graphicData>
+		<thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+		<costList>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>4</ComponentSpacer>
+		</costList>
+		<butcherProducts>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>4</ComponentSpacer>
+		</butcherProducts>
+		<recipeMaker>
+			<researchPrerequisite>FSFResearchCombatImplants</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>InstallFSFImplantBrainPlants</defName>
+		<label>install agricultural assistant</label>
+		<description>Install a agricultural assistant.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantBrainPlants</ThingDef>
+			<HediffDef>FSFImplantBrainPlants</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing agricultural assistant.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFImplantBrainPlants</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFImplantBrainPlants</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Brain</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFImplantBrainPlants</addsHediff>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemoveFSFImplantBrainPlants</defName>
+		<label>remove agricultural assistant</label>
+		<description>Remove agricultural assistant.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantBrainPlants</ThingDef></descriptionHyperlinks>
+		<jobString>Removing agricultural assistant.</jobString>
+		<removesHediff>FSFImplantBrainPlants</removesHediff>
+	</RecipeDef>
+	
+</Defs>

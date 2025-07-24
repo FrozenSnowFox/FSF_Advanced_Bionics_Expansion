@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+	
+  	<!-- Add Implant Tag to Psychic Sensitizer -->
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/HediffDef[defName = "PsychicSensitizer"]</xpath>
+				<value>
+					<tags><li>FSFImplantBrainPsychic</li></tags>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/RecipeDef[defName = "InstallPsychicSensitizer"]</xpath>
+				<value>
+					<incompatibleWithHediffTags>
+						<li>FSFImplantBrainPsychic</li>
+					</incompatibleWithHediffTags>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+	
+</Patch>

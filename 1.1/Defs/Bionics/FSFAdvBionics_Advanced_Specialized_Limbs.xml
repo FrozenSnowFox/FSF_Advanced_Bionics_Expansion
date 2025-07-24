@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	
+	<!-- Advanced Bionic Power Arm -->
+	
+	<HediffDef ParentName="FSFAddedBodyPartAdvBionic">
+		<defName>FSFAdvBionicPowerArm</defName>
+		<label>advanced power arm</label>
+		<labelNoun>a advanced power arm</labelNoun>
+		<description>An installed advanced bionic power arm.</description>
+		<descriptionHyperlinks><ThingDef>FSFAdvBionicPowerArm</ThingDef></descriptionHyperlinks>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>fist</label>
+						<capacities>
+							<li>Blunt</li>
+						</capacities>
+						<power>30</power>
+						<armorPenetration>0.50</armorPenetration>
+						<cooldownTime>2</cooldownTime>
+						<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+					</li>
+					<li>
+						<label>edge</label>
+						<capacities>
+							<li>Cut</li>
+						</capacities>
+						<power>30</power>
+						<armorPenetration>0.50</armorPenetration>
+						<cooldownTime>2</cooldownTime>
+						<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+					</li>
+					<li>
+						<label>point</label>
+						<capacities>
+							<li>Stab</li>
+						</capacities>
+						<power>30</power>
+						<armorPenetration>1.0</armorPenetration>
+						<cooldownTime>2</cooldownTime>
+						<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+					</li>
+				</tools>
+			</li>
+		</comps>
+		<spawnThingOnRemoved>FSFAdvBionicPowerArm</spawnThingOnRemoved>
+		<addedPartProps>
+			<isGoodWeapon>true</isGoodWeapon>
+			<solid>true</solid>
+			<partEfficiency>1.50</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+	
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFAdvBionicPowerArm</defName>
+		<label>advanced bionic power arm</label>
+		<description>An advanced artificial arm fitted with retractable wrist blades. Silenced mini-servos give great strength, while the biogel nerve-link gives exquisite control. A lattice-dust healing system allows it to recover from damage.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFAdvBionicPowerArm</RecipeDef></descriptionHyperlinks>
+		<thingSetMakerTags>
+			<li>RewardStandardMidFreq</li>
+		</thingSetMakerTags>
+		<costList>
+			<Plasteel>30</Plasteel>
+			<ComponentSpacer>16</ComponentSpacer>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite>FSFAdvancedSpecializedLimbs</researchPrerequisite>
+		</recipeMaker>
+		<statBases>
+			<Mass>6</Mass>
+		</statBases>
+		<techHediffsTags>
+			<li>AdvancedWeapon</li>
+		</techHediffsTags>
+	</ThingDef>
+	
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallFSFAdvBionicPowerArm</defName>
+		<label>install advanced power arm</label>
+		<description>Install an advanced power arm.</description>
+    	<descriptionHyperlinks><ThingDef>FSFAdvBionicPowerArm</ThingDef></descriptionHyperlinks>
+		<jobString>Installing advanced power arm.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFAdvBionicPowerArm</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFAdvBionicPowerArm</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Shoulder</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFAdvBionicPowerArm</addsHediff>
+	</RecipeDef>
+	
+	<!-- Advanced Bionic Shocker Arm -->
+	
+	<HediffDef ParentName="FSFAddedBodyPartAdvBionic">
+		<defName>FSFAdvBionicTaserArm</defName>
+		<label>advanced shocker arm</label>
+		<labelNoun>a advanced shocker arm</labelNoun>
+		<description>An installed advanced bionic shocker arm.</description>
+		<descriptionHyperlinks><ThingDef>FSFAdvBionicTaserArm</ThingDef></descriptionHyperlinks>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>palm</label>
+						<capacities>
+							<li>FSFEffectTaser</li>
+						</capacities>
+						<power>20</power>
+						<armorPenetration>2.0</armorPenetration>
+						<cooldownTime>5.0</cooldownTime>
+						<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+						<extraMeleeDamages>
+							<li>
+								<def>EMP</def>
+								<amount>50</amount>
+							</li>
+						</extraMeleeDamages>
+					</li>
+				</tools>
+			</li>
+		</comps>
+		<spawnThingOnRemoved>FSFAdvBionicTaserArm</spawnThingOnRemoved>
+		<addedPartProps>
+			<isGoodWeapon>true</isGoodWeapon>
+			<solid>true</solid>
+			<partEfficiency>1.50</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+	
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFAdvBionicTaserArm</defName>
+		<label>advanced bionic shocker arm</label>
+		<description>An advanced artificial arm capable of delivering a less than lethal high powered electrical charge that can instantly down enemies. Silenced mini-servos give great strength, while the biogel nerve-link gives exquisite control. A lattice-dust healing system allows it to recover from damage.
+		
+		The electrical discharge system is capable of instantly downing humans in a single hit and capable of downing somewhat larger creatures with a second. While the effects are generally instantaneous the device requires several seconds to discharge its energy and reset which renders the user unable to move temporarily.
+		
+		Note: Rimworld has a built in instant death chance when enemies are downed that scales with population. To bypass this mechanic and use this bionic without randomly killing enemies you'll need a mod to tweak or remove the instant down chance.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFAdvBionicTaserArm</RecipeDef></descriptionHyperlinks>
+		<thingSetMakerTags>
+			<li>RewardStandardMidFreq</li>
+		</thingSetMakerTags>
+		<costList>
+			<Plasteel>30</Plasteel>
+			<ComponentSpacer>16</ComponentSpacer>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite>FSFAdvancedSpecializedLimbs</researchPrerequisite>
+		</recipeMaker>
+		<statBases>
+			<Mass>6</Mass>
+		</statBases>
+		<techHediffsTags>
+			<li>AdvancedWeapon</li>
+		</techHediffsTags>
+	</ThingDef>
+	
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallFSFAdvBionicTaserArm</defName>
+		<label>install advanced shocker arm</label>
+		<description>Install an advanced shocker arm.</description>
+    	<descriptionHyperlinks><ThingDef>FSFAdvBionicTaserArm</ThingDef></descriptionHyperlinks>
+		<jobString>Installing advanced shocker arm.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFAdvBionicTaserArm</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFAdvBionicTaserArm</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Shoulder</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFAdvBionicTaserArm</addsHediff>
+	</RecipeDef>
+	
+	<!-- Advanced Bionic Drill Arm -->
+	
+	<HediffDef ParentName="FSFAddedBodyPartAdvBionic">
+		<defName>FSFAdvBionicDrillArm</defName>
+		<label>advanced drill arm</label>
+		<labelNoun>a advanced drill arm</labelNoun>
+		<description>An installed advanced bionic drill arm.</description>
+		<descriptionHyperlinks><ThingDef>FSFAdvBionicDrillArm</ThingDef></descriptionHyperlinks>
+		<stages>
+			<li>
+				<statOffsets>
+					<MiningSpeed>1.0</MiningSpeed>
+					<DeepDrillingSpeed>0.4</DeepDrillingSpeed>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>stab</label>
+						<capacities>
+							<li>Stab</li>
+						</capacities>
+						<power>18</power>
+						<cooldownTime>2</cooldownTime>
+						<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+					</li>
+				</tools>
+			</li>
+		</comps>
+		<spawnThingOnRemoved>FSFAdvBionicDrillArm</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.50</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+	
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFAdvBionicDrillArm</defName>
+		<label>advanced bionic drill arm</label>
+		<description>An advanced artificial arm with a built-in snake drill, which allows the miner to rapidly find and exploit weak lines in the rock. Silenced mini-servos give great strength, while the biogel nerve-link gives exquisite control. A lattice-dust healing system allows it to recover from damage.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFAdvBionicDrillArm</RecipeDef></descriptionHyperlinks>
+		<thingSetMakerTags>
+			<li>RewardStandardMidFreq</li>
+		</thingSetMakerTags>
+		<costList>
+			<Plasteel>60</Plasteel>
+			<ComponentSpacer>16</ComponentSpacer>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite>FSFAdvancedSpecializedLimbs</researchPrerequisite>
+		</recipeMaker>
+		<statBases>
+			<Mass>10</Mass>
+		</statBases>
+	</ThingDef>
+	
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallFSFAdvBionicDrillArm</defName>
+		<label>install advanced drill arm</label>
+		<description>Install an advanced drill arm.</description>
+    	<descriptionHyperlinks><ThingDef>FSFAdvBionicDrillArm</ThingDef></descriptionHyperlinks>
+		<jobString>Installing advanced drill arm.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFAdvBionicDrillArm</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFAdvBionicDrillArm</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Shoulder</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFAdvBionicDrillArm</addsHediff>
+	</RecipeDef>
+	
+	<!-- Advanced Bionic Field Arm -->
+	
+	<HediffDef ParentName="FSFAddedBodyPartAdvBionic">
+		<defName>FSFAdvBionicFieldArm</defName>
+		<label>advanced field arm</label>
+		<labelNoun>a advanced field arm</labelNoun>
+		<description>An installed advanced bionic field arm.</description>
+		<descriptionHyperlinks><ThingDef>FSFAdvBionicFieldArm</ThingDef></descriptionHyperlinks>
+		<stages>
+			<li>
+				<statOffsets>
+					<PlantWorkSpeed>1.0</PlantWorkSpeed>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>fist</label>
+						<capacities>
+							<li>Blunt</li>
+						</capacities>
+						<power>14</power>
+						<cooldownTime>2</cooldownTime>
+					</li>
+				</tools>
+			</li>
+		</comps>
+		<spawnThingOnRemoved>FSFAdvBionicFieldArm</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.50</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+	
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFAdvBionicFieldArm</defName>
+		<label>advanced bionic field arm</label>
+		<description>An advanced artificial arm with multiple built-in telescopic finger-like protrusions that can simultaneously harvest from several points on the same plant, or precisely sow several holes at once. Silenced mini-servos give great strength, while the biogel nerve-link gives exquisite control. A lattice-dust healing system allows it to recover from damage.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFAdvBionicFieldArm</RecipeDef></descriptionHyperlinks>
+		<thingSetMakerTags>
+			<li>RewardStandardMidFreq</li>
+		</thingSetMakerTags>
+		<costList>
+			<Plasteel>60</Plasteel>
+			<ComponentSpacer>16</ComponentSpacer>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite>FSFAdvancedSpecializedLimbs</researchPrerequisite>
+		</recipeMaker>
+		<statBases>
+			<Mass>10</Mass>
+		</statBases>
+	</ThingDef>
+	
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallFSFAdvBionicFieldArm</defName>
+		<label>install advanced field arm</label>
+		<description>Install an advanced field arm.</description>
+    	<descriptionHyperlinks><ThingDef>FSFAdvBionicFieldArm</ThingDef></descriptionHyperlinks>
+		<jobString>Installing advanced field arm.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFAdvBionicFieldArm</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFAdvBionicFieldArm</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Shoulder</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFAdvBionicFieldArm</addsHediff>
+	</RecipeDef>
+	
+	<!-- Advanced Bionic Construction Arm -->
+	
+	<HediffDef ParentName="FSFAddedBodyPartAdvBionic">
+		<defName>FSFAdvBionicConstructionArm</defName>
+		<label>advanced construction arm</label>
+		<labelNoun>a advanced construction arm</labelNoun>
+		<description>An installed advanced bionic construction arm.</description>
+		<descriptionHyperlinks><ThingDef>FSFAdvBionicConstructionArm</ThingDef></descriptionHyperlinks>
+		<stages>
+			<li>
+				<statOffsets>
+					<ConstructionSpeed>1.0</ConstructionSpeed>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>fist</label>
+						<capacities>
+							<li>Blunt</li>
+						</capacities>
+						<power>14</power>
+						<cooldownTime>2</cooldownTime>
+					</li>
+				</tools>
+			</li>
+		</comps>
+		<spawnThingOnRemoved>FSFAdvBionicConstructionArm</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.50</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+	
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFAdvBionicConstructionArm</defName>
+		<label>advanced bionic construction arm</label>
+		<description>An advanced artificial arm with multiple built-in tools used in general construction work. Silenced mini-servos give great strength, while the biogel nerve-link gives exquisite control. A lattice-dust healing system allows it to recover from damage.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFAdvBionicConstructionArm</RecipeDef></descriptionHyperlinks>
+		<thingSetMakerTags>
+			<li>RewardStandardMidFreq</li>
+		</thingSetMakerTags>
+		<costList>
+			<Plasteel>60</Plasteel>
+			<ComponentSpacer>16</ComponentSpacer>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite>FSFAdvancedSpecializedLimbs</researchPrerequisite>
+		</recipeMaker>
+		<statBases>
+			<Mass>10</Mass>
+		</statBases>
+	</ThingDef>
+	
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallFSFAdvBionicConstructionArm</defName>
+		<label>install advanced construction arm</label>
+		<description>Install an advanced construction arm.</description>
+    	<descriptionHyperlinks><ThingDef>FSFAdvBionicConstructionArm</ThingDef></descriptionHyperlinks>
+		<jobString>Installing advanced construction arm.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFAdvBionicConstructionArm</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFAdvBionicConstructionArm</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Shoulder</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFAdvBionicConstructionArm</addsHediff>
+	</RecipeDef>
+
+</Defs>

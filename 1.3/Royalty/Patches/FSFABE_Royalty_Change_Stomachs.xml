@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+
+  	<!-- Hediffs_BodyParts_Bionic_Empire.xml -->
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			
+  			<!-- Detoxifier Stomach -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/HediffDef[defName = "DetoxifierStomach"]/addedPartProps/partEfficiency</xpath>
+				<value>
+					<partEfficiency>1.5</partEfficiency>
+				</value>
+			</li>
+			
+  			<!-- Reprocessor Stomach -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/HediffDef[defName = "ReprocessorStomach"]/addedPartProps/partEfficiency</xpath>
+				<value>
+					<partEfficiency>1.5</partEfficiency>
+				</value>
+			</li>
+			
+  			<!-- Nuclear Stomach -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/HediffDef[defName = "NuclearStomach"]/addedPartProps/partEfficiency</xpath>
+				<value>
+					<partEfficiency>1.5</partEfficiency>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+	
+</Patch>

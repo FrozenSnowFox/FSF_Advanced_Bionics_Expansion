@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+	<!-- Archotech Power Arm -->
+	
+	<HediffDef ParentName="FSFAddedBodyPartArchotech">
+		<defName>FSFArchotechPowerArm</defName>
+		<label>archotech power arm</label>
+		<labelNoun>an archotech power arm</labelNoun>
+		<description>An installed archotech power arm.</description>
+		<descriptionHyperlinks><ThingDef>FSFArchotechPowerArm</ThingDef></descriptionHyperlinks>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>fist</label>
+						<capacities>
+							<li>Blunt</li>
+						</capacities>
+						<power>40</power>
+						<armorPenetration>1.0</armorPenetration>
+						<cooldownTime>2</cooldownTime>
+						<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+					</li>
+					<li>
+						<label>edge</label>
+						<capacities>
+							<li>Cut</li>
+						</capacities>
+						<power>40</power>
+						<armorPenetration>1.0</armorPenetration>
+						<cooldownTime>2</cooldownTime>
+						<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+					</li>
+					<li>
+						<label>point</label>
+						<capacities>
+							<li>Stab</li>
+						</capacities>
+						<power>40</power>
+						<armorPenetration>2.0</armorPenetration>
+						<cooldownTime>2</cooldownTime>
+						<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+					</li>
+				</tools>
+			</li>
+		</comps>
+		<spawnThingOnRemoved>FSFArchotechPowerArm</spawnThingOnRemoved>
+		<addedPartProps>
+			<isGoodWeapon>true</isGoodWeapon>
+			<solid>true</solid>
+			<partEfficiency>2.0</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+	
+	<ThingDef ParentName="BodyPartArchotechBase">
+		<defName>FSFArchotechPowerArm</defName>
+		<label>Archotech Power Arm</label>
+		<description>An artifical arm built by an archotech fitted with retractable wrist blades. It's strong enough to crush a thick hardwood branch in its hand, and precise enough to write a sonnet on a grain of rice. It looks and feels like natural flesh, but it's harder to damage than plasteel. Even if it is harmed, it repairs itself over time. Its internal workings are a mystery to all human minds.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFArchotechPowerArm</RecipeDef></descriptionHyperlinks>
+		<statBases>
+			<MarketValue>6940</MarketValue>
+			<Mass>4</Mass>
+		</statBases>
+		<techHediffsTags>
+			<li>AdvancedWeapon</li>
+		</techHediffsTags>
+		<thingSetMakerTags>
+			<li>RewardStandardHighFreq</li>
+		</thingSetMakerTags>
+	</ThingDef>
+	
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallFSFArchotechPowerArm</defName>
+		<label>install archotech power arm</label>
+		<description>Install an archotech power arm.</description>
+		<descriptionHyperlinks><ThingDef>FSFArchotechPowerArm</ThingDef></descriptionHyperlinks>
+		<jobString>Installing archotech power arm.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFArchotechPowerArm</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFArchotechPowerArm</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Shoulder</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFArchotechPowerArm</addsHediff>
+	</RecipeDef>
+	
+	<!-- Archotech Power Core -->
+	
+	<HediffDef ParentName="FSFAddedBodyPartArchotech">
+		<defName>FSFArchotechPowerCore</defName>
+		<label>archotech power core</label>
+		<labelNoun>a archotech power core</labelNoun>
+		<description>An installed archotech power core.</description>
+		<descriptionHyperlinks><ThingDef>FSFArchotechPowerCore</ThingDef></descriptionHyperlinks>
+		<spawnThingOnRemoved>FSFArchotechPowerCore</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>2.0</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+		<stages>
+			<li>
+				<hungerRateFactor>0</hungerRateFactor>
+				<foodPoisoningChanceFactor>0</foodPoisoningChanceFactor>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<ThingDef ParentName="BodyPartArchotechBase">
+		<defName>FSFArchotechPowerCore</defName>
+		<label>archotech power core</label>
+		<description>An advanced artificial stomach built by an archotech. It uses some unknown system to replaces the body’s need for food and water. It looks and feels like natural flesh, but it's harder to damage than plasteel. Even if it is harmed, it repairs itself over time. Its internal workings are a mystery to all human minds.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFArchotechPowerCore</RecipeDef></descriptionHyperlinks>
+		<statBases>
+			<MarketValue>5160</MarketValue>
+			<Mass>2</Mass>
+		</statBases>
+		<thingSetMakerTags>
+			<li>RewardStandardMidFreq</li>
+		</thingSetMakerTags>
+	</ThingDef>
+	
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallFSFArchotechPowerCore</defName>
+		<label>install archotech power core</label>
+		<description>Install an archotech power core.</description>
+		<descriptionHyperlinks><ThingDef>FSFArchotechPowerCore</ThingDef></descriptionHyperlinks>
+		<jobString>Installing archotech power core.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFArchotechPowerCore</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFArchotechPowerCore</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Stomach</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFArchotechPowerCore</addsHediff>
+	</RecipeDef>
+	
+	<!-- Archotech Skin -->
+
+	<HediffDef ParentName="FSFImplantHediffArchotechBase">
+		<defName>FSFArchotechSkinI</defName>
+		<label>synthetic skin gland</label>
+		<labelNoun>a synthetic skin gland</labelNoun>
+		<description>An installed synthetic skin gland.</description>
+		<descriptionHyperlinks><ThingDef>FSFArchotechSkinI</ThingDef></descriptionHyperlinks>
+		<spawnThingOnRemoved>FSFArchotechSkinI</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<statOffsets>
+					<ArmorRating_Sharp>1.0</ArmorRating_Sharp>
+					<ArmorRating_Blunt>0.5</ArmorRating_Blunt>
+					<ArmorRating_Heat>0.7</ArmorRating_Heat>
+					<PawnBeauty>1</PawnBeauty>
+	    	    </statOffsets>
+			</li>
+		</stages>
+		<tags><li>ArmorGland</li></tags>
+	</HediffDef>
+
+	<ThingDef ParentName="BodyPartRoyalBase">
+		<defName>FSFArchotechSkinI</defName>
+		<label>synthetic skin gland</label>
+		<description>An advanced artificial skin gland built by an archotech. The gland releases chemicals and nanomachines that remodels the user’s skin, making it flawless and tougher than plasteel. Its internal workings are a mystery to all human minds.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFArchotechSkinI</RecipeDef></descriptionHyperlinks>
+		<statBases>
+			<MarketValue>3650</MarketValue>
+			<Mass>1</Mass>
+		</statBases>
+		<thingSetMakerTags>
+			<li>RewardStandardMidFreq</li>
+		</thingSetMakerTags>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>InstallFSFArchotechSkinI</defName>
+		<label>install synthetic skin gland</label>
+		<description>Install a synthetic skin gland.</description>
+		<descriptionHyperlinks><ThingDef>FSFArchotechSkinI</ThingDef></descriptionHyperlinks>
+		<jobString>Installing synthetic skin gland.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFArchotechSkinI</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFArchotechSkinI</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Torso</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFArchotechSkinI</addsHediff>
+		<incompatibleWithHediffTags>
+			<li>ArmorGland</li>
+		</incompatibleWithHediffTags>
+	</RecipeDef>
+  
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemoveFSFArchotechSkinI</defName>
+		<label>remove synthetic skin gland</label>
+		<description>Remove synthetic skin gland.</description>
+		<descriptionHyperlinks><ThingDef>FSFArchotechSkinI</ThingDef></descriptionHyperlinks>
+		<jobString>Removing synthetic skin gland.</jobString>
+		<removesHediff>FSFArchotechSkinI</removesHediff>
+	</RecipeDef>
+	
+</Defs>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	
+	<!-- Advanced Bionic Revenant Spine -->
+	
+	<HediffDef ParentName="FSFAddedBodyPartAdvBionic">
+		<defName>FSFAdvBionicRevenantSpine</defName>
+		<label>advanced bionic revenant spine</label>
+		<labelNoun>a advanced bionic revenant spine</labelNoun>
+		<description>An installed advanced bionic revenant spine.  A highly advanced artificial spine crafted from a revenant spine using cutting edge ultratech techniques.  It provides a significant increase to flexibility and movement allowing a much larger degree of motion than a regular spine.  It’s as hard as plasteel and through the use of a lattice-dust healing system its capable of repairing itself over time.\n\nThe spine uses archotech shards to restrain the dormant revenant allowing the user to make use of its psychic abilities to manipulate the visual centers of those nearby, effectively turning themself invisible for a short time.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAdvBionicRevenantSpine</ThingDef>
+			<RecipeDef>InstallFSFAdvBionicRevenantSpine</RecipeDef>
+			<AbilityDef>FSFAdvBionicRevenantInvisibility</AbilityDef>
+		</descriptionHyperlinks>
+		<abilities>
+			<li>FSFAdvBionicRevenantInvisibility</li>
+		</abilities>
+		<comps>
+        	<li MayRequire="V1024.EBFramework" Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust">
+            	<scaleAdjustment>0.5</scaleAdjustment>
+        	</li>
+		</comps>
+		<spawnThingOnRemoved>FSFAdvBionicRevenantSpine</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.50</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+	
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFAdvBionicRevenantSpine</defName>
+		<label>advanced bionic revenant spine</label>
+		<description>A highly advanced artificial spine crafted from a revenant spine using cutting edge ultratech techniques.  It provides a significant increase to flexibility and movement allowing a much larger degree of motion than a regular spine.  It’s as hard as plasteel and through the use of a lattice-dust healing system its capable of repairing itself over time.\n\nThe spine uses archotech shards to restrain the dormant revenant allowing the user to make use of its psychic abilities to manipulate the visual centers of those nearby, effectively turning themself invisible for a short time.</description>
+		<descriptionHyperlinks>
+			<HediffDef>FSFAdvBionicRevenantSpine</HediffDef>
+			<RecipeDef>InstallFSFAdvBionicRevenantSpine</RecipeDef>
+			<AbilityDef>FSFAdvBionicRevenantInvisibility</AbilityDef>
+		</descriptionHyperlinks>
+		<thingSetMakerTags>
+			<li>RewardStandardLowFreq</li>
+		</thingSetMakerTags>
+		<tradeTags Inherit="false" />
+		<techHediffsTags Inherit="false">
+			<li>Advanced</li>
+			<li>Anomaly</li>
+		</techHediffsTags>
+		<researchPrerequisites>
+			<li>FSFAdvancedBionics</li>
+			<li>RevenantInvisibility</li>
+		</researchPrerequisites>
+		<costList>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>8</ComponentSpacer>
+			<Bioferrite>10</Bioferrite>
+			<Shard>2</Shard>
+			<RevenantSpine>1</RevenantSpine>
+		</costList>
+		<statBases>
+			<Mass>2</Mass>
+		</statBases>
+	</ThingDef>
+	
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallFSFAdvBionicRevenantSpine</defName>
+		<label>install advanced bionic revenant spine</label>
+		<description>Install an advanced bionic revenant spine.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAdvBionicRevenantSpine</ThingDef>
+			<HediffDef>FSFAdvBionicRevenantSpine</HediffDef>
+			<AbilityDef>FSFAdvBionicRevenantInvisibility</AbilityDef>
+		</descriptionHyperlinks>
+		<jobString>Installing advanced bionic revenant spine.</jobString>
+    	<surgeryOutcomeEffect IsNull="True" /> <!-- Always succeeds -->
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFAdvBionicRevenantSpine</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFAdvBionicRevenantSpine</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Spine</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFAdvBionicRevenantSpine</addsHediff>
+		<uiIconThing>FSFAdvBionicRevenantSpine</uiIconThing>
+	</RecipeDef>
+	
+	<AbilityDef>
+		<defName>FSFAdvBionicRevenantInvisibility</defName>
+		<label>revenant invisibility</label>
+		<description>Use the advanced bionic revenant spine to temporarily turn invisible. The bionic manipulates the visual centers of those nearby, letting the user pass unnoticed.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAdvBionicRevenantSpine</ThingDef>
+			<HediffDef>FSFAdvBionicRevenantSpine</HediffDef>
+			<RecipeDef>InstallFSFAdvBionicRevenantSpine</RecipeDef>
+			<AbilityDef>FSFAdvBionicRevenantInvisibility</AbilityDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/Abilities/RevenantInvisibility</iconPath>
+		<cooldownTicksRange>60000</cooldownTicksRange> <!-- 1 Day -->
+		<cooldownPerCharge>true</cooldownPerCharge>
+		<charges>3</charges>
+		<writeCombatLog>True</writeCombatLog>
+		<hotKey>Misc12</hotKey>
+		<targetRequired>false</targetRequired>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<statBases>
+			<Ability_Duration>15</Ability_Duration>
+		</statBases>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<drawAimPie>false</drawAimPie>
+			<requireLineOfSight>false</requireLineOfSight>
+			<nonInterruptingSelfCast>true</nonInterruptingSelfCast>
+			<warmupTime>1</warmupTime>
+			<range>19.9</range>
+			<targetable>false</targetable>
+			<targetParams>
+				<canTargetSelf>True</canTargetSelf>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>PsychicInvisibility</hediffDef>
+				<psychic>True</psychic>
+			</li>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>PsycastPsychicEffect</fleckDef>
+			</li>
+		</comps>
+	</AbilityDef>
+	
+</Defs>

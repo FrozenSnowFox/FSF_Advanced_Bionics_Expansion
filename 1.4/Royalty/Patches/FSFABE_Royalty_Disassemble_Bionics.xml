@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+	
+  	<!-- Add Butchery Products To Bionics -->
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+			
+  			<!-- Royalty Prosthetic -->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "Mindscrew"]</xpath>
+				<value>
+					<butcherProducts>
+						<Steel>15</Steel>
+						<ComponentIndustrial>4</ComponentIndustrial>
+					</butcherProducts>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "DrillArm"]</xpath>
+				<value>
+					<butcherProducts>
+						<Steel>60</Steel>
+						<ComponentIndustrial>8</ComponentIndustrial>
+					</butcherProducts>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "FieldHand"]</xpath>
+				<value>
+					<butcherProducts>
+						<Steel>60</Steel>
+						<ComponentIndustrial>8</ComponentIndustrial>
+					</butcherProducts>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "HandTalon"]</xpath>
+				<value>
+					<butcherProducts>
+						<Steel>40</Steel>
+						<ComponentIndustrial>7</ComponentIndustrial>
+					</butcherProducts>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "ElbowBlade"]</xpath>
+				<value>
+					<butcherProducts>
+						<Steel>40</Steel>
+						<ComponentIndustrial>7</ComponentIndustrial>
+					</butcherProducts>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "KneeSpike"]</xpath>
+				<value>
+					<butcherProducts>
+						<Steel>40</Steel>
+						<ComponentIndustrial>7</ComponentIndustrial>
+					</butcherProducts>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "VenomFangs"]</xpath>
+				<value>
+					<butcherProducts>
+						<Steel>40</Steel>
+						<ComponentIndustrial>7</ComponentIndustrial>
+					</butcherProducts>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "VenomTalon"]</xpath>
+				<value>
+					<butcherProducts>
+						<Steel>40</Steel>
+						<ComponentIndustrial>7</ComponentIndustrial>
+					</butcherProducts>
+				</value>
+			</li>
+			
+  			<!-- FSF Royalty Bionic -->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "FSFBionicDrillArm"]</xpath>
+				<value>
+					<butcherProducts>
+						<BionicArm>1</BionicArm>
+						<DrillArm>1</DrillArm>
+						<ComponentSpacer>3</ComponentSpacer>
+					</butcherProducts>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "FSFBionicFieldArm"]</xpath>
+				<value>
+					<butcherProducts>
+						<BionicArm>1</BionicArm>
+						<FieldHand>1</FieldHand>
+						<ComponentSpacer>3</ComponentSpacer>
+					</butcherProducts>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+	
+</Patch>

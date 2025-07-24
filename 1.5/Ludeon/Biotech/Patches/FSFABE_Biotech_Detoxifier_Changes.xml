@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+	
+  	<!-- Add Detoxifier Changes To Advanced Bionics -->
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+			
+  			<!-- Nullify Acidic Smog Thought -->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThoughtDef[defName = "NoxiousHaze"]/nullifyingHediffs</xpath>
+				<value>
+					<li>FSFAdvBionicLung</li>
+					<li>FSFArchotechLung</li>
+					<li>FSFImplantTorsoRespirator</li>
+				</value>
+			</li>
+			
+  			<!-- Change Advanced Bionic Lung Description -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/HediffDef[defName = "FSFAdvBionicLung"]/description</xpath>
+				<value>
+					<description>An installed advanced bionic lung.  A highly advanced artificial lung made using cutting edge ultratech techniques.  It provides enhanced breathing which improves consciousness, helps with movement and promotes a better night’s rest.  It’s as hard as plasteel and through the use of a lattice-dust healing system its capable of repairing itself over time.\n\nIt’s microfilters reduce the intake of environmental toxins allowing the user to survive longer in polluted environments.  Additionally, it negates the irritation of acidic smoke and prevents lung rot in this lung.</description>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName = "FSFAdvBionicLung"]/description</xpath>
+				<value>
+					<description>A highly advanced artificial lung made using cutting edge ultratech techniques.  It provides enhanced breathing which improves consciousness, helps with movement and promotes a better night’s rest.  It’s as hard as plasteel and through the use of a lattice-dust healing system its capable of repairing itself over time.\n\nIt’s microfilters reduce the intake of environmental toxins allowing the user to survive longer in polluted environments.  Additionally, it negates the irritation of acidic smoke and prevents lung rot in this lung.</description>
+				</value>
+			</li>
+			
+  			<!-- Change Advanced Bionic Kidney Description -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/HediffDef[defName = "FSFAdvBionicKidney"]/description</xpath>
+				<value>
+					<description>An installed advanced bionic kidney.  A highly advanced artificial kidney made using cutting edge ultratech techniques.  It provides enhanced blood filtration which helps fight against diseases and infections.  Using a series of nanofilters, it can rapidly remove a vast range of toxins from the blood, making it effective against environmental toxins, venoms, and injected poisons.  It’s as hard as plasteel and through the use of a lattice-dust healing system its capable of repairing itself over time.</description>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName = "FSFAdvBionicKidney"]/description</xpath>
+				<value>
+					<description>A highly advanced artificial kidney made using cutting edge ultratech techniques.  It provides enhanced blood filtration which helps fight against diseases and infections.  Using a series of nanofilters, it can rapidly remove a vast range of toxins from the blood, making it effective against environmental toxins, venoms, and injected poisons.  It’s as hard as plasteel and through the use of a lattice-dust healing system its capable of repairing itself over time.</description>
+				</value>
+			</li>
+			
+  			<!-- Change Environmental Filter Description -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/HediffDef[defName = "FSFImplantTorsoRespirator"]/description</xpath>
+				<value>
+					<description>An installed environmental filter.  A small internal module connected to the respiratory system that filters the incoming air of environmental toxins and gases.  The gathered toxins are later harmlessly excreted from the body.  The implant allows the user to survive longer in polluted environments.  Additionally, it negates the irritation of acidic smoke and prevents lung rot.</description>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName = "FSFImplantTorsoRespirator"]/description</xpath>
+				<value>
+					<description>A small internal module connected to the respiratory system that filters the incoming air of environmental toxins and gases.  The gathered toxins are later harmlessly excreted from the body.  The implant allows the user to survive longer in polluted environments.  Additionally, it negates the irritation of acidic smoke and prevents lung rot.</description>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+	
+</Patch>

@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	
+	<!-- Brain Implant Addiction -->
+
+	<HediffDef ParentName="FSFImplantHediffAdvBase">
+		<defName>FSFImplantBrainAddiction</defName>
+		<label>addiction assistant</label>
+		<labelNoun>a addiction assistant</labelNoun>
+		<description>An installed addiction assistant.  A low-intelligent microcomputer that monitors the body and brain activity of its host.  It intercepts harmful side-effects of drug withdrawals preventing the host from feeling any negative side effects from not indulging in their addictions.  This implant is commonly used on more developed worlds to help people become free of drug addictions.\n\nWarning: This implant does not work with Luciferium.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantBrainAddiction</ThingDef>
+			<RecipeDef>InstallFSFImplantBrainAddiction</RecipeDef>
+			<RecipeDef>RemoveFSFImplantBrainAddiction</RecipeDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>FSFImplantBrainAddiction</spawnThingOnRemoved>
+		<disablesNeeds>
+			<li>DrugDesire</li>
+			<li>Chemical_Alcohol</li>
+			<li>Chemical_Ambrosia</li>
+			<li>Chemical_GoJuice</li>
+			<li>Chemical_Psychite</li>
+			<li>Chemical_Smokeleaf</li>
+			<li>Chemical_WakeUp</li>
+			<li MayRequire="VanillaExpanded.VBrewE">VBE_Chemical_Caffeine</li>
+			<li MayRequire="VanillaExpanded.VBrewE">VBE_Chemical_Tobacco</li>
+			<li MayRequire="OskarPotocki.VFE.Classical">VFEC_Chemical_Opium</li>
+			<li MayRequire="OskarPotocki.VFE.Insectoid2">VFEI2_Chemical_RoyalJelly</li>
+			<li MayRequire="Erin.HotDrink">ERN_Chemical_Caffeine</li>
+			<li MayRequire="Mlie.JecsTobaccoAndCigarettes">Jecs_Chemical_Nicotine</li>
+			<li MayRequire="freefolk.Remedies">FF_Chemical_Painkiller</li>
+			<li MayRequire="Crustypeanut.RC2.Core">RC2_Chemical_Caffeine</li>
+			<li MayRequire="Crustypeanut.RC2.SaSE">RC2_Chemical_Floxacine</li>
+			<li MayRequire="Crustypeanut.RC2.SaSE">RC2_Chemical_Shrooms</li>
+			<li MayRequire="Crustypeanut.RC2.SaSE">RC2_Chemical_SoldierPill</li>
+			<li MayRequire="Crustypeanut.RC2.SaSE">RC2_Chemical_Sunshine</li>
+			<li MayRequire="Crustypeanut.RC2.SaSE">RC2_Chemical_Tango</li>
+			<li MayRequire="Crustypeanut.RC2.SaSE">RC2_Chemical_Nicotine</li>
+			<li MayRequire="Crustypeanut.RC2.SaSE">RC2_Chemical_Zopioid</li>
+			<li MayRequire="froggo.speeddrugs_copy">chemical_frog_ketamine</li>
+			<li MayRequire="froggo.speeddrugs_copy">Chemical_frog_speed</li>
+			<li MayRequire="froggo.speeddrugs_copy">Chemical_frog_liquid_speed</li>
+			<li MayRequire="syrchalis.coffeeandtea">Chemical_SyrCaffeine</li>
+		</disablesNeeds>
+		<comps>
+			<li Class="HediffCompProperties_ReactOnDamage">
+				<damageDefIncoming>EMP</damageDefIncoming>
+				<createHediff>BrainShock</createHediff>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFImplantBrainAddiction</defName>
+		<label>addiction assistant</label>
+		<description>A low-intelligent microcomputer that monitors the body and brain activity of its host.  It intercepts harmful side-effects of drug withdrawals preventing the host from feeling any negative side effects from not indulging in their addictions.  This implant is commonly used on more developed worlds to help people become free of drug addictions.\n\nWarning: This implant does not work with Luciferium.</description>
+		<descriptionHyperlinks>
+			<HediffDef>FSFImplantBrainAddiction</HediffDef>
+			<RecipeDef>InstallFSFImplantBrainAddiction</RecipeDef>
+			<RecipeDef>RemoveFSFImplantBrainAddiction</RecipeDef>
+		</descriptionHyperlinks>
+		<graphicData>
+			<texPath>Things/Item/Health/HealthItem</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.80</drawSize>
+			<color>(189,169,118)</color>
+		</graphicData>
+		<thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+		<costList>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>4</ComponentSpacer>
+		</costList>
+		<butcherProducts>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>4</ComponentSpacer>
+		</butcherProducts>
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>FSFAdvancedBrainImplants</li>
+			</researchPrerequisites>
+		</recipeMaker>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>InstallFSFImplantBrainAddiction</defName>
+		<label>install addiction assistant</label>
+		<description>Install a addiction assistant.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantBrainAddiction</ThingDef>
+			<HediffDef>FSFImplantBrainAddiction</HediffDef>
+			<RecipeDef>RemoveFSFImplantBrainAddiction</RecipeDef>
+		</descriptionHyperlinks>
+		<jobString>Installing addiction assistant.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFImplantBrainAddiction</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFImplantBrainAddiction</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Brain</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFImplantBrainAddiction</addsHediff>
+		<uiIconThing>FSFImplantBrainAddiction</uiIconThing>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemoveFSFImplantBrainAddiction</defName>
+		<label>remove addiction assistant</label>
+		<description>Remove addiction assistant.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantBrainAddiction</ThingDef>
+			<HediffDef>FSFImplantBrainAddiction</HediffDef>
+			<RecipeDef>InstallFSFImplantBrainAddiction</RecipeDef>
+		</descriptionHyperlinks>
+		<jobString>Removing addiction assistant.</jobString>
+		<removesHediff>FSFImplantBrainAddiction</removesHediff>
+	</RecipeDef>
+	
+	<!-- Brain Implant Recreation -->
+
+	<HediffDef ParentName="FSFImplantHediffAdvBase">
+		<defName>FSFImplantBrainRecreation</defName>
+		<label>recreation module</label>
+		<labelNoun>a recreation module</labelNoun>
+		<description>An installed recreation module.  A low-intelligent microcomputer that monitors the brain activity of its host. By periodically intercepting and altering signals in the brain it allows a person to find joy in whatever they are doing.  While it’s not as dangerous and harmful as joywires it has the detrimental effect of making a person unable to gain true joy or fulfillment from something which would otherwise be beneficial to their mood.  Due to such a detrimental side effect this implant is typically only used in questionable military organizations and black companies.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantBrainRecreation</ThingDef>
+			<RecipeDef>InstallFSFImplantBrainRecreation</RecipeDef>
+			<RecipeDef>RemoveFSFImplantBrainRecreation</RecipeDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>FSFImplantBrainRecreation</spawnThingOnRemoved>
+		<disablesNeeds>
+			<li>Joy</li>
+		</disablesNeeds>
+		<comps>
+			<li Class="HediffCompProperties_ReactOnDamage">
+				<damageDefIncoming>EMP</damageDefIncoming>
+				<createHediff>BrainShock</createHediff>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFImplantBrainRecreation</defName>
+		<label>recreation module</label>
+		<description>A low-intelligent microcomputer that monitors the brain activity of its host. By periodically intercepting and altering signals in the brain it allows a person to find joy in whatever they are doing. While it’s not as dangerous and harmful as joywires it has the detrimental effect of making a person unable to gain true joy or fulfillment from something which would otherwise be beneficial to their mood. Due to such a detrimental side effect this implant is typically only used in questionable military organizations and black companies.</description>
+		<descriptionHyperlinks>
+			<HediffDef>FSFImplantBrainRecreation</HediffDef>
+			<RecipeDef>InstallFSFImplantBrainRecreation</RecipeDef>
+			<RecipeDef>RemoveFSFImplantBrainRecreation</RecipeDef>
+		</descriptionHyperlinks>
+		<graphicData>
+			<texPath>Things/Item/Health/HealthItem</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.80</drawSize>
+			<color>(189,169,118)</color>
+		</graphicData>
+		<thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+		<costList>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>4</ComponentSpacer>
+		</costList>
+		<butcherProducts>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>4</ComponentSpacer>
+		</butcherProducts>
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>FSFAdvancedBrainImplants</li>
+			</researchPrerequisites>
+		</recipeMaker>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>InstallFSFImplantBrainRecreation</defName>
+		<label>install recreation module</label>
+		<description>Install a recreation module.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantBrainRecreation</ThingDef>
+			<HediffDef>FSFImplantBrainRecreation</HediffDef>
+			<RecipeDef>RemoveFSFImplantBrainRecreation</RecipeDef>
+		</descriptionHyperlinks>
+		<jobString>Installing recreation module.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFImplantBrainRecreation</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFImplantBrainRecreation</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Brain</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFImplantBrainRecreation</addsHediff>
+		<uiIconThing>FSFImplantBrainRecreation</uiIconThing>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemoveFSFImplantBrainRecreation</defName>
+		<label>remove recreation module</label>
+		<description>Remove recreation module.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantBrainRecreation</ThingDef>
+			<HediffDef>FSFImplantBrainRecreation</HediffDef>
+			<RecipeDef>InstallFSFImplantBrainRecreation</RecipeDef>
+		</descriptionHyperlinks>
+		<jobString>Removing recreation module.</jobString>
+		<removesHediff>FSFImplantBrainRecreation</removesHediff>
+	</RecipeDef>
+	
+</Defs>

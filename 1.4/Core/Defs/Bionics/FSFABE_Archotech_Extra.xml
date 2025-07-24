@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+	<!-- Archotech Power Arm -->
+	
+	<HediffDef ParentName="FSFAddedBodyPartArchotech">
+		<defName>FSFArchotechPowerArm</defName>
+		<label>archotech power arm</label>
+		<labelNoun>an archotech power arm</labelNoun>
+		<description>An installed archotech power arm.</description>
+		<descriptionHyperlinks><ThingDef>FSFArchotechPowerArm</ThingDef></descriptionHyperlinks>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>fist</label>
+						<capacities>
+							<li>Blunt</li>
+						</capacities>
+						<power>40</power>
+						<armorPenetration>1.5</armorPenetration>
+						<cooldownTime>1.5</cooldownTime>
+						<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+						<soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
+						<soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
+					</li>
+					<li>
+						<label>edge</label>
+						<capacities>
+							<li>Cut</li>
+						</capacities>
+						<power>40</power>
+						<armorPenetration>2.0</armorPenetration>
+						<cooldownTime>1.5</cooldownTime>
+						<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+						<soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
+						<soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
+					</li>
+					<li>
+						<label>point</label>
+						<capacities>
+							<li>Stab</li>
+						</capacities>
+						<power>40</power>
+						<armorPenetration>2.0</armorPenetration>
+						<cooldownTime>1.5</cooldownTime>
+						<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+						<soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
+						<soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
+					</li>
+				</tools>
+			</li>
+		</comps>
+		<spawnThingOnRemoved>FSFArchotechPowerArm</spawnThingOnRemoved>
+		<addedPartProps>
+			<isGoodWeapon>true</isGoodWeapon>
+			<solid>true</solid>
+			<partEfficiency>2.0</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+	
+	<ThingDef ParentName="BodyPartArchotechBase">
+		<defName>FSFArchotechPowerArm</defName>
+		<label>Archotech Power Arm</label>
+		<description>An artifical arm built by an archotech fitted with retractable wrist blades. It's strong enough to crush a thick hardwood branch in its hand, and precise enough to write a sonnet on a grain of rice. It looks and feels like natural flesh, but it's harder to damage than plasteel. Even if it is harmed, it repairs itself over time. Its internal workings are a mystery to all human minds.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFArchotechPowerArm</RecipeDef></descriptionHyperlinks>
+		<statBases>
+			<MarketValue>5340</MarketValue>
+			<Mass>4</Mass>
+		</statBases>
+		<techHediffsTags>
+			<li>AdvancedWeapon</li>
+		</techHediffsTags>
+		<thingSetMakerTags>
+			<li>RewardStandardMidFreq</li>
+		</thingSetMakerTags>
+	</ThingDef>
+	
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallFSFArchotechPowerArm</defName>
+		<label>install archotech power arm</label>
+		<description>Install an archotech power arm.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFArchotechPowerArm</ThingDef>
+			<HediffDef>FSFArchotechPowerArm</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing archotech power arm.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFArchotechPowerArm</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFArchotechPowerArm</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Shoulder</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFArchotechPowerArm</addsHediff>
+	</RecipeDef>
+	
+	<!-- Archotech Power Core -->
+	
+	<HediffDef ParentName="FSFAddedBodyPartArchotech">
+		<defName>FSFArchotechPowerCore</defName>
+		<label>archotech power core</label>
+		<labelNoun>a archotech power core</labelNoun>
+		<description>An installed archotech power core.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFArchotechPowerCore</ThingDef>
+			<HediffDef>FSFArchotechPowerCore</HediffDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>FSFArchotechPowerCore</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>2.0</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+		<stages>
+			<li>
+				<hungerRateFactor>0.001</hungerRateFactor>
+				<foodPoisoningChanceFactor>0</foodPoisoningChanceFactor>
+				<statOffsets>
+					<BladderRateMultiplier MayRequire="Dubwise.DubsBadHygiene">-3.0</BladderRateMultiplier>
+					<ThirstRateMultiplier MayRequire="Dubwise.DubsBadHygiene">-3.0</ThirstRateMultiplier>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<ThingDef ParentName="BodyPartArchotechBase">
+		<defName>FSFArchotechPowerCore</defName>
+		<label>archotech power core</label>
+		<description>An advanced artificial stomach built by an archotech. It uses some unknown system to replaces the body’s need for food and water. It looks and feels like natural flesh, but it's harder to damage than plasteel. Even if it is harmed, it repairs itself over time. Its internal workings are a mystery to all human minds.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFArchotechPowerCore</RecipeDef></descriptionHyperlinks>
+		<statBases>
+			<MarketValue>3780</MarketValue>
+			<Mass>2</Mass>
+		</statBases>
+		<thingSetMakerTags>
+			<li>RewardStandardMidFreq</li>
+		</thingSetMakerTags>
+	</ThingDef>
+	
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallFSFArchotechPowerCore</defName>
+		<label>install archotech power core</label>
+		<description>Install an archotech power core.</description>
+		<descriptionHyperlinks><ThingDef>FSFArchotechPowerCore</ThingDef></descriptionHyperlinks>
+		<jobString>Installing archotech power core.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFArchotechPowerCore</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFArchotechPowerCore</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Stomach</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFArchotechPowerCore</addsHediff>
+	</RecipeDef>
+	
+</Defs>

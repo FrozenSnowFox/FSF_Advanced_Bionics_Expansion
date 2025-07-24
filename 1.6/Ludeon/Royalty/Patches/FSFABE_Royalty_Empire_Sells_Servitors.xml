@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+			
+  			<!-- Empire Sells Servitors -->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/TraderKindDef[defName = "Base_Empire_Standard" or defName = "Orbital_Empire"]/stockGenerators</xpath>
+				<value>
+					<li MayRequire="Ludeon.RimWorld.Biotech" Class="StockGenerator_Slaves">
+						<respectPopulationIntent>false</respectPopulationIntent>
+						<countRange>0~1</countRange>
+						<slaveKindDef>FSFServitorBlankFemale</slaveKindDef>
+					</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech" Class="StockGenerator_Slaves">
+						<respectPopulationIntent>false</respectPopulationIntent>
+						<countRange>0~1</countRange>
+						<slaveKindDef>FSFServitorBlankMale</slaveKindDef>
+					</li>
+					<li Class="StockGenerator_Slaves">
+						<respectPopulationIntent>false</respectPopulationIntent>
+						<countRange>0~1</countRange>
+						<slaveKindDef>FSFServitorAnimals</slaveKindDef>
+					</li>
+					<li Class="StockGenerator_Slaves">
+						<respectPopulationIntent>false</respectPopulationIntent>
+						<countRange>0~1</countRange>
+						<slaveKindDef>FSFServitorCombat</slaveKindDef>
+					</li>
+					<li Class="StockGenerator_Slaves">
+						<respectPopulationIntent>false</respectPopulationIntent>
+						<countRange>0~1</countRange>
+						<slaveKindDef>FSFServitorConstruction</slaveKindDef>
+					</li>
+					<li Class="StockGenerator_Slaves">
+						<respectPopulationIntent>false</respectPopulationIntent>
+						<countRange>0~1</countRange>
+						<slaveKindDef>FSFServitorCooking</slaveKindDef>
+					</li>
+					<li Class="StockGenerator_Slaves">
+						<respectPopulationIntent>false</respectPopulationIntent>
+						<countRange>0~1</countRange>
+						<slaveKindDef>FSFServitorCrafting</slaveKindDef>
+					</li>
+					<li Class="StockGenerator_Slaves">
+						<respectPopulationIntent>false</respectPopulationIntent>
+						<countRange>0~1</countRange>
+						<slaveKindDef>FSFServitorIntellectual</slaveKindDef>
+					</li>
+					<li Class="StockGenerator_Slaves">
+						<respectPopulationIntent>false</respectPopulationIntent>
+						<countRange>0~1</countRange>
+						<slaveKindDef>FSFServitorMedical</slaveKindDef>
+					</li>
+					<li Class="StockGenerator_Slaves">
+						<respectPopulationIntent>false</respectPopulationIntent>
+						<countRange>0~1</countRange>
+						<slaveKindDef>FSFServitorMining</slaveKindDef>
+					</li>
+					<li Class="StockGenerator_Slaves">
+						<respectPopulationIntent>false</respectPopulationIntent>
+						<countRange>0~1</countRange>
+						<slaveKindDef>FSFServitorPlants</slaveKindDef>
+					</li>
+					<li Class="StockGenerator_Slaves">
+						<respectPopulationIntent>false</respectPopulationIntent>
+						<countRange>0~1</countRange>
+						<slaveKindDef>FSFServitorSocial</slaveKindDef>
+					</li>
+					<li Class="StockGenerator_Slaves">
+						<respectPopulationIntent>false</respectPopulationIntent>
+						<countRange>0~1</countRange>
+						<slaveKindDef>FSFServitorDeluxe</slaveKindDef>
+					</li>
+					<li Class="StockGenerator_SingleDef">
+						<thingDef>FSFImplantBrainServitor</thingDef>
+						<countRange>0~2</countRange>
+					</li>
+					<li MayRequire="Ludeon.RimWorld.Ideology" Class="StockGenerator_SingleDef">
+						<thingDef>FSFImplantBrainSuppression</thingDef>
+						<countRange>0~2</countRange>
+					</li>
+					<li MayRequire="Fuu.UsefulTerror" Class="StockGenerator_SingleDef">
+						<thingDef>UsefulTerror_HeartAcidifier</thingDef>
+						<countRange>0~2</countRange>
+					</li>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+	
+</Patch>

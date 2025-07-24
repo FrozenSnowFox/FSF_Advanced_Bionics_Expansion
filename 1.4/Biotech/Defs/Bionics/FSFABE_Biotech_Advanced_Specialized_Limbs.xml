@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+	<!-- Advanced Bionic Medic Arm -->
+	
+	<HediffDef ParentName="FSFAddedBodyPartAdvBionic">
+		<defName>FSFAdvBionicMedicArm</defName>
+		<label>advanced medic arm</label>
+		<labelNoun>a advanced medic arm</labelNoun>
+		<description>An installed advanced bionic medic arm.</description>
+		<descriptionHyperlinks><ThingDef>FSFAdvBionicMedicArm</ThingDef></descriptionHyperlinks>
+		<stages>
+			<li>
+				<statOffsets>
+					<MedicalOperationSpeed>+0.6</MedicalOperationSpeed>
+					<MedicalTendSpeed>+0.6</MedicalTendSpeed>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>fist</label>
+						<capacities>
+							<li>Blunt</li>
+						</capacities>
+						<power>14</power>
+						<cooldownTime>2</cooldownTime>
+						<alwaysTreatAsWeapon>false</alwaysTreatAsWeapon>
+						<soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
+						<soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
+					</li>
+				</tools>
+			</li>
+			<li Class="HediffCompProperties_GiveAbility">
+				<abilityDef>FSFAdvBionicMedic</abilityDef>
+			</li>
+        	<li MayRequire="V1024.EBFramework" Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust">
+            	<scaleAdjustment>0.5</scaleAdjustment>
+        	</li>
+		</comps>
+		<spawnThingOnRemoved>FSFAdvBionicMedicArm</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.50</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+		<tags><li>FSFAdvBionicMedic</li></tags>
+	</HediffDef>
+	
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFAdvBionicMedicArm</defName>
+		<label>advanced bionic medic arm</label>
+		<description>An advanced artificial arm with a built-in gel system designed for rapidly tending wounds. Silenced mini-servos give great strength, while the biogel nerve-link gives exquisite control. A lattice-dust healing system allows it to recover from damage.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFAdvBionicMedicArm</RecipeDef></descriptionHyperlinks>
+		<thingSetMakerTags>
+			<li>RewardStandardMidFreq</li>
+		</thingSetMakerTags>
+		<costList>
+			<Plasteel>60</Plasteel>
+			<ComponentSpacer>12</ComponentSpacer>
+			<Neutroamine>10</Neutroamine>
+		</costList>
+		<butcherProducts>
+			<Plasteel>60</Plasteel>
+			<ComponentSpacer>12</ComponentSpacer>
+		</butcherProducts>
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>FSFAdvancedSpecializedLimbs</li>
+			</researchPrerequisites>
+		</recipeMaker>
+		<statBases>
+			<Mass>10</Mass>
+		</statBases>
+	</ThingDef>
+	
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallFSFAdvBionicMedicArm</defName>
+		<label>install advanced medic arm</label>
+		<description>Install an advanced medic arm.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAdvBionicMedicArm</ThingDef>
+			<HediffDef>FSFAdvBionicMedicArm</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing advanced medic arm.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFAdvBionicMedicArm</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFAdvBionicMedicArm</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Shoulder</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFAdvBionicMedicArm</addsHediff>
+		<incompatibleWithHediffTags>
+			<li>FSFAdvBionicMedic</li>
+		</incompatibleWithHediffTags>
+	</RecipeDef>
+	
+	<AbilityDef ParentName="AbilityTouchBase">
+		<defName>FSFAdvBionicMedic</defName>
+		<label>administer medical care</label>
+		<description>Use special glands in the wrists to secrete a medical gel to quickly tend someone's wounds.</description>
+		<iconPath>UI/Abilities/FSFArchotechMedic</iconPath>
+		<cooldownTicksRange>20000</cooldownTicksRange>
+		<cooldownPerCharge>true</cooldownPerCharge>
+		<charges>3</charges>
+		<aiCanUse>true</aiCanUse>
+		<stunTargetWhileCasting>true</stunTargetWhileCasting>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<warmupMote>Mote_CoagulateStencil</warmupMote>
+		<warmupEffecter>Coagulate</warmupEffecter>
+		<warmupStartSound>Coagulate_Cast</warmupStartSound>
+		<jobDef>CastAbilityOnThingMelee</jobDef>
+		<displayOrder>400</displayOrder>
+		<hostile>false</hostile>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
+			<drawAimPie>false</drawAimPie>
+			<range>-1</range>
+			<warmupTime>1</warmupTime>
+			<targetParams>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetSelf>true</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetMechs>false</canTargetMechs>
+				<canTargetBloodfeeders>true</canTargetBloodfeeders>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="CompProperties_AbilityCoagulate">
+				<tendQualityRange>0.4~0.8</tendQualityRange>
+			</li>
+		</comps>
+	</AbilityDef>
+
+</Defs>

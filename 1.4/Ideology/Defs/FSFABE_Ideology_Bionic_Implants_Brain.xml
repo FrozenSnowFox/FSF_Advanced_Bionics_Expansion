@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	
+	<!-- Brain Implant Suppression -->
+
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>FSFImplantBrainSuppression</defName>
+		<label>Suppression module</label>
+		<labelNoun>a suppression module</labelNoun>
+		<description>An installed suppression module.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantBrainSuppression</ThingDef></descriptionHyperlinks>
+		<spawnThingOnRemoved>FSFImplantBrainSuppression</spawnThingOnRemoved>
+		<comps>
+			<li Class="HediffCompProperties_ReactOnDamage">
+				<damageDefIncoming>EMP</damageDefIncoming>
+				<createHediff>BrainShock</createHediff>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<ThingDef ParentName="BodyPartBionicBase">
+		<defName>FSFImplantBrainSuppression</defName>
+		<label>suppression module</label>
+		<description>This simple brain implant was designed to subdue rebellious slaves without harming them. By itself it’s completely benign, however, when hit by an electromagnetic pulse it will knock the host unconscious.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFImplantBrainSuppression</RecipeDef></descriptionHyperlinks>
+		<graphicData>
+			<texPath>Things/Item/Health/HealthItem</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.80</drawSize>
+			<color>(189,169,118)</color>
+		</graphicData>
+		<thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+		<costList>
+			<Steel>15</Steel>
+			<ComponentIndustrial>4</ComponentIndustrial>
+		</costList>
+		<butcherProducts>
+			<Steel>15</Steel>
+			<ComponentIndustrial>4</ComponentIndustrial>
+		</butcherProducts>
+		<recipeMaker>
+			<researchPrerequisite>Bionics</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>InstallFSFImplantBrainSuppression</defName>
+		<label>install suppression module</label>
+		<description>Install a suppression module.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantBrainSuppression</ThingDef>
+			<HediffDef>FSFImplantBrainSuppression</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing suppression module.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFImplantBrainSuppression</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFImplantBrainSuppression</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Brain</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFImplantBrainSuppression</addsHediff>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemoveFSFImplantBrainSuppression</defName>
+		<label>remove suppression module</label>
+		<description>Remove suppression module.</description>
+		<descriptionHyperlinks><ThingDef>FSFImplantBrainSuppression</ThingDef></descriptionHyperlinks>
+		<jobString>Removing suppression module.</jobString>
+		<removesHediff>FSFImplantBrainSuppression</removesHediff>
+	</RecipeDef>
+	
+</Defs>

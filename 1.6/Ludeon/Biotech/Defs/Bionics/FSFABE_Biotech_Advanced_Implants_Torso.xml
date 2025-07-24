@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	
+	<!-- Implant Torso Reproduction Controller -->
+	
+	<HediffDef ParentName="FSFImplantHediffAdvBase">
+		<defName>FSFImplantReproduction</defName>
+		<label>reproduction controller</label>
+		<labelNoun>a reproduction controller</labelNoun>
+		<description>An installed reproduction controller.  A small internal module designed to control the body’s reproduction functions.  Through the use of synthetic hormones and nanomachines the module is able to alter the user’s body achieving complete control of their organic functions relating to reproduction.\n\nDuring pregnancy the implant will keep the body and its hormones in a stable state preventing resulting issues such as morning sickness and fluctuating moods.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantReproduction</ThingDef>
+			<AbilityDef>FSFReproductionControllerLactation</AbilityDef>
+			<AbilityDef>FSFReproductionControllerFertile</AbilityDef>
+			<AbilityDef>FSFReproductionControllerSterile</AbilityDef>
+			<AbilityDef>FSFReproductionControllerPregnancy</AbilityDef>
+			<AbilityDef>FSFReproductionControllerRemovePregnancy</AbilityDef>
+			<RecipeDef>InstallFSFImplantReproduction</RecipeDef>
+			<RecipeDef>RemoveFSFImplantReproduction</RecipeDef>
+		</descriptionHyperlinks>
+		<abilities>
+			<li>FSFReproductionController</li>
+		</abilities>
+		<spawnThingOnRemoved>FSFImplantReproduction</spawnThingOnRemoved>
+	</HediffDef>
+
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFImplantReproduction</defName>
+		<label>reproduction controller</label>
+		<description>A small internal module designed to control the body’s reproduction functions.  Through the use of synthetic hormones and nanomachines the module is able to alter the user’s body achieving complete control of their organic functions relating to reproduction.\n\nDuring pregnancy the implant will keep the body and its hormones in a stable state preventing resulting issues such as morning sickness and fluctuating moods.</description>
+		<descriptionHyperlinks>
+			<HediffDef>FSFImplantReproduction</HediffDef>
+			<AbilityDef>FSFReproductionControllerLactation</AbilityDef>
+			<AbilityDef>FSFReproductionControllerFertile</AbilityDef>
+			<AbilityDef>FSFReproductionControllerSterile</AbilityDef>
+			<AbilityDef>FSFReproductionControllerPregnancy</AbilityDef>
+			<AbilityDef>FSFReproductionControllerRemovePregnancy</AbilityDef>
+			<RecipeDef>InstallFSFImplantReproduction</RecipeDef>
+			<RecipeDef>RemoveFSFImplantReproduction</RecipeDef>
+		</descriptionHyperlinks>
+		<thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+		<costList>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>3</ComponentSpacer>
+		</costList>
+		<butcherProducts>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>3</ComponentSpacer>
+		</butcherProducts>
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>FSFAdvancedBionics</li>
+				<li>FertilityProcedures</li>
+			</researchPrerequisites>
+		</recipeMaker>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>InstallFSFImplantReproduction</defName>
+		<label>install reproduction controller</label>
+		<description>Install a reproduction controller.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantReproduction</ThingDef>
+			<HediffDef>FSFImplantReproduction</HediffDef>
+			<AbilityDef>FSFReproductionControllerLactation</AbilityDef>
+			<AbilityDef>FSFReproductionControllerFertile</AbilityDef>
+			<AbilityDef>FSFReproductionControllerSterile</AbilityDef>
+			<AbilityDef>FSFReproductionControllerPregnancy</AbilityDef>
+			<AbilityDef>FSFReproductionControllerRemovePregnancy</AbilityDef>
+			<RecipeDef>RemoveFSFImplantReproduction</RecipeDef>
+		</descriptionHyperlinks>
+		<jobString>Installing reproduction controller.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFImplantReproduction</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFImplantReproduction</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Torso</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFImplantReproduction</addsHediff>
+		<uiIconThing>FSFImplantReproduction</uiIconThing>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemoveFSFImplantReproduction</defName>
+		<label>remove reproduction controller</label>
+		<description>Remove reproduction controller.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantReproduction</ThingDef>
+			<HediffDef>FSFImplantReproduction</HediffDef>
+			<AbilityDef>FSFReproductionControllerLactation</AbilityDef>
+			<AbilityDef>FSFReproductionControllerFertile</AbilityDef>
+			<AbilityDef>FSFReproductionControllerSterile</AbilityDef>
+			<AbilityDef>FSFReproductionControllerPregnancy</AbilityDef>
+			<AbilityDef>FSFReproductionControllerRemovePregnancy</AbilityDef>
+			<RecipeDef>InstallFSFImplantReproduction</RecipeDef>
+		</descriptionHyperlinks>
+		<jobString>Removing reproduction controller.</jobString>
+		<removesHediff>FSFImplantReproduction</removesHediff>
+	</RecipeDef>
+	
+	<AbilityDef>
+		<defName>FSFReproductionController</defName>
+		<label>reproduction controller interface</label>
+		<description>Temporarily enables the control interface of the reproduction controller.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantReproduction</ThingDef>
+			<HediffDef>FSFImplantReproduction</HediffDef>
+			<AbilityDef>FSFReproductionControllerLactation</AbilityDef>
+			<AbilityDef>FSFReproductionControllerFertile</AbilityDef>
+			<AbilityDef>FSFReproductionControllerSterile</AbilityDef>
+			<AbilityDef>FSFReproductionControllerPregnancy</AbilityDef>
+			<AbilityDef>FSFReproductionControllerRemovePregnancy</AbilityDef>
+			<RecipeDef>InstallFSFImplantReproduction</RecipeDef>
+			<RecipeDef>RemoveFSFImplantReproduction</RecipeDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/Abilities/FSFReproductionController</iconPath>
+		<aiCanUse>false</aiCanUse>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<showWhenDrafted>false</showWhenDrafted>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<jobDef>CastAbilityOnThing</jobDef>
+		<targetRequired>False</targetRequired>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
+			<drawAimPie>False</drawAimPie>
+		</verbProperties>
+		<comps>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+    		    <hediffDef>FSFReproductionController</hediffDef>
+				<severity>0.05</severity>
+	        	<onlyApplyToSelf>True</onlyApplyToSelf>
+    	    	<replaceExisting>true</replaceExisting>
+			</li>
+		</comps>
+	</AbilityDef>
+	
+	<HediffDef>
+		<defName>FSFReproductionController</defName>
+		<label>reproduction controller (control interface)</label>
+		<description>The control interface of the reproduction controller has been temporarily activated. It will automatically deactivate after some time has passed.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantReproduction</ThingDef>
+		</descriptionHyperlinks>
+		<hediffClass>HediffWithComps</hediffClass>
+		<defaultLabelColor>(144,98,179)</defaultLabelColor>
+		<duplicationAllowed>false</duplicationAllowed>
+		<isBad>false</isBad>
+		<initialSeverity>0.05</initialSeverity>
+		<abilities>
+			<li>FSFReproductionControllerLactation</li>
+			<li>FSFReproductionControllerRemoveLactation</li>
+			<li>FSFReproductionControllerFertile</li>
+			<li>FSFReproductionControllerRemoveFertile</li>
+			<li>FSFReproductionControllerSterile</li>
+			<li>FSFReproductionControllerRemoveSterile</li>
+			<li>FSFReproductionControllerPregnancy</li>
+			<li>FSFReproductionControllerRemovePregnancy</li>
+		</abilities>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-1.0</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	<AbilityDef>
+		<defName>FSFReproductionControllerLactation</defName>
+		<label>induce lactation</label>
+		<description>Artificially induces lactation in the user, allowing them to immediately breastfeed infants.</description>
+		<iconPath>UI/Abilities/FSFReproductionControllerLactation</iconPath>
+		<aiCanUse>false</aiCanUse>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<showWhenDrafted>false</showWhenDrafted>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<jobDef>CastAbilityOnThing</jobDef>
+		<targetRequired>False</targetRequired>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
+			<drawAimPie>False</drawAimPie>
+		</verbProperties>
+	    <comps>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+	    	    <hediffDef>Lactating</hediffDef>
+				<severity>1</severity>
+    	    	<onlyApplyToSelf>True</onlyApplyToSelf>
+	        	<replaceExisting>False</replaceExisting>
+			</li>
+		</comps>
+	</AbilityDef>
+	
+	<AbilityDef>
+		<defName>FSFReproductionControllerRemoveLactation</defName>
+		<label>remove lactation</label>
+		<description>Manipulates the user’s body causing them to immediately stop lactating.</description>
+		<iconPath>UI/Abilities/FSFReproductionControllerRemoveLactation</iconPath>
+		<aiCanUse>false</aiCanUse>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<showWhenDrafted>false</showWhenDrafted>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<jobDef>CastAbilityOnThing</jobDef>
+		<targetRequired>False</targetRequired>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
+			<drawAimPie>False</drawAimPie>
+		</verbProperties>
+	    <comps>
+			<li Class="CompProperties_AbilityRemoveHediff">
+				<compClass>CompAbilityEffect_RemoveHediff</compClass>
+				<hediffDef>Lactating</hediffDef>
+				<applyToSelf>true</applyToSelf>
+			</li>
+		</comps>
+	</AbilityDef>
+	
+	<AbilityDef>
+		<defName>FSFReproductionControllerFertile</defName>
+		<label>induces fertility</label>
+		<description>Artificially enhances the fertility of the user.</description>
+		<iconPath>UI/Icons/Genes/Gene_Fertile</iconPath>
+		<aiCanUse>false</aiCanUse>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<showWhenDrafted>false</showWhenDrafted>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<jobDef>CastAbilityOnThing</jobDef>
+		<targetRequired>False</targetRequired>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
+			<drawAimPie>False</drawAimPie>
+		</verbProperties>
+	    <comps>
+			<li Class="CompProperties_AbilityRemoveHediff">
+				<compClass>CompAbilityEffect_RemoveHediff</compClass>
+				<hediffDef>FSFReproductionControllerSterile</hediffDef>
+				<applyToSelf>true</applyToSelf>
+			</li>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>FSFReproductionControllerFertile</hediffDef>
+				<severity>1</severity>
+        		<onlyApplyToSelf>True</onlyApplyToSelf>
+        		<replaceExisting>true</replaceExisting>
+			</li>
+		</comps>
+	</AbilityDef>
+	
+	<HediffDef>
+		<defName>FSFReproductionControllerFertile</defName>
+		<label>fertile (reproduction controller)</label>
+		<description>Through the use of the reproduction controller the user has been temporarily given enhanced fertility. This effect can be removed by reconfiguring the reproduction controller.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantReproduction</ThingDef>
+		</descriptionHyperlinks>
+		<hediffClass>HediffWithComps</hediffClass>
+		<defaultLabelColor>(144,98,179)</defaultLabelColor>
+		<duplicationAllowed>false</duplicationAllowed>
+		<isBad>false</isBad>
+		<initialSeverity>1</initialSeverity>
+		<stages>
+			<li>
+				<statFactors>
+					<Fertility>100</Fertility>
+				</statFactors>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<AbilityDef>
+		<defName>FSFReproductionControllerRemoveFertile</defName>
+		<label>remove fertility enhancement</label>
+		<description>Returns the user’s fertility back to its normal biological level.</description>
+		<iconPath>UI/Abilities/FSFReproductionControllerRemoveFertile</iconPath>
+		<aiCanUse>false</aiCanUse>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<showWhenDrafted>false</showWhenDrafted>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<jobDef>CastAbilityOnThing</jobDef>
+		<targetRequired>False</targetRequired>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
+			<drawAimPie>False</drawAimPie>
+		</verbProperties>
+	    <comps>
+			<li Class="CompProperties_AbilityRemoveHediff">
+				<compClass>CompAbilityEffect_RemoveHediff</compClass>
+				<hediffDef>FSFReproductionControllerFertile</hediffDef>
+				<applyToSelf>true</applyToSelf>
+			</li>
+		</comps>
+	</AbilityDef>
+	
+	<AbilityDef>
+		<defName>FSFReproductionControllerSterile</defName>
+		<label>induce sterility</label>
+		<description>Artificially induces sterility in the user.</description>
+		<iconPath>UI/Icons/Genes/Gene_Sterile</iconPath>
+		<aiCanUse>false</aiCanUse>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<showWhenDrafted>false</showWhenDrafted>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<jobDef>CastAbilityOnThing</jobDef>
+		<targetRequired>False</targetRequired>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
+			<drawAimPie>False</drawAimPie>
+		</verbProperties>
+	    <comps>
+			<li Class="CompProperties_AbilityRemoveHediff">
+				<compClass>CompAbilityEffect_RemoveHediff</compClass>
+				<hediffDef>FSFReproductionControllerFertile</hediffDef>
+				<applyToSelf>true</applyToSelf>
+			</li>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+    		    <hediffDef>FSFReproductionControllerSterile</hediffDef>
+				<severity>1</severity>
+	        	<onlyApplyToSelf>True</onlyApplyToSelf>
+    	    	<replaceExisting>true</replaceExisting>
+			</li>
+		</comps>
+	</AbilityDef>
+	
+	<HediffDef>
+		<defName>FSFReproductionControllerSterile</defName>
+		<label>sterile (reproduction controller)</label>
+		<description>Through the use of the reproduction controller the user has been rendered temporarily sterile. This effect can be removed by reconfiguring the reproduction controller.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantReproduction</ThingDef>
+		</descriptionHyperlinks>
+		<hediffClass>HediffWithComps</hediffClass>
+		<defaultLabelColor>(144,98,179)</defaultLabelColor>
+		<duplicationAllowed>false</duplicationAllowed>
+		<isBad>false</isBad>
+		<initialSeverity>1</initialSeverity>
+		<preventsPregnancy>true</preventsPregnancy>
+		<stages>
+			<li>
+				<statFactors>
+					<Fertility>0</Fertility>
+				</statFactors>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<AbilityDef>
+		<defName>FSFReproductionControllerRemoveSterile</defName>
+		<label>remove sterility adjustment</label>
+		<description>Returns the user’s fertility back to its normal biological level.</description>
+		<iconPath>UI/Abilities/FSFReproductionControllerRemoveSterile</iconPath>
+		<aiCanUse>false</aiCanUse>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<showWhenDrafted>false</showWhenDrafted>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<jobDef>CastAbilityOnThing</jobDef>
+		<targetRequired>False</targetRequired>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
+			<drawAimPie>False</drawAimPie>
+		</verbProperties>
+	    <comps>
+			<li Class="CompProperties_AbilityRemoveHediff">
+				<compClass>CompAbilityEffect_RemoveHediff</compClass>
+				<hediffDef>FSFReproductionControllerSterile</hediffDef>
+				<applyToSelf>true</applyToSelf>
+			</li>
+		</comps>
+	</AbilityDef>
+	
+	<AbilityDef>
+		<defName>FSFReproductionControllerPregnancy</defName>
+		<label>induce pregnancy</label>
+		<description>Through the use of advanced artificial fertility procedures and some of the user’s dna the reproduction controller induces a stable and healthy pregnancy in the user without a donor or partner.</description>
+		<iconPath>UI/Abilities/FSFReproductionControllerPregnancy</iconPath>
+		<aiCanUse>false</aiCanUse>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<showWhenDrafted>false</showWhenDrafted>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<jobDef>CastAbilityOnThing</jobDef>
+		<targetRequired>False</targetRequired>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
+			<drawAimPie>False</drawAimPie>
+		</verbProperties>
+	    <comps>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+	    	    <hediffDef>PregnantHuman</hediffDef>
+				<severity>0.001</severity>
+    	    	<onlyApplyToSelf>True</onlyApplyToSelf>
+	        	<replaceExisting>False</replaceExisting>
+			</li>
+		</comps>
+	</AbilityDef>
+	
+	<AbilityDef>
+		<defName>FSFReproductionControllerRemovePregnancy</defName>
+		<label>terminate pregnancy</label>
+		<description>Terminates the user’s current pregnancy.</description>
+		<iconPath>UI/Abilities/FSFReproductionControllerRemovePregnancy</iconPath>
+		<aiCanUse>false</aiCanUse>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<showWhenDrafted>false</showWhenDrafted>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<jobDef>CastAbilityOnThing</jobDef>
+		<targetRequired>False</targetRequired>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
+			<drawAimPie>False</drawAimPie>
+		</verbProperties>
+	    <comps>
+			<li Class="CompProperties_AbilityRemoveHediff">
+				<compClass>CompAbilityEffect_RemoveHediff</compClass>
+				<hediffDef>PregnantHuman</hediffDef>
+				<applyToSelf>true</applyToSelf>
+			</li>
+		</comps>
+	</AbilityDef>
+	
+</Defs>

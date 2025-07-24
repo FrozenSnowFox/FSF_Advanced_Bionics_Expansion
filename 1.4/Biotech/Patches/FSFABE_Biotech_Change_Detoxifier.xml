@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+
+  	<!-- Hediffs_BodyParts_Detoxifier.xml -->
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+			
+  			<!-- Change Research Tech -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ResearchProjectDef[defName = "ToxFiltration"]/techLevel</xpath>
+				<value>
+					<techLevel>Ultra</techLevel>
+				</value>
+			</li>
+			
+  			<!-- Detoxifier Lung -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/HediffDef[defName = "DetoxifierLung"]/addedPartProps/partEfficiency</xpath>
+				<value>
+					<partEfficiency>1.5</partEfficiency>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/HediffDef[defName = "DetoxifierLung"]</xpath>
+				<value>
+					<defaultLabelColor>(144,98,179)</defaultLabelColor>
+				</value>
+			</li>
+			
+  			<!-- Detoxifier Kidney -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/HediffDef[defName = "DetoxifierKidney"]/addedPartProps/partEfficiency</xpath>
+				<value>
+					<partEfficiency>1.5</partEfficiency>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/HediffDef[defName = "DetoxifierKidney"]</xpath>
+				<value>
+					<defaultLabelColor>(144,98,179)</defaultLabelColor>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+	
+</Patch>
