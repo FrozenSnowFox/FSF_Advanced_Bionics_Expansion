@@ -288,6 +288,8 @@
 					<AnimalGatherSpeed>+0.2</AnimalGatherSpeed>
 					<AnimalGatherYield>+0.2</AnimalGatherYield>
 					<AnimalProductsSellImprovement MayRequire="Ludeon.RimWorld.Ideology">+0.2</AnimalProductsSellImprovement>
+					<FishingSpeed MayRequire="Ludeon.RimWorld.Odyssey">+0.2</FishingSpeed>
+					<FishingYield MayRequire="Ludeon.RimWorld.Odyssey">+0.2</FishingYield>
 					<HuntingStealth>+0.2</HuntingStealth>
 					<TameAnimalChance>+0.1</TameAnimalChance>
 					<TrainAnimalChance>+0.1</TrainAnimalChance>
@@ -489,9 +491,11 @@
 					<EntityStudyRate MayRequire="Ludeon.RimWorld.Anomaly">+0.2</EntityStudyRate>
 					<FieldResearchSpeedMultiplier MayRequire="PeteTimesSix.ResearchReinvented">+0.2</FieldResearchSpeedMultiplier>
 					<GlobalLearningFactor>+0.2</GlobalLearningFactor>
-					<HackingSpeed MayRequire="Ludeon.RimWorld.Ideology">+0.2</HackingSpeed>
+					<HackingSpeed>+0.2</HackingSpeed>
+					<HackingStealth>+0.2</HackingStealth>
 					<Hauts_InstructiveAbility MayRequire="vanillaexpanded.skills,Hautarche.HautsFramework">+0.2</Hauts_InstructiveAbility>
-					<LearningRateFactor MayRequire="Ludeon.RimWorld.Biotech">0.2</LearningRateFactor>
+					<LearningRateFactor MayRequire="Ludeon.RimWorld.Biotech">+0.2</LearningRateFactor>
+					<PilotingAbility MayRequire="Ludeon.RimWorld.Odyssey">+0.2</PilotingAbility>
 					<ReadingSpeed>+0.2</ReadingSpeed>
 					<ResearchSpeed>+0.2</ResearchSpeed>
 					<StudyEfficiency MayRequire="Ludeon.RimWorld.Anomaly">+0.2</StudyEfficiency>
