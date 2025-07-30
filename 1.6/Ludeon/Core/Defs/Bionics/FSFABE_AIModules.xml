@@ -492,7 +492,7 @@
 					<FieldResearchSpeedMultiplier MayRequire="PeteTimesSix.ResearchReinvented">+0.2</FieldResearchSpeedMultiplier>
 					<GlobalLearningFactor>+0.2</GlobalLearningFactor>
 					<HackingSpeed>+0.2</HackingSpeed>
-					<HackingStealth>+0.2</HackingStealth>
+					<HackingStealth>+20</HackingStealth>
 					<Hauts_InstructiveAbility MayRequire="vanillaexpanded.skills,Hautarche.HautsFramework">+0.2</Hauts_InstructiveAbility>
 					<LearningRateFactor MayRequire="Ludeon.RimWorld.Biotech">+0.2</LearningRateFactor>
 					<PilotingAbility MayRequire="Ludeon.RimWorld.Odyssey">+0.2</PilotingAbility>

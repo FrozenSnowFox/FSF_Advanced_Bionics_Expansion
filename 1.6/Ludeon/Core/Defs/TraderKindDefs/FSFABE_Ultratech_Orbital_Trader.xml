@@ -125,6 +125,14 @@
 				<thingDef>Shard</thingDef>
 				<countRange>0~2</countRange>
 			</li>
+			<li MayRequire="Ludeon.RimWorld.Odyssey" Class="StockGenerator_SingleDef">
+				<thingDef>GravlitePanel</thingDef>
+				<countRange>-15~80</countRange>
+			</li>
+			<li MayRequire="Ludeon.RimWorld.Odyssey" Class="StockGenerator_SingleDef">
+				<thingDef>ShuttleEngine</thingDef>
+				<countRange>0~1</countRange>
+			</li>
 
 			<!-- Drugs -->
 			
