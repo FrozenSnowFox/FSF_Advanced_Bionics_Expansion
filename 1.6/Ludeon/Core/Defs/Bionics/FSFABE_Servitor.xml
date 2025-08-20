@@ -8,7 +8,7 @@
 		<defName>FSFImplantBrainServitor</defName>
 		<label>servitor module</label>
 		<labelNoun>a servitor module</labelNoun>
-		<description>An installed servitor module.  Upon finishing reconditioning the host it provides the following benefits.\n\nProvides +1000 mood.\nRemoves the feeling of pain.\nRemoves the need for recreation.\nRemoves the need for rest.\nPrevents inspirations.\nPrevents mental breaks.\nPrevents starting social fights.\nPrevents forming opinions of others.\nPrevents bonding with animals.</description>
+		<description>An installed servitor module.  Upon finishing reconditioning the host it provides the following benefits.\n\nProvides +1000 mood.\nRemoves the feeling of pain.\nRemoves the need for recreation.\nPrevents inspirations.\nPrevents mental breaks.\nPrevents starting social fights.\nPrevents forming opinions of others.\nPrevents bonding with animals.</description>
 		<descriptionHyperlinks>
 			<ThingDef>FSFImplantBrainServitor</ThingDef>
 			<RecipeDef>InstallFSFImplantBrainServitor</RecipeDef>
@@ -298,7 +298,7 @@
 	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
 		<defName>FSFImplantBrainServitor</defName>
 		<label>servitor module</label>
-		<description>A low-intelligent microcomputer that monitors the brain activity of its host.  Through constant conditioning, behaviour modifications and punishments it makes the host into a compliant and willing servant.  Due to the twisted design of the implant however it intentionally makes no attempts to appease the host in any way that matters.  As a result, the person undergoes horrific physical and mental suffering silently.  The Servitor Module is banned on all developed worlds, yet it can still be found in heavy use by slave traders and certain black companies.\n\nThe servitor module requires seven days to properly recondition its host.  During that time their consciousness will be temporarily lowered and they may undergo constant mental breaks with decreasing severity as they fight against the chip.  Upon finishing reconditioning the host it provides the following benefits.\n\nProvides +1000 mood.\nRemoves the feeling of pain.\nRemoves the need for recreation.\nRemoves the need for rest.\nPrevents inspirations.\nPrevents mental breaks.\nPrevents starting social fights.\nPrevents forming opinions of others.\nPrevents bonding with animals.</description>
+		<description>A low-intelligent microcomputer that monitors the brain activity of its host.  Through constant conditioning, behaviour modifications and punishments it makes the host into a compliant and willing servant.  Due to the twisted design of the implant however it intentionally makes no attempts to appease the host in any way that matters.  As a result, the person undergoes horrific physical and mental suffering silently.  The Servitor Module is banned on all developed worlds, yet it can still be found in heavy use by slave traders and certain black companies.\n\nThe servitor module requires seven days to properly recondition its host.  During that time their consciousness will be temporarily lowered and they may undergo constant mental breaks with decreasing severity as they fight against the chip.  Upon finishing reconditioning the host it provides the following benefits.\n\nProvides +1000 mood.\nRemoves the feeling of pain.\nRemoves the need for recreation.\nPrevents inspirations.\nPrevents mental breaks.\nPrevents starting social fights.\nPrevents forming opinions of others.\nPrevents bonding with animals.</description>
 		<descriptionHyperlinks>
 			<HediffDef>FSFImplantBrainServitor</HediffDef>
 			<RecipeDef>InstallFSFImplantBrainServitor</RecipeDef>
@@ -393,7 +393,7 @@
 		<defName>FSFImplantBrainServitorBaby</defName>
 		<label>servitor module</label>
 		<labelNoun>a servitor module</labelNoun>
-		<description>An installed servitor module.  Due to being installed when the host was only an infant it has done irreparable damage to their psyche causing them to acknowledge the Servitor Module as a normal part of their existence.\n\nProvides +1000 mood.\nRemoves the feeling of pain.\nRemoves the need for recreation.\nRemoves the need for rest.\nPrevents inspirations.\nPrevents mental breaks.\nPrevents starting social fights.\nPrevents forming opinions of others.\nPrevents bonding with animals.</description>
+		<description>An installed servitor module.  Due to being installed when the host was only an infant it has done irreparable damage to their psyche causing them to acknowledge the Servitor Module as a normal part of their existence.\n\nProvides +1000 mood.\nRemoves the feeling of pain.\nRemoves the need for recreation.\nPrevents inspirations.\nPrevents mental breaks.\nPrevents starting social fights.\nPrevents forming opinions of others.\nPrevents bonding with animals.</description>
 		<descriptionHyperlinks>
 			<ThingDef>FSFImplantBrainServitor</ThingDef>
 			<RecipeDef>InstallFSFImplantBrainServitor</RecipeDef>
