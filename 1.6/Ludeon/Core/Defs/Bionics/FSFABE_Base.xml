@@ -173,6 +173,15 @@
 		<levelIsQuantity>true</levelIsQuantity>
 	</HediffDef>
 	
+	<!-- Mech Serum Use Item Job -->
+	
+	<JobDef>
+		<defName>FSFInstallMechSerum</defName>
+		<driverClass>JobDriver_UseItem</driverClass>
+		<reportString>Injecting TargetA.</reportString>
+		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+	</JobDef>
+	
 	<!-- Mechanite Serum Storage Category -->
 	
 	<ThingCategoryDef>
@@ -205,19 +214,19 @@
 				<li>FSFMechaniteSerums</li>
 			</researchPrerequisites>
 		</recipeMaker>
+		<comps>
+			<li Class="CompProperties_Forbiddable"/>
+			<li Class="CompProperties_Usable">
+				<compClass>CompUsableImplant</compClass>
+				<useJob>FSFInstallMechSerum</useJob>
+				<useLabel>Inject {0_label}</useLabel>
+			</li>
+			<li Class="CompProperties_UseEffectPlaySound">
+				<soundOnUsed>MechSerumUsed</soundOnUsed>
+			</li>
+			<li Class="CompProperties_UseEffectDestroySelf" />
+		</comps>
 	</ThingDef>
-	
-	<!-- Mechanite Serum Surgery Install Base -->
-	
-	<RecipeDef Name="FSFMechSerumSurgeryInstallBase" ParentName="SurgeryInstallImplantBase" Abstract="True">
-		<workAmount>100</workAmount>
-		<surgeryIgnoreEnvironment>true</surgeryIgnoreEnvironment>
-		<surgerySuccessChanceFactor>5</surgerySuccessChanceFactor>
-		<surgeryOutcomeEffect IsNull="True" /> <!-- Always succeeds -->
-		<skillRequirements>
-			<Medicine>0</Medicine>
-		</skillRequirements>
-	</RecipeDef>
 	
 	<!-- Mechanite Serum Surgery Remove Base -->
 	

@@ -11,7 +11,7 @@
 			<!-- Replace Healing Mechanites regeneration code with the one from the Anomaly DLC -->
 			
 			<li MayRequire="OskarPotocki.VanillaFactionsExpanded.Core" Class="PatchOperationRemove">
-				<xpath>/Defs/HediffDef[defName = "FSFImplantMechanitesHealing"]/comps</xpath>
+				<xpath>/Defs/HediffDef[defName = "FSFImplantMechanitesHealing"]/comps/li[@Class = "VEF.AnimalBehaviours.HediffCompProperties_Regeneration"]</xpath>
 			</li>
 			
 			<li MayRequire="OskarPotocki.VanillaFactionsExpanded.Core" Class="PatchOperationAdd">
@@ -28,14 +28,14 @@
 			<li MayRequire="OskarPotocki.VanillaFactionsExpanded.Core" Class="PatchOperationReplace">
 				<xpath>/Defs/HediffDef[defName = "FSFImplantMechanitesHealing"]/description</xpath>
 				<value>
-					<description>A dose of semi-coherent mechanites designed to rapidly heal injuries within the host.  They're so powerful they can regenerate scars, missing organs and lost limbs.  Due to how mechanites work only one strain can exist harmoniously inside the host’s body.  However, it is possible to remove a mechanite strain with surgery.</description>
+					<description>A dose of semi-coherent mechanites designed to rapidly heal injuries within the host.  They're so powerful they can regenerate scars, missing organs and lost limbs.\n\nFor ease-of-use the mechanites are designed to be self-installable via a small handheld injector.  Due to how mechanites work only one strain can exist harmoniously inside the host’s body.  Upon injection any existing strain will be eliminated by the newly injected mechanites.  It is possible to remove mechanite strains entirely from a host, however it requires an expensive and difficult surgery.</description>
 				</value>
 			</li>
 			
 			<li MayRequire="OskarPotocki.VanillaFactionsExpanded.Core" Class="PatchOperationReplace">
 				<xpath>/Defs/ThingDef[defName = "FSFImplantMechanitesHealing"]/description</xpath>
 				<value>
-					<description>A dose of semi-coherent mechanites designed to rapidly heal injuries within the host.  They're so powerful they can regenerate scars, missing organs and lost limbs.  Due to how mechanites work only one strain can exist harmoniously inside the host’s body.  However, it is possible to remove a mechanite strain with surgery.</description>
+					<description>A dose of semi-coherent mechanites designed to rapidly heal injuries within the host.  They're so powerful they can regenerate scars, missing organs and lost limbs.\n\nFor ease-of-use the mechanites are designed to be self-installable via a small handheld injector.  Due to how mechanites work only one strain can exist harmoniously inside the host’s body.  Upon injection any existing strain will be eliminated by the newly injected mechanites.  It is possible to remove mechanite strains entirely from a host, however it requires an expensive and difficult surgery.</description>
 				</value>
 			</li>
 			

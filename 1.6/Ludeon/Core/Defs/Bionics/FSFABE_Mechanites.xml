@@ -8,10 +8,9 @@
 		<defName>FSFImplantMechanitesArmor</defName>
 		<label>armor-enhancing mechanites</label>
 		<labelNoun>armor-enhancing mechanites</labelNoun>
-		<description>A swarm of armor-enhancing mechanites.  A dose of semi-coherent mechanites which modifies muscle and tissue to create a durable subdermal layer of armour in order to protect the host.  Due to how mechanites work only one strain can exist harmoniously inside the host’s body.  However, it is possible to remove a mechanite strain with an expensive and difficult surgery.</description>
+		<description>A swarm of armor-enhancing mechanites.  A dose of semi-coherent mechanites which modifies muscle and tissue to create a durable subdermal layer of armour in order to protect the host.\n\nFor ease-of-use the mechanites are designed to be self-installable via a small handheld injector.  Due to how mechanites work only one strain can exist harmoniously inside the host’s body.  Upon injection any existing strain will be eliminated by the newly injected mechanites.  It is possible to remove mechanite strains entirely from a host, however it requires an expensive and difficult surgery.</description>
 		<descriptionHyperlinks>
 			<ThingDef>FSFImplantMechanitesArmor</ThingDef>
-			<RecipeDef>InstallFSFImplantMechanitesArmor</RecipeDef>
 			<RecipeDef>RemoveFSFImplantMechanitesArmor</RecipeDef>
 		</descriptionHyperlinks>
 		<stages>
@@ -21,16 +20,26 @@
 				</statFactors>
 			</li>
 		</stages>
+		<comps>
+			<li Class="HediffCompProperties_RemoveIfOtherHediff">
+				<hediffs>
+					<li MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">FSFImplantMechanitesHealing</li>
+					<li MayRequire="Ludeon.RimWorld.Royalty">FSFImplantMechanitesPsychic</li>
+					<li>FSFImplantMechanitesSensory</li>
+					<li>FSFImplantMechanitesSpeed</li>
+					<li>FSFImplantMechanitesStrength</li>
+				</hediffs>
+			</li>
+		</comps>
 		<tags><li>FSFImplantMechanites</li></tags>
 	</HediffDef>
 
 	<ThingDef ParentName="FSFMechSerumBase">
 		<defName>FSFImplantMechanitesArmor</defName>
 		<label>armor-enhancing mechanites</label>
-		<description>A dose of semi-coherent mechanites which modifies muscle and tissue to create a durable subdermal layer of armour in order to protect the host.  Due to how mechanites work only one strain can exist harmoniously inside the host’s body.  However, it is possible to remove a mechanite strain with an expensive and difficult surgery.</description>
+		<description>A dose of semi-coherent mechanites which modifies muscle and tissue to create a durable subdermal layer of armour in order to protect the host.\n\nFor ease-of-use the mechanites are designed to be self-installable via a small handheld injector.  Due to how mechanites work only one strain can exist harmoniously inside the host’s body.  Upon injection any existing strain will be eliminated by the newly injected mechanites.  It is possible to remove mechanite strains entirely from a host, however it requires an expensive and difficult surgery.</description>
 		<descriptionHyperlinks>
 			<HediffDef>FSFImplantMechanitesArmor</HediffDef>
-			<RecipeDef>InstallFSFImplantMechanitesArmor</RecipeDef>
 			<RecipeDef>RemoveFSFImplantMechanitesArmor</RecipeDef>
 		</descriptionHyperlinks>
 		<graphicData>
@@ -43,42 +52,14 @@
 			<ComponentSpacer>4</ComponentSpacer>
 			<Plasteel>4</Plasteel>
 		</costList>
-	</ThingDef>
-	
-	<RecipeDef ParentName="FSFMechSerumSurgeryInstallBase">
-		<defName>InstallFSFImplantMechanitesArmor</defName>
-		<label>administer armor-enhancing mechanite serum</label>
-		<description>Administer a armor-enhancing mechanite serum.</description>
-		<descriptionHyperlinks>
-			<ThingDef>FSFImplantMechanitesArmor</ThingDef>
-			<HediffDef>FSFImplantMechanitesArmor</HediffDef>
-			<RecipeDef>InstallFSFImplantMechanitesArmor</RecipeDef>
-		</descriptionHyperlinks>
-		<jobString>Administering armor-enhancing mechanite serum.</jobString>
-		<ingredients>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>FSFImplantMechanitesArmor</li>
-					</thingDefs>
-				</filter>
-				<count>1</count>
+		<comps>
+			<li Class="CompProperties_UseEffectInstallImplant">
+				<compClass>CompUseEffect_InstallImplant</compClass>
+				<hediffDef>FSFImplantMechanitesArmor</hediffDef>
+				<bodyPart>Torso</bodyPart>
 			</li>
-		</ingredients>
-		<fixedIngredientFilter>
-			<thingDefs>
-				<li>FSFImplantMechanitesArmor</li>
-			</thingDefs>
-		</fixedIngredientFilter>
-		<appliedOnFixedBodyParts>
-			<li>Torso</li>
-		</appliedOnFixedBodyParts>
-		<addsHediff>FSFImplantMechanitesArmor</addsHediff>
-		<uiIconThing>FSFImplantMechanitesArmor</uiIconThing>
-		<incompatibleWithHediffTags>
-			<li>FSFImplantMechanites</li>
-		</incompatibleWithHediffTags>
-	</RecipeDef>
+		</comps>
+	</ThingDef>
 	
 	<RecipeDef ParentName="FSFMechSerumSurgeryRemoveBase">
 		<defName>RemoveFSFImplantMechanitesArmor</defName>
@@ -87,7 +68,6 @@
 		<descriptionHyperlinks>
 			<ThingDef>FSFImplantMechanitesArmor</ThingDef>
 			<HediffDef>FSFImplantMechanitesArmor</HediffDef>
-			<RecipeDef>RemoveFSFImplantMechanitesArmor</RecipeDef>
 		</descriptionHyperlinks>
 		<jobString>Removing and destroying armor-enhancing mechanites.</jobString>
 		<removesHediff>FSFImplantMechanitesArmor</removesHediff>
@@ -99,10 +79,9 @@
 		<defName>FSFImplantMechanitesImmunity</defName>
 		<label>immunity-enhancing mechanites</label>
 		<labelNoun>immunity-enhancing mechanites</labelNoun>
-		<description>A swarm of immunity-enhancing mechanites.  A dose of semi-coherent mechanites which travel throughout the body in order to fight off diseases within the host.  While mechanite strains normally conflict with one another this one is designed to remain in sleep mode the majority of the time and only awaken temporarily to deal with threats to the host’s health.  As such it’s able to coexist with other more aggressive mechanite strains.  Unfortunately, this has the downside of the mechanites being unable to remain active long to fight off existing conditions that have had time to take hold in the host’s system.</description>
+		<description>A swarm of immunity-enhancing mechanites.  A dose of semi-coherent mechanites which travel throughout the body in order to fight off diseases within the host.  While mechanite strains normally conflict with one another this one is designed to remain in sleep mode the majority of the time and only awaken temporarily to deal with threats to the host’s health.  As such it’s able to coexist with other more aggressive mechanite strains.  Unfortunately, this has the downside of the mechanites being unable to remain active long enough to fight off existing conditions that have had time to take hold in the host’s system.\n\nFor ease-of-use the mechanites are designed to be self-installable via a small handheld injector.  It is possible to remove mechanite strains entirely from a host, however it requires an expensive and difficult surgery.</description>
 		<descriptionHyperlinks>
 			<ThingDef>FSFImplantMechanitesImmunity</ThingDef>
-			<RecipeDef>InstallFSFImplantMechanitesImmunity</RecipeDef>
 			<RecipeDef>RemoveFSFImplantMechanitesImmunity</RecipeDef>
 		</descriptionHyperlinks>
 		<stages>
@@ -128,10 +107,9 @@
 	<ThingDef ParentName="FSFMechSerumBase">
 		<defName>FSFImplantMechanitesImmunity</defName>
 		<label>immunity-enhancing mechanites</label>
-		<description>A dose of semi-coherent mechanites which travel throughout the body in order to fight off diseases within the host.  While mechanite strains normally conflict with one another this one is designed to remain in sleep mode the majority of the time and only awaken temporarily to deal with threats to the host’s health.  As such it’s able to coexist with other more aggressive mechanite strains.  Unfortunately, this has the downside of the mechanites being unable to remain active long to fight off existing conditions that have had time to take hold in the host’s system.</description>
+		<description>A dose of semi-coherent mechanites which travel throughout the body in order to fight off diseases within the host.  While mechanite strains normally conflict with one another this one is designed to remain in sleep mode the majority of the time and only awaken temporarily to deal with threats to the host’s health.  As such it’s able to coexist with other more aggressive mechanite strains.  Unfortunately, this has the downside of the mechanites being unable to remain active long enough to fight off existing conditions that have had time to take hold in the host’s system.\n\nFor ease-of-use the mechanites are designed to be self-installable via a small handheld injector.  It is possible to remove mechanite strains entirely from a host, however it requires an expensive and difficult surgery.</description>
 		<descriptionHyperlinks>
 			<HediffDef>FSFImplantMechanitesImmunity</HediffDef>
-			<RecipeDef>InstallFSFImplantMechanitesImmunity</RecipeDef>
 			<RecipeDef>RemoveFSFImplantMechanitesImmunity</RecipeDef>
 		</descriptionHyperlinks>
 		<graphicData>
@@ -143,39 +121,14 @@
 			<MedicineUltratech>20</MedicineUltratech>
 			<ComponentSpacer>4</ComponentSpacer>
 		</costList>
-	</ThingDef>
-	
-	<RecipeDef ParentName="FSFMechSerumSurgeryInstallBase">
-		<defName>InstallFSFImplantMechanitesImmunity</defName>
-		<label>administer immunity-enhancing mechanite serum</label>
-		<description>Administer a immunity-enhancing mechanite serum.</description>
-		<descriptionHyperlinks>
-			<ThingDef>FSFImplantMechanitesImmunity</ThingDef>
-			<HediffDef>FSFImplantMechanitesImmunity</HediffDef>
-			<RecipeDef>InstallFSFImplantMechanitesImmunity</RecipeDef>
-		</descriptionHyperlinks>
-		<jobString>Administering immunity-enhancing mechanite serum.</jobString>
-		<ingredients>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>FSFImplantMechanitesImmunity</li>
-					</thingDefs>
-				</filter>
-				<count>1</count>
+		<comps>
+			<li Class="CompProperties_UseEffectInstallImplant">
+				<compClass>CompUseEffect_InstallImplant</compClass>
+				<hediffDef>FSFImplantMechanitesImmunity</hediffDef>
+				<bodyPart>Torso</bodyPart>
 			</li>
-		</ingredients>
-		<fixedIngredientFilter>
-			<thingDefs>
-				<li>FSFImplantMechanitesImmunity</li>
-			</thingDefs>
-		</fixedIngredientFilter>
-		<appliedOnFixedBodyParts>
-			<li>Torso</li>
-		</appliedOnFixedBodyParts>
-		<addsHediff>FSFImplantMechanitesImmunity</addsHediff>
-		<uiIconThing>FSFImplantMechanitesImmunity</uiIconThing>
-	</RecipeDef>
+		</comps>
+	</ThingDef>
 	
 	<RecipeDef ParentName="FSFMechSerumSurgeryRemoveBase">
 		<defName>RemoveFSFImplantMechanitesImmunity</defName>
@@ -184,7 +137,6 @@
 		<descriptionHyperlinks>
 			<ThingDef>FSFImplantMechanitesImmunity</ThingDef>
 			<HediffDef>FSFImplantMechanitesImmunity</HediffDef>
-			<RecipeDef>RemoveFSFImplantMechanitesImmunity</RecipeDef>
 		</descriptionHyperlinks>
 		<jobString>Removing and destroying immunity-enhancing mechanites.</jobString>
 		<removesHediff>FSFImplantMechanitesImmunity</removesHediff>
@@ -196,10 +148,9 @@
 		<defName>FSFImplantMechanitesSensory</defName>
 		<label>sense-enhancing mechanites</label>
 		<labelNoun>sense-enhancing mechanites</labelNoun>
-		<description>A swarm of sense-enhancing mechanites.  A dose of semi-coherent mechanites which reside in the nervous system and are designed to augment the host's senses.  This is the stable and safe form of what’s commonly known as sensory mechanites.  Due to how mechanites work only one strain can exist harmoniously inside the host’s body.  However, it is possible to remove a mechanite strain with an expensive and difficult surgery.</description>
+		<description>A swarm of sense-enhancing mechanites.  A dose of semi-coherent mechanites which reside in the nervous system and are designed to augment the host's senses.  This is the stable and safe form of what’s commonly known as sensory mechanites.\n\nFor ease-of-use the mechanites are designed to be self-installable via a small handheld injector.  Due to how mechanites work only one strain can exist harmoniously inside the host’s body.  Upon injection any existing strain will be eliminated by the newly injected mechanites.  It is possible to remove mechanite strains entirely from a host, however it requires an expensive and difficult surgery.</description>
 		<descriptionHyperlinks>
 			<ThingDef>FSFImplantMechanitesSensory</ThingDef>
-			<RecipeDef>InstallFSFImplantMechanitesSensory</RecipeDef>
 			<RecipeDef>RemoveFSFImplantMechanitesSensory</RecipeDef>
 		</descriptionHyperlinks>
 		<stages>
@@ -224,16 +175,26 @@
 				</statOffsets>
 			</li>
 		</stages>
+		<comps>
+			<li Class="HediffCompProperties_RemoveIfOtherHediff">
+				<hediffs>
+					<li>FSFImplantMechanitesArmor</li>
+					<li MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">FSFImplantMechanitesHealing</li>
+					<li MayRequire="Ludeon.RimWorld.Royalty">FSFImplantMechanitesPsychic</li>
+					<li>FSFImplantMechanitesSpeed</li>
+					<li>FSFImplantMechanitesStrength</li>
+				</hediffs>
+			</li>
+		</comps>
 		<tags><li>FSFImplantMechanites</li></tags>
 	</HediffDef>
 
 	<ThingDef ParentName="FSFMechSerumBase">
 		<defName>FSFImplantMechanitesSensory</defName>
 		<label>sense-enhancing mechanites</label>
-		<description>A dose of semi-coherent mechanites which reside in the nervous system and are designed to augment the host's senses.  This is the stable and safe form of what’s commonly known as sensory mechanites.  Due to how mechanites work only one strain can exist harmoniously inside the host’s body.  However, it is possible to remove a mechanite strain with an expensive and difficult surgery.</description>
+		<description>A dose of semi-coherent mechanites which reside in the nervous system and are designed to augment the host's senses.  This is the stable and safe form of what’s commonly known as sensory mechanites.\n\nFor ease-of-use the mechanites are designed to be self-installable via a small handheld injector.  Due to how mechanites work only one strain can exist harmoniously inside the host’s body.  Upon injection any existing strain will be eliminated by the newly injected mechanites.  It is possible to remove mechanite strains entirely from a host, however it requires an expensive and difficult surgery.</description>
 		<descriptionHyperlinks>
 			<HediffDef>FSFImplantMechanitesSensory</HediffDef>
-			<RecipeDef>InstallFSFImplantMechanitesSensory</RecipeDef>
 			<RecipeDef>RemoveFSFImplantMechanitesSensory</RecipeDef>
 		</descriptionHyperlinks>
 		<graphicData>
@@ -245,42 +206,14 @@
 			<MedicineUltratech>20</MedicineUltratech>
 			<ComponentSpacer>4</ComponentSpacer>
 		</costList>
-	</ThingDef>
-	
-	<RecipeDef ParentName="FSFMechSerumSurgeryInstallBase">
-		<defName>InstallFSFImplantMechanitesSensory</defName>
-		<label>administer sense-enhancing mechanite serum</label>
-		<description>Administer a sense-enhancing mechanite serum.</description>
-		<descriptionHyperlinks>
-			<ThingDef>FSFImplantMechanitesSensory</ThingDef>
-			<HediffDef>FSFImplantMechanitesSensory</HediffDef>
-			<RecipeDef>RemoveFSFImplantMechanitesSensory</RecipeDef>
-		</descriptionHyperlinks>
-		<jobString>Administering sense-enhancing mechanite serum.</jobString>
-		<ingredients>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>FSFImplantMechanitesSensory</li>
-					</thingDefs>
-				</filter>
-				<count>1</count>
+		<comps>
+			<li Class="CompProperties_UseEffectInstallImplant">
+				<compClass>CompUseEffect_InstallImplant</compClass>
+				<hediffDef>FSFImplantMechanitesSensory</hediffDef>
+				<bodyPart>Torso</bodyPart>
 			</li>
-		</ingredients>
-		<fixedIngredientFilter>
-			<thingDefs>
-				<li>FSFImplantMechanitesSensory</li>
-			</thingDefs>
-		</fixedIngredientFilter>
-		<appliedOnFixedBodyParts>
-			<li>Torso</li>
-		</appliedOnFixedBodyParts>
-		<addsHediff>FSFImplantMechanitesSensory</addsHediff>
-		<uiIconThing>FSFImplantMechanitesSensory</uiIconThing>
-		<incompatibleWithHediffTags>
-			<li>FSFImplantMechanites</li>
-		</incompatibleWithHediffTags>
-	</RecipeDef>
+		</comps>
+	</ThingDef>
 	
 	<RecipeDef ParentName="FSFMechSerumSurgeryRemoveBase">
 		<defName>RemoveFSFImplantMechanitesSensory</defName>
@@ -289,7 +222,6 @@
 		<descriptionHyperlinks>
 			<ThingDef>FSFImplantMechanitesSensory</ThingDef>
 			<HediffDef>FSFImplantMechanitesSensory</HediffDef>
-			<RecipeDef>InstallFSFImplantMechanitesSensory</RecipeDef>
 		</descriptionHyperlinks>
 		<jobString>Removing and destroying sense-enhancing mechanites.</jobString>
 		<removesHediff>FSFImplantMechanitesSensory</removesHediff>
@@ -301,10 +233,9 @@
 		<defName>FSFImplantMechanitesSpeed</defName>
 		<label>speed-enhancing mechanites</label>
 		<labelNoun>speed-enhancing mechanites</labelNoun>
-		<description>A swarm of speed-enhancing mechanites.  A dose of semi-coherent mechanites which develop fibrous links in muscle tissue in order to augment the host's speed.  Due to how mechanites work only one strain can exist harmoniously inside the host’s body.  However, it is possible to remove a mechanite strain with an expensive and difficult surgery.</description>
+		<description>A swarm of speed-enhancing mechanites.  A dose of semi-coherent mechanites which develop fibrous links in muscle tissue in order to augment the host's speed.\n\nFor ease-of-use the mechanites are designed to be self-installable via a small handheld injector.  Due to how mechanites work only one strain can exist harmoniously inside the host’s body.  Upon injection any existing strain will be eliminated by the newly injected mechanites.  It is possible to remove mechanite strains entirely from a host, however it requires an expensive and difficult surgery.</description>
 		<descriptionHyperlinks>
 			<ThingDef>FSFImplantMechanitesSpeed</ThingDef>
-			<RecipeDef>InstallFSFImplantMechanitesSpeed</RecipeDef>
 			<RecipeDef>RemoveFSFImplantMechanitesSpeed</RecipeDef>
 		</descriptionHyperlinks>
 		<stages>
@@ -325,16 +256,26 @@
 				</statFactors>
 			</li>
 		</stages>
+		<comps>
+			<li Class="HediffCompProperties_RemoveIfOtherHediff">
+				<hediffs>
+					<li>FSFImplantMechanitesArmor</li>
+					<li MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">FSFImplantMechanitesHealing</li>
+					<li MayRequire="Ludeon.RimWorld.Royalty">FSFImplantMechanitesPsychic</li>
+					<li>FSFImplantMechanitesSensory</li>
+					<li>FSFImplantMechanitesStrength</li>
+				</hediffs>
+			</li>
+		</comps>
 		<tags><li>FSFImplantMechanites</li></tags>
 	</HediffDef>
 
 	<ThingDef ParentName="FSFMechSerumBase">
 		<defName>FSFImplantMechanitesSpeed</defName>
 		<label>speed-enhancing mechanites</label>
-		<description>A dose of semi-coherent mechanites which develop fibrous links in muscle tissue in order to augment the host's speed.  Due to how mechanites work only one strain can exist harmoniously inside the host’s body.  However, it is possible to remove a mechanite strain with an expensive and difficult surgery.</description>
+		<description>A dose of semi-coherent mechanites which develop fibrous links in muscle tissue in order to augment the host's speed.\n\nFor ease-of-use the mechanites are designed to be self-installable via a small handheld injector.  Due to how mechanites work only one strain can exist harmoniously inside the host’s body.  Upon injection any existing strain will be eliminated by the newly injected mechanites.  It is possible to remove mechanite strains entirely from a host, however it requires an expensive and difficult surgery.</description>
 		<descriptionHyperlinks>
 			<HediffDef>FSFImplantMechanitesSpeed</HediffDef>
-			<RecipeDef>InstallFSFImplantMechanitesSpeed</RecipeDef>
 			<RecipeDef>RemoveFSFImplantMechanitesSpeed</RecipeDef>
 		</descriptionHyperlinks>
 		<graphicData>
@@ -346,42 +287,14 @@
 			<MedicineUltratech>20</MedicineUltratech>
 			<ComponentSpacer>4</ComponentSpacer>
 		</costList>
-	</ThingDef>
-	
-	<RecipeDef ParentName="FSFMechSerumSurgeryInstallBase">
-		<defName>InstallFSFImplantMechanitesSpeed</defName>
-		<label>administer speed-enhancing mechanite serum</label>
-		<description>Administer a speed-enhancing mechanite serum.</description>
-		<descriptionHyperlinks>
-			<ThingDef>FSFImplantMechanitesSpeed</ThingDef>
-			<HediffDef>FSFImplantMechanitesSpeed</HediffDef>
-			<RecipeDef>InstallFSFImplantMechanitesSpeed</RecipeDef>
-		</descriptionHyperlinks>
-		<jobString>Administering speed-enhancing mechanite serum.</jobString>
-		<ingredients>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>FSFImplantMechanitesSpeed</li>
-					</thingDefs>
-				</filter>
-				<count>1</count>
+		<comps>
+			<li Class="CompProperties_UseEffectInstallImplant">
+				<compClass>CompUseEffect_InstallImplant</compClass>
+				<hediffDef>FSFImplantMechanitesSpeed</hediffDef>
+				<bodyPart>Torso</bodyPart>
 			</li>
-		</ingredients>
-		<fixedIngredientFilter>
-			<thingDefs>
-				<li>FSFImplantMechanitesSpeed</li>
-			</thingDefs>
-		</fixedIngredientFilter>
-		<appliedOnFixedBodyParts>
-			<li>Torso</li>
-		</appliedOnFixedBodyParts>
-		<addsHediff>FSFImplantMechanitesSpeed</addsHediff>
-		<uiIconThing>FSFImplantMechanitesSpeed</uiIconThing>
-		<incompatibleWithHediffTags>
-			<li>FSFImplantMechanites</li>
-		</incompatibleWithHediffTags>
-	</RecipeDef>
+		</comps>
+	</ThingDef>
 	
 	<RecipeDef ParentName="FSFMechSerumSurgeryRemoveBase">
 		<defName>RemoveFSFImplantMechanitesSpeed</defName>
@@ -390,7 +303,6 @@
 		<descriptionHyperlinks>
 			<ThingDef>FSFImplantMechanitesSpeed</ThingDef>
 			<HediffDef>FSFImplantMechanitesSpeed</HediffDef>
-			<RecipeDef>RemoveFSFImplantMechanitesSpeed</RecipeDef>
 		</descriptionHyperlinks>
 		<jobString>Removing and destroying speed-enhancing mechanites.</jobString>
 		<removesHediff>FSFImplantMechanitesSpeed</removesHediff>
@@ -402,10 +314,9 @@
 		<defName>FSFImplantMechanitesStrength</defName>
 		<label>strength-enhancing mechanites</label>
 		<labelNoun>strength-enhancing mechanites</labelNoun>
-		<description>A swarm of strength-enhancing mechanites.  A dose of semi-coherent mechanites which develop fibrous links in muscle tissue in order to augment the host's strength.  This is the stable and safe form of what’s commonly known as fibrous mechanites.  Due to how mechanites work only one strain can exist harmoniously inside the host’s body.  However, it is possible to remove a mechanite strain with an expensive and difficult surgery.</description>
+		<description>A swarm of strength-enhancing mechanites.  A dose of semi-coherent mechanites which develop fibrous links in muscle tissue in order to augment the host's strength.  This is the stable and safe form of what’s commonly known as fibrous mechanites.\n\nFor ease-of-use the mechanites are designed to be self-installable via a small handheld injector.  Due to how mechanites work only one strain can exist harmoniously inside the host’s body.  Upon injection any existing strain will be eliminated by the newly injected mechanites.  It is possible to remove mechanite strains entirely from a host, however it requires an expensive and difficult surgery.</description>
 		<descriptionHyperlinks>
 			<ThingDef>FSFImplantMechanitesStrength</ThingDef>
-			<RecipeDef>InstallFSFImplantMechanitesStrength</RecipeDef>
 			<RecipeDef>RemoveFSFImplantMechanitesStrength</RecipeDef>
 		</descriptionHyperlinks>
 		<stages>
@@ -428,16 +339,26 @@
 				</statFactors>
 			</li>
 		</stages>
+		<comps>
+			<li Class="HediffCompProperties_RemoveIfOtherHediff">
+				<hediffs>
+					<li>FSFImplantMechanitesArmor</li>
+					<li MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">FSFImplantMechanitesHealing</li>
+					<li MayRequire="Ludeon.RimWorld.Royalty">FSFImplantMechanitesPsychic</li>
+					<li>FSFImplantMechanitesSensory</li>
+					<li>FSFImplantMechanitesSpeed</li>
+				</hediffs>
+			</li>
+		</comps>
 		<tags><li>FSFImplantMechanites</li></tags>
 	</HediffDef>
 
 	<ThingDef ParentName="FSFMechSerumBase">
 		<defName>FSFImplantMechanitesStrength</defName>
 		<label>strength-enhancing mechanites</label>
-		<description>A dose of semi-coherent mechanites which develop fibrous links in muscle tissue in order to augment the host's strength.  This is the stable and safe form of what’s commonly known as fibrous mechanites.  Due to how mechanites work only one strain can exist harmoniously inside the host’s body.  However, it is possible to remove a mechanite strain with an expensive and difficult surgery.</description>
+		<description>A dose of semi-coherent mechanites which develop fibrous links in muscle tissue in order to augment the host's strength.  This is the stable and safe form of what’s commonly known as fibrous mechanites.\n\nFor ease-of-use the mechanites are designed to be self-installable via a small handheld injector.  Due to how mechanites work only one strain can exist harmoniously inside the host’s body.  Upon injection any existing strain will be eliminated by the newly injected mechanites.  It is possible to remove mechanite strains entirely from a host, however it requires an expensive and difficult surgery.</description>
 		<descriptionHyperlinks>
 			<HediffDef>FSFImplantMechanitesStrength</HediffDef>
-			<RecipeDef>InstallFSFImplantMechanitesStrength</RecipeDef>
 			<RecipeDef>RemoveFSFImplantMechanitesStrength</RecipeDef>
 		</descriptionHyperlinks>
 		<graphicData>
@@ -449,42 +370,14 @@
 			<MedicineUltratech>20</MedicineUltratech>
 			<ComponentSpacer>4</ComponentSpacer>
 		</costList>
-	</ThingDef>
-	
-	<RecipeDef ParentName="FSFMechSerumSurgeryInstallBase">
-		<defName>InstallFSFImplantMechanitesStrength</defName>
-		<label>administer strength-enhancing mechanite serum</label>
-		<description>Administer a strength-enhancing mechanite serum.</description>
-		<descriptionHyperlinks>
-			<ThingDef>FSFImplantMechanitesStrength</ThingDef>
-			<HediffDef>FSFImplantMechanitesStrength</HediffDef>
-			<RecipeDef>RemoveFSFImplantMechanitesStrength</RecipeDef>
-		</descriptionHyperlinks>
-		<jobString>Administering strength-enhancing mechanite serum.</jobString>
-		<ingredients>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>FSFImplantMechanitesStrength</li>
-					</thingDefs>
-				</filter>
-				<count>1</count>
+		<comps>
+			<li Class="CompProperties_UseEffectInstallImplant">
+				<compClass>CompUseEffect_InstallImplant</compClass>
+				<hediffDef>FSFImplantMechanitesStrength</hediffDef>
+				<bodyPart>Torso</bodyPart>
 			</li>
-		</ingredients>
-		<fixedIngredientFilter>
-			<thingDefs>
-				<li>FSFImplantMechanitesStrength</li>
-			</thingDefs>
-		</fixedIngredientFilter>
-		<appliedOnFixedBodyParts>
-			<li>Torso</li>
-		</appliedOnFixedBodyParts>
-		<addsHediff>FSFImplantMechanitesStrength</addsHediff>
-		<uiIconThing>FSFImplantMechanitesStrength</uiIconThing>
-		<incompatibleWithHediffTags>
-			<li>FSFImplantMechanites</li>
-		</incompatibleWithHediffTags>
-	</RecipeDef>
+		</comps>
+	</ThingDef>
 	
 	<RecipeDef ParentName="FSFMechSerumSurgeryRemoveBase">
 		<defName>RemoveFSFImplantMechanitesStrength</defName>
@@ -493,7 +386,6 @@
 		<descriptionHyperlinks>
 			<ThingDef>FSFImplantMechanitesStrength</ThingDef>
 			<HediffDef>FSFImplantMechanitesStrength</HediffDef>
-			<RecipeDef>InstallFSFImplantMechanitesStrength</RecipeDef>
 		</descriptionHyperlinks>
 		<jobString>Removing and destroying strength-enhancing mechanites.</jobString>
 		<removesHediff>FSFImplantMechanitesStrength</removesHediff>

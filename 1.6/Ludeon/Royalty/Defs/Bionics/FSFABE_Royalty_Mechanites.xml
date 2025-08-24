@@ -8,10 +8,9 @@
 		<defName>FSFImplantMechanitesPsychic</defName>
 		<label>psychic-enhancing mechanites</label>
 		<labelNoun>psychic-enhancing mechanites</labelNoun>
-		<description>A swarm of psychic-enhancing mechanites.  A dose of semi-coherent mechanites which work as a conduit across the body to enhance the hosts psychic abilities.  Due to how mechanites work only one strain can exist harmoniously inside the host’s body.  However, it is possible to remove a mechanite strain with an expensive and difficult surgery.</description>
+		<description>A swarm of psychic-enhancing mechanites.  A dose of semi-coherent mechanites which work as a conduit across the body to enhance the hosts psychic abilities.\n\nFor ease-of-use the mechanites are designed to be self-installable via a small handheld injector.  Due to how mechanites work only one strain can exist harmoniously inside the host’s body.  Upon injection any existing strain will be eliminated by the newly injected mechanites.  It is possible to remove mechanite strains entirely from a host, however it requires an expensive and difficult surgery.</description>
 		<descriptionHyperlinks>
 			<ThingDef>FSFImplantMechanitesPsychic</ThingDef>
-			<RecipeDef>InstallFSFImplantMechanitesPsychic</RecipeDef>
 			<RecipeDef>RemoveFSFImplantMechanitesPsychic</RecipeDef>
 		</descriptionHyperlinks>
 		<stages>
@@ -23,16 +22,26 @@
 				</statOffsets>
 			</li>
 		</stages>
+		<comps>
+			<li Class="HediffCompProperties_RemoveIfOtherHediff">
+				<hediffs>
+					<li>FSFImplantMechanitesArmor</li>
+					<li MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">FSFImplantMechanitesHealing</li>
+					<li>FSFImplantMechanitesSensory</li>
+					<li>FSFImplantMechanitesSpeed</li>
+					<li>FSFImplantMechanitesStrength</li>
+				</hediffs>
+			</li>
+		</comps>
 		<tags><li>FSFImplantMechanites</li></tags>
 	</HediffDef>
 
 	<ThingDef ParentName="FSFMechSerumBase">
 		<defName>FSFImplantMechanitesPsychic</defName>
 		<label>psychic-enhancing mechanites</label>
-		<description>A dose of semi-coherent mechanites which work as a conduit across the body to enhance the hosts psychic abilities.  Due to how mechanites work only one strain can exist harmoniously inside the host’s body.  However, it is possible to remove a mechanite strain with an expensive and difficult surgery.</description>
+		<description>A dose of semi-coherent mechanites which work as a conduit across the body to enhance the hosts psychic abilities.\n\nFor ease-of-use the mechanites are designed to be self-installable via a small handheld injector.  Due to how mechanites work only one strain can exist harmoniously inside the host’s body.  Upon injection any existing strain will be eliminated by the newly injected mechanites.  It is possible to remove mechanite strains entirely from a host, however it requires an expensive and difficult surgery.</description>
 		<descriptionHyperlinks>
 			<HediffDef>FSFImplantMechanitesPsychic</HediffDef>
-			<RecipeDef>InstallFSFImplantMechanitesPsychic</RecipeDef>
 			<RecipeDef>RemoveFSFImplantMechanitesPsychic</RecipeDef>
 		</descriptionHyperlinks>
 		<graphicData>
@@ -45,42 +54,14 @@
 			<ComponentSpacer>4</ComponentSpacer>
 			<VPE_Eltex MayRequire="VanillaExpanded.VPsycastsE">1</VPE_Eltex>
 		</costList>
-	</ThingDef>
-	
-	<RecipeDef ParentName="FSFMechSerumSurgeryInstallBase">
-		<defName>InstallFSFImplantMechanitesPsychic</defName>
-		<label>administer psychic-enhancing mechanite serum</label>
-		<description>Administer a psychic-enhancing mechanite serum.</description>
-		<descriptionHyperlinks>
-			<ThingDef>FSFImplantMechanitesPsychic</ThingDef>
-			<HediffDef>FSFImplantMechanitesPsychic</HediffDef>
-			<RecipeDef>RemoveFSFImplantMechanitesPsychic</RecipeDef>
-		</descriptionHyperlinks>
-		<jobString>Administering psychic-enhancing mechanite serum.</jobString>
-		<ingredients>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>FSFImplantMechanitesPsychic</li>
-					</thingDefs>
-				</filter>
-				<count>1</count>
+		<comps>
+			<li Class="CompProperties_UseEffectInstallImplant">
+				<compClass>CompUseEffect_InstallImplant</compClass>
+				<hediffDef>FSFImplantMechanitesPsychic</hediffDef>
+				<bodyPart>Torso</bodyPart>
 			</li>
-		</ingredients>
-		<fixedIngredientFilter>
-			<thingDefs>
-				<li>FSFImplantMechanitesPsychic</li>
-			</thingDefs>
-		</fixedIngredientFilter>
-		<appliedOnFixedBodyParts>
-			<li>Torso</li>
-		</appliedOnFixedBodyParts>
-		<addsHediff>FSFImplantMechanitesPsychic</addsHediff>
-		<uiIconThing>FSFImplantMechanitesPsychic</uiIconThing>
-		<incompatibleWithHediffTags>
-			<li>FSFImplantMechanites</li>
-		</incompatibleWithHediffTags>
-	</RecipeDef>
+		</comps>
+	</ThingDef>
 	
 	<RecipeDef ParentName="FSFMechSerumSurgeryRemoveBase">
 		<defName>RemoveFSFImplantMechanitesPsychic</defName>
@@ -89,7 +70,6 @@
 		<descriptionHyperlinks>
 			<ThingDef>FSFImplantMechanitesPsychic</ThingDef>
 			<HediffDef>FSFImplantMechanitesPsychic</HediffDef>
-			<RecipeDef>InstallFSFImplantMechanitesPsychic</RecipeDef>
 		</descriptionHyperlinks>
 		<jobString>Removing and destroying psychic-enhancing mechanites.</jobString>
 		<removesHediff>FSFImplantMechanitesPsychic</removesHediff>
