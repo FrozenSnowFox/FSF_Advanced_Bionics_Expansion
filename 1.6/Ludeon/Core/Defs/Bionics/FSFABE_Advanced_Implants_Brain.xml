@@ -131,6 +131,111 @@
 		<removesHediff>FSFImplantBrainAddiction</removesHediff>
 	</RecipeDef>
 	
+	<!-- Advanced Hacking Implant -->
+	
+	<HediffDef ParentName="FSFImplantHediffAdvBase">
+		<defName>FSFImplantHackingAdv</defName>
+		<label>neural intrusion interface</label>
+		<labelNoun>a neural intrusion interface</labelNoun>
+		<description>An installed neural intrusion interface.  A cutting-edge cybernetic implant engineered for seamless neural integration, allowing users to hack systems at the speed of thought.  The Neural Intrusion Interface deploys microscopic neural tendrils and nanofiber conduits that directly link to the user’s brain and sensory pathways, eliminating latency and enabling highly intuitive, almost instinctual control over intrusion processes.\n\nThe implant boasts quantum-grade encryption spoofing and advanced adaptive cloaking algorithms, dramatically increasing hacking stealth and reducing the risk of detection even by intelligent security AIs.  Wireless penetration is near-limitless, while its dynamic interface can auto-configure to any signal or protocol without the need for manual intervention.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantHackingAdv</ThingDef>
+			<RecipeDef>InstallFSFImplantHackingAdv</RecipeDef>
+			<RecipeDef>RemoveFSFImplantHackingAdv</RecipeDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>FSFImplantHackingAdv</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<statOffsets>
+					<HackingSpeed>+5.0</HackingSpeed>
+					<HackingStealth>+300</HackingStealth>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_ReactOnDamage">
+				<damageDefIncoming>EMP</damageDefIncoming>
+				<createHediff>BrainShock</createHediff>
+			</li>
+		</comps>
+		<tags><li>FSFImplantHacking</li></tags>
+	</HediffDef>
+
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFImplantHackingAdv</defName>
+		<label>neural intrusion interface</label>
+		<description>A cutting-edge cybernetic implant engineered for seamless neural integration, allowing users to hack systems at the speed of thought.  The Neural Intrusion Interface deploys microscopic neural tendrils and nanofiber conduits that directly link to the user’s brain and sensory pathways, eliminating latency and enabling highly intuitive, almost instinctual control over intrusion processes.\n\nThe implant boasts quantum-grade encryption spoofing and advanced adaptive cloaking algorithms, dramatically increasing hacking stealth and reducing the risk of detection even by intelligent security AIs.  Wireless penetration is near-limitless, while its dynamic interface can auto-configure to any signal or protocol without the need for manual intervention.</description>
+		<descriptionHyperlinks>
+			<HediffDef>FSFImplantHackingAdv</HediffDef>
+			<RecipeDef>InstallFSFImplantHackingAdv</RecipeDef>
+			<RecipeDef>RemoveFSFImplantHackingAdv</RecipeDef>
+		</descriptionHyperlinks>
+		<thingSetMakerTags>
+			<li>RewardStandardLowFreq</li>
+		</thingSetMakerTags>
+		<costList>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>6</ComponentSpacer>
+		</costList>
+		<butcherProducts>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>6</ComponentSpacer>
+		</butcherProducts>
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>FSFAdvancedBrainImplants</li>
+			</researchPrerequisites>
+		</recipeMaker>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>InstallFSFImplantHackingAdv</defName>
+		<label>install neural intrusion interface</label>
+		<description>Install a neural intrusion interface.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantHackingAdv</ThingDef>
+			<HediffDef>FSFImplantHackingAdv</HediffDef>
+			<RecipeDef>RemoveFSFImplantHackingAdv</RecipeDef>
+		</descriptionHyperlinks>
+		<jobString>Installing neural intrusion interface.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFImplantHackingAdv</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFImplantHackingAdv</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Brain</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFImplantHackingAdv</addsHediff>
+		<uiIconThing>FSFImplantHackingAdv</uiIconThing>
+		<incompatibleWithHediffTags>
+			<li>FSFImplantHacking</li>
+		</incompatibleWithHediffTags>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemoveFSFImplantHackingAdv</defName>
+		<label>remove neural intrusion interface</label>
+		<description>Remove neural intrusion interface.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantHackingAdv</ThingDef>
+			<HediffDef>FSFImplantHackingAdv</HediffDef>
+			<RecipeDef>InstallFSFImplantHackingAdv</RecipeDef>
+		</descriptionHyperlinks>
+		<jobString>Removing neural intrusion interface.</jobString>
+		<removesHediff>FSFImplantHackingAdv</removesHediff>
+	</RecipeDef>
+	
 	<!-- Brain Implant Recreation -->
 
 	<HediffDef ParentName="FSFImplantHediffAdvBase">

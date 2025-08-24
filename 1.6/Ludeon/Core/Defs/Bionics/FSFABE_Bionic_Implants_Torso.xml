@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	
+	<!-- Bionic Hacking Implant -->
+	
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>FSFImplantHacking</defName>
+		<label>omni-link hacking implant</label>
+		<labelNoun>a omni-link hacking implant</labelNoun>
+		<description>An installed omni-link hacking implant.  A rugged, all-purpose hacking module designed for adaptability in the vast expanse of space.  The Omni-Link implant features a configurable retractable data jack, stored discreetly within a subdermal compartment near the lower rib cage, capable of interfacing with a wide range of terminals, locks, and security devices.  Wireless connectivity is included for systems without physical access points, though its range and encryption are limited compared to more advanced models.\n\nWhile reliable and versatile, it lacks direct neural integration, requiring manual input through connected devices.  It’s hacking stealth algorithms are basic, offering only minimal protection against detection, making careful timing essential during use.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantHacking</ThingDef>
+			<RecipeDef>InstallFSFImplantHacking</RecipeDef>
+			<RecipeDef>RemoveFSFImplantHacking</RecipeDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>FSFImplantHacking</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<statOffsets>
+					<HackingSpeed>+2.5</HackingSpeed>
+					<HackingStealth>+100</HackingStealth>
+				</statOffsets>
+			</li>
+		</stages>
+		<tags><li>FSFImplantHacking</li></tags>
+	</HediffDef>
+
+	<ThingDef ParentName="BodyPartBionicBase">
+		<defName>FSFImplantHacking</defName>
+		<label>omni-link hacking implant</label>
+		<description>A rugged, all-purpose hacking module designed for adaptability in the vast expanse of space.  The Omni-Link implant features a configurable retractable data jack, stored discreetly within a subdermal compartment near the lower rib cage, capable of interfacing with a wide range of terminals, locks, and security devices.  Wireless connectivity is included for systems without physical access points, though its range and encryption are limited compared to more advanced models.\n\nWhile reliable and versatile, it lacks direct neural integration, requiring manual input through connected devices.  It’s hacking stealth algorithms are basic, offering only minimal protection against detection, making careful timing essential during use.</description>
+		<descriptionHyperlinks>
+			<HediffDef>FSFImplantHacking</HediffDef>
+			<RecipeDef>InstallFSFImplantHacking</RecipeDef>
+			<RecipeDef>RemoveFSFImplantHacking</RecipeDef>
+		</descriptionHyperlinks>
+		<thingSetMakerTags>
+			<li>RewardStandardLowFreq</li>
+		</thingSetMakerTags>
+		<costList>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>3</ComponentSpacer>
+		</costList>
+		<butcherProducts>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>3</ComponentSpacer>
+		</butcherProducts>
+		<researchPrerequisites>
+			<li>Bionics</li>
+		</researchPrerequisites>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>InstallFSFImplantHacking</defName>
+		<label>install omni-link hacking implant</label>
+		<description>Install a omni-link hacking implant.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantHacking</ThingDef>
+			<HediffDef>FSFImplantHacking</HediffDef>
+			<RecipeDef>RemoveFSFImplantHacking</RecipeDef>
+		</descriptionHyperlinks>
+		<jobString>Installing omni-link hacking implant.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFImplantHacking</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFImplantHacking</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Torso</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFImplantHacking</addsHediff>
+		<uiIconThing>FSFImplantHacking</uiIconThing>
+		<incompatibleWithHediffTags>
+			<li>FSFImplantHacking</li>
+		</incompatibleWithHediffTags>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemoveFSFImplantHacking</defName>
+		<label>remove omni-link hacking implant</label>
+		<description>Remove omni-link hacking implant.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantHacking</ThingDef>
+			<HediffDef>FSFImplantHacking</HediffDef>
+			<RecipeDef>InstallFSFImplantHacking</RecipeDef>
+		</descriptionHyperlinks>
+		<jobString>Removing omni-link hacking implant.</jobString>
+		<removesHediff>FSFImplantHacking</removesHediff>
+	</RecipeDef>
+
+</Defs>

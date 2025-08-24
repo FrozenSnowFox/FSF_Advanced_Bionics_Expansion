@@ -6,6 +6,7 @@
 		<label>ultratech trader</label>
 		<commonality>0</commonality>
 		<orbital>true</orbital>
+		<faction MayRequire="Ludeon.RimWorld.Odyssey">TradersGuild</faction>
 		<stockGenerators>
 			
 			<!-- Slaves -->

@@ -51,10 +51,10 @@
 			<Plasteel>15</Plasteel>
 			<ComponentSpacer>4</ComponentSpacer>
 		</butcherProducts>
-			<researchPrerequisites>
-				<li>Bionics</li>
-				<li MayRequire="Ludeon.RimWorld.Royalty">BrainWiring</li>
-			</researchPrerequisites>
+		<researchPrerequisites>
+			<li>Bionics</li>
+			<li MayRequire="Ludeon.RimWorld.Royalty">BrainWiring</li>
+		</researchPrerequisites>
 	</ThingDef>
 
 	<RecipeDef ParentName="SurgeryInstallImplantBase">
