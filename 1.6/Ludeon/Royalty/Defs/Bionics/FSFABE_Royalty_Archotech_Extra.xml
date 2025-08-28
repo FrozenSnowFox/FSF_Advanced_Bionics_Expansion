@@ -20,7 +20,9 @@
 					<DecompressionResistance MayRequire="kentington.saveourship2">1</DecompressionResistance>
 					<PawnBeauty>1</PawnBeauty>
 					<VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">1</VacuumResistance>
+					<ComfyTemperatureMin>-25</ComfyTemperatureMin>
 	    	    </statOffsets>
+				<preventVacuumBurns>true</preventVacuumBurns>
 			</li>
 		</stages>
 		<comps>
