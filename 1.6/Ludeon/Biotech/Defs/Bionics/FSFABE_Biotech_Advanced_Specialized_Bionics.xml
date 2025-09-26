@@ -130,7 +130,8 @@
 		<cooldownTicksRange>20000</cooldownTicksRange>
 		<cooldownPerCharge>true</cooldownPerCharge>
 		<charges>3</charges>
-		<aiCanUse>true</aiCanUse>
+		<aiCanUse>false</aiCanUse>
+		<ai_IsOffensive>false</ai_IsOffensive>
 		<stunTargetWhileCasting>true</stunTargetWhileCasting>
 		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
 		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>

@@ -111,6 +111,7 @@
 		<cooldownPerCharge>true</cooldownPerCharge>
 		<charges>3</charges>
 		<aiCanUse>false</aiCanUse>
+		<ai_IsOffensive>false</ai_IsOffensive>
 		<stunTargetWhileCasting>true</stunTargetWhileCasting>
 		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
 		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
