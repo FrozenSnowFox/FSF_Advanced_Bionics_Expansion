@@ -400,8 +400,8 @@
 
 	<ThingDef ParentName="FSFAIModuleItemUpgradeBase">
 		<defName>FSFAIModuleCrafting</defName>
-		<label>AI assistant production module</label>
-		<description>The production module enriches the AI Assistant with an extensive database of crafting techniques, schematics, and materials science.  It allows the AI Assistant to provide real-time guidance and visual feedback to improve the craftsmanship and efficiency of production processes.\n\nFor ease-of-use AI modules are packaged in a small handheld device.  When in close proximity with an AI assistant microcomputer the unit can be enabled to wirelessly transfer its data.  Due to the way the modules are designed however, they can only be used once.</description>
+		<label>AI assistant crafting module</label>
+		<description>The crafting module enriches the AI Assistant with an extensive database of crafting techniques, schematics, and materials science.  It allows the AI Assistant to provide real-time guidance and visual feedback to improve the craftsmanship and efficiency of production processes.\n\nFor ease-of-use AI modules are packaged in a small handheld device.  When in close proximity with an AI assistant microcomputer the unit can be enabled to wirelessly transfer its data.  Due to the way the modules are designed however, they can only be used once.</description>
 		<descriptionHyperlinks>
 			<HediffDef>FSFAIModuleCrafting</HediffDef>
 		</descriptionHyperlinks>
@@ -409,7 +409,7 @@
 			<li Class="CompProperties_Usable">
 				<compClass>CompUsableImplant</compClass>
 				<useJob>FSFInstallFSFAIModule</useJob>
-				<useLabel>Install production module</useLabel>
+				<useLabel>Install crafting module</useLabel>
 				<userMustHaveHediff>FSFAIModuleCore</userMustHaveHediff>
 			</li>
 			<li Class="CompProperties_UseEffectInstallImplant">
@@ -426,8 +426,8 @@
 		<descriptionHyperlinks>
 			<ThingDef>FSFAIModuleCrafting</ThingDef>
 		</descriptionHyperlinks>
-		<label>production module</label>
-		<description>An installed production module.  The production module enriches the AI Assistant with an extensive database of crafting techniques, schematics, and materials science.  It allows the AI Assistant to provide real-time guidance and visual feedback to improve the craftsmanship and efficiency of production processes.\n\nFor ease-of-use AI modules are packaged in a small handheld device.  When in close proximity with an AI assistant microcomputer the unit can be enabled to wirelessly transfer its data.  Due to the way the modules are designed however, they can only be used once.</description>
+		<label>crafting module</label>
+		<description>An installed crafting module.  The crafting module enriches the AI Assistant with an extensive database of crafting techniques, schematics, and materials science.  It allows the AI Assistant to provide real-time guidance and visual feedback to improve the craftsmanship and efficiency of production processes.\n\nFor ease-of-use AI modules are packaged in a small handheld device.  When in close proximity with an AI assistant microcomputer the unit can be enabled to wirelessly transfer its data.  Due to the way the modules are designed however, they can only be used once.</description>
 		<aptitudes>
 			<Crafting MayRequire="Ludeon.RimWorld.Anomaly">4</Crafting>
 		</aptitudes>
