@@ -110,6 +110,8 @@
 		<cooldownTicksRange>60000</cooldownTicksRange> <!-- 1 Day -->
 		<cooldownPerCharge>true</cooldownPerCharge>
 		<charges>3</charges>
+		<aiCanUse>true</aiCanUse>
+		<ai_IsOffensive>true</ai_IsOffensive>
 		<writeCombatLog>True</writeCombatLog>
 		<hotKey>Misc12</hotKey>
 		<targetRequired>false</targetRequired>

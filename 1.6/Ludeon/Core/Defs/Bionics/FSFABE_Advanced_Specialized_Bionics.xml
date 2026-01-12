@@ -801,6 +801,7 @@
 		<cooldownPerCharge>true</cooldownPerCharge>
 		<charges>3</charges>
 		<aiCanUse>true</aiCanUse>
+		<ai_IsOffensive>true</ai_IsOffensive>
 		<writeCombatLog>true</writeCombatLog>
 		<warmupStartSound>EnergyShield_Reset</warmupStartSound>
 		<stunTargetWhileCasting>true</stunTargetWhileCasting>

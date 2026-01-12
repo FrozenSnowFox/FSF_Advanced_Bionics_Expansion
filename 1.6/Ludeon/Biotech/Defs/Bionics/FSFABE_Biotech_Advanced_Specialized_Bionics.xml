@@ -289,6 +289,7 @@
 		<cooldownPerCharge>true</cooldownPerCharge>
 		<charges>3</charges>
 		<aiCanUse>true</aiCanUse>
+		<ai_IsOffensive>true</ai_IsOffensive>
 		<displayOrder>300</displayOrder>
 		<warmupStartSound>AcidSpray_Warmup</warmupStartSound>
 		<verbProperties>
@@ -436,6 +437,7 @@
 		<cooldownPerCharge>true</cooldownPerCharge>
 		<charges>3</charges>
 		<aiCanUse>true</aiCanUse>
+		<ai_IsOffensive>true</ai_IsOffensive>
 		<warmupStartSound>FireSpew_Warmup</warmupStartSound>
 		<verbProperties>
 			<verbClass>Verb_CastAbility</verbClass>
