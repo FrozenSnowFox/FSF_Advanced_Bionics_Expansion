@@ -26,17 +26,11 @@
 		</comps>
 	</HediffDef>
 
-	<ThingDef ParentName="BodyPartBionicBase">
+	<ThingDef ParentName="BodyPartProstheticMakeableBase">
 		<defName>FSFImplantBrainSuppression</defName>
 		<label>suppression module</label>
 		<description>This simple brain implant was designed to subdue rebellious slaves without harming them. By itself it’s completely benign, however, when hit by an electromagnetic pulse it will knock the host unconscious.</description>
 		<descriptionHyperlinks><RecipeDef>InstallFSFImplantBrainSuppression</RecipeDef></descriptionHyperlinks>
-		<graphicData>
-			<texPath>Things/Item/Health/HealthItem</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>0.80</drawSize>
-			<color>(189,169,118)</color>
-		</graphicData>
 		<thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
 		<costList>
 			<Steel>15</Steel>
@@ -46,9 +40,6 @@
 			<Steel>15</Steel>
 			<ComponentIndustrial>4</ComponentIndustrial>
 		</butcherProducts>
-		<recipeMaker>
-			<researchPrerequisite>Bionics</researchPrerequisite>
-		</recipeMaker>
 	</ThingDef>
 
 	<RecipeDef ParentName="SurgeryInstallImplantBase">

@@ -20,6 +20,17 @@
 			</li>
 			
 			<li Class="PatchOperationAdd">
+				<xpath>/Defs/HediffDef[defName = "OvumExtracted"]/comps</xpath>
+				<value>
+					<li Class="HediffCompProperties_RemoveIfOtherHediff">
+						<hediffs>
+							<li>FSFImplantReproduction</li>
+						</hediffs>
+					</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
 				<xpath>/Defs/HediffDef[defName = "PregnancyMood"]/comps</xpath>
 				<value>
 					<li Class="HediffCompProperties_RemoveIfOtherHediff">

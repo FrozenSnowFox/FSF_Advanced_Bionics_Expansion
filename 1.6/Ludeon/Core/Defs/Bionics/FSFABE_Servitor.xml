@@ -28,10 +28,11 @@
 					<li>Extreme</li>
 				</allowedMentalBreakIntensities>
 				<painFactor>0</painFactor>
-				<statOffsets>
-					<MentalBreakThreshold>-10</MentalBreakThreshold>
-					<BondAnimalChanceFactor>-10</BondAnimalChanceFactor>
-				</statOffsets>
+				<statFactors>
+					<GlobalLearningFactor>0</GlobalLearningFactor>
+					<MentalBreakThreshold>0</MentalBreakThreshold>
+					<BondAnimalChanceFactor>0</BondAnimalChanceFactor>
+				</statFactors>
 				<capMods>
 					<li>
 						<capacity>Talking</capacity>
@@ -50,10 +51,13 @@
 					<li>Extreme</li>
 				</allowedMentalBreakIntensities>
 				<painFactor>0</painFactor>
+				<statFactors>
+					<GlobalLearningFactor>0.1</GlobalLearningFactor>
+					<MentalBreakThreshold>0</MentalBreakThreshold>
+					<BondAnimalChanceFactor>0</BondAnimalChanceFactor>
+				</statFactors>
 				<statOffsets>
 					<TerrorSource MayRequire="Ludeon.RimWorld.Ideology,Fuu.UsefulTerror">10</TerrorSource>
-					<MentalBreakThreshold>-10</MentalBreakThreshold>
-					<BondAnimalChanceFactor>-10</BondAnimalChanceFactor>
 				</statOffsets>
 				<opinionOfOthersFactor>0.9</opinionOfOthersFactor>
 				<socialFightChanceFactor>0.9</socialFightChanceFactor>
@@ -75,10 +79,13 @@
 					<li>Major</li>
 				</allowedMentalBreakIntensities>
 				<painFactor>0</painFactor>
+				<statFactors>
+					<GlobalLearningFactor>0.2</GlobalLearningFactor>
+					<MentalBreakThreshold>0</MentalBreakThreshold>
+					<BondAnimalChanceFactor>0</BondAnimalChanceFactor>
+				</statFactors>
 				<statOffsets>
 					<TerrorSource MayRequire="Ludeon.RimWorld.Ideology,Fuu.UsefulTerror">20</TerrorSource>
-					<MentalBreakThreshold>-10</MentalBreakThreshold>
-					<BondAnimalChanceFactor>-10</BondAnimalChanceFactor>
 				</statOffsets>
 				<opinionOfOthersFactor>0.8</opinionOfOthersFactor>
 				<socialFightChanceFactor>0.8</socialFightChanceFactor>
@@ -100,10 +107,13 @@
 					<li>Major</li>
 				</allowedMentalBreakIntensities>
 				<painFactor>0</painFactor>
+				<statFactors>
+					<GlobalLearningFactor>0.3</GlobalLearningFactor>
+					<MentalBreakThreshold>0</MentalBreakThreshold>
+					<BondAnimalChanceFactor>0</BondAnimalChanceFactor>
+				</statFactors>
 				<statOffsets>
 					<TerrorSource MayRequire="Ludeon.RimWorld.Ideology,Fuu.UsefulTerror">30</TerrorSource>
-					<MentalBreakThreshold>-10</MentalBreakThreshold>
-					<BondAnimalChanceFactor>-10</BondAnimalChanceFactor>
 				</statOffsets>
 				<opinionOfOthersFactor>0.7</opinionOfOthersFactor>
 				<socialFightChanceFactor>0.7</socialFightChanceFactor>
@@ -125,10 +135,13 @@
 					<li>Major</li>
 				</allowedMentalBreakIntensities>
 				<painFactor>0</painFactor>
+				<statFactors>
+					<GlobalLearningFactor>0.4</GlobalLearningFactor>
+					<MentalBreakThreshold>0</MentalBreakThreshold>
+					<BondAnimalChanceFactor>0</BondAnimalChanceFactor>
+				</statFactors>
 				<statOffsets>
 					<TerrorSource MayRequire="Ludeon.RimWorld.Ideology,Fuu.UsefulTerror">40</TerrorSource>
-					<MentalBreakThreshold>-10</MentalBreakThreshold>
-					<BondAnimalChanceFactor>-10</BondAnimalChanceFactor>
 				</statOffsets>
 				<opinionOfOthersFactor>0.6</opinionOfOthersFactor>
 				<socialFightChanceFactor>0.6</socialFightChanceFactor>
@@ -150,10 +163,13 @@
 					<li>Major</li>
 				</allowedMentalBreakIntensities>
 				<painFactor>0</painFactor>
+				<statFactors>
+					<GlobalLearningFactor>0.5</GlobalLearningFactor>
+					<MentalBreakThreshold>0</MentalBreakThreshold>
+					<BondAnimalChanceFactor>0</BondAnimalChanceFactor>
+				</statFactors>
 				<statOffsets>
 					<TerrorSource MayRequire="Ludeon.RimWorld.Ideology,Fuu.UsefulTerror">50</TerrorSource>
-					<MentalBreakThreshold>-10</MentalBreakThreshold>
-					<BondAnimalChanceFactor>-10</BondAnimalChanceFactor>
 				</statOffsets>
 				<opinionOfOthersFactor>0.5</opinionOfOthersFactor>
 				<socialFightChanceFactor>0.5</socialFightChanceFactor>
@@ -175,10 +191,13 @@
 					<li>Minor</li>
 				</allowedMentalBreakIntensities>
 				<painFactor>0</painFactor>
+				<statFactors>
+					<GlobalLearningFactor>0.6</GlobalLearningFactor>
+					<MentalBreakThreshold>0</MentalBreakThreshold>
+					<BondAnimalChanceFactor>0</BondAnimalChanceFactor>
+				</statFactors>
 				<statOffsets>
 					<TerrorSource MayRequire="Ludeon.RimWorld.Ideology,Fuu.UsefulTerror">60</TerrorSource>
-					<MentalBreakThreshold>-10</MentalBreakThreshold>
-					<BondAnimalChanceFactor>-10</BondAnimalChanceFactor>
 				</statOffsets>
 				<opinionOfOthersFactor>0.4</opinionOfOthersFactor>
 				<socialFightChanceFactor>0.4</socialFightChanceFactor>
@@ -200,10 +219,13 @@
 					<li>Minor</li>
 				</allowedMentalBreakIntensities>
 				<painFactor>0</painFactor>
+				<statFactors>
+					<GlobalLearningFactor>0.7</GlobalLearningFactor>
+					<MentalBreakThreshold>0</MentalBreakThreshold>
+					<BondAnimalChanceFactor>0</BondAnimalChanceFactor>
+				</statFactors>
 				<statOffsets>
 					<TerrorSource MayRequire="Ludeon.RimWorld.Ideology,Fuu.UsefulTerror">70</TerrorSource>
-					<MentalBreakThreshold>-10</MentalBreakThreshold>
-					<BondAnimalChanceFactor>-10</BondAnimalChanceFactor>
 				</statOffsets>
 				<opinionOfOthersFactor>0.3</opinionOfOthersFactor>
 				<socialFightChanceFactor>0.3</socialFightChanceFactor>
@@ -225,10 +247,13 @@
 					<li>Minor</li>
 				</allowedMentalBreakIntensities>
 				<painFactor>0</painFactor>
+				<statFactors>
+					<GlobalLearningFactor>0.8</GlobalLearningFactor>
+					<MentalBreakThreshold>0</MentalBreakThreshold>
+					<BondAnimalChanceFactor>0</BondAnimalChanceFactor>
+				</statFactors>
 				<statOffsets>
 					<TerrorSource MayRequire="Ludeon.RimWorld.Ideology,Fuu.UsefulTerror">80</TerrorSource>
-					<MentalBreakThreshold>-10</MentalBreakThreshold>
-					<BondAnimalChanceFactor>-10</BondAnimalChanceFactor>
 				</statOffsets>
 				<opinionOfOthersFactor>0.2</opinionOfOthersFactor>
 				<socialFightChanceFactor>0.2</socialFightChanceFactor>
@@ -250,10 +275,13 @@
 					<li>Minor</li>
 				</allowedMentalBreakIntensities>
 				<painFactor>0</painFactor>
+				<statFactors>
+					<GlobalLearningFactor>0.9</GlobalLearningFactor>
+					<MentalBreakThreshold>0</MentalBreakThreshold>
+					<BondAnimalChanceFactor>0</BondAnimalChanceFactor>
+				</statFactors>
 				<statOffsets>
 					<TerrorSource MayRequire="Ludeon.RimWorld.Ideology,Fuu.UsefulTerror">90</TerrorSource>
-					<MentalBreakThreshold>-10</MentalBreakThreshold>
-					<BondAnimalChanceFactor>-10</BondAnimalChanceFactor>
 				</statOffsets>
 				<opinionOfOthersFactor>0.1</opinionOfOthersFactor>
 				<socialFightChanceFactor>0.1</socialFightChanceFactor>
@@ -272,10 +300,12 @@
 				<painFactor>0</painFactor>
         		<blocksMentalBreaks>true</blocksMentalBreaks>
 				<blocksInspirations>true</blocksInspirations>
+				<statFactors>
+					<MentalBreakThreshold>0</MentalBreakThreshold>
+					<BondAnimalChanceFactor>0</BondAnimalChanceFactor>
+				</statFactors>
 				<statOffsets>
 					<TerrorSource MayRequire="Ludeon.RimWorld.Ideology,Fuu.UsefulTerror">100</TerrorSource>
-					<MentalBreakThreshold>-10</MentalBreakThreshold>
-					<BondAnimalChanceFactor>-10</BondAnimalChanceFactor>
 				</statOffsets>
 				<opinionOfOthersFactor>0</opinionOfOthersFactor>
 				<socialFightChanceFactor>0</socialFightChanceFactor>
@@ -409,10 +439,12 @@
 				<painFactor>0</painFactor>
         		<blocksMentalBreaks>true</blocksMentalBreaks>
 				<blocksInspirations>true</blocksInspirations>
+				<statFactors>
+					<MentalBreakThreshold>0</MentalBreakThreshold>
+					<BondAnimalChanceFactor>0</BondAnimalChanceFactor>
+				</statFactors>
 				<statOffsets>
 					<TerrorSource MayRequire="Ludeon.RimWorld.Ideology,Fuu.UsefulTerror">100</TerrorSource>
-					<MentalBreakThreshold>-10</MentalBreakThreshold>
-					<BondAnimalChanceFactor>-10</BondAnimalChanceFactor>
 				</statOffsets>
 				<opinionOfOthersFactor>0</opinionOfOthersFactor>
 				<socialFightChanceFactor>0</socialFightChanceFactor>

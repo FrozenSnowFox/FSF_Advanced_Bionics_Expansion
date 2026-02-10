@@ -12,10 +12,12 @@
 
 	<!-- Add Royalty Research to Suppression Module -->
 		
-			<li Class="PatchOperationReplace">
-				<xpath>/Defs/ThingDef[defName = "FSFImplantBrainSuppression"]/recipeMaker/researchPrerequisite</xpath>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "FSFImplantBrainSuppression"]</xpath>
 				<value>
-					<researchPrerequisite>BrainWiring</researchPrerequisite>
+					<recipeMaker>
+						<researchPrerequisite>BrainWiring</researchPrerequisite>
+					</recipeMaker>
 				</value>
 			</li>
 			
