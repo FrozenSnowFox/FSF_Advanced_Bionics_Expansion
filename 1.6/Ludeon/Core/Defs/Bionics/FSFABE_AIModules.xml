@@ -60,7 +60,6 @@
 			</researchPrerequisites>
 		</recipeMaker>
 		<comps>
-			<li Class="CompProperties_Forbiddable"/>
 			<li Class="CompProperties_Usable">
 				<compClass>CompUsableImplant</compClass>
 				<useJob>FSFInstallFSFAIModule</useJob>
