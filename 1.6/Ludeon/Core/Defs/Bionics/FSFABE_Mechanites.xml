@@ -20,18 +20,12 @@
 				</statFactors>
 			</li>
 		</stages>
-		<comps>
-			<li Class="HediffCompProperties_RemoveIfOtherHediff">
-				<hediffs>
-					<li MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">FSFImplantMechanitesHealing</li>
-					<li MayRequire="Ludeon.RimWorld.Royalty">FSFImplantMechanitesPsychic</li>
-					<li>FSFImplantMechanitesSensory</li>
-					<li>FSFImplantMechanitesSpeed</li>
-					<li>FSFImplantMechanitesStrength</li>
-				</hediffs>
-			</li>
-		</comps>
-		<tags><li>FSFImplantMechanites</li></tags>
+		<tags>
+			<li>FSFImplantMechanites</li>
+		</tags>
+		<removeWithTags>
+			<li>FSFImplantMechanites</li>
+		</removeWithTags>
 	</HediffDef>
 
 	<ThingDef ParentName="FSFMechSerumBase">
@@ -175,18 +169,12 @@
 				</statOffsets>
 			</li>
 		</stages>
-		<comps>
-			<li Class="HediffCompProperties_RemoveIfOtherHediff">
-				<hediffs>
-					<li>FSFImplantMechanitesArmor</li>
-					<li MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">FSFImplantMechanitesHealing</li>
-					<li MayRequire="Ludeon.RimWorld.Royalty">FSFImplantMechanitesPsychic</li>
-					<li>FSFImplantMechanitesSpeed</li>
-					<li>FSFImplantMechanitesStrength</li>
-				</hediffs>
-			</li>
-		</comps>
-		<tags><li>FSFImplantMechanites</li></tags>
+		<tags>
+			<li>FSFImplantMechanites</li>
+		</tags>
+		<removeWithTags>
+			<li>FSFImplantMechanites</li>
+		</removeWithTags>
 	</HediffDef>
 
 	<ThingDef ParentName="FSFMechSerumBase">
@@ -256,18 +244,12 @@
 				</statFactors>
 			</li>
 		</stages>
-		<comps>
-			<li Class="HediffCompProperties_RemoveIfOtherHediff">
-				<hediffs>
-					<li>FSFImplantMechanitesArmor</li>
-					<li MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">FSFImplantMechanitesHealing</li>
-					<li MayRequire="Ludeon.RimWorld.Royalty">FSFImplantMechanitesPsychic</li>
-					<li>FSFImplantMechanitesSensory</li>
-					<li>FSFImplantMechanitesStrength</li>
-				</hediffs>
-			</li>
-		</comps>
-		<tags><li>FSFImplantMechanites</li></tags>
+		<tags>
+			<li>FSFImplantMechanites</li>
+		</tags>
+		<removeWithTags>
+			<li>FSFImplantMechanites</li>
+		</removeWithTags>
 	</HediffDef>
 
 	<ThingDef ParentName="FSFMechSerumBase">
@@ -339,18 +321,12 @@
 				</statFactors>
 			</li>
 		</stages>
-		<comps>
-			<li Class="HediffCompProperties_RemoveIfOtherHediff">
-				<hediffs>
-					<li>FSFImplantMechanitesArmor</li>
-					<li MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">FSFImplantMechanitesHealing</li>
-					<li MayRequire="Ludeon.RimWorld.Royalty">FSFImplantMechanitesPsychic</li>
-					<li>FSFImplantMechanitesSensory</li>
-					<li>FSFImplantMechanitesSpeed</li>
-				</hediffs>
-			</li>
-		</comps>
-		<tags><li>FSFImplantMechanites</li></tags>
+		<tags>
+			<li>FSFImplantMechanites</li>
+		</tags>
+		<removeWithTags>
+			<li>FSFImplantMechanites</li>
+		</removeWithTags>
 	</HediffDef>
 
 	<ThingDef ParentName="FSFMechSerumBase">
