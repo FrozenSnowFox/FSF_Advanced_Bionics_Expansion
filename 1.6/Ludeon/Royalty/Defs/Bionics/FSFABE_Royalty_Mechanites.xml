@@ -57,6 +57,38 @@
 		</comps>
 	</ThingDef>
 	
+	<RecipeDef ParentName="FSFMechSerumSurgeryInstallBase">
+		<defName>InstallFSFImplantMechanitesPsychic</defName>
+		<label>administer psychic-enhancing mechanite serum</label>
+		<description>Administer a psychic-enhancing mechanite serum.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantMechanitesPsychic</ThingDef>
+			<HediffDef>FSFImplantMechanitesPsychic</HediffDef>
+			<RecipeDef>RemoveFSFImplantMechanitesPsychic</RecipeDef>
+		</descriptionHyperlinks>
+		<jobString>Administering psychic-enhancing mechanite serum.</jobString>
+		<ingredients Inherit="False">
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFImplantMechanitesPsychic</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFImplantMechanitesPsychic</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Torso</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFImplantMechanitesPsychic</addsHediff>
+		<uiIconThing>FSFImplantMechanitesPsychic</uiIconThing>
+	</RecipeDef>
+	
 	<RecipeDef ParentName="FSFMechSerumSurgeryRemoveBase">
 		<defName>RemoveFSFImplantMechanitesPsychic</defName>
 		<label>remove and destroy psychic-enhancing mechanites</label>

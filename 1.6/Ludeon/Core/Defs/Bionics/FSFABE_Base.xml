@@ -219,6 +219,7 @@
 				<compClass>CompUsableImplant</compClass>
 				<useJob>FSFInstallMechSerum</useJob>
 				<useLabel>Inject {0_label}</useLabel>
+				<showUseGizmo>true</showUseGizmo>
 			</li>
 			<li Class="CompProperties_UseEffectPlaySound">
 				<soundOnUsed>MechSerumUsed</soundOnUsed>
@@ -226,6 +227,21 @@
 			<li Class="CompProperties_UseEffectDestroySelf" />
 		</comps>
 	</ThingDef>
+	
+	<!-- Mechanite Serum Surgery Install Base -->
+	
+	<RecipeDef Name="FSFMechSerumSurgeryInstallBase" ParentName="SurgeryInstallImplantBase" Abstract="True">
+		<workAmount>100</workAmount>
+		<workSkillLearnFactor>0</workSkillLearnFactor>
+		<anesthetize>false</anesthetize>
+		<hideBodyPartNames>true</hideBodyPartNames>
+		<surgeryIgnoreEnvironment>true</surgeryIgnoreEnvironment>
+		<surgerySuccessChanceFactor>5</surgerySuccessChanceFactor>
+		<surgeryOutcomeEffect IsNull="True" /> <!-- Always succeeds -->
+		<skillRequirements>
+			<Medicine>0</Medicine>
+		</skillRequirements>
+	</RecipeDef>
 	
 	<!-- Mechanite Serum Surgery Remove Base -->
 	

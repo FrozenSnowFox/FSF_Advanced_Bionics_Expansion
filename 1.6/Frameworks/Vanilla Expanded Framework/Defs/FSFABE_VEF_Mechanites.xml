@@ -52,6 +52,38 @@
 		</comps>
 	</ThingDef>
 	
+	<RecipeDef ParentName="FSFMechSerumSurgeryInstallBase">
+		<defName>InstallFSFImplantMechanitesHealing</defName>
+		<label>administer healing mechanite serum</label>
+		<description>Administer a healing mechanite serum.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantMechanitesHealing</ThingDef>
+			<HediffDef>FSFImplantMechanitesHealing</HediffDef>
+			<RecipeDef>RemoveFSFImplantMechanitesHealing</RecipeDef>
+		</descriptionHyperlinks>
+		<jobString>Administering healing mechanite serum.</jobString>
+		<ingredients Inherit="False">
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFImplantMechanitesHealing</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFImplantMechanitesHealing</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Torso</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFImplantMechanitesHealing</addsHediff>
+		<uiIconThing>FSFImplantMechanitesHealing</uiIconThing>
+	</RecipeDef>
+	
 	<RecipeDef ParentName="FSFMechSerumSurgeryRemoveBase">
 		<defName>RemoveFSFImplantMechanitesHealing</defName>
 		<label>remove and destroy healing mechanites</label>

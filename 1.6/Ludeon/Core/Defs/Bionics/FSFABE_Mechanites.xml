@@ -55,6 +55,38 @@
 		</comps>
 	</ThingDef>
 	
+	<RecipeDef ParentName="FSFMechSerumSurgeryInstallBase">
+		<defName>InstallFSFImplantMechanitesArmor</defName>
+		<label>administer armor-enhancing mechanite serum</label>
+		<description>Administer a armor-enhancing mechanite serum.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantMechanitesArmor</ThingDef>
+			<HediffDef>FSFImplantMechanitesArmor</HediffDef>
+			<RecipeDef>RemoveFSFImplantMechanitesArmor</RecipeDef>
+		</descriptionHyperlinks>
+		<jobString>Administering armor-enhancing mechanite serum.</jobString>
+		<ingredients Inherit="False">
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFImplantMechanitesArmor</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFImplantMechanitesArmor</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Torso</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFImplantMechanitesArmor</addsHediff>
+		<uiIconThing>FSFImplantMechanitesArmor</uiIconThing>
+	</RecipeDef>
+	
 	<RecipeDef ParentName="FSFMechSerumSurgeryRemoveBase">
 		<defName>RemoveFSFImplantMechanitesArmor</defName>
 		<label>remove and destroy armor-enhancing mechanites</label>
@@ -123,6 +155,38 @@
 			</li>
 		</comps>
 	</ThingDef>
+	
+	<RecipeDef ParentName="FSFMechSerumSurgeryInstallBase">
+		<defName>InstallFSFImplantMechanitesImmunity</defName>
+		<label>administer immunity-enhancing mechanite serum</label>
+		<description>Administer a immunity-enhancing mechanite serum.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantMechanitesImmunity</ThingDef>
+			<HediffDef>FSFImplantMechanitesImmunity</HediffDef>
+			<RecipeDef>RemoveFSFImplantMechanitesImmunity</RecipeDef>
+		</descriptionHyperlinks>
+		<jobString>Administering immunity-enhancing mechanite serum.</jobString>
+		<ingredients Inherit="False">
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFImplantMechanitesImmunity</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFImplantMechanitesImmunity</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Torso</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFImplantMechanitesImmunity</addsHediff>
+		<uiIconThing>FSFImplantMechanitesImmunity</uiIconThing>
+	</RecipeDef>
 	
 	<RecipeDef ParentName="FSFMechSerumSurgeryRemoveBase">
 		<defName>RemoveFSFImplantMechanitesImmunity</defName>
@@ -203,6 +267,38 @@
 		</comps>
 	</ThingDef>
 	
+	<RecipeDef ParentName="FSFMechSerumSurgeryInstallBase">
+		<defName>InstallFSFImplantMechanitesSensory</defName>
+		<label>administer sense-enhancing mechanite serum</label>
+		<description>Administer a sense-enhancing mechanite serum.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantMechanitesSensory</ThingDef>
+			<HediffDef>FSFImplantMechanitesSensory</HediffDef>
+			<RecipeDef>RemoveFSFImplantMechanitesSensory</RecipeDef>
+		</descriptionHyperlinks>
+		<jobString>Administering sense-enhancing mechanite serum.</jobString>
+		<ingredients Inherit="False">
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFImplantMechanitesSensory</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFImplantMechanitesSensory</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Torso</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFImplantMechanitesSensory</addsHediff>
+		<uiIconThing>FSFImplantMechanitesSensory</uiIconThing>
+	</RecipeDef>
+	
 	<RecipeDef ParentName="FSFMechSerumSurgeryRemoveBase">
 		<defName>RemoveFSFImplantMechanitesSensory</defName>
 		<label>remove and destroy sense-enhancing mechanites</label>
@@ -277,6 +373,38 @@
 			</li>
 		</comps>
 	</ThingDef>
+	
+	<RecipeDef ParentName="FSFMechSerumSurgeryInstallBase">
+		<defName>InstallFSFImplantMechanitesSpeed</defName>
+		<label>administer speed-enhancing mechanite serum</label>
+		<description>Administer a speed-enhancing mechanite serum.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantMechanitesSpeed</ThingDef>
+			<HediffDef>FSFImplantMechanitesSpeed</HediffDef>
+			<RecipeDef>RemoveFSFImplantMechanitesSpeed</RecipeDef>
+		</descriptionHyperlinks>
+		<jobString>Administering speed-enhancing mechanite serum.</jobString>
+		<ingredients Inherit="False">
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFImplantMechanitesSpeed</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFImplantMechanitesSpeed</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Torso</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFImplantMechanitesSpeed</addsHediff>
+		<uiIconThing>FSFImplantMechanitesSpeed</uiIconThing>
+	</RecipeDef>
 	
 	<RecipeDef ParentName="FSFMechSerumSurgeryRemoveBase">
 		<defName>RemoveFSFImplantMechanitesSpeed</defName>
@@ -354,6 +482,38 @@
 			</li>
 		</comps>
 	</ThingDef>
+	
+	<RecipeDef ParentName="FSFMechSerumSurgeryInstallBase">
+		<defName>InstallFSFImplantMechanitesStrength</defName>
+		<label>administer strength-enhancing mechanite serum</label>
+		<description>Administer a strength-enhancing mechanite serum.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantMechanitesStrength</ThingDef>
+			<HediffDef>FSFImplantMechanitesStrength</HediffDef>
+			<RecipeDef>RemoveFSFImplantMechanitesStrength</RecipeDef>
+		</descriptionHyperlinks>
+		<jobString>Administering strength-enhancing mechanite serum.</jobString>
+		<ingredients Inherit="False">
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFImplantMechanitesStrength</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFImplantMechanitesStrength</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Torso</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFImplantMechanitesStrength</addsHediff>
+		<uiIconThing>FSFImplantMechanitesStrength</uiIconThing>
+	</RecipeDef>
 	
 	<RecipeDef ParentName="FSFMechSerumSurgeryRemoveBase">
 		<defName>RemoveFSFImplantMechanitesStrength</defName>
