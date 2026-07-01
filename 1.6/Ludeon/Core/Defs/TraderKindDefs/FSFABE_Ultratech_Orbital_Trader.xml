@@ -132,8 +132,20 @@
 			</li>
 			<li MayRequire="Ludeon.RimWorld.Odyssey" Class="StockGenerator_SingleDef">
 				<thingDef>ShuttleEngine</thingDef>
-				<countRange>0~1</countRange>
+				<countRange>0~2</countRange>
 			</li>
+			
+			<li MayRequire="Ludeon.RimWorld.Odyssey,vanillaexpanded.gravship" Class="StockGenerator_SingleDef">
+				<thingDef>VGE_OxygenCanister</thingDef>
+				<countRange>100~300</countRange>
+			</li>
+			
+			<li MayRequire="Ludeon.RimWorld.Odyssey,vanillaexpanded.gravship" Class="StockGenerator_SingleDef">
+				<thingDef>VGE_Astrofuel</thingDef>
+				<countRange>100~300</countRange>
+			</li>
+			
+			<li MayRequire="Ludeon.RimWorld.Odyssey,vanillaexpanded.gravship" Class="VanillaGravshipExpanded.StockGenerator_Gravcore" />
 
 			<!-- Drugs -->
 			
@@ -426,6 +438,7 @@
 			<li Class="StockGenerator_BuySingleDef" MayRequire="Ludeon.RimWorld.Anomaly"><thingDef>Shell_Deadlife</thingDef></li>
 			<li Class="StockGenerator_BuySingleDef" MayRequire="Ludeon.RimWorld.Anomaly"><thingDef>Bioferrite</thingDef></li>
 			<li Class="StockGenerator_BuySingleDef" MayRequire="Ludeon.RimWorld.Anomaly"><thingDef>RevenantSpine</thingDef></li>
+			<li Class="StockGenerator_BuySingleDef" MayRequire="Ludeon.RimWorld.Odyssey,vanillaexpanded.gravship"><thingDef>VGE_Astrofuel</thingDef></li>
 
 		</stockGenerators>
 	</TraderKindDef>
