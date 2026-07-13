@@ -120,9 +120,12 @@
 					<li>WoundInfection</li>
 					<li>Malaria</li>
 					<li MayRequire="Ludeon.RimWorld.Anomaly">MetalhorrorImplant</li>
-					<li>OrganDecay</li>
+					<li>Malaria</li>
+					<li>MuscleParasites</li>
+					<li MayRequire="Ludeon.RimWorld.Anomaly,Ushanka.NecroaArchovirus">USH_Necroa</li>
 					<li>Plague</li>
 					<li MayRequire="SineSwiper.XenobionicPatcher">Animal_Plague</li>
+					<li>ScariaInfection</li>
 					<li>SensoryMechanites</li>
 					<li>SleepingSickness</li>
 				</makeImmuneTo>
