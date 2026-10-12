@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+	
+	<!-- Bionics Crafting Speed -->
+			
+	<!-- ABE Items -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[@Name = "FSFBodyPartAdvBionicBase"]/recipeMaker/workSpeedStat</xpath>
+				<value>
+					<workSpeedStat>FSFBionicsCraftingSpeed</workSpeedStat>
+				</value>
+			</li>
+			
+			<li MayRequire="FrozenSnowFox.AdvancedBionicsExpansion,OskarPotocki.VanillaFactionsExpanded.Core" Class="PatchOperationReplace">
+				<xpath>/Defs/RecipeDef[defName = "FSFImplantTorsoResurrect"]/workSpeedStat</xpath>
+				<value>
+					<workSpeedStat>FSFBionicsCraftingSpeed</workSpeedStat>
+				</value>
+			</li>
+	
+		</operations>
+	</Operation>
+	
+</Patch>

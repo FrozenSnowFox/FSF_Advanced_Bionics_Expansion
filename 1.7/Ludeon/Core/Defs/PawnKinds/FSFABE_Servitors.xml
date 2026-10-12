@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<PawnKindDef Name="FSFServitorBase" Abstract="True">
+		<race>Human</race>
+		<combatPower>60</combatPower>
+		<minGenerationAge>18</minGenerationAge>
+		<maxGenerationAge>25</maxGenerationAge>
+		<pawnGroupDevelopmentStage>Adult</pawnGroupDevelopmentStage>
+		<isFighter>false</isFighter>
+		<backstoryCryptosleepCommonality>0.05</backstoryCryptosleepCommonality>
+		<chemicalAddictionChance>0</chemicalAddictionChance>
+		<nakedChance>1</nakedChance>
+		<initialWillRange>0~0</initialWillRange>
+		<initialResistanceRange>0~0</initialResistanceRange>
+		<humanPregnancyChance>0</humanPregnancyChance>
+		<royalTitleChance>0.03</royalTitleChance>
+		<useFactionXenotypes>false</useFactionXenotypes>
+		<apparelIgnoreSeasons>true</apparelIgnoreSeasons>
+		<apparelIgnorePollution MayRequire="Ludeon.RimWorld.Biotech">true</apparelIgnorePollution>
+		<startingHediffs>
+			<li>
+				<def>FSFImplantBrainServitor</def>
+				<severity>1</severity>
+			</li>
+		</startingHediffs>
+		<techHediffsRequired>
+			<li>FSFAIModuleCore</li>
+			<li>FSFImplantMechanitesImmunity</li>
+			<li MayRequire="Ludeon.RimWorld.Biotech">FSFImplantReproduction</li>
+		</techHediffsRequired>
+		<requiredWorkTags> <!-- Must be capable of labor -->
+			<li>ManualDumb</li>
+			<li>ManualSkilled</li>
+			<li>Cleaning</li>
+			<li>Hauling</li>
+			<li>Firefighting</li>
+		</requiredWorkTags>
+	</PawnKindDef>
+	
+	<PawnKindDef MayRequire="Ludeon.RimWorld.Biotech" ParentName="FSFServitorBase">
+		<defName>FSFServitorBlankFemale</defName>
+		<label>blank servitor</label>
+		<combatPower>30</combatPower>
+		<minGenerationAge>3</minGenerationAge>
+		<maxGenerationAge>5</maxGenerationAge>
+		<fixedGender>Female</fixedGender>
+		<pawnGroupDevelopmentStage>Child</pawnGroupDevelopmentStage>
+		<startingHediffs Inherit="False">
+			<li>
+				<def>FSFImplantBrainServitorBaby</def>
+				<severity>1</severity>
+			</li>
+		</startingHediffs>
+		<techHediffsRequired Inherit="False"/>
+	</PawnKindDef>
+	
+	<PawnKindDef MayRequire="Ludeon.RimWorld.Biotech" ParentName="FSFServitorBase">
+		<defName>FSFServitorBlankMale</defName>
+		<label>blank servitor</label>
+		<combatPower>30</combatPower>
+		<minGenerationAge>3</minGenerationAge>
+		<maxGenerationAge>5</maxGenerationAge>
+		<fixedGender>Male</fixedGender>
+		<pawnGroupDevelopmentStage>Child</pawnGroupDevelopmentStage>
+		<startingHediffs Inherit="False">
+			<li>
+				<def>FSFImplantBrainServitorBaby</def>
+				<severity>1</severity>
+			</li>
+		</startingHediffs>
+		<techHediffsRequired Inherit="False"/>
+	</PawnKindDef>
+	
+	<PawnKindDef ParentName="FSFServitorBase">
+		<defName>FSFServitorAnimals</defName>
+		<label>animals servitor</label>
+		<techHediffsRequired>
+			<li>FSFAIModuleAnimals</li>
+			<li>FSFAdvBionicArm</li>
+			<li>FSFAdvBionicArm</li>
+		</techHediffsRequired>
+		<requiredWorkTags>
+			<li>Animals</li>
+		</requiredWorkTags>
+		<skills>
+			<li>
+				<skill>Animals</skill>
+				<range>10~20</range>
+			</li>
+		</skills>
+	</PawnKindDef>
+	
+	<PawnKindDef ParentName="FSFServitorBase">
+		<defName>FSFServitorCombat</defName>
+		<label>combat servitor</label>
+		<isFighter>true</isFighter>
+		<combatPower>300</combatPower>
+		<techHediffsRequired>
+			<li>FSFAIModuleMelee</li>
+			<li>FSFAIModuleShooting</li>
+			<li>FSFAdvBionicTaserArm</li>
+			<li>FSFAdvBionicPowerArm</li>
+			<li>FSFAdvBionicLeg</li>
+			<li>FSFAdvBionicLeg</li>
+			<li>FSFImplantMechanitesArmor</li>
+			<li MayRequire="Ludeon.RimWorld.Royalty">Coagulator</li>
+			<li MayRequire="Ludeon.RimWorld.Royalty">HealingEnhancer</li>
+		</techHediffsRequired>
+		<requiredWorkTags>
+			<li>Shooting</li>
+			<li>Violent</li>
+		</requiredWorkTags>
+		<skills>
+			<li>
+				<skill>Melee</skill>
+				<range>10~20</range>
+			</li>
+			<li>
+				<skill>Shooting</skill>
+				<range>10~20</range>
+			</li>
+		</skills>
+	</PawnKindDef>
+	
+	<PawnKindDef ParentName="FSFServitorBase">
+		<defName>FSFServitorConstruction</defName>
+		<label>construction servitor</label>
+		<techHediffsRequired>
+			<li>FSFAIModuleConstruction</li>
+			<li>FSFAdvBionicConstructionArm</li>
+			<li>FSFAdvBionicConstructionArm</li>
+		</techHediffsRequired>
+		<requiredWorkTags>
+			<li>Constructing</li>
+		</requiredWorkTags>
+		<skills>
+			<li>
+				<skill>Construction</skill>
+				<range>10~20</range>
+			</li>
+		</skills>
+	</PawnKindDef>
+	
+	<PawnKindDef ParentName="FSFServitorBase">
+		<defName>FSFServitorCooking</defName>
+		<label>cooking servitor</label>
+		<techHediffsRequired>
+			<li>FSFAIModuleCooking</li>
+			<li>FSFAdvBionicCookingArm</li>
+			<li>FSFAdvBionicCookingArm</li>
+		</techHediffsRequired>
+		<requiredWorkTags>
+			<li>Cooking</li>
+		</requiredWorkTags>
+		<skills>
+			<li>
+				<skill>Cooking</skill>
+				<range>10~20</range>
+			</li>
+		</skills>
+	</PawnKindDef>
+	
+	<PawnKindDef ParentName="FSFServitorBase">
+		<defName>FSFServitorCrafting</defName>
+		<label>production servitor</label>
+		<techHediffsRequired>
+			<li>FSFAIModuleCrafting</li>
+			<li>FSFAdvBionicCraftingArm</li>
+			<li>FSFAdvBionicCraftingArm</li>
+		</techHediffsRequired>
+		<requiredWorkTags>
+			<li>Crafting</li>
+		</requiredWorkTags>
+		<skills>
+			<li>
+				<skill>Crafting</skill>
+				<range>10~20</range>
+			</li>
+		</skills>
+	</PawnKindDef>
+	
+	<PawnKindDef ParentName="FSFServitorBase">
+		<defName>FSFServitorIntellectual</defName>
+		<label>intellectual servitor</label>
+		<techHediffsRequired>
+			<li>FSFAIModuleIntellectual</li>
+			<li>FSFAdvBionicArm</li>
+			<li>FSFAdvBionicArm</li>
+		</techHediffsRequired>
+		<requiredWorkTags>
+			<li>Intellectual</li>
+		</requiredWorkTags>
+		<skills>
+			<li>
+				<skill>Intellectual</skill>
+				<range>10~20</range>
+			</li>
+		</skills>
+	</PawnKindDef>
+	
+	<PawnKindDef ParentName="FSFServitorBase">
+		<defName>FSFServitorMedical</defName>
+		<label>medical servitor</label>
+		<forcedTraits>
+			<Beauty>2</Beauty>
+		</forcedTraits>
+		<techHediffsRequired>
+			<li>FSFAIModuleMedical</li>
+			<li MayRequire="Ludeon.RimWorld.Biotech">FSFAdvBionicMedicArm</li>
+			<li MayRequire="Ludeon.RimWorld.Biotech">FSFAdvBionicMedicArm</li>
+		</techHediffsRequired>
+		<requiredWorkTags>
+			<li>Caring</li>
+		</requiredWorkTags>
+		<skills>
+			<li>
+				<skill>Medicine</skill>
+				<range>10~20</range>
+			</li>
+		</skills>
+	</PawnKindDef>
+	
+	<PawnKindDef ParentName="FSFServitorBase">
+		<defName>FSFServitorMining</defName>
+		<label>mining servitor</label>
+		<techHediffsRequired>
+			<li>FSFAIModuleMining</li>
+			<li MayRequire="Ludeon.RimWorld.Royalty">FSFAdvBionicDrillArm</li>
+			<li MayRequire="Ludeon.RimWorld.Royalty">FSFAdvBionicDrillArm</li>
+		</techHediffsRequired>
+		<requiredWorkTags>
+			<li>Mining</li>
+		</requiredWorkTags>
+		<skills>
+			<li>
+				<skill>Mining</skill>
+				<range>10~20</range>
+			</li>
+		</skills>
+	</PawnKindDef>
+	
+	<PawnKindDef ParentName="FSFServitorBase">
+		<defName>FSFServitorPlants</defName>
+		<label>plants servitor</label>
+		<techHediffsRequired>
+			<li>FSFAIModulePlants</li>
+			<li MayRequire="Ludeon.RimWorld.Royalty">FSFAdvBionicFieldArm</li>
+			<li MayRequire="Ludeon.RimWorld.Royalty">FSFAdvBionicFieldArm</li>
+		</techHediffsRequired>
+		<requiredWorkTags>
+			<li>PlantWork</li>
+		</requiredWorkTags>
+		<skills>
+			<li>
+				<skill>Plants</skill>
+				<range>10~20</range>
+			</li>
+		</skills>
+	</PawnKindDef>
+	
+	<PawnKindDef ParentName="FSFServitorBase">
+		<defName>FSFServitorSocial</defName>
+		<label>entertainer servitor</label>
+		<forcedTraits>
+			<Beauty>2</Beauty>
+		</forcedTraits>
+		<techHediffsRequired>
+			<li>FSFAIModuleSocial</li>
+			<li MayRequire="Ludeon.RimWorld.Royalty">AestheticNose</li>
+			<li MayRequire="Ludeon.RimWorld.Royalty">AestheticShaper</li>
+			<li MayRequire="Ludeon.RimWorld.Royalty">LoveEnhancer</li>
+		</techHediffsRequired>
+		<requiredWorkTags>
+			<li>Social</li>
+		</requiredWorkTags>
+		<skills>
+			<li>
+				<skill>Social</skill>
+				<range>10~20</range>
+			</li>
+		</skills>
+	</PawnKindDef>
+	
+	<PawnKindDef ParentName="FSFServitorBase">
+		<defName>FSFServitorDeluxe</defName>
+		<label>deluxe servitor</label>
+		<isFighter>true</isFighter>
+		<combatPower>300</combatPower>
+		<forcedTraits>
+			<Beauty>2</Beauty>
+		</forcedTraits>
+		<techHediffsRequired>
+			<li>FSFAIModuleAnimals</li>
+			<li MayRequire="Ludeon.RimWorld.Anomaly">FSFAIModuleArtistic</li>
+			<li>FSFAIModuleConstruction</li>
+			<li>FSFAIModuleCooking</li>
+			<li>FSFAIModuleCrafting</li>
+			<li>FSFAIModuleIntellectual</li>
+			<li>FSFAIModuleMedical</li>
+			<li>FSFAIModuleMining</li>
+			<li>FSFAIModuleMelee</li>
+			<li>FSFAIModulePlants</li>
+			<li>FSFAIModuleShooting</li>
+			<li>FSFAIModuleSocial</li>
+			<li>FSFAdvBionicEar</li>
+			<li>FSFAdvBionicEar</li>
+			<li>FSFAdvBionicEye</li>
+			<li>FSFAdvBionicEye</li>
+			<li>FSFAdvBionicJaw</li>
+			<li>FSFAdvBionicArm</li>
+			<li>FSFAdvBionicArm</li>
+			<li>FSFAdvBionicSpine</li>
+			<li>FSFAdvBionicHeart</li>
+			<li>FSFAdvBionicLung</li>
+			<li>FSFAdvBionicLung</li>
+			<li>FSFAdvBionicKidney</li>
+			<li>FSFAdvBionicKidney</li>
+			<li>FSFAdvBionicLiver</li>
+			<li>FSFAdvBionicStomach</li>
+			<li>FSFAdvBionicLeg</li>
+			<li>FSFAdvBionicLeg</li>
+			<li>FSFImplantTorsoClimateControl</li>
+			<li>FSFImplantTorsoRespirator</li>
+			<li MayRequire="Ludeon.RimWorld.Royalty">AestheticNose</li>
+			<li MayRequire="Ludeon.RimWorld.Royalty">AestheticShaper</li>
+			<li MayRequire="Ludeon.RimWorld.Royalty">LoveEnhancer</li>
+			<li MayRequire="Ludeon.RimWorld.Royalty">Coagulator</li>
+			<li MayRequire="Ludeon.RimWorld.Royalty">HealingEnhancer</li>
+		</techHediffsRequired>
+		<requiredWorkTags>
+			<li>Animals</li>
+			<li>Artistic</li>
+			<li>Caring</li>
+			<li>Constructing</li>
+			<li>Cooking</li>
+			<li>Crafting</li>
+			<li>Hunting</li>
+			<li>Intellectual</li>
+			<li>Mining</li>
+			<li>PlantWork</li>
+			<li>Shooting</li>
+			<li>Social</li>
+			<li>Violent</li>
+		</requiredWorkTags>
+		<skills>
+			<li>
+				<skill>Animals</skill>
+				<range>10~20</range>
+			</li>
+			<li>
+				<skill>Artistic</skill>
+				<range>10~20</range>
+			</li>
+			<li>
+				<skill>Construction</skill>
+				<range>10~20</range>
+			</li>
+			<li>
+				<skill>Cooking</skill>
+				<range>10~20</range>
+			</li>
+			<li>
+				<skill>Crafting</skill>
+				<range>10~20</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>10~20</range>
+			</li>
+			<li>
+				<skill>Medicine</skill>
+				<range>10~20</range>
+			</li>
+			<li>
+				<skill>Mining</skill>
+				<range>10~20</range>
+			</li>
+			<li>
+				<skill>Melee</skill>
+				<range>10~20</range>
+			</li>
+			<li>
+				<skill>Plants</skill>
+				<range>10~20</range>
+			</li>
+			<li>
+				<skill>Shooting</skill>
+				<range>10~20</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>10~20</range>
+			</li>
+		</skills>
+	</PawnKindDef>
+
+</Defs>

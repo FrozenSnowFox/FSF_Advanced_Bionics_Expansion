@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	
+	<!-- Brain Implant Darklight -->
+
+	<HediffDef ParentName="FSFImplantHediffAdvBase">
+		<defName>FSFImplantBrainDarklight</defName>
+		<label>darklight module</label>
+		<labelNoun>a darklight module</labelNoun>
+		<description>An installed darklight module.  A low-intelligent microcomputer that integrates seamlessly with the user's visual cortex, automatically adjusting the incoming light to a darklight spectrum.  This ensures that users who are accustomed to darklight conditions can venture into brightly lit areas without discomfort or visual impairment.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantBrainDarklight</ThingDef>
+			<RecipeDef>InstallFSFImplantBrainDarklight</RecipeDef>
+			<RecipeDef>RemoveFSFImplantBrainDarklight</RecipeDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>FSFImplantBrainDarklight</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<statOffsets>
+					<FSFABELightSensitivity>-1.0</FSFABELightSensitivity>
+				</statOffsets>
+				<statFactors>
+					<ShootingAccuracyOutdoorsLitOffset>0</ShootingAccuracyOutdoorsLitOffset>
+					<ShootingAccuracyIndoorsLitOffset>0</ShootingAccuracyIndoorsLitOffset>
+					<MeleeHitChanceOutdoorsLitOffset>0</MeleeHitChanceOutdoorsLitOffset>
+					<MeleeHitChanceIndoorsLitOffset>0</MeleeHitChanceIndoorsLitOffset>
+					<MeleeDodgeChanceOutdoorsLitOffset>0</MeleeDodgeChanceOutdoorsLitOffset>
+					<MeleeDodgeChanceIndoorsLitOffset>0</MeleeDodgeChanceIndoorsLitOffset>
+				</statFactors>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_ReactOnDamage">
+				<damageDefIncoming>EMP</damageDefIncoming>
+				<createHediff>BrainShock</createHediff>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFImplantBrainDarklight</defName>
+		<label>darklight module</label>
+		<description>A low-intelligent microcomputer that integrates seamlessly with the user's visual cortex, automatically adjusting the incoming light to a darklight spectrum.  This ensures that users who are accustomed to darklight conditions can venture into brightly lit areas without discomfort or visual impairment.</description>
+		<descriptionHyperlinks>
+			<HediffDef>FSFImplantBrainDarklight</HediffDef>
+			<RecipeDef>InstallFSFImplantBrainDarklight</RecipeDef>
+			<RecipeDef>RemoveFSFImplantBrainDarklight</RecipeDef>
+		</descriptionHyperlinks>
+		<graphicData>
+			<texPath>Things/Item/Health/HealthItem</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.80</drawSize>
+			<color>(189,169,118)</color>
+		</graphicData>
+		<techHediffsTags Inherit="False"/>
+		<thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+		<costList>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>4</ComponentSpacer>
+		</costList>
+		<butcherProducts>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>4</ComponentSpacer>
+		</butcherProducts>
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>FSFAdvancedBrainImplants</li>
+			</researchPrerequisites>
+		</recipeMaker>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>InstallFSFImplantBrainDarklight</defName>
+		<label>install darklight module</label>
+		<description>Install a darklight module.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantBrainDarklight</ThingDef>
+			<HediffDef>FSFImplantBrainDarklight</HediffDef>
+			<RecipeDef>RemoveFSFImplantBrainDarklight</RecipeDef>
+		</descriptionHyperlinks>
+		<jobString>Installing darklight module.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFImplantBrainDarklight</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFImplantBrainDarklight</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Brain</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFImplantBrainDarklight</addsHediff>
+		<uiIconThing>FSFImplantBrainDarklight</uiIconThing>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemoveFSFImplantBrainDarklight</defName>
+		<label>remove darklight module</label>
+		<description>Remove darklight module.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantBrainDarklight</ThingDef>
+			<HediffDef>FSFImplantBrainDarklight</HediffDef>
+			<RecipeDef>InstallFSFImplantBrainDarklight</RecipeDef>
+		</descriptionHyperlinks>
+		<jobString>Removing darklight module.</jobString>
+		<removesHediff>FSFImplantBrainDarklight</removesHediff>
+	</RecipeDef>
+	
+	<StatDef>
+		<defName>FSFABELightSensitivity</defName>
+		<label>light sensitivity</label>
+		<description>A multiplier on how much a persons vision is effected by light.</description>
+		<category>PawnMisc</category>
+		<defaultBaseValue>1</defaultBaseValue>
+		<minValue>0</minValue>
+		<hideAtValue>1</hideAtValue>
+		<toStringStyle>PercentZero</toStringStyle>
+		<showOnAnimals>false</showOnAnimals>
+		<showOnMechanoids>false</showOnMechanoids>
+		<scenarioRandomizable>false</scenarioRandomizable>
+		<displayPriorityInCategory>2005</displayPriorityInCategory>
+	</StatDef>
+	
+</Defs>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	
+	<!-- AI Module Artistic Module -->
+
+	<ThingDef ParentName="FSFAIModuleItemUpgradeBase">
+		<defName>FSFAIModuleArtistic</defName>
+		<label>AI assistant artistic module</label>
+		<description>The artistic module enriches the AI Assistant with an extensive knowledge of art techniques, styles, and historical references.  It allows the AI Assistant to provide real-time guidance, inspiration, and feedback to help the user develop their artistic skills and produce captivating works of art.\n\nFor ease-of-use AI modules are packaged in a small handheld device.  When in close proximity with an AI assistant microcomputer the unit can be enabled to wirelessly transfer its data.  Due to the way the modules are designed however, they can only be used once.</description>
+		<descriptionHyperlinks>
+			<HediffDef>FSFAIModuleArtistic</HediffDef>
+		</descriptionHyperlinks>
+		<comps>
+			<li Class="CompProperties_Usable">
+				<compClass>CompUsableImplant</compClass>
+				<useJob>FSFInstallFSFAIModule</useJob>
+				<useLabel>Install artistic module</useLabel>
+				<userMustHaveHediff>FSFAIModuleCore</userMustHaveHediff>
+			</li>
+			<li Class="CompProperties_UseEffectInstallImplant">
+				<hediffDef>FSFAIModuleArtistic</hediffDef>
+				<bodyPart>Brain</bodyPart>
+				<canUpgrade>false</canUpgrade>
+				<maxSeverity>1</maxSeverity>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	<HediffDef ParentName="FSFAIModuleHediffUpgradeBase">
+		<defName>FSFAIModuleArtistic</defName>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAIModuleArtistic</ThingDef>
+		</descriptionHyperlinks>
+		<label>artistic module</label>
+		<description>An installed artistic module.  The artistic module enriches the AI Assistant with an extensive knowledge of art techniques, styles, and historical references.  It allows the AI Assistant to provide real-time guidance, inspiration, and feedback to help the user develop their artistic skills and produce captivating works of art.\n\nFor ease-of-use AI modules are packaged in a small handheld device.  When in close proximity with an AI assistant microcomputer the unit can be enabled to wirelessly transfer its data.  Due to the way the modules are designed however, they can only be used once.</description>
+		<aptitudes>
+			<Artistic MayRequire="Ludeon.RimWorld.Anomaly">4</Artistic>
+		</aptitudes>
+		<stages>
+			<li>
+				<minSeverity>1</minSeverity>
+				<statOffsets>
+					<VSE_ArtSpeed MayRequire="vanillaexpanded.skills">+0.2</VSE_ArtSpeed>
+					<VSE_ArtQuality MayRequire="vanillaexpanded.skills">+0.2</VSE_ArtQuality>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+</Defs>

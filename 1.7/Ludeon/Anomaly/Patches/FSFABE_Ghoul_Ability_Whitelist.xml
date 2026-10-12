@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+	
+	<!-- Patch Ghoul Ability Whitelist -->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/MutantDef[defName = "Ghoul"]/abilityWhitelist</xpath>
+				<value>
+					<li MayRequire="Ludeon.RimWorld.Biotech">FSFAdvBionicAcidJaw</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">FSFAdvBionicFlameJaw</li>
+					<li>FSFAdvBionicTaser</li>
+					<li>FSFAdvBionicRevenantInvisibility</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationConditional">		
+				<xpath>/Defs/MutantDef[defName = "Ghoul"]/abilityWhitelist/li[text()="RevenantInvisibility"]</xpath>
+				<nomatch Class="PatchOperationAdd">
+					<xpath>/Defs/MutantDef[defName = "Ghoul"]/abilityWhitelist</xpath>
+					<value>
+						<li>RevenantInvisibility</li>
+					</value>
+				</nomatch>
+			</li>
+	
+		</operations>
+	</Operation>
+	
+</Patch>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	
+	<Operation Class="XmlExtensions.OptionalPatch">
+		<modId>FrozenSnowFox.FrozenSnowFoxAdvancedBionicsExpansion</modId>
+		<key>FSFABEDisableOverlaidTexturesOn</key>
+		<defaultValue>false</defaultValue>
+		<caseTrue>
+			
+		<!-- Option is nested so patch isn't always run -->
+			
+			<!-- Disable Archotech Eye Textures -->
+	
+	<Operation Class="XmlExtensions.OptionalPatch">
+		<modId>FrozenSnowFox.FrozenSnowFoxAdvancedBionicsExpansion</modId>
+		<key>FSFABEDisableTextureArchotechEye</key>
+		<defaultValue>false</defaultValue>
+		<caseTrue>
+			
+		<Operation Class="PatchOperationSequence">
+			<success>Normal</success>
+			<operations>
+				
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/HediffDef[defName = "ArchotechEye"]/renderNodeProperties</xpath>
+			</li>
+				
+			</operations>
+		</Operation>
+			
+		</caseTrue>
+	</Operation>
+			
+			<!-- Disable Bionic Eye Textures -->
+	
+	<Operation Class="XmlExtensions.OptionalPatch">
+		<modId>FrozenSnowFox.FrozenSnowFoxAdvancedBionicsExpansion</modId>
+		<key>FSFABEDisableTextureBionicEye</key>
+		<defaultValue>false</defaultValue>
+		<caseTrue>
+			
+		<Operation Class="PatchOperationSequence">
+			<success>Normal</success>
+			<operations>
+				
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/HediffDef[defName = "BionicEye"]/renderNodeProperties</xpath>
+			</li>
+				
+			</operations>
+		</Operation>
+			
+		</caseTrue>
+	</Operation>
+			
+			<!-- Disable Prosthetic Eye Textures -->
+	
+	<Operation Class="XmlExtensions.OptionalPatch">
+		<modId>FrozenSnowFox.FrozenSnowFoxAdvancedBionicsExpansion</modId>
+		<key>FSFABEDisableTextureProstheticEye</key>
+		<defaultValue>false</defaultValue>
+		<caseTrue>
+			
+		<Operation Class="PatchOperationSequence">
+			<success>Normal</success>
+			<operations>
+				
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/HediffDef[defName = "FSFProstheticEye"]/renderNodeProperties</xpath>
+			</li>
+				
+			</operations>
+		</Operation>
+			
+		</caseTrue>
+	</Operation>
+			
+		</caseTrue>
+	</Operation>
+
+</Patch>

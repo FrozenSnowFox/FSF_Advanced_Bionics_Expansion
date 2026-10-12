@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	
+	<!-- Advanced Bionic Drill Arm -->
+	
+	<HediffDef ParentName="FSFAddedBodyPartAdvBionic">
+		<defName>FSFAdvBionicDrillArm</defName>
+		<label>advanced bionic drill arm</label>
+		<labelNoun>a advanced bionic drill arm</labelNoun>
+		<description>An installed advanced bionic drill arm.  A highly advanced artificial arm made using cutting edge ultratech techniques.  It provides smooth micrometre precision motor control with strength capable of crushing hardwood branches.  The synthetic flesh looks and feels just like natural flesh, but it’s as hard as plasteel.  Through the use of a lattice-dust healing system its capable of repairing itself over time.\n\nThe arm features a built-in snake drill, which allows the miner to rapidly find and exploit weak lines in the rock.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAdvBionicDrillArm</ThingDef>
+			<RecipeDef>InstallFSFAdvBionicDrillArm</RecipeDef>
+		</descriptionHyperlinks>
+		<stages>
+			<li>
+				<statOffsets>
+					<MiningSpeed>1.60</MiningSpeed>
+					<DeepDrillingSpeed>0.7</DeepDrillingSpeed>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>drill</label>
+						<capacities>
+							<li>Stab</li>
+						</capacities>
+						<power>20</power>
+						<armorPenetration>0.75</armorPenetration>
+						<cooldownTime>2</cooldownTime>
+						<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+						<soundMeleeHit>MeleeHit_DrillArm</soundMeleeHit>
+						<soundMeleeMiss>MeleeMiss_DrillArm</soundMeleeMiss>
+					</li>
+				</tools>
+			</li>
+        	<li MayRequire="V1024.EBFramework" Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust">
+            	<scaleAdjustment>0.5</scaleAdjustment>
+        	</li>
+		</comps>
+		<spawnThingOnRemoved>FSFAdvBionicDrillArm</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.50</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+	
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFAdvBionicDrillArm</defName>
+		<label>advanced bionic drill arm</label>
+		<description>A highly advanced artificial arm made using cutting edge ultratech techniques.  It provides smooth micrometre precision motor control with strength capable of crushing hardwood branches.  The synthetic flesh looks and feels just like natural flesh, but it’s as hard as plasteel.  Through the use of a lattice-dust healing system its capable of repairing itself over time.\n\nThe arm features a built-in snake drill, which allows the miner to rapidly find and exploit weak lines in the rock.</description>
+		<descriptionHyperlinks>
+			<HediffDef>FSFAdvBionicDrillArm</HediffDef>
+			<RecipeDef>InstallFSFAdvBionicDrillArm</RecipeDef>
+		</descriptionHyperlinks>
+		<thingSetMakerTags>
+			<li>RewardStandardMidFreq</li>
+		</thingSetMakerTags>
+		<costList>
+			<Plasteel>60</Plasteel>
+			<ComponentSpacer>12</ComponentSpacer>
+		</costList>
+		<butcherProducts>
+			<Plasteel>60</Plasteel>
+			<ComponentSpacer>12</ComponentSpacer>
+		</butcherProducts>
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>FSFAdvancedSpecializedLimbs</li>
+			</researchPrerequisites>
+		</recipeMaker>
+		<statBases>
+			<Mass>10</Mass>
+		</statBases>
+	</ThingDef>
+	
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallFSFAdvBionicDrillArm</defName>
+		<label>install advanced bionic drill arm</label>
+		<description>Install an advanced bionic drill arm.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAdvBionicDrillArm</ThingDef>
+			<HediffDef>FSFAdvBionicDrillArm</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing advanced bionic drill arm.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFAdvBionicDrillArm</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFAdvBionicDrillArm</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Shoulder</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFAdvBionicDrillArm</addsHediff>
+		<uiIconThing>FSFAdvBionicDrillArm</uiIconThing>
+	</RecipeDef>
+	
+	<!-- Advanced Bionic Field Arm -->
+	
+	<HediffDef ParentName="FSFAddedBodyPartAdvBionic">
+		<defName>FSFAdvBionicFieldArm</defName>
+		<label>advanced bionic field arm</label>
+		<labelNoun>a advanced bionic field arm</labelNoun>
+		<description>An installed advanced bionic field arm.  A highly advanced artificial arm made using cutting edge ultratech techniques.  It provides smooth micrometre precision motor control with strength capable of crushing hardwood branches.  The synthetic flesh looks and feels just like natural flesh, but it’s as hard as plasteel.  Through the use of a lattice-dust healing system its capable of repairing itself over time.\n\nThe arm houses a wide range of tools commonly used in a variety of agriculture tasks attached to telescoping appendages capable of independent movement.  It allows the user to simultaneously harvest from several points on the same plant, or precisely sow several holes at once.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAdvBionicFieldArm</ThingDef>
+			<RecipeDef>InstallFSFAdvBionicFieldArm</RecipeDef>
+		</descriptionHyperlinks>
+		<stages>
+			<li>
+				<statOffsets>
+					<PlantWorkSpeed>1.60</PlantWorkSpeed>
+					<PruningSpeed MayRequire="Ludeon.RimWorld.Ideology">0.7</PruningSpeed>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>fist</label>
+						<capacities>
+							<li>Blunt</li>
+						</capacities>
+						<power>16</power>
+						<armorPenetration>0.5</armorPenetration>
+						<cooldownTime>2</cooldownTime>
+						<alwaysTreatAsWeapon>false</alwaysTreatAsWeapon>
+						<soundMeleeHit>MeleeHit_FieldHand</soundMeleeHit>
+						<soundMeleeMiss>MeleeMiss_FieldHand</soundMeleeMiss>
+					</li>
+				</tools>
+			</li>
+        	<li MayRequire="V1024.EBFramework" Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust">
+            	<scaleAdjustment>0.5</scaleAdjustment>
+        	</li>
+		</comps>
+		<spawnThingOnRemoved>FSFAdvBionicFieldArm</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.50</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+	
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFAdvBionicFieldArm</defName>
+		<label>advanced bionic field arm</label>
+		<description>A highly advanced artificial arm made using cutting edge ultratech techniques.  It provides smooth micrometre precision motor control with strength capable of crushing hardwood branches.  The synthetic flesh looks and feels just like natural flesh, but it’s as hard as plasteel.  Through the use of a lattice-dust healing system its capable of repairing itself over time.\n\nThe arm houses a wide range of tools commonly used in a variety of agriculture tasks attached to telescoping appendages capable of independent movement.  It allows the user to simultaneously harvest from several points on the same plant, or precisely sow several holes at once.</description>
+		<descriptionHyperlinks>
+			<HediffDef>FSFAdvBionicFieldArm</HediffDef>
+			<RecipeDef>InstallFSFAdvBionicFieldArm</RecipeDef>
+		</descriptionHyperlinks>
+		<thingSetMakerTags>
+			<li>RewardStandardMidFreq</li>
+		</thingSetMakerTags>
+		<costList>
+			<Plasteel>60</Plasteel>
+			<ComponentSpacer>12</ComponentSpacer>
+		</costList>
+		<butcherProducts>
+			<Plasteel>60</Plasteel>
+			<ComponentSpacer>12</ComponentSpacer>
+		</butcherProducts>
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>FSFAdvancedSpecializedLimbs</li>
+			</researchPrerequisites>
+		</recipeMaker>
+		<statBases>
+			<Mass>10</Mass>
+		</statBases>
+	</ThingDef>
+	
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallFSFAdvBionicFieldArm</defName>
+		<label>install advanced bionic field arm</label>
+		<description>Install an advanced bionic field arm.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAdvBionicFieldArm</ThingDef>
+			<HediffDef>FSFAdvBionicFieldArm</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing advanced bionic field arm.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFAdvBionicFieldArm</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFAdvBionicFieldArm</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Shoulder</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFAdvBionicFieldArm</addsHediff>
+		<uiIconThing>FSFAdvBionicFieldArm</uiIconThing>
+	</RecipeDef>
+	
+</Defs>

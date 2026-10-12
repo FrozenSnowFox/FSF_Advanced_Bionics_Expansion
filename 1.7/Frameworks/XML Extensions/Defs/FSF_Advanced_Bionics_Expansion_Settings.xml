@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+	<XmlExtensions.SettingsMenuDef>
+		<defName>FrozenSnowFoxAdvancedBionicsExpansionSettings</defName> <!--Can be anything unique with no periods-->
+		<modId>FrozenSnowFox.FrozenSnowFoxAdvancedBionicsExpansion</modId> <!--MUST be the same as the one entered earlier-->    
+		<label>FrozenSnowFox Advanced Bionics Expansion</label> <!-- This is what displays as your mod's name-->    
+		<settings> <!--This is where you define what settings are in the settings menu-->
+
+			<li Class="XmlExtensions.Setting.SetColor">
+				<color>(187,0,0)</color>
+			</li>
+			<li Class="XmlExtensions.Setting.Text">
+				<text>For any changed settings to take effect the game must be restarted.</text>
+				<font>Medium</font>
+				<anchor>Middle</anchor>
+				<tKey>FSFABEModWarning</tKey>
+			</li>
+			<li Class="XmlExtensions.Setting.SetColor"/>
+			<li Class="XmlExtensions.Setting.GapLine">
+			</li>
+			
+			<li Class="XmlExtensions.Setting.Text">
+				<text>Advanced Bionics Expansion Settings</text>
+				<font>Medium</font>
+				<anchor>Middle</anchor>
+				<tKey>FSFABESettingsTitle</tKey>
+			</li>
+			<li Class="XmlExtensions.Setting.GapLine">
+			</li>
+			
+			<!-- Baby Bionics -->
+			
+			<li Class="XmlExtensions.Setting.Checkbox">
+				<label>Baby Bionics</label>
+				<key>FSFABEBabyBionics</key>
+				<defaultValue>false</defaultValue>
+				<tKey>FSFABEBabyBionicsTitle</tKey>
+			</li>
+			<li Class="XmlExtensions.Setting.SetColor">
+				<color>(163,177,188)</color>
+			</li>
+			<li Class="XmlExtensions.Setting.Text">
+				<text>Enables the ability to install bionic replacements and implants into babies.</text>
+				<tKey>FSFABEBabyBionicsDesc</tKey>
+			</li>
+			<li Class="XmlExtensions.Setting.SetColor"/>
+			<li Class="XmlExtensions.Setting.GapLine">
+				<spacing>12</spacing>
+			</li>
+			
+			<!-- Bionics Table -->
+			
+			<li Class="XmlExtensions.Setting.Checkbox">
+				<label>Bionics Table</label>
+				<key>FSFABEBionicsTableOn</key>
+				<defaultValue>false</defaultValue>
+				<tKey>FSFABEBionicsTableTitle</tKey>
+			</li>
+			<li Class="XmlExtensions.Setting.ToggleableSettings">
+				<key>FSFABEBionicsTableOn</key>
+				<caseFalse>
+					<li Class="XmlExtensions.Setting.SetColor">
+						<color>(163,177,188)</color>
+					</li>
+					<li Class="XmlExtensions.Setting.Text">
+						<text>Enables the Bionics Table which contains all bionics recipes.  The recipes are also removed from existing workbenches to remove clutter.</text>
+						<tKey>FSFABEBionicsTableOnDesc</tKey>
+					</li>
+					<li Class="XmlExtensions.Setting.SetColor"/>				
+				</caseFalse>
+				<caseTrue>
+					<li Class="XmlExtensions.Setting.SetColor">
+						<color>(163,177,188)</color>
+					</li>
+					<li Class="XmlExtensions.Setting.Text">
+						<text>Enables the Bionics Table which contains all bionics recipes.  The recipes are also removed from existing workbenches to remove clutter.</text>
+						<tKey>FSFABEBionicsTableOnDesc</tKey>
+					</li>
+					<li Class="XmlExtensions.Setting.SetColor"/>
+					<li Class="XmlExtensions.Setting.Checkbox">
+						<label>Bionics Worktype</label>
+						<key>FSFABEBionicsWorktype</key>
+						<defaultValue>false</defaultValue>
+						<tKey>FSFABEBionicsWorktypeTitle</tKey>
+					</li>
+					<li Class="XmlExtensions.Setting.SetColor">
+						<color>(163,177,188)</color>
+					</li>
+					<li Class="XmlExtensions.Setting.Text">
+						<text>Enables the Bionics Worktype and changes the Bionics Table to use the Bionics Worktype.\nWarning: Enabling a new worktype on existing saves can cause game breaking issues for some people.</text>
+						<tKey>FSFABEBionicsWorktypeDesc</tKey>
+					</li>
+					<li Class="XmlExtensions.Setting.SetColor"/>
+					<li Class="XmlExtensions.Setting.Checkbox">
+						<label>Move Mechanitor Implant Recipes (Require Biotech DLC)</label>
+						<key>FSFABEMechanitorImplantRecipes</key>
+						<defaultValue>false</defaultValue>
+						<tKey>FSFABEMechanitorImplantRecipesTitle</tKey>
+					</li>
+					<li Class="XmlExtensions.Setting.SetColor">
+						<color>(163,177,188)</color>
+					</li>
+					<li Class="XmlExtensions.Setting.Text">
+						<text>Removes the Mechanitor Implant Recipes from existing workbenches and adds them to the Bionics Table.</text>
+						<tKey>FSFABEMechanitorImplantRecipesDesc</tKey>
+					</li>
+					<li Class="XmlExtensions.Setting.SetColor"/>
+				</caseTrue>
+			</li>
+			<li Class="XmlExtensions.Setting.GapLine">
+				<spacing>12</spacing>
+			</li>
+			
+			<!-- Disable Overlaid Textures -->
+			
+			<li Class="XmlExtensions.Setting.Checkbox">
+				<label>Disable Overlaid Textures</label>
+				<key>FSFABEDisableOverlaidTexturesOn</key>
+				<defaultValue>false</defaultValue>
+				<tKey>FSFABEDisableOverlaidTexturesTitle</tKey>
+			</li>
+			<li Class="XmlExtensions.Setting.SetColor">
+				<color>(163,177,188)</color>
+			</li>
+			<li Class="XmlExtensions.Setting.Text">
+				<text>Allows you to individually disable certain overlaid textures for pawns such as those from eye bionics.</text>
+				<tKey>FSFABEDisableOverlaidTexturesOnDesc</tKey>
+			</li>
+			<li Class="XmlExtensions.Setting.ToggleableSettings">
+				<key>FSFABEDisableOverlaidTexturesOn</key>
+				<caseTrue>
+					<li Class="XmlExtensions.Setting.SetColor">
+						<color>(163,177,188)</color>
+					</li>
+					<li Class="XmlExtensions.Setting.Text">
+						<text>Disables the textures rendered over a pawns face when they have an Archotech Eye installed.</text>
+						<tKey>FSFABEDisableTextureArchotechEyeDesc</tKey>
+					</li>
+					<li Class="XmlExtensions.Setting.SetColor"/>
+					<li Class="XmlExtensions.Setting.Checkbox">
+						<label>Disable Archotech Eye Textures</label>
+						<key>FSFABEDisableTextureArchotechEye</key>
+						<defaultValue>false</defaultValue>
+						<tKey>FSFABEDisableTextureArchotechEyeTitle</tKey>
+					</li>
+					<li Class="XmlExtensions.Setting.SetColor">
+						<color>(163,177,188)</color>
+					</li>
+					<li Class="XmlExtensions.Setting.Text">
+						<text>Disables the textures rendered over a pawns face when they have an Bionic Eye installed.</text>
+						<tKey>FSFABEDisableTextureBionicEyeDesc</tKey>
+					</li>
+					<li Class="XmlExtensions.Setting.SetColor"/>
+					<li Class="XmlExtensions.Setting.Checkbox">
+						<label>Disable Bionic Eye Textures</label>
+						<key>FSFABEDisableTextureBionicEye</key>
+						<defaultValue>false</defaultValue>
+						<tKey>FSFABEDisableTextureBionicEyeTitle</tKey>
+					</li>
+					<li Class="XmlExtensions.Setting.SetColor">
+						<color>(163,177,188)</color>
+					</li>
+					<li Class="XmlExtensions.Setting.Text">
+						<text>Disables the textures rendered over a pawns face when they have an Prosthetic Eye installed.</text>
+						<tKey>FSFABEDisableTextureProstheticEyeDesc</tKey>
+					</li>
+					<li Class="XmlExtensions.Setting.SetColor"/>
+					<li Class="XmlExtensions.Setting.Checkbox">
+						<label>Disable Prosthetic Eye Textures</label>
+						<key>FSFABEDisableTextureProstheticEye</key>
+						<defaultValue>false</defaultValue>
+						<tKey>FSFABEDisableTextureProstheticEyeTitle</tKey>
+					</li>
+				</caseTrue>
+			</li>
+			<li Class="XmlExtensions.Setting.SetColor"/>
+			<li Class="XmlExtensions.Setting.GapLine">
+				<spacing>12</spacing>
+			</li>
+			
+			<!-- Save Our Ship 2 Balance Patch -->
+			
+			<li MayRequire="kentington.saveourship2" Class="XmlExtensions.Setting.Checkbox">
+				<label>Save Our Ship 2 Balance Patch</label>
+				<key>FSFABESoS2Balance</key>
+				<defaultValue>false</defaultValue>
+				<tKey>FSFABESoS2BalanceTitle</tKey>
+			</li>
+			<li MayRequire="kentington.saveourship2" Class="XmlExtensions.Setting.SetColor">
+				<color>(163,177,188)</color>
+			</li>
+			<li MayRequire="kentington.saveourship2" Class="XmlExtensions.Setting.Text">
+				<text>This setting applies a balance patch to Save Our Ship 2's Archotech bionics changing the balance of them to fit the design philosophy used in Advanced Bionics Expansion.  Which is that for the most part stat bonuses should come from the resulting body parts efficiency rating rather than custom stats.  In many cases this is a direct downgrade as it removes numerous bonuses featured on SOS2's bionics.</text>
+				<tKey>FSFABESoS2BalanceDesc</tKey>
+			</li>
+			<li MayRequire="kentington.saveourship2" Class="XmlExtensions.Setting.SetColor"/>
+			<li MayRequire="kentington.saveourship2" Class="XmlExtensions.Setting.GapLine">
+				<spacing>12</spacing>
+			</li>
+			
+			<!-- Ultratech Orbital Trader -->
+			
+			<li Class="XmlExtensions.Setting.Checkbox">
+				<label>Ultratech Orbital Trader</label>
+				<key>FSFABEUltratechTraderOn</key>
+				<defaultValue>false</defaultValue>
+				<tKey>FSFABEUltratechTraderTitle</tKey>
+			</li>
+			<li Class="XmlExtensions.Setting.SetColor">
+				<color>(163,177,188)</color>
+			</li>
+			<li Class="XmlExtensions.Setting.Text">
+				<text>Enables an Ultratech Orbital Trader with a customisable commonality that sells Advanced Bionics, Servitors and other ultratech goods.</text>
+				<tKey>FSFABEUltratechTraderOnDesc</tKey>
+			</li>
+			<li Class="XmlExtensions.Setting.ToggleableSettings">
+				<key>FSFABEUltratechTraderOn</key>
+				<caseTrue>
+					<li Class="XmlExtensions.Setting.SetColor">
+						<color>(163,177,188)</color>
+					</li>
+					<li Class="XmlExtensions.Setting.Slider">
+						<key>FSFABEUltratechTraderCommonality</key>
+						<defaultValue>1.0</defaultValue>
+						<min>0</min>
+						<max>5</max>
+						<decimals>1</decimals>
+						<label>Commonality {FSFABEUltratechTraderCommonality}</label>
+						<tKey>FSFABEUltratechTraderCommonality</tKey>
+					</li>
+					<li Class="XmlExtensions.Setting.SetColor"/>
+					<li Class="XmlExtensions.Setting.SetColor">
+						<color>(163,177,188)</color>
+					</li>
+					<li Class="XmlExtensions.Setting.Text">
+						<text>Input a value to adjust the commonality of the Ultratech Orbital Trader.  The standard for Orbital Traders and the default value is 1.  You can make it lower to make it more rare or higher to make it more common.</text>
+						<tKey>FSFABEUltratechTraderDesc</tKey>
+					</li>
+					<li Class="XmlExtensions.Setting.SetColor"/>
+				</caseTrue>
+			</li>
+			<li Class="XmlExtensions.Setting.SetColor"/>
+			
+		</settings>
+	</XmlExtensions.SettingsMenuDef>
+
+</Defs>

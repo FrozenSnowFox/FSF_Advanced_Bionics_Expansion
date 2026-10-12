@@ -163,7 +163,7 @@
 		<defName>FSFReproductionControllerRemoveLactation</defName>
 		<label>remove lactation</label>
 		<description>Forces the user's body to stop lactacting.</description>
-		<iconPath>UI/Abilities/FSFReproductionControllerResetFertility</iconPath>
+		<iconPath>UI/Abilities/FSFReproductionControllerRemoveLactation</iconPath>
 		<aiCanUse>false</aiCanUse>
 		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
 		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
@@ -237,7 +237,7 @@
 		<defName>FSFReproductionControllerRemoveFertile</defName>
 		<label>remove fertility enhancement</label>
 		<description>Returns the user’s fertility to its normal biological level.</description>
-		<iconPath>UI/Abilities/FSFReproductionControllerResetFertility</iconPath>
+		<iconPath>UI/Abilities/FSFReproductionControllerRemoveFertile</iconPath>
 		<aiCanUse>false</aiCanUse>
 		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
 		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
@@ -312,7 +312,7 @@
 		<defName>FSFReproductionControllerRemoveSterile</defName>
 		<label>remove sterility adjustment</label>
 		<description>Returns the user’s fertility to its normal biological level.</description>
-		<iconPath>UI/Abilities/FSFReproductionControllerResetFertility</iconPath>
+		<iconPath>UI/Abilities/FSFReproductionControllerRemoveSterile</iconPath>
 		<aiCanUse>false</aiCanUse>
 		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
 		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>

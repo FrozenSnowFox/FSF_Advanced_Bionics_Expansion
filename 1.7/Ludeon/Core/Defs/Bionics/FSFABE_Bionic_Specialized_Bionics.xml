@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	
+	<!-- Bionic Construction Arm -->
+	
+	<HediffDef ParentName="AddedBodyPartBase">
+		<defName>FSFBionicConstructionArm</defName>
+		<label>bionic construction arm</label>
+		<labelNoun>a bionic construction arm</labelNoun>
+		<description>An installed bionic construction arm.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFBionicConstructionArm</ThingDef>
+			<RecipeDef>InstallFSFBionicConstructionArm</RecipeDef>
+		</descriptionHyperlinks>
+		<stages>
+			<li>
+				<statOffsets>
+					<ConstructionSpeed>1.60</ConstructionSpeed>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>fist</label>
+						<capacities>
+							<li>Blunt</li>
+						</capacities>
+						<power>12</power>
+						<armorPenetration>0.25</armorPenetration>
+						<cooldownTime>2</cooldownTime>
+						<alwaysTreatAsWeapon>false</alwaysTreatAsWeapon>
+						<soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
+						<soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
+					</li>
+				</tools>
+			</li>
+        	<li MayRequire="V1024.EBFramework" Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust">
+            	<scaleAdjustment>0.25</scaleAdjustment>
+        	</li>
+		</comps>
+		<spawnThingOnRemoved>FSFBionicConstructionArm</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.25</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+	
+	<ThingDef ParentName="BodyPartBionicBase">
+		<defName>FSFBionicConstructionArm</defName>
+		<label>bionic construction arm</label>
+		<description>An advanced artificial arm with multiple built-in tools used in general construction work. Silenced mini-servos give great strength, while the biogel nerve-link gives exquisite control. A lattice-dust healing system allows it to recover from damage.</description>
+		<descriptionHyperlinks>
+			<HediffDef>FSFBionicConstructionArm</HediffDef>
+			<RecipeDef>InstallFSFBionicConstructionArm</RecipeDef>
+		</descriptionHyperlinks>
+		<thingSetMakerTags>
+			<li>RewardStandardLowFreq</li>
+		</thingSetMakerTags>
+		<costList>
+			<Plasteel>30</Plasteel>
+			<ComponentSpacer>6</ComponentSpacer>
+		</costList>
+		<butcherProducts>
+			<Plasteel>30</Plasteel>
+			<ComponentSpacer>6</ComponentSpacer>
+		</butcherProducts>
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>Bionics</li>
+				<li MayRequire="Ludeon.RimWorld.Royalty">SpecializedLimbs</li>
+			</researchPrerequisites>
+		</recipeMaker>
+		<statBases>
+			<Mass>6</Mass>
+		</statBases>
+		<techHediffsTags>
+			<li>Advanced</li>
+			<li>AdvancedWeapon</li>
+		</techHediffsTags>
+	</ThingDef>
+	
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallFSFBionicConstructionArm</defName>
+		<label>install bionic construction arm</label>
+		<description>Install a bionic construction arm.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFBionicConstructionArm</ThingDef>
+			<HediffDef>FSFBionicConstructionArm</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing bionic construction arm.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFBionicConstructionArm</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFBionicConstructionArm</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Shoulder</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFBionicConstructionArm</addsHediff>
+		<uiIconThing>FSFBionicConstructionArm</uiIconThing>
+	</RecipeDef>
+	
+	<!-- Bionic Cooking Arm -->
+	
+	<HediffDef ParentName="AddedBodyPartBase">
+		<defName>FSFBionicCookingArm</defName>
+		<label>bionic chef arm</label>
+		<labelNoun>a bionic chef arm</labelNoun>
+		<description>An installed bionic chef arm.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFBionicCookingArm</ThingDef>
+			<RecipeDef>InstallFSFBionicCookingArm</RecipeDef>
+		</descriptionHyperlinks>
+		<stages>
+			<li>
+				<statOffsets>
+					<ButcheryFleshSpeed>+1.6</ButcheryFleshSpeed>
+					<CookSpeed>+20</CookSpeed>
+					<DrugCookingSpeed>+1.6</DrugCookingSpeed>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>fist</label>
+						<capacities>
+							<li>Blunt</li>
+						</capacities>
+						<power>12</power>
+						<armorPenetration>0.25</armorPenetration>
+						<cooldownTime>2</cooldownTime>
+						<alwaysTreatAsWeapon>false</alwaysTreatAsWeapon>
+						<soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
+						<soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
+					</li>
+				</tools>
+			</li>
+        	<li MayRequire="V1024.EBFramework" Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust">
+            	<scaleAdjustment>0.25</scaleAdjustment>
+        	</li>
+		</comps>
+		<spawnThingOnRemoved>FSFBionicCookingArm</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.25</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+	
+	<ThingDef ParentName="BodyPartBionicBase">
+		<defName>FSFBionicCookingArm</defName>
+		<label>bionic chef arm</label>
+		<description>An advanced artificial arm with multiple built-in tools used in a variety of culinary tasks. Silenced mini-servos give great strength, while the biogel nerve-link gives exquisite control. A lattice-dust healing system allows it to recover from damage.</description>
+		<descriptionHyperlinks>
+			<HediffDef>FSFBionicCookingArm</HediffDef>
+			<RecipeDef>InstallFSFBionicCookingArm</RecipeDef>
+		</descriptionHyperlinks>
+		<thingSetMakerTags>
+			<li>RewardStandardLowFreq</li>
+		</thingSetMakerTags>
+		<costList>
+			<Plasteel>30</Plasteel>
+			<ComponentSpacer>6</ComponentSpacer>
+		</costList>
+		<butcherProducts>
+			<Plasteel>30</Plasteel>
+			<ComponentSpacer>6</ComponentSpacer>
+		</butcherProducts>
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>Bionics</li>
+				<li MayRequire="Ludeon.RimWorld.Royalty">SpecializedLimbs</li>
+			</researchPrerequisites>
+		</recipeMaker>
+		<statBases>
+			<Mass>6</Mass>
+		</statBases>
+		<techHediffsTags>
+			<li>Advanced</li>
+			<li>AdvancedWeapon</li>
+		</techHediffsTags>
+	</ThingDef>
+	
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallFSFBionicCookingArm</defName>
+		<label>install bionic chef arm</label>
+		<description>Install a bionic chef arm.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFBionicCookingArm</ThingDef>
+			<HediffDef>FSFBionicCookingArm</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing bionic chef arm.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFBionicCookingArm</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFBionicCookingArm</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Shoulder</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFBionicCookingArm</addsHediff>
+		<uiIconThing>FSFBionicCookingArm</uiIconThing>
+	</RecipeDef>
+	
+	<!-- Bionic Production Arm -->
+	
+	<HediffDef ParentName="AddedBodyPartBase">
+		<defName>FSFBionicCraftingArm</defName>
+		<label>bionic production arm</label>
+		<labelNoun>a bionic production arm</labelNoun>
+		<description>An installed bionic production arm.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFBionicCraftingArm</ThingDef>
+			<RecipeDef>InstallFSFBionicCraftingArm</RecipeDef>
+		</descriptionHyperlinks>
+		<stages>
+			<li>
+				<statOffsets>
+					<DrugSynthesisSpeed>+1.6</DrugSynthesisSpeed>
+					<GeneralLaborSpeed>+1.6</GeneralLaborSpeed>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>fist</label>
+						<capacities>
+							<li>Blunt</li>
+						</capacities>
+						<power>12</power>
+						<armorPenetration>0.25</armorPenetration>
+						<cooldownTime>2</cooldownTime>
+						<alwaysTreatAsWeapon>false</alwaysTreatAsWeapon>
+						<soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
+						<soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
+					</li>
+				</tools>
+			</li>
+        	<li MayRequire="V1024.EBFramework" Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust">
+            	<scaleAdjustment>0.25</scaleAdjustment>
+        	</li>
+		</comps>
+		<spawnThingOnRemoved>FSFBionicCraftingArm</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.25</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+	
+	<ThingDef ParentName="BodyPartBionicBase">
+		<defName>FSFBionicCraftingArm</defName>
+		<label>bionic production arm</label>
+		<description>An advanced artificial arm with multiple built-in tools used in a variety of production tasks. Silenced mini-servos give great strength, while the biogel nerve-link gives exquisite control. A lattice-dust healing system allows it to recover from damage.</description>
+		<descriptionHyperlinks>
+			<HediffDef>FSFBionicCraftingArm</HediffDef>
+			<RecipeDef>InstallFSFBionicCraftingArm</RecipeDef>
+		</descriptionHyperlinks>
+		<thingSetMakerTags>
+			<li>RewardStandardLowFreq</li>
+		</thingSetMakerTags>
+		<costList>
+			<Plasteel>30</Plasteel>
+			<ComponentSpacer>6</ComponentSpacer>
+		</costList>
+		<butcherProducts>
+			<Plasteel>30</Plasteel>
+			<ComponentSpacer>6</ComponentSpacer>
+		</butcherProducts>
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>Bionics</li>
+				<li MayRequire="Ludeon.RimWorld.Royalty">SpecializedLimbs</li>
+			</researchPrerequisites>
+		</recipeMaker>
+		<statBases>
+			<Mass>6</Mass>
+		</statBases>
+		<techHediffsTags>
+			<li>Advanced</li>
+			<li>AdvancedWeapon</li>
+		</techHediffsTags>
+	</ThingDef>
+	
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallFSFBionicCraftingArm</defName>
+		<label>install bionic production arm</label>
+		<description>Install a bionic production arm.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFBionicCraftingArm</ThingDef>
+			<HediffDef>FSFBionicCraftingArm</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing bionic production arm.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFBionicCraftingArm</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFBionicCraftingArm</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Shoulder</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFBionicCraftingArm</addsHediff>
+		<uiIconThing>FSFBionicCraftingArm</uiIconThing>
+	</RecipeDef>
+	
+	<!-- Bionic Power Arm -->
+	
+	<HediffDef ParentName="AddedBodyPartBase">
+		<defName>FSFBionicPowerArm</defName>
+		<label>bionic power arm</label>
+		<labelNoun>a bionic power arm</labelNoun>
+		<description>An installed bionic power arm.</description>
+		<descriptionHyperlinks><ThingDef>FSFBionicPowerArm</ThingDef></descriptionHyperlinks>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>claw</label>
+						<capacities>
+							<li>Scratch</li>
+						</capacities>
+						<power>22</power>
+						<armorPenetration>0.5</armorPenetration>
+						<cooldownTime>2</cooldownTime>
+						<soundMeleeHit>Pawn_Melee_PowerClaw_Hit</soundMeleeHit>
+						<soundMeleeMiss>Pawn_Melee_PowerClaw_Miss</soundMeleeMiss>
+						<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+					</li>
+				</tools>
+			</li>
+        	<li MayRequire="V1024.EBFramework" Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust">
+            	<scaleAdjustment>0.5</scaleAdjustment>
+        	</li>
+		</comps>
+		<spawnThingOnRemoved>FSFBionicPowerArm</spawnThingOnRemoved>
+		<addedPartProps>
+			<isGoodWeapon>true</isGoodWeapon>
+			<solid>true</solid>
+			<partEfficiency>1.25</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+	
+	<ThingDef ParentName="BodyPartBionicBase">
+		<defName>FSFBionicPowerArm</defName>
+		<label>bionic power arm</label>
+		<description>An advanced artificial arm fitted with retractable power claw blades. Silenced mini-servos give great strength, while the biogel nerve-link gives exquisite control. A lattice-dust healing system allows it to recover from damage.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFBionicPowerArm</RecipeDef></descriptionHyperlinks>
+		<costList>
+			<BionicArm>1</BionicArm>
+			<PowerClaw>1</PowerClaw>
+		</costList>
+		<butcherProducts>
+			<BionicArm>1</BionicArm>
+			<PowerClaw>1</PowerClaw>
+		</butcherProducts>
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>Bionics</li>
+				<li MayRequire="Ludeon.RimWorld.Royalty">SpecializedLimbs</li>
+			</researchPrerequisites>
+		</recipeMaker>
+		<thingSetMakerTags><li>RewardStandardMidFreq</li></thingSetMakerTags>
+		<statBases>
+			<Mass>6</Mass>
+		</statBases>
+		<techHediffsTags>
+			<li>Advanced</li>
+			<li>AdvancedWeapon</li>
+		</techHediffsTags>
+	</ThingDef>
+	
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallFSFBionicPowerArm</defName>
+		<label>install bionic power arm</label>
+		<description>Install a bionic power arm.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFBionicPowerArm</ThingDef>
+			<HediffDef>FSFBionicPowerArm</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing bionic power arm.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFBionicPowerArm</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFBionicPowerArm</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Shoulder</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFBionicPowerArm</addsHediff>
+		<uiIconThing>FSFBionicPowerArm</uiIconThing>
+	</RecipeDef>
+	
+	<!-- Bionic Breaching Arm -->
+	
+	<HediffDef ParentName="AddedBodyPartBase">
+		<defName>FSFBionicBreachArm</defName>
+		<label>bionic breaching arm</label>
+		<labelNoun>a bionic breaching arm</labelNoun>
+		<description>An installed bionic breaching arm.</description>
+		<descriptionHyperlinks><ThingDef>FSFBionicBreachArm</ThingDef></descriptionHyperlinks>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>fist</label>
+						<capacities>
+							<li>Demolish</li>
+						</capacities>
+						<power>24</power>
+						<armorPenetration>0.25</armorPenetration>
+						<cooldownTime>2</cooldownTime>
+						<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+						<soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
+						<soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
+					</li>
+				</tools>
+			</li>
+        	<li MayRequire="V1024.EBFramework" Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust">
+            	<scaleAdjustment>0.5</scaleAdjustment>
+        	</li>
+		</comps>
+		<spawnThingOnRemoved>FSFBionicBreachArm</spawnThingOnRemoved>
+		<addedPartProps>
+			<isGoodWeapon>true</isGoodWeapon>
+			<solid>true</solid>
+			<partEfficiency>1.25</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+	
+	<ThingDef ParentName="BodyPartBionicBase">
+		<defName>FSFBionicBreachArm</defName>
+		<label>bionic breaching arm</label>
+		<description>An advanced artificial arm with a built-in concussion effect designed for knocking down walls. Silenced mini-servos give great strength, while the biogel nerve-link gives exquisite control. A lattice-dust healing system allows it to recover from damage.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFBionicBreachArm</RecipeDef></descriptionHyperlinks>
+		<costList>
+			<Plasteel>30</Plasteel>
+			<ComponentSpacer>6</ComponentSpacer>
+		</costList>
+		<butcherProducts>
+			<Plasteel>30</Plasteel>
+			<ComponentSpacer>6</ComponentSpacer>
+		</butcherProducts>
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>Bionics</li>
+				<li MayRequire="Ludeon.RimWorld.Royalty">SpecializedLimbs</li>
+			</researchPrerequisites>
+		</recipeMaker>
+		<thingSetMakerTags><li>RewardStandardMidFreq</li></thingSetMakerTags>
+		<statBases>
+			<Mass>6</Mass>
+		</statBases>
+		<techHediffsTags>
+			<li>Advanced</li>
+			<li>AdvancedWeapon</li>
+		</techHediffsTags>
+	</ThingDef>
+	
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallFSFBionicBreachArm</defName>
+		<label>install bionic breaching arm</label>
+		<description>Install a bionic breaching arm.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFBionicBreachArm</ThingDef>
+			<HediffDef>FSFBionicBreachArm</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing bionic breaching arm.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFBionicBreachArm</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFBionicBreachArm</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Shoulder</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFBionicBreachArm</addsHediff>
+		<uiIconThing>FSFBionicBreachArm</uiIconThing>
+	</RecipeDef>
+	
+	<!-- Bionic Cleaner Leg -->
+	
+	<HediffDef ParentName="AddedBodyPartBase">
+		<defName>FSFBionicCleanerLeg</defName>
+		<label>bionic cleaner leg</label>
+		<labelNoun>a bionic cleaner leg</labelNoun>
+		<description>An installed bionic cleaner leg.</description>
+		<descriptionHyperlinks><ThingDef>FSFBionicCleanerLeg</ThingDef></descriptionHyperlinks>
+		<stages>
+			<li>
+				<statOffsets>
+					<CleaningSpeed>+2.0</CleaningSpeed>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+        	<li MayRequire="V1024.EBFramework" Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust">
+            	<scaleAdjustment>0.25</scaleAdjustment>
+        	</li>
+		</comps>
+		<spawnThingOnRemoved>FSFBionicCleanerLeg</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.25</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+	
+	<ThingDef ParentName="BodyPartBionicBase">
+		<defName>FSFBionicCleanerLeg</defName>
+		<label>bionic cleaner leg</label>
+		<description>An advanced artificial leg with multiple built-in tools used in general cleaning work. Silenced mini-servos give great strength, while the biogel nerve-link gives exquisite control. A lattice-dust healing system allows it to recover from damage.</description>
+		<descriptionHyperlinks><RecipeDef>InstallFSFBionicCleanerLeg</RecipeDef></descriptionHyperlinks>
+		<costList>
+			<Plasteel>30</Plasteel>
+			<ComponentSpacer>6</ComponentSpacer>
+		</costList>
+		<butcherProducts>
+			<Plasteel>30</Plasteel>
+			<ComponentSpacer>6</ComponentSpacer>
+		</butcherProducts>
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>Bionics</li>
+				<li MayRequire="Ludeon.RimWorld.Royalty">SpecializedLimbs</li>
+			</researchPrerequisites>
+		</recipeMaker>
+		<statBases>
+			<Mass>6</Mass>
+		</statBases>
+		<techHediffsTags>
+			<li>Advanced</li>
+			<li>AdvancedWeapon</li>
+		</techHediffsTags>
+	</ThingDef>
+	
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallFSFBionicCleanerLeg</defName>
+		<label>install bionic cleaner leg</label>
+		<description>Install a bionic cleaner leg.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFBionicCleanerLeg</ThingDef>
+			<HediffDef>FSFBionicCleanerLeg</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing bionic cleaner leg.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFBionicCleanerLeg</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFBionicCleanerLeg</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Leg</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFBionicCleanerLeg</addsHediff>
+		<uiIconThing>FSFBionicCleanerLeg</uiIconThing>
+	</RecipeDef>
+
+</Defs>

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+	<!-- Advanced Bionic Bladder -->
+
+	<HediffDef ParentName="FSFImplantHediffAdvBase">
+		<defName>FSFAdvBionicBladder</defName>
+		<label>advanced bionic bladder</label>
+		<labelNoun>a advanced bionic bladder</labelNoun>
+		<description>An installed advanced bionic bladder.  A highly advanced artificial bladder made using cutting edge ultratech techniques.  Its chemical recycling system breaks down waste products from the body into molecules which are recycled with the remainder released as gas.  It’s as hard as plasteel and through the use of a lattice-dust healing system its capable of repairing itself over time.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAdvBionicBladder</ThingDef>
+			<RecipeDef>InstallFSFAdvBionicBladder</RecipeDef>
+			<RecipeDef>RemoveFSFAdvBionicBladder</RecipeDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>FSFAdvBionicBladder</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<statOffsets>
+					<BladderRateMultiplier>-0.75</BladderRateMultiplier>
+					<ThirstRateMultiplier>-0.75</ThirstRateMultiplier>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFAdvBionicBladder</defName>
+		<label>advanced bionic bladder</label>
+		<description>A highly advanced artificial bladder made using cutting edge ultratech techniques.  Its chemical recycling system breaks down waste products from the body into molecules which are recycled with the remainder released as gas.  It’s as hard as plasteel and through the use of a lattice-dust healing system its capable of repairing itself over time.</description>
+		<descriptionHyperlinks>
+			<HediffDef>FSFAdvBionicBladder</HediffDef>
+			<RecipeDef>InstallFSFAdvBionicBladder</RecipeDef>
+			<RecipeDef>RemoveFSFAdvBionicBladder</RecipeDef>
+		</descriptionHyperlinks>
+		<costList>
+			<Plasteel>10</Plasteel>
+			<ComponentSpacer>6</ComponentSpacer>
+		</costList>
+		<butcherProducts>
+			<Plasteel>10</Plasteel>
+			<ComponentSpacer>6</ComponentSpacer>
+		</butcherProducts>
+		<statBases>
+			<Mass>2</Mass>
+		</statBases>
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>FSFAdvancedBionics</li>
+				<li MayRequire="Dubwise.DubsBadHygiene">HygieneBionics</li>
+			</researchPrerequisites>
+		</recipeMaker>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>InstallFSFAdvBionicBladder</defName>
+		<label>install advanced bionic bladder</label>
+		<description>Install a advanced bionic bladder.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAdvBionicBladder</ThingDef>
+			<HediffDef>FSFAdvBionicBladder</HediffDef>
+			<RecipeDef>RemoveFSFAdvBionicBladder</RecipeDef>
+		</descriptionHyperlinks>
+		<jobString>Installing advanced bionic bladder.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFAdvBionicBladder</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFAdvBionicBladder</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Torso</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFAdvBionicBladder</addsHediff>
+		<uiIconThing>FSFAdvBionicBladder</uiIconThing>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemoveFSFAdvBionicBladder</defName>
+		<label>remove advanced bionic bladder</label>
+		<description>Remove advanced bionic bladder.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAdvBionicBladder</ThingDef>
+			<HediffDef>FSFAdvBionicBladder</HediffDef>
+			<RecipeDef>InstallFSFAdvBionicBladder</RecipeDef>
+		</descriptionHyperlinks>
+		<jobString>Removing advanced bionic bladder.</jobString>
+		<removesHediff>FSFAdvBionicBladder</removesHediff>
+	</RecipeDef>
+	
+	<!-- Advanced Hygiene Enhancer -->
+
+	<HediffDef ParentName="FSFImplantHediffAdvBase">
+		<defName>FSFAdvHygieneEnhancer</defName>
+		<label>advanced hygiene enhancer</label>
+		<labelNoun>a advanced hygiene enhancer</labelNoun>
+		<description>An installed advanced hygiene enhancer.  The implant monitors the host’s personal hygiene and periodically releases mechanites to break down dead skin cells, other detritus on the skin and hair which is then released harmlessly into the air.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAdvHygieneEnhancer</ThingDef>
+			<RecipeDef>InstallFSFAdvHygieneEnhancer</RecipeDef>
+			<RecipeDef>RemoveFSFAdvHygieneEnhancer</RecipeDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>FSFAdvHygieneEnhancer</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<statOffsets>
+					<HygieneRateMultiplier>-0.75</HygieneRateMultiplier>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFAdvHygieneEnhancer</defName>
+		<label>advanced hygiene enhancer</label>
+		<description>The implant monitors the host’s personal hygiene and periodically releases mechanites to break down dead skin cells, other detritus on the skin and hair which is then released harmlessly into the air.</description>
+		<descriptionHyperlinks>
+			<HediffDef>FSFAdvHygieneEnhancer</HediffDef>
+			<RecipeDef>InstallFSFAdvHygieneEnhancer</RecipeDef>
+			<RecipeDef>RemoveFSFAdvHygieneEnhancer</RecipeDef>
+		</descriptionHyperlinks>
+		<costList>
+			<Plasteel>10</Plasteel>
+			<ComponentSpacer>6</ComponentSpacer>
+		</costList>
+		<butcherProducts>
+			<Plasteel>10</Plasteel>
+			<ComponentSpacer>6</ComponentSpacer>
+		</butcherProducts>
+		<statBases>
+			<Mass>2</Mass>
+		</statBases>
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>FSFAdvancedBionics</li>
+				<li MayRequire="Dubwise.DubsBadHygiene">HygieneBionics</li>
+			</researchPrerequisites>
+		</recipeMaker>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>InstallFSFAdvHygieneEnhancer</defName>
+		<label>install advanced hygiene enhancer</label>
+		<description>Install a advanced hygiene enhancer.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAdvHygieneEnhancer</ThingDef>
+			<HediffDef>FSFAdvHygieneEnhancer</HediffDef>
+			<RecipeDef>RemoveFSFAdvHygieneEnhancer</RecipeDef>
+		</descriptionHyperlinks>
+		<jobString>Installing advanced hygiene enhancer.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFAdvHygieneEnhancer</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFAdvHygieneEnhancer</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Torso</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFAdvHygieneEnhancer</addsHediff>
+		<uiIconThing>FSFAdvHygieneEnhancer</uiIconThing>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemoveFSFAdvHygieneEnhancer</defName>
+		<label>remove advanced hygiene enhancer</label>
+		<description>Remove advanced hygiene enhancer.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFAdvHygieneEnhancer</ThingDef>
+			<HediffDef>FSFAdvHygieneEnhancer</HediffDef>
+			<RecipeDef>InstallFSFAdvHygieneEnhancer</RecipeDef>
+		</descriptionHyperlinks>
+		<jobString>Removing advanced hygiene enhancer.</jobString>
+		<removesHediff>FSFAdvHygieneEnhancer</removesHediff>
+	</RecipeDef>
+		
+</Defs>

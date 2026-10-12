@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	
+	<!-- Implant Torso Climate Control -->
+	
+	<HediffDef ParentName="FSFImplantHediffAdvBase">
+		<defName>FSFImplantTorsoClimateControl</defName>
+		<label>thermoregulator module</label>
+		<labelNoun>a thermoregulator</labelNoun>
+		<description>An installed thermoregulator.  An implant designed to help regulate the bodies temperature allowing a person to endure harsher cold and heat without ill effects.  The implant integrates seamlessly with the body's natural systems, employing a combination of microthermal regulators and advanced bio-coolants. The implant constantly monitors the body's core temperature through a network of nanosensors embedded in the skin and circulatory system. When exposed to high temperatures, the system activates micro-cooling channels that dissipate heat by circulating a special coolant through the body. Conversely, in cold environments, the implant triggers a micro-heating mechanism, increasing blood flow and gently warming tissues to maintain a stable internal temperature.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantTorsoClimateControl</ThingDef>
+			<RecipeDef>InstallFSFImplantTorsoClimateControl</RecipeDef>
+			<RecipeDef>RemoveFSFImplantTorsoClimateControl</RecipeDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>FSFImplantTorsoClimateControl</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<statOffsets>
+					<ComfyTemperatureMax>+25.0</ComfyTemperatureMax>
+					<ComfyTemperatureMin>-25.0</ComfyTemperatureMin>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFImplantTorsoClimateControl</defName>
+		<label>thermoregulator module</label>
+		<description>An implant designed to help regulate the bodies temperature allowing a person to endure harsher cold and heat without ill effects.  The implant integrates seamlessly with the body's natural systems, employing a combination of microthermal regulators and advanced bio-coolants. The implant constantly monitors the body's core temperature through a network of nanosensors embedded in the skin and circulatory system. When exposed to high temperatures, the system activates micro-cooling channels that dissipate heat by circulating a special coolant through the body. Conversely, in cold environments, the implant triggers a micro-heating mechanism, increasing blood flow and gently warming tissues to maintain a stable internal temperature.</description>
+		<descriptionHyperlinks>
+			<HediffDef>FSFImplantTorsoClimateControl</HediffDef>
+			<RecipeDef>InstallFSFImplantTorsoClimateControl</RecipeDef>
+			<RecipeDef>RemoveFSFImplantTorsoClimateControl</RecipeDef>
+		</descriptionHyperlinks>
+		<thingSetMakerTags>
+			<li>RewardStandardLowFreq</li>
+		</thingSetMakerTags>
+		<costList>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>4</ComponentSpacer>
+		</costList>
+		<butcherProducts>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>4</ComponentSpacer>
+		</butcherProducts>
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>FSFEnvironmentalImplants</li>
+			</researchPrerequisites>
+		</recipeMaker>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>InstallFSFImplantTorsoClimateControl</defName>
+		<label>install thermoregulator module</label>
+		<description>Install a thermoregulator module.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantTorsoClimateControl</ThingDef>
+			<HediffDef>FSFImplantTorsoClimateControl</HediffDef>
+			<RecipeDef>RemoveFSFImplantTorsoClimateControl</RecipeDef>
+		</descriptionHyperlinks>
+		<jobString>Installing thermoregulator module.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFImplantTorsoClimateControl</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFImplantTorsoClimateControl</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Torso</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFImplantTorsoClimateControl</addsHediff>
+		<uiIconThing>FSFImplantTorsoClimateControl</uiIconThing>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemoveFSFImplantTorsoClimateControl</defName>
+		<label>remove thermoregulator module</label>
+		<description>Remove thermoregulator module</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantTorsoClimateControl</ThingDef>
+			<HediffDef>FSFImplantTorsoClimateControl</HediffDef>
+			<RecipeDef>InstallFSFImplantTorsoClimateControl</RecipeDef>
+		</descriptionHyperlinks>
+		<jobString>Removing thermoregulator module.</jobString>
+		<removesHediff>FSFImplantTorsoClimateControl</removesHediff>
+	</RecipeDef>
+	
+	<!-- Implant Torso Respirator -->
+	
+	<HediffDef ParentName="FSFImplantHediffAdvBase">
+		<defName>FSFImplantTorsoRespirator</defName>
+		<label>environmental filter</label>
+		<labelNoun>a environmental filter</labelNoun>
+		<description>An installed environmental filter.  A small internal module connected to the respiratory system that filters the incoming air of environmental toxins and gases.  The gathered toxins are later harmlessly excreted from the body.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantTorsoRespirator</ThingDef>
+			<RecipeDef>InstallFSFImplantTorsoRespirator</RecipeDef>
+			<RecipeDef>RemoveFSFImplantTorsoRespirator</RecipeDef>
+			<HediffDef>LungRot</HediffDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>FSFImplantTorsoRespirator</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<makeImmuneTo>
+					<li>LungRotExposure</li>
+					<li>LungRot</li>
+				</makeImmuneTo>
+				<statOffsets>
+					<ToxicEnvironmentResistance>+2.0</ToxicEnvironmentResistance>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFImplantTorsoRespirator</defName>
+		<label>environmental filter</label>
+		<description>A small internal module connected to the respiratory system that filters the incoming air of environmental toxins and gases.  The gathered toxins are later harmlessly excreted from the body.</description>
+		<descriptionHyperlinks>
+			<HediffDef>FSFImplantTorsoRespirator</HediffDef>
+			<RecipeDef>InstallFSFImplantTorsoRespirator</RecipeDef>
+			<RecipeDef>RemoveFSFImplantTorsoRespirator</RecipeDef>
+			<HediffDef>LungRot</HediffDef>
+		</descriptionHyperlinks>
+		<thingSetMakerTags>
+			<li>RewardStandardLowFreq</li>
+		</thingSetMakerTags>
+		<costList>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>4</ComponentSpacer>
+		</costList>
+		<butcherProducts>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>4</ComponentSpacer>
+		</butcherProducts>
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>FSFEnvironmentalImplants</li>
+			</researchPrerequisites>
+		</recipeMaker>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>InstallFSFImplantTorsoRespirator</defName>
+		<label>install environmental filter</label>
+		<description>Install a environmental filter.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantTorsoRespirator</ThingDef>
+			<HediffDef>FSFImplantTorsoRespirator</HediffDef>
+			<RecipeDef>RemoveFSFImplantTorsoRespirator</RecipeDef>
+			<HediffDef>LungRot</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing environmental filter.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFImplantTorsoRespirator</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFImplantTorsoRespirator</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Torso</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFImplantTorsoRespirator</addsHediff>
+		<uiIconThing>FSFImplantTorsoRespirator</uiIconThing>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemoveFSFImplantTorsoRespirator</defName>
+		<label>remove environmental filter</label>
+		<description>Remove environmental filter.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantTorsoRespirator</ThingDef>
+			<HediffDef>FSFImplantTorsoRespirator</HediffDef>
+			<RecipeDef>InstallFSFImplantTorsoRespirator</RecipeDef>
+			<HediffDef>LungRot</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Removing environmental filter.</jobString>
+		<removesHediff>FSFImplantTorsoRespirator</removesHediff>
+	</RecipeDef>
+	
+	<!-- Implant EMP Shield -->
+	
+	<HediffDef ParentName="FSFImplantHediffAdvBase">
+		<defName>FSFImplantEMPShield</defName>
+		<label>EMP shield</label>
+		<labelNoun>a EMP shield</labelNoun>
+		<description>An installed EMP shield.  A full-body internal defense system designed to safeguard from electrical surges, such as those caused by EMP blasts, lightning strikes and electroshock weapons.  Upon detecting a surge, the system temporarily isolates and disables all bionic components to prevent permanent damage.  This emergency shutdown can briefly disrupt the user's motor functions and cognitive focus, leading to momentary disorientation and loss of task awareness.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantEMPShield</ThingDef>
+			<RecipeDef>InstallFSFImplantEMPShield</RecipeDef>
+			<RecipeDef>RemoveFSFImplantEMPShield</RecipeDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>FSFImplantEMPShield</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<makeImmuneTo>
+					<li>BrainShock</li>
+					<li>FSFEffectTaser</li>
+				</makeImmuneTo>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<ThingDef ParentName="FSFBodyPartAdvBionicBase">
+		<defName>FSFImplantEMPShield</defName>
+		<label>EMP shield</label>
+		<description>A full-body internal defense system designed to safeguard from electrical surges, such as those caused by EMP blasts, lightning strikes and electroshock weapons.  Upon detecting a surge, the system temporarily isolates and disables all bionic components to prevent permanent damage.  This emergency shutdown can briefly disrupt the user's motor functions and cognitive focus, leading to momentary disorientation and loss of task awareness.</description>
+		<descriptionHyperlinks>
+			<HediffDef>FSFImplantEMPShield</HediffDef>
+			<RecipeDef>InstallFSFImplantEMPShield</RecipeDef>
+			<RecipeDef>RemoveFSFImplantEMPShield</RecipeDef>
+		</descriptionHyperlinks>
+		<thingSetMakerTags>
+			<li>RewardStandardLowFreq</li>
+		</thingSetMakerTags>
+		<costList>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>4</ComponentSpacer>
+		</costList>
+		<butcherProducts>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>4</ComponentSpacer>
+		</butcherProducts>
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>FSFEnvironmentalImplants</li>
+			</researchPrerequisites>
+		</recipeMaker>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>InstallFSFImplantEMPShield</defName>
+		<label>install EMP shield</label>
+		<description>Install a EMP shield.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantEMPShield</ThingDef>
+			<HediffDef>FSFImplantEMPShield</HediffDef>
+			<RecipeDef>RemoveFSFImplantEMPShield</RecipeDef>
+		</descriptionHyperlinks>
+		<jobString>Installing EMP shield.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSFImplantEMPShield</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FSFImplantEMPShield</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Torso</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>FSFImplantEMPShield</addsHediff>
+		<uiIconThing>FSFImplantEMPShield</uiIconThing>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemoveFSFImplantEMPShield</defName>
+		<label>remove EMP shield</label>
+		<description>Remove EMP shield.</description>
+		<descriptionHyperlinks>
+			<ThingDef>FSFImplantEMPShield</ThingDef>
+			<HediffDef>FSFImplantEMPShield</HediffDef>
+			<RecipeDef>InstallFSFImplantEMPShield</RecipeDef>
+		</descriptionHyperlinks>
+		<jobString>Removing EMP shield.</jobString>
+		<removesHediff>FSFImplantEMPShield</removesHediff>
+	</RecipeDef>
+		
+</Defs>

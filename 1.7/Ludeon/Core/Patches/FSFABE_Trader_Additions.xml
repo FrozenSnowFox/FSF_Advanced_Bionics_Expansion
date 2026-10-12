@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+	
+	<!-- Trader Additions -->
+			
+			<!-- Add AI Module Core to always be available -->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/TraderKindDef [defName [contains(text(), "Orbital")] ]/stockGenerators [li/tradeTag [text() = "TechHediff"]]</xpath>
+				<value>
+					<li Class="StockGenerator_SingleDef">
+						<thingDef>FSFAIModuleCore</thingDef>
+						<countRange>1~1</countRange>
+					</li>
+					<li Class="StockGenerator_Category">
+						<categoryDef>FSFBodyPartsAIModule</categoryDef>
+						<thingDefCountRange>1~2</thingDefCountRange>
+						<countRange>1~1</countRange>
+					</li>
+				</value>
+			</li>
+			
+			<li MayRequire="Ludeon.RimWorld.Royalty" Class="PatchOperationAdd">
+				<xpath>/Defs/TraderKindDef [defName [contains(text(), "Orbital")] ]/stockGenerators [li/tradeTag [text() = "ImplantEmpireCommon"]]</xpath>
+				<value>
+					<li Class="StockGenerator_SingleDef">
+						<thingDef>FSFAIModuleCore</thingDef>
+						<countRange>1~1</countRange>
+					</li>
+					<li Class="StockGenerator_Category">
+						<categoryDef>FSFBodyPartsAIModule</categoryDef>
+						<thingDefCountRange>1~2</thingDefCountRange>
+						<countRange>1~1</countRange>
+					</li>
+				</value>
+			</li>
+			
+			<li MayRequire="Ludeon.RimWorld.Royalty" Class="PatchOperationAdd">
+				<xpath>/Defs/TraderKindDef [defName [contains(text(), "Base")] ]/stockGenerators [li/tradeTag [text() = "ImplantEmpireCommon"]]</xpath>
+				<value>
+					<li Class="StockGenerator_SingleDef">
+						<thingDef>FSFAIModuleCore</thingDef>
+						<countRange>1~1</countRange>
+					</li>
+					<li Class="StockGenerator_Category">
+						<categoryDef>FSFBodyPartsAIModule</categoryDef>
+						<thingDefCountRange>1~2</thingDefCountRange>
+						<countRange>1~1</countRange>
+					</li>
+				</value>
+			</li>
+	
+		</operations>
+	</Operation>
+	
+</Patch>
